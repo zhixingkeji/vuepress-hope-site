@@ -1,0 +1,86 @@
+{
+  "hash": "23afdba4",
+  "browserHash": "653ecde6",
+  "optimized": {
+    "@vue/devtools-api": {
+      "src": "../../../../node_modules/_@vue_devtools-api@6.2.1@@vue/devtools-api/lib/esm/index.js",
+      "file": "@vue_devtools-api.js",
+      "fileHash": "08f8f56c",
+      "needsInterop": false
+    },
+    "@vuepress/shared": {
+      "src": "../../../../node_modules/_@vuepress_shared@2.0.0-beta.49@@vuepress/shared/dist/index.js",
+      "file": "@vuepress_shared.js",
+      "fileHash": "7ee27b3b",
+      "needsInterop": false
+    },
+    "vue": {
+      "src": "../../../../node_modules/_vue@3.2.37@vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "d67770b7",
+      "needsInterop": false
+    },
+    "vue-router": {
+      "src": "../../../../node_modules/_vue-router@4.1.5@vue-router/dist/vue-router.esm-bundler.js",
+      "file": "vue-router.js",
+      "fileHash": "2cc39507",
+      "needsInterop": false
+    },
+    "chart.js/auto": {
+      "src": "../../../../node_modules/_chart.js@3.9.1@chart.js/auto/auto.mjs",
+      "file": "chart_js_auto.js",
+      "fileHash": "c71f49a3",
+      "needsInterop": false
+    },
+    "echarts": {
+      "src": "../../../../node_modules/_echarts@5.3.3@echarts/index.js",
+      "file": "echarts.js",
+      "fileHash": "34177fa5",
+      "needsInterop": false
+    },
+    "flowchart.js": {
+      "src": "../../../../node_modules/_flowchart.js@1.17.1@flowchart.js/index.js",
+      "file": "flowchart_js.js",
+      "fileHash": "476edde5",
+      "needsInterop": true
+    },
+    "mermaid": {
+      "src": "../../../../node_modules/_mermaid@9.1.6@mermaid/dist/mermaid.esm.min.mjs",
+      "file": "mermaid.js",
+      "fileHash": "9fbc7ff3",
+      "needsInterop": false
+    },
+    "@vue/repl": {
+      "src": "../../../../node_modules/_@vue_repl@1.3.0@@vue/repl/dist/vue-repl.js",
+      "file": "@vue_repl.js",
+      "fileHash": "bdd0f603",
+      "needsInterop": false
+    },
+    "register-service-worker": {
+      "src": "../../../../node_modules/_register-service-worker@1.7.2@register-service-worker/index.js",
+      "file": "register-service-worker.js",
+      "fileHash": "cb9278c0",
+      "needsInterop": false
+    },
+    "@vueuse/core": {
+      "src": "../../../../node_modules/_@vueuse_core@9.1.1@@vueuse/core/index.mjs",
+      "file": "@vueuse_core.js",
+      "fileHash": "10981bda",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-ZLU3F6KH": {
+      "file": "chunk-ZLU3F6KH.js"
+    },
+    "chunk-GJFHGD2Z": {
+      "file": "chunk-GJFHGD2Z.js"
+    },
+    "chunk-O7OP4E6C": {
+      "file": "chunk-O7OP4E6C.js"
+    },
+    "chunk-LSYFD7Z3": {
+      "file": "chunk-LSYFD7Z3.js"
+    }
+  }
+}
