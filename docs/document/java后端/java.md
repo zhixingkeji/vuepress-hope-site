@@ -1746,13 +1746,25 @@ javadoc 工具将你 Java 程序的源代码作为输入，输出一些包含你
 
 ### 7.1 多线/进程
 
-Java 给多线程编程提供了内置的支持。 一条线程指的是进程中一个单一顺序的控制流，一个进程中可以并发多个线程，每条线程并行执行不同的任务。
+-   线程
 
-多线程是多任务的一种特别的形式，但多线程使用了更小的资源开销。
+    指的是进程中一个单一顺序的控制流，一个进程中可以并发多个线程，每条线程并行执行不同的任务。
 
-这里定义和线程相关的另一个术语 - 进程：一个进程包括由操作系统分配的内存空间，包含一个或多个线程。一个线程不能独立的存在，它必须是进程的一部分。一个进程一直运行，直到所有的非守护线程都结束运行后才能结束。
+-   多线程
 
-多线程能满足程序员编写高效率的程序来达到充分利用 CPU 的目的。
+    是多任务的一种特别的形式，但多线程使用了更小的资源开销。多线程能满足程序员编写高效率的程序来达到充分利用 CPU 的目的。
+
+-   进程
+
+    一个进程包括由操作系统分配的内存空间，包含一个或多个线程。一个线程不能独立的存在，它必须是进程的一部分。一个进程一直运行，直到所有的非守护线程都结束运行后才能结束。
+
+-   start方法和run方法的区别
+
+    run不会新建线程, start会新建线程
+
+
+
+
 
 ### 7.2 线程的生命周期
 
@@ -1800,3 +1812,508 @@ Java 给多线程编程提供了内置的支持。 一条线程指的是进程�
 
 死亡状态:
 一个运行状态的线程完成任务或者其他终止条件发生时，该线程就切换到终止状态。
+
+
+
+### 7.3 创建线程的方式
+
+-   方法1 实现Runnable接口
+
+
+
+-   方法2 lambad表达式
+
+
+
+-   方法3 继承Thread类
+
+
+
+-   方法4 内部类
+
+
+
+```java
+package com.company.one_thread;
+
+import com.company.config.Logger;
+
+import java.util.random.RandomGenerator;
+
+public class one_thread {
+//    private static Logger logger = Logger.getLogger(one_thread.class);
+
+
+    public static void main(String[] args) {
+//        logger.info("测试");
+
+
+        //测试单线程
+//        test1();
+
+        //测试多线程
+//        test2();
+
+
+        //线程的四种创建方法
+//        t1_create();
+//        t2_create();
+//        t3_create();
+        t4_create();
+
+    }
+
+
+    // 测试单线程
+    public static void test1(){
+        RandomT randomT = new RandomT();
+        Thread thread = new Thread(randomT);
+        thread.start();
+    }
+
+
+    //测试多线程
+    public static void test2(){
+        RandomT randomT = new RandomT();
+        Thread t1 = new Thread(randomT);
+        Thread t2 = new Thread(randomT);
+        Thread t3 = new Thread(randomT);
+        Thread t4 = new Thread(randomT);
+
+        // run方法不能启动新线程 start方法可以启动新线程
+        t1.start();
+        t2.start();
+        t3.start();
+        t4.start();
+
+//        t1.run();
+//        t2.run();
+//        t3.run();
+//        t4.run();
+
+    }
+
+
+
+
+
+
+    //创建线程方法1
+    static class Task1 implements Runnable{
+
+        @Override
+        public void run() {
+            System.out.println('['+ Thread.currentThread().getName() + ']' + "创建线程第1个方法");
+        }
+    }
+
+
+
+    public static void t1_create() {
+        //第2个参数可选,可以指定线程名称
+        new Thread (new Task1(),"wl1").start();
+    }
+
+
+
+    //创建线程方法2 推荐!
+    public static void t2_create() {
+        //第2个参数可选,可以指定线程名称
+
+        new Thread (() -> {
+            System.out.println('['+ Thread.currentThread().getName() + ']' + "创建线程第2个方法");
+        },"wl2").start();
+    }
+
+    //创建线程方法3 继承thread类
+    static class Task3 extends Thread {
+        @Override
+        public void run(){
+            System.out.println('['+ Thread.currentThread().getName() + ']' + "创建线程第3个方法");
+        }
+    }
+
+    public static void t3_create() {
+        new Thread (new Task3(),"wl3").start();
+    }
+
+
+    //创建线程方法4 内部类
+
+    public static void t4_create() {
+
+        new Thread (
+                new Thread(){
+                    @Override
+                    public void run(){
+                        System.out.println('['+ Thread.currentThread().getName() + ']' + "创建线程第4个方法");
+                    }
+                },"wl4"
+        ).start();
+    }
+}
+
+```
+
+
+
+
+
+
+
+
+
+### 7.4 线程的方法
+
+-   线程休眠
+
+作用: 做一些延迟处理, 定时任务
+
+
+
+```java
+package com.company.one_thread;
+
+import java.util.concurrent.TimeUnit;
+
+//线程休眠
+public class Tsleep {
+
+    public static void main(String[] args) {
+        //测试主线程休眠
+//        test_sleep();
+
+        //测试多线程休眠
+        test_sleep2();
+    }
+
+
+    //主线程休眠
+    public static void test_sleep(){
+        System.out.println("开始执行");
+        try {
+            System.out.println("开始休眠2秒");
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("结束执行");
+    }
+
+
+
+    //多线程分别休眠
+    public static void test_sleep2(){
+        //先启动子线程
+        new Thread (() -> {
+
+            System.out.println("新线程开启");
+            try {
+                System.out.println("新线程休眠5秒");
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            System.out.println("新线程结束");
+        }).start();
+
+
+
+
+        System.out.println("主线程开始执行");
+        try {
+            System.out.println("主线程开始休眠2秒");
+//            Thread.sleep(2000);
+            // 使用更明显的api进行休眠
+            TimeUnit.SECONDS.sleep(2);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("主线程结束执行");
+
+    }
+
+}
+
+```
+
+
+
+
+
+-   线程中断
+
+作用: 控制线程的运行 
+
+在休眠的时候可以中断线程
+
+
+
+-   中断状态
+
+中断线程可以分为不清除中断标记和清除中断标记
+
+```
+isInterrupted  //不清除中断状态
+interrupted    // 清除中断状态
+```
+
+ 
+
+如果使用的是清除标记状态的语法, 那么在循环中的开头进行判断时, 中断状态已经被改为false
+
+解决方法是在捕获中断请求后再发起一次中断请求
+
+
+
+-   线程等待
+
+线程的优先级 , 线程让步 都不能保证线程优先级, 只是大概率能做到
+
+线程等待 调用线程的join方法, 阻塞直到该线程死亡后继续执行
+
+
+
+
+
+-   线程状态
+
+6种状态 
+
+使用getState方法获取线程状态
+
+
+
+NEW 新建状态
+
+RUNNABLE 运行状态
+
+BLOCKED 阻塞状态
+
+WAITING 等待状态
+
+TIMED_WAITING 指定时间的等待状态
+
+TERMINATED 终止状态
+
+
+
+
+
+-   守护线程
+
+java中有两类线程, 用户线程和守护线程
+
+用户线程是前台线程, 不会随着其他用户线程结束而结束
+
+守护线程是服务用户线程的, 当最后一个用户线程结束, 所有的守护线程也就结束
+
+在守护线程中再启动一个线程默认为守护线程
+
+
+
+```java
+t1.setDaemon(true)
+```
+
+
+
+
+
+-   采集程序
+
+
+
+
+
+
+
+### 7.5 线程池
+
+-   线程池作用
+
+控制创建线程的数量,避免资源耗尽
+
+实现线程重复利用, 提高效率
+
+使用任务缓冲队列, 提高吞吐量
+
+
+
+-   线程池关键参数
+
+核心线程数 最大线程数
+
+
+
+-   线程池工作流程
+
+![image-20220907150727978](./asset/image-20220907150727978.png)
+
+
+
+-   实现代码
+
+
+
+-   任务拒绝
+
+
+
+-   阻塞与非阻塞
+
+poll是非阻塞方法
+
+take是阻塞方法
+
+
+
+
+
+-   线程工厂
+
+
+
+
+
+-   拒绝策略
+
+
+
+-   监控
+
+
+
+-   关闭线程池
+
+shutdown() 方法 不再接收新任务, 会继续完成已有的任务
+
+shutdownNow() 方法 不再接收新任务, 终止正在执行的任务, 没执行的任务不再执行
+
+
+
+
+
+### 7.6 线程安全
+
+-   不安全原因
+
+多线程向共享变量存在并发写操作, 该现象称为竞态条件
+
+
+
+-   消除竞态条件
+
+不访问共享资源
+
+异步操作改为同步操作
+
+
+
+-   临界区
+
+存在竞态条件的代码叫做临界区
+
+
+
+-   同步锁 synchronized
+
+如果是同一个锁对象代表争抢的是同一把锁, 可以线程安全, 如果争抢的是两把锁, 那么依然会产生并发写
+
+```java
+```
+
+
+
+-   同步代码块
+
+用 synchronized 关键字包裹的临界区的代码块称为同步代码块
+
+
+
+形式
+
+类的同一个对象的所有被上锁的方法 是同步的
+
+上锁的静态方法和上锁的实例方法不会同步执行, 静态和静态同步, 实例和实例同步
+
+
+
+
+
+-   优化同步代码块
+
+能不加锁就不加
+
+尽量缩小临界范围
+
+能不共用同一个锁对象就不要共用一个
+
+
+
+-   锁的可重入性
+
+
+
+-   sleep方法不会释放锁
+
+
+
+-   死锁
+
+两个线程竞争一个锁, 有锁的永远不解锁, 另一个线程永远在等待, 形成了死锁
+
+
+
+原因
+
+交叉式锁
+
+内存不足
+
+cpu占用率过高
+
+
+
+
+
+-   线程饥饿
+
+使用Reentrantlock锁对象可以非阻塞获取锁
+
+
+
+-   jmm 内存模型
+
+保证了原子性 有序性 可见性 
+
+
+
+-   volatile保证可见性 有序性
+
+
+
+-   单例模式
+
+实现的两种方式
+
+懒汉 类加载的时候自动创建
+
+饿汉 在使用的时候才创建
+
+
+
+-   ThreadLocal 线程本地数据
+
+
+
+-   内存泄露
+
+
+
+### 7.7 锁
+
+![image-20220907215906957](./asset/image-20220907215906957.png)

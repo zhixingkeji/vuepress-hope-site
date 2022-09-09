@@ -8,7 +8,7 @@ date: 2021-11-15 15:27:44
 
 
 
-## 一 . Spring could - 简介
+## 第1章 Spring could - 简介
 
 ### 1.1 微服务概念
 
@@ -77,7 +77,7 @@ date: 2021-11-15 15:27:44
 
 
 
-## 二. 阿里nacos - 服务注册与发现
+## 第2章 阿里nacos - 服务注册与发现
 
 相关技术（eureka停更，consul，zookeeper）
 
@@ -276,7 +276,7 @@ public class RibbonConfig {
 
 
 
-## 三. openFeign - 服务调用
+## 第3章 openFeign - 服务调用
 
 相关技术（Feign停更 , RestTemplate繁琐）
 
@@ -477,7 +477,7 @@ public class CustomFeignInterceptor implements RequestInterceptor{
 
 
 
-## 四. 阿里 nacos - 服务配置
+## 第4章 阿里 nacos - 服务配置
 
 相关技术（springcould config停更）
 
@@ -713,7 +713,7 @@ public class ConfigController {
 
 
 
-## 五.  阿里 sentinel - 服务熔断
+## 第5章  阿里 sentinel - 服务熔断
 
 相关技术（Hystrix停更）
 
@@ -1044,7 +1044,7 @@ push 推模式 结合 nacos配置中心
 
 
 
-## 六. 阿里 seata - 事物
+## 第6章 阿里 seata - 事物
 
 相关技术（）
 
@@ -1212,7 +1212,7 @@ seata / conf / file.conf
 
 
 
-## 七. spring Cloud gateway - 服务网关
+## 第7章 spring Cloud gateway - 服务网关
 
 相关技术（zuul停更，zuul2停更）
 
@@ -1418,7 +1418,7 @@ spring.could.sentinel.transport.dashboard: 127.0.0.1:8858
 
 
 
-## 八. Apache SkyWalking - 服务跟踪
+## 第8章 Apache SkyWalking - 服务跟踪
 
 相关技术spring could sleuth
 
