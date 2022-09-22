@@ -1691,6 +1691,8 @@ public class GenericTest {
 }
 ```
 
+
+
 ### 6.10 序列化
 
 Java 提供了一种对象序列化的机制，该机制中，一个对象可以被表示为一个字节序列，该字节序列包括该对象的数据、有关对象的类型的信息和存储在对象中数据的类型。
@@ -1738,400 +1740,201 @@ javadoc 工具将你 Java 程序的源代码作为输入，输出一些包含你
 
 
 
+## 第7章 IO流
+
+### 7.1 IO流简介
+
+输入: 让程序从外部系统读数据
+
+输出: 程序输出数据写到外部系统
+
+数据源: 提供数据的原始媒介
+
+流: 一连串连续动态的数据集合
 
 
 
+### 7.2 流的分类
 
-## 第7章 并发编程
+四大IO抽象类: 字节流 InputSteam / OutputStream  字符流 Reader / Writer
 
-### 7.1 多线/进程
+节点流: 可以直接从数据源读写数据
 
--   线程
-
-    指的是进程中一个单一顺序的控制流，一个进程中可以并发多个线程，每条线程并行执行不同的任务。
-
--   多线程
-
-    是多任务的一种特别的形式，但多线程使用了更小的资源开销。多线程能满足程序员编写高效率的程序来达到充分利用 CPU 的目的。
-
--   进程
-
-    一个进程包括由操作系统分配的内存空间，包含一个或多个线程。一个线程不能独立的存在，它必须是进程的一部分。一个进程一直运行，直到所有的非守护线程都结束运行后才能结束。
-
--   start方法和run方法的区别
-
-    run不会新建线程, start会新建线程
+处理流: 不直接连接到数据源, 也叫包装流, 如BufferedInputStream
 
 
 
+### 7.3 流的体系
 
+InputSream / OutputStream 字节流的抽象类
 
-### 7.2 线程的生命周期
+Reader / Writer 字符流的抽象类
 
-线程是一个动态执行的过程，它也有一个从产生到死亡的过程。
+FileInputStream / FileOutputStream 节点流 以字节为单位直接操作文件
 
-下图显示了一个线程完整的生命周期。
+ByteArrayInputStream / ByteArrayOutputStream 节点流 以字节为单位直接操作字节数组对象
 
-![](./asset/javase-1636976369132.png)
+ObjectInputStream / ObjectOutputStream 处理流 以字节为单位直接操作对象
 
-新建状态:
+DataInputStream / DataOutputStream 处理流 以字节为单位直接操作基本数据类型与字符串类型
 
-使用 new 关键字和 Thread 类或其子类建立一个线程对象后，该线程对象就处于新建状态。它保持这个状态直到程序 start() 这个线程。
+FileReader / FileWriter 节点流 以字符为单位直接操作基本数据类型与字符串类型
 
+BufferedReader / BufferedWriter 处理流 增加缓存功能
 
+BufferedInputSteram / BufferedOutputStream 处理流 增加缓存功能
 
-就绪状态:
+InputStreamReader / OutputStreamWriter 处理流 将字节流对象转为成字符流对象
 
-当线程对象调用了start()方法之后，该线程就进入就绪状态。就绪状态的线程处于就绪队列中，要等待JVM里线程调度器的调度。
-
-
-
-运行状态:
-
-如果就绪状态的线程获取 CPU 资源，就可以执行 run()，此时线程便处于运行状态。处于运行状态的线程最为复杂，它可以变为阻塞状态、就绪状态和死亡状态。
-
-
-
-阻塞状态:
-
-如果一个线程执行了sleep（睡眠）、suspend（挂起）等方法，失去所占用资源之后，该线程就从运行状态进入阻塞状态。在睡眠时间已到或获得设备资源后可以重新进入就绪状态。可以分为三种：
+PrintStream 处理流 包装OutputStream 方便输出字符
 
 
 
-等待阻塞：运行状态中的线程执行 wait() 方法，使线程进入到等待阻塞状态。
+### 7.4 入门案例
 
-
-
-同步阻塞：线程在获取 synchronized 同步锁失败(因为同步锁被其他线程占用)。
-
-
-
-其他阻塞：通过调用线程的 sleep() 或 join() 发出了 I/O 请求时，线程就会进入到阻塞状态。当sleep() 状态超时，join() 等待线程终止或超时，或者 I/O 处理完毕，线程重新转入就绪状态。
-
-
-
-死亡状态:
-一个运行状态的线程完成任务或者其他终止条件发生时，该线程就切换到终止状态。
-
-
-
-<<<<<<< HEAD
-### 7.3 创建线程的方式
-
--   方法1 实现Runnable接口
-
-
-
--   方法2 lambad表达式
-
-
-
--   方法3 继承Thread类
-
-
-
--   方法4 内部类
-
-
+文件字节输入流
 
 ```java
-package com.company.one_thread;
+package com.company.字节输入流;
 
-import com.company.config.Logger;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
-import java.util.random.RandomGenerator;
-
-public class one_thread {
-//    private static Logger logger = Logger.getLogger(one_thread.class);
-
-
+public class FirstTest {
     public static void main(String[] args) {
-//        logger.info("测试");
-
-
-        //测试单线程
-//        test1();
-
-        //测试多线程
-//        test2();
-
-
-        //线程的四种创建方法
-//        t1_create();
-//        t2_create();
-//        t3_create();
-        t4_create();
-
-    }
-
-
-    // 测试单线程
-    public static void test1(){
-        RandomT randomT = new RandomT();
-        Thread thread = new Thread(randomT);
-        thread.start();
-    }
-
-
-    //测试多线程
-    public static void test2(){
-        RandomT randomT = new RandomT();
-        Thread t1 = new Thread(randomT);
-        Thread t2 = new Thread(randomT);
-        Thread t3 = new Thread(randomT);
-        Thread t4 = new Thread(randomT);
-
-        // run方法不能启动新线程 start方法可以启动新线程
-        t1.start();
-        t2.start();
-        t3.start();
-        t4.start();
-
-//        t1.run();
-//        t2.run();
-//        t3.run();
-//        t4.run();
-
-    }
-
-
-
-
-
-
-    //创建线程方法1
-    static class Task1 implements Runnable{
-
-        @Override
-        public void run() {
-            System.out.println('['+ Thread.currentThread().getName() + ']' + "创建线程第1个方法");
-        }
-    }
-
-
-
-    public static void t1_create() {
-        //第2个参数可选,可以指定线程名称
-        new Thread (new Task1(),"wl1").start();
-    }
-
-
-
-    //创建线程方法2 推荐!
-    public static void t2_create() {
-        //第2个参数可选,可以指定线程名称
-
-        new Thread (() -> {
-            System.out.println('['+ Thread.currentThread().getName() + ']' + "创建线程第2个方法");
-        },"wl2").start();
-    }
-
-    //创建线程方法3 继承thread类
-    static class Task3 extends Thread {
-        @Override
-        public void run(){
-            System.out.println('['+ Thread.currentThread().getName() + ']' + "创建线程第3个方法");
-        }
-    }
-
-    public static void t3_create() {
-        new Thread (new Task3(),"wl3").start();
-    }
-
-
-    //创建线程方法4 内部类
-
-    public static void t4_create() {
-
-        new Thread (
-                new Thread(){
-                    @Override
-                    public void run(){
-                        System.out.println('['+ Thread.currentThread().getName() + ']' + "创建线程第4个方法");
-                    }
-                },"wl4"
-        ).start();
-    }
-}
-
-```
-
-
-=======
-## 第8章 jvm
-
-### 8.1 简介
-
-jvm 是java程序的运行环境, 准确说是java二进制字节码的运行环境
-
-
-
--   优点
-
-一次编写, 多平台运行
-
-自动内存管理, 垃圾回收功能
-
-数组下标越界检查
-
-
-
--   缺点
-
-只能运行在装有jdk环境的系统上
-
-
-
--   模块介绍
-
-类加载器
-
-方法区
-
-堆
-
-栈
-
-程序计数器
-
-本地方法栈
-
-解释器
-
-即时编译器
-
-垃圾回收器
-
-本地方法接口
-
-
-
-### 8.2 内存结构
-
--   程序计数器
-
-作用: 记住下一条jvm指令的地址
-
-特点: 线程私有, 不会内存溢出
-
-
-
--   虚拟机栈
-
-定义
-
-每个线程运行时需要的内存, 称为虚拟机栈
-
-每个栈由多个栈帧组成,对应每次方法调用时所占有的内存
-
-每个线程只能有一个活动栈帧, 对应着当前正在执行的那个方法
-
-
-
-栈的解释
-
-垃圾回收器不管理栈内存, 只管理堆内存
-
-栈内存不是越大越好, 相应的线程会减少
-
-方法内局部变量没有逃离方法的作用访问是线程安全的, 但如果是局部变量引用了对象, 并逃离方法的作用方法, 需要考虑线程安全
-
-
-
-栈内存溢出原因
-
-1.   栈帧过多 (循环调用, 无限递归)
-2.   栈帧过大 
-
-
-
-
-
--   本地方法栈
-
-和系统交互的方法
->>>>>>> 05e0fff8863da6775114cc570514f79e2ad2d86b
-
-
-
-
-
-<<<<<<< HEAD
-
-
-### 8.3 线程的方法
-
--   线程休眠
-
-作用: 做一些延迟处理, 定时任务
-
-
-
-```java
-package com.company.one_thread;
-
-import java.util.concurrent.TimeUnit;
-
-//线程休眠
-public class Tsleep {
-
-    public static void main(String[] args) {
-        //测试主线程休眠
-//        test_sleep();
-
-        //测试多线程休眠
-        test_sleep2();
-    }
-
-
-    //主线程休眠
-    public static void test_sleep(){
-        System.out.println("开始执行");
+        FileInputStream fis = null;
         try {
-            System.out.println("开始休眠2秒");
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+            fis = new FileInputStream("/Users/wangle/Project/IO/a.txt");
 
-        System.out.println("结束执行");
-    }
+            StringBuilder sb = new StringBuilder();
 
+            int temp = 0;
+            while((temp = fis.read()) != -1) {
 
+                System.out.println(temp);
 
-    //多线程分别休眠
-    public static void test_sleep2(){
-        //先启动子线程
-        new Thread (() -> {
-
-            System.out.println("新线程开启");
-            try {
-                System.out.println("新线程休眠5秒");
-                Thread.sleep(5000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+                sb.append((char)temp);
             }
 
-            System.out.println("新线程结束");
-        }).start();
+            System.out.println(sb);
 
 
-
-
-        System.out.println("主线程开始执行");
-        try {
-            System.out.println("主线程开始休眠2秒");
-//            Thread.sleep(2000);
-            // 使用更明显的api进行休眠
-            TimeUnit.SECONDS.sleep(2);
-        } catch (InterruptedException e) {
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (fis!= null) {
+                try {
+                    fis.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
         }
 
-        System.out.println("主线程结束执行");
+
+    }
+}
+
+```
+
+
+
+### 7.5 File类
+
+-   作用: 获取文件或目录, 以及对其创建, 删除等功能
+
+
+
+-   操作文件方法
+
+createNewFile 创建新文件
+
+delete 从磁盘上删除
+
+exists 查询是否存在
+
+getAbsolutePath 获取文件绝对路径
+
+getPath 获取文件相对路径
+
+getName 获取文件名
+
+isFile 判断是否为文件
+
+length 查看文件中的字节数
+
+isHidden 查看是否为隐藏文件
+
+
+
+-   操作目录方法
+
+exists 查询目录是否存在
+
+isDirectory 判断是否为目录
+
+mkdir 创建目录
+
+getParentFile 获取当前目录的父目录
+
+list 返回字符串数组 包含目录中的文件和目录的路径名
+
+listFiles 返回File数组 包含目录中的文件
+
+
+
+```java
+package com.company.File类;
+
+import java.io.File;
+import java.io.IOException;
+
+public class FileDemo {
+    public static void main(String[] args) {
+
+//        test_file();
+        test_dir();
 
     }
 
+    public static void  test_file() {
+        File file = new File("/Users/wangle/Project/IO/aa.txt");
+        try {
+            //创建文件
+            file.createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println(file.exists());
+    }
+
+    public static void  test_dir() {
+        //mkdirs方法
+        File file = new File("/Users/wangle/Project/IO");
+        //mkdir 只能创建单级目录 mkdirs可以创建多级目录
+        file.mkdirs();
+
+        //list方法
+        File file2 = new File("/Users/wangle/Project/IO");
+        String[] arr = file.list();
+        for (String temp : arr) {
+            System.out.println(temp);
+        }
+
+        System.out.println("--------------");
+
+        //listFiles方法
+        File[] arr2 = file2.listFiles();
+        for (File temp : arr2) {
+            System.out.println(temp);
+        }
+
+
+    }
 }
 
 ```
@@ -2140,391 +1943,424 @@ public class Tsleep {
 
 
 
--   线程中断
+### 7.6 文件字节流
 
-作用: 控制线程的运行 
+创建缓冲数组提高读写效率 , 必须是2的次方, 一般用1024 2048等
 
-在休眠的时候可以中断线程
+```java
+package com.company.字节输入流;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class FirstTest {
+    public static void main(String[] args) {
+        readFile();
+    }
+
+    public static void readFile(){
+        FileInputStream fis = null;
+        FileOutputStream fos = null;
+
+        try {
+            fis = new FileInputStream("/Users/wangle/Project/IO/a.jpg");
+            fos = new FileOutputStream("/Users/wangle/Project/IO/b.jpg");
+
+            //创建缓冲区
+            byte[] buffer = new byte[1024];
+
+            int temp = 0;
+            while((temp = fis.read(buffer)) != -1) {
+                fos.write(buffer,0,temp);
+            }
+
+            //将数据从内存中写入到磁盘里
+            fos.flush();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (fis!= null) {
+                try {
+                    fis.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            if (fos!= null) {
+                try {
+                    fos.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
 
 
-
--   中断状态
-
-中断线程可以分为不清除中断标记和清除中断标记
+    }
+}
 
 ```
-isInterrupted  //不清除中断状态
-interrupted    // 清除中断状态
+
+
+
+### 7.7 字节缓冲流
+
+buffer缓冲流自动创建了缓冲数组 默认大小为8192
+
+```java
+package com.company.字节输入流;
+
+import java.io.*;
+
+public class FirstTest {
+    public static void main(String[] args) {
+        readFile();
+    }
+
+    public static void readFile(){
+        FileInputStream fis = null;
+        FileOutputStream fos = null;
+        BufferedInputStream bis = null;
+        BufferedOutputStream bos = null;
+
+
+
+        try {
+            fis = new FileInputStream("/Users/wangle/Project/IO/a.jpg");
+            bis = new BufferedInputStream(fis);
+
+            //默认缓冲区大小为8192
+            fos = new FileOutputStream("/Users/wangle/Project/IO/b.jpg");
+            bos = new BufferedOutputStream(fos);
+
+            int temp = 0;
+            while((temp = bis.read()) != -1) {
+                bos.write(temp);
+            }
+
+            //将数据从内存中写入到磁盘里
+            bos.flush();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (bis!= null) {
+                try {
+                    bis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (fis!= null) {
+                try {
+                    fis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (bos!= null) {
+                try {
+                    bos.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (fos!= null) {
+                try {
+                    fos.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+
+    }
+}
+
 ```
 
+
+
+
+
+### 7.8 字节数组流
+
+字节数组流用于在流和数组之间转化
+
+
+
+ByteArrayInputStream 将字节流读取到数组
+
+```java
+package com.company.字节数组流;
+
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+
+public class ByteTest {
+    public static void main(String[] args) {
+        byte[] bytes = "abcdefghijklmnopqrstuvwxyzABCDEF".getBytes();
+
+        ByteArrayInputStream bais =null;
+        StringBuilder sb = new StringBuilder();
+
+
+        try {
+            bais = new ByteArrayInputStream(bytes);
+            int temp = 0;
+            while ((temp = bais.read()) != -1) {
+                sb.append((char)temp);
+            }
+
+            System.out.println(sb);
+
+        }finally {
+            try {
+                bais.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+}
  
+```
 
-如果使用的是清除标记状态的语法, 那么在循环中的开头进行判断时, 中断状态已经被改为false
 
-解决方法是在捕获中断请求后再发起一次中断请求
 
-
-
--   线程等待
-
-线程的优先级 , 线程让步 都不能保证线程优先级, 只是大概率能做到
-
-线程等待 调用线程的join方法, 阻塞直到该线程死亡后继续执行
-
--   堆 heap
-
-(1) 特点
-
-通过new创建对象都会使用堆
-
-堆是线程共享的, 需要考虑线程安全
-
-有垃圾回收机制
-
-
-
-(2) 堆内存溢出
-
-
-
-(3) 诊断工具
-
-jps 查看当前系统中有哪些java进程
-
-jmap 查看堆内存占用情况
-
-jconsole 监测工具
-
-
-
-
-
--   方法区
-
-(1) 定义
-
-存储类相关的代码
-
-
-
-(2) 组成
-
-
-
-(3) 方法区内存溢出
-
-
-
-(4) 运行时常量池
-
-常量池就是一张表, 虚拟机指令根据这张常量表找到要执行的类名, 方法名, 参数类型, 字面量等信息
-
-运行时常量池是class文件中的, 当该类被加载, 他的常量池信息就会放入运行时常量池, 并把里面符号地址变为真实地址
-
-
-
-面试题
-
-![image-20220912171408796](./asset/image-20220912171408796.png)
-
-
-
-
-
--   直接内存
-
-用于数据缓冲区
-
-读写性能高
-
-不受jvm回收管理
-
-
-
-### 8.4 执行引擎
-
--   解释器
->>>>>>> 05e0fff8863da6775114cc570514f79e2ad2d86b
-
-
-
-
-
-<<<<<<< HEAD
--   线程状态
-
-6种状态 
-
-使用getState方法获取线程状态
-
-
-
-NEW 新建状态
-
-RUNNABLE 运行状态
-
-BLOCKED 阻塞状态
-
-WAITING 等待状态
-
-TIMED_WAITING 指定时间的等待状态
-
-TERMINATED 终止状态
-
-
-
-
-
--   守护线程
-
-java中有两类线程, 用户线程和守护线程
-
-用户线程是前台线程, 不会随着其他用户线程结束而结束
-
-守护线程是服务用户线程的, 当最后一个用户线程结束, 所有的守护线程也就结束
-
-在守护线程中再启动一个线程默认为守护线程
-
-
+ByteArrayOutputStream 将字节流写到数组
 
 ```java
-t1.setDaemon(true)
+package com.company.字节数组流;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+
+public class ByteDemo {
+    public static void main(String[] args) {
+        byte[] bytes = "abcdefghijklmnopqrstuvwxyzABCDEF".getBytes();
+        ByteArrayOutputStream baos =null;
+        StringBuilder sb = new StringBuilder();
+        try {
+            baos = new ByteArrayOutputStream();
+            baos.write('a');
+            baos.write('b');
+            baos.write('c');
+            byte[] arr =  baos.toByteArray();
+
+            for (int i = 0 ; i<arr.length ; i++) {
+                System.out.println(arr[i]);
+                sb.append((char)arr[i]);
+            }
+            System.out.println(sb);
+        }finally {
+            try {
+                baos.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+
 ```
 
 
 
 
 
--   采集程序
+### 7.9 数据流
 
+不需要复杂的流的类型转换了
 
-
-
-
-
-
-### 8.5 线程池
-
--   线程池作用
-
-控制创建线程的数量,避免资源耗尽
-
-实现线程重复利用, 提高效率
-
-使用任务缓冲队列, 提高吞吐量
-
-
-
--   线程池关键参数
-
-核心线程数 最大线程数
-
-
-
--   线程池工作流程
-
-![image-20220907150727978](./asset/image-20220907150727978.png)
-
-
-
--   实现代码
-
-
-
--   任务拒绝
-
-
-
--   阻塞与非阻塞
-
-poll是非阻塞方法
-
-take是阻塞方法
-
-
-
-
-
--   线程工厂
-
-
-
-
-
--   拒绝策略
-
-
-
--   监控
-
-
-
--   关闭线程池
-
-shutdown() 方法 不再接收新任务, 会继续完成已有的任务
-
-shutdownNow() 方法 不再接收新任务, 终止正在执行的任务, 没执行的任务不再执行
-
-
-
-
-
-### 8.6 线程安全
-
--   不安全原因
-
-多线程向共享变量存在并发写操作, 该现象称为竞态条件
-
-
-
--   消除竞态条件
-
-不访问共享资源
-
-异步操作改为同步操作
-
-
-
--   临界区
-
-存在竞态条件的代码叫做临界区
-
-
-
--   同步锁 synchronized
-
-如果是同一个锁对象代表争抢的是同一把锁, 可以线程安全, 如果争抢的是两把锁, 那么依然会产生并发写
+注意读取的顺序必须和写入的顺序一致
 
 ```java
+package com.company.数据流;
+
+import java.io.*;
+
+public class DataDemo {
+    public static void main(String[] args) {
+        //数据输出流
+        DataOutputStream dos = null;
+        //数据输入流
+        DataInputStream dis = null;
+
+
+        try {
+
+            //写入
+            dos = new DataOutputStream(
+                    new BufferedOutputStream(
+                            new FileOutputStream("/Users/wangle/Project/IO/a.txt"))
+
+            );
+
+            dos.writeChar('a');
+            dos.writeInt(10);
+            dos.writeUTF("你好哥哥");
+            dos.flush();
+
+
+            //读取
+            dis = new DataInputStream(
+                    new BufferedInputStream(
+                            new FileInputStream("/Users/wangle/Project/IO/a.txt"))
+            );
+
+            System.out.println(dis.readChar());
+            System.out.println(dis.readInt());
+            System.out.println(dis.readUTF());
+
+
+        }catch (Exception e) {
+            e.printStackTrace();
+
+
+        }finally{
+            try {
+                if(dos!=null){
+                    dos.close();
+                }
+                if(dis!=null){
+                    dis.close();
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+}
+
 ```
 
 
 
--   同步代码块
 
-用 synchronized 关键字包裹的临界区的代码块称为同步代码块
 
+### 7.10 对象流
+
+将java对象从程序中序列化持久存储到文件里, 并从文件中反序列化到程序中 
+
+注意要实现Serializable接口
+
+```java
+package com.company.对象流;
+
+import java.io.*;
+
+public class ObjectDemo {
+    public static void main(String[] args) {
+        ObjectOutputStream oos = null;
+        ObjectInputStream ois = null;
+        try {
 
+            //写入
+            oos = new ObjectOutputStream(new FileOutputStream("/Users/wangle/Project/IO/object.txt"));
+            Users users = new Users(1,"old","lao");
+            oos.writeObject(users);
+            oos.flush();
 
-形式
+            //读取
+            ois = new ObjectInputStream(new FileInputStream("/Users/wangle/Project/IO/object.txt"));
+            Users user2 = (Users)ois.readObject();
+            System.out.println(user2);
 
-类的同一个对象的所有被上锁的方法 是同步的
+        }catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                if(oos!=null){
+                    oos.close();
+                }
 
-上锁的静态方法和上锁的实例方法不会同步执行, 静态和静态同步, 实例和实例同步
+                if(ois!=null){
+                    ois.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
 
+```
 
 
 
 
--   优化同步代码块
 
-能不加锁就不加
+### 7.11 随机访问流
 
-尽量缩小临界范围
+```java
+package com.company.随机访问流;
 
-能不共用同一个锁对象就不要共用一个
+import java.io.RandomAccessFile;
 
+public class RandomDemo {
+    public static void main(String[] args) {
+        RandomAccessFile raf = null;
 
+        try {
+            //写入数据
+            raf = new RandomAccessFile("/Users/wangle/Project/IO/c.txt","rw");
+            int[] arr = new int[]{10,20,30,40,50,60,70,80,90,100};
+            for (int i = 0; i < arr.length; i++) {
+                raf.writeInt(arr[i]);
+            }
 
--   锁的可重入性
+            //移动指针位置 读取指定位置元素
+            raf.seek(4);
+            System.out.println("读取指定位置元素");
+            System.out.println(raf.readInt());
 
+            
+            //读取所有奇数索引数据
+            System.out.println("读取奇数索引元素");
+            for (int i = 0; i < 10 ; i+=2) {
+                raf.seek(i*4);
+                System.out.println(raf.readInt());
+            }
+            
 
+            //替换第三个数据  0-3 4-7 8-11
+            raf.seek(8);
+            raf.writeInt(45);
+            System.out.println("替换后数组");
+            for (int i = 0; i < 10 ; i++) {
+                raf.seek(i*4);
+                System.out.println(raf.readInt());
+            }
+            
 
--   sleep方法不会释放锁
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            if(null!= raf){
+                try {
+                    raf.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+}
 
+```
 
 
--   死锁
 
-两个线程竞争一个锁, 有锁的永远不解锁, 另一个线程永远在等待, 形成了死锁
 
 
 
-原因
 
-交叉式锁
-
-内存不足
-
-cpu占用率过高
-
-
-
-
-
--   线程饥饿
-
-使用Reentrantlock锁对象可以非阻塞获取锁
-
-
-
--   jmm 内存模型
-
-保证了原子性 有序性 可见性 
-
-
-
--   volatile保证可见性 有序性
-
-
-
--   单例模式
-
-实现的两种方式
-
-懒汉 类加载的时候自动创建
-
-饿汉 在使用的时候才创建
-
-
-
--   ThreadLocal 线程本地数据
-
-
-
--   内存泄露
-
-
-
-### 8.7 锁
-
-![image-20220907215906957](./asset/image-20220907215906957.png)
-=======
--   即时编译器
-
-
-
-
-
--   垃圾回收器
-
-(1) 判断回收条件
-
-引用计数法
-
-
-
-可达性分析算法
-
-
-
-四种引用
-
-强引用 弱引用 虚引用 软引用 终结器引用
-
-
-
-
-
-
-
-
-
-(2) 垃圾回收算法
-
-(3) 分代垃圾回收
-
-(4) 垃圾回收器
-
-(5) 垃圾回收调优
->>>>>>> 05e0fff8863da6775114cc570514f79e2ad2d86b
