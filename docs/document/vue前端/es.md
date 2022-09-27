@@ -43,6 +43,31 @@ class Person {
 
 
 
+继承类
+
+```js
+class Student extends Person {
+    constructor(brand,age,name){
+        //如果使用了继承 必须在构造器里调用super
+        //super关键字必须在构造器的最前面
+      
+        super(brand,age)
+        this.name = name
+    }
+    
+      //类中定义的方法都是放在类的原型对象上,供实例调用
+        //如果该类中没有方法则顺着原型链向上找, 找到顶层还没有则报错
+    study(){
+        console.log("我很爱学习")
+    }
+    
+}
+```
+
+
+
+
+
 ### 1.2 模块化
 
 好处: 防止命名冲突 代码复用 高维护性
@@ -664,7 +689,6 @@ let ref = new WeakRef(object)
 let x = 23333
 let x = 23_333  //只让阅读更清晰 不会编译到代码里 不会影响程序运行
 ```
-
 
 
 

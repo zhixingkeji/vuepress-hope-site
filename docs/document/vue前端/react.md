@@ -27,7 +27,7 @@ date: 2022-03-24 00:41:38
 
 4）原生应用 React Native
 
-
+ 
 
 ### 1.3 基本使用
 
@@ -89,39 +89,90 @@ npm start
 
 ### 1.5 React JSX
 
-1.语法
+#### 1.5.1 语法
 
 使用变量时 用单花括号
 
+```jsx
+<div id={myid}></div>
+<div>{data}</div>
+```
+
+
+
 class 更名为 className
+
+```jsx
+<div className="title"></div>
+```
+
+
 
 内联样式 style 要用 双花括号
 
-只能有一个根标签
+```jsx
+<div style={{color:'white',fontSize:'20px'}}></div>
+```
 
-标签首字母小写会从html语法里寻找对应标签
 
-标签首字母大写会搜索React组件
 
-只能遍历数组 不能遍历对象
+只能有一个根标签, 标签必须闭合
+
+```jsx
+<div>
+	// 代码...
+    <input></input>
+</div>	
+```
+
+
+
+标签首字母小写会从html语法里寻找对应标签, 首字母大写会搜索React组件
+
+```jsx
+<good></good>  //报错,html语法里没有该标签
+<div></div> //创建html标签
+<Good></Good>  //创建组件
+```
+
+
+
+数组自动遍历, 传入对象会报错
+
+```jsx
+function App() {
+  const data = ['a','b','c']
+  const obj = {name: 'wl', age: 18}
+  return (
+      <div>{data}</div>  // 结果 abc
+      <div>{obj}</div>   // 结果 报错
+  )
+}
+```
+
+
 
 可以写表达式 不能写语句
+
+```jsx
+<div>
+	{data}  // 大括号中可以写表达式
+    
+    {if(){...}}  // 大括号中不能写语句
+</div>	
+```
 
 
 
 注释的写法 要在外面加一层大括号
 
 ```jsx
-{/*注释的内容 */ }
+{/* 注释的内容 */}
 ```
 
 
 
-
-
-
-
-2.区分表达式和语句
+#### 1.5.2 区分表达式和语句
 
 表达式 : 左侧可以接值 , 包括函数调用 , 定义函数
 
@@ -129,7 +180,7 @@ class 更名为 className
 
 
 
-3.遍历一个数组实例
+#### 1.5.3 遍历一个数组实例
 
 ```jsx
 const data = ['a','b','c']
@@ -155,27 +206,13 @@ const VDOM = (
 
 ### 1.6 模块化与组件化
 
-#### 1.6.1 模块
+模块: 一个业务逻辑 ,  放在一个js文件里
 
-一个业务逻辑 ,  放在一个js文件里
+组件: 所有实现某个功能的 html , css , js , 图片 , 字体 , 音视频等资源的集合, 构成一个组件
 
+模块化: 当应用的 js 都以模块来编写, 这个应用就是模块化的应用
 
-
-#### 1.6.2 组件
-
-所有实现某个功能的 html , css , js , 图片 , 字体 , 音视频等资源的集合, 构成一个组件
-
-
-
-#### 1.6.3 模块化
-
-当应用的 js 都以模块来编写, 这个应用就是模块化的应用
-
-
-
-#### 1.6.4 组件化
-
-当应用多是以组件来编写, 这个应用就是组件化的应用
+组件化: 当应用多是以组件来编写, 这个应用就是组件化的应用
 
 
 
@@ -185,22 +222,22 @@ const VDOM = (
 
 ### 2.1 开发者工具
 
+谷歌浏览器下载 react开发工具
+
 
 
 ### 2.2 函数式组件和类式组件
 
 #### 2.2.1 函数式组件
 
-1.函数定义的组件适用于简单组件
+函数定义的组件适用于简单组件
 
-
-
-```js
+```jsx
 //创建函数式组件
 function MyComponent(){
   //函数里的this是undifind，因为babel开启严格模式编译
 	consolo.log(this)
-  return <h2>我是函数式组件</h2> 
+  return (<h2>我是函数式组件</h2>) 
 }
 
 //渲染组件到页面
@@ -211,22 +248,19 @@ ReactDOM.render(<MyComponent/>,document.getElementById('text'))
 
 
 
-
-
 #### 2.2.2 类式组件
 
-1.类式组件适用于复杂组件
+类式组件适用于复杂组件
 
-
-
-```js
+```jsx
 //创建类式组件
 class MyComponent extends React.Component{
   //render放在组件的原型对象上,供实例使用
 	//render中的this指向组建的实例对象
   render(){
+      console.log(this) //组件实例对象
     return (
-    	<div>我是类组件</div>	
+        <div>我是类组件</div>	
     )
   }
 }
@@ -244,17 +278,13 @@ ReactDOM.render(<MyComponent/>,document.getElementById('text'))
 
 ### 2.3 组件实例的三大属性 state
 
-箭头函数的复习
-
-
-
 使用构造器的方法
 
 ```js
 //通过点击 使页面的文字更改
 class Weather extends React.Component{
   
-  //构造器
+  //构造器 new一次组件实例调用1次
   constructor(props){
     super(props)
     
@@ -264,26 +294,34 @@ class Weather extends React.Component{
       wind: '微风'
     }
     
+    //react内部new的实例 获取不到this
     //解决函数内this指向为undifind问题
     this.changeWeather = this.changeWeather.bind(this)
     
   }
   
   
-  //渲染
+  //渲染次数:1+n次 初始化1次,更新几次数据调用几次render
   render(){
     const {isHot} = this.state
     return (
+        //必须加this,只有实例上才有该方法,不然就是直接调用
+        //changeWeather作为onClick的回调调用,而不是通过实例调用
+        //相当于 一个指针引用了堆内的该对象,所以丢失this
     	<div onClick={this.changeWeather}>
-      今天天气很{isHot ? '炎热' : '凉爽'}
-			</div>	
-    )}
+      今天天气很 {isHot ? '炎热' : '凉爽'}
+ 		</div>	
+   )}
     
-  //鼠标单击更改布尔值
+  //改变天气方法 
+   // render和构造器中的this指向是实例对象,但方法中会丢失this
+   // changeWeather是作为onClick回调,而不是通过实例调用的
+   // 类里默认开启了严格模式,this不允许指向window
+   
   changeWeather(){
     //获取isHot变量
   	const isHot = this.state.isHot
-    //通过react认可的方法进行修改,合并不是替换
+    //通过react认可的方法进行修改,合并不是替换,不然state就只有被修改的属性了
     this.setState({isHot: !isHot})
 	}
 }
@@ -293,13 +331,13 @@ ReactDOM.render(<Weather/>,document.getElementById('root'))
 
 
 
-不使用构造器的方法
-
-
+不使用构造器的方法 简写模式
 
 ```jsx
 //通过点击 使页面的文字更改
 class Weather extends React.Component{
+    //简写state 
+    //类里面可以直接用赋值语句
   state = {isHot: false}
   
   render(){
@@ -311,13 +349,13 @@ class Weather extends React.Component{
     	)
     }
     
+    //箭头函数 将该方法放到实例对象上
 	changeWeather = () => {
-  		const isHot = this.state.isHot
+  	  const isHot = this.state.isHot
       this.setState({isHot: !isHot})
 	}
-
-  
 }
+
 
 ReactDOM.render(<Weather/>,document.getElementById('root'))
 ```
@@ -326,11 +364,25 @@ ReactDOM.render(<Weather/>,document.getElementById('root'))
 
 
 
-
-
 ### 2.4 组件实例的三大属性 props
 
 #### 1.展开运算符的复习
+
+```js
+//数组拼接
+let arr1 = [1,2,3]
+let arr2 = [4,5,6]
+let arr3 = [...arr1,arr2] // arr3 = [1,2,3,4,5,6,]
+
+
+//不定参函数
+function sum(...numbers) {
+    return numbers.reduce((pre,current)=>{
+        return pre + current
+    })
+}
+console.log(sum(1,2,3,4))
+```
 
 
 
@@ -361,9 +413,17 @@ ReactDOM.render(
 const p = {name="tom" age="18" sex="女"}
 //使用展开运算符
 ReactDOM.render(
-  <Person {...p},
+  <Person {...p}></Person>,
   document.getElementById('root')
 )
+
+//展开运算符不能展开对象, 没有itreater接口
+let obj = {name: "wl", age= 18}
+let p = {...obj}
+//复制对象并修改内容
+let p1 = {...obj,age=14}
+//复制对象并新增内容
+let p2 = {...obj,address="北京"}
 ```
 
 
@@ -388,20 +448,21 @@ class Person extends React.Component{
 
 Person.propTypes = {
   //对某个参数类型的限制
-  name:PropTypes.string
+  name: PropTypes.string
   
   //对某个参数是否为必填的限制
-  age:PropTypes.number.isRequired
+  age: PropTypes.number.isRequired
   
   //限制参数为函数要写成func
-	speak:PropTypes.func
+  speak: PropTypes.func
 }
 
 	
 
 //若某个参数没有,显示为默认值
 Person.defaultProps = {
-  sex:'不男不女'
+  sex: '不男不女',
+  age: 18
 }
 
 ReactDOM.render(
@@ -424,13 +485,13 @@ class Person extends React.Component{
   
   //通过static修饰,为类的原型上添加属性
 	static defaultProps = {
-  	sex:'不男不女'
+  		sex:'不男不女'
 	}
   
   //通过static修饰,为类的原型上添加属性
-	propTypes = {
+	static propTypes = {
   	//对某个参数类型的限制
-  	name:PropTypes.string
+  		name: PropTypes.string
 	}
   
   
@@ -474,7 +535,7 @@ function Person(props){
   const {name,age,sex} = props
   return (
      <ul>
-      <li>姓名: {name}</li>
+       <li>姓名: {name}</li>
        <li>性别: {sex} </li>
        <li>年龄: {age} </li>
      </ul>    		
@@ -507,11 +568,10 @@ ReactDOM.render(
 
 #### 2.5.2 字符串形式ref (已经废弃)
 
-
-
 ```jsx
+//标识ref
 <input ref="inp1"></input>
-
+//组件内获取ref
 const {inp1} = this.refs
 ```
 
@@ -524,6 +584,7 @@ const {inp1} = this.refs
   ```jsx
 //currentNode为当前形参 使用任何名称都可以
 //input1 是为这个节点起的名字,react调用ref函数直接挂载到类的属性上
+//箭头函数this寻找到了该类的实例,指向了实例
 <input ref={(currentNode)=>{this.input1 = currentNode}}></input>
 
 //在类上直接通过this接受
@@ -541,8 +602,6 @@ const {input1} = this
 解决办法
 
 类绑定的回调  在类上定义方法
-
-
 
 ```jsx
 //类内的方法
@@ -567,7 +626,7 @@ class Dome extends React.Component{
   myRef1 = React.createRef()
   myRef2 = React.createRef()
   
-  //展示数据
+  //展示数据 current是节点的key
   shouwData1 = ()=>{
   	alert(this.myRef1.current.value)
   }
@@ -625,8 +684,12 @@ class Dome extends React.Component{
 
 #### 2.6.1 非受控组件
 
+现用现取
+
 ```jsx
 class Login extends React.Component{
+  
+  //表单提交方法
   hadleSubmit = (event)=>{
     event.preventDefault() //阻止表单提交
     const {username,password} = this
@@ -636,6 +699,7 @@ class Login extends React.Component{
     你输入的密码是:${password.value}`)
   } 
   
+  //渲染
   render(){
     return (
      <form onSubmit={this.hadleSubmit}>
@@ -663,7 +727,7 @@ ReactDOM.render(
 
 #### 2.6.2 受控组件
 
-
+随着输入维护到状态中, 不需要ref , 推荐 
 
 ```jsx
 class Login extends React.Component{
@@ -676,12 +740,12 @@ class Login extends React.Component{
   
   //保存用户名到状态
   saveUsername = (event)=> {
-    this.setState({username:event.target.value})
+    this.setState({username: event.target.value})
   }
   
   //保存密码到状态
    savePassword = (event)=> {
-    this.setState({password:event.target.value})
+    this.setState({password: event.target.value})
   }
   
   //表单提交回调
@@ -731,7 +795,7 @@ ReactDOM.render(
 
 2.函数的柯里化
 
-通过函数调用继续返回函数的方式,实现多次接受参数最后统一处理的函数编码形式
+通过函数调用继续返回函数的方式, 实现多次接受参数最后统一处理的函数编码形式
 
 
 
@@ -748,7 +812,8 @@ class Login extends React.Component{
   
   //保存表单数据到状态中
   saveFormData = (dataType)=> {
-    return(event)=>{
+    //在返回值返回一个真正的函数,则组件上可以调用该函数
+    return (event)=>{
       //不加方括号,是字符串,等于多加了个dataType属性
       //加上方括号,等于读变量,才是正常
       this.setState({[dataType]:event.target.value})
@@ -768,6 +833,7 @@ class Login extends React.Component{
     return (
      <form onSubmit={this.hadleSubmit}>
         //如果加上小括号,则调用的是saveFormData函数的返回值
+        //不加小括号是调用该函数,此处情况必须有小括号
      用户名:<input onChange={this.saveFormData('username')} type="text" name="username"}></input>
         
      密码:<input onChange={this.saveFormData('password')} type="password" name="password"}></input>
@@ -849,17 +915,54 @@ getDerivedStateFromProps → shouldComponentUpdatae → remder → getSnapshotBe
 
 卸载组件 由ReactDOM.unmountComponentAtNode触发
 
-componentWillUnmoount
+```jsx
+death = () => {
+  ReactDOM.unmountComponentAtNode(document.getElementById('test'))
+}
+```
+
+
 
 
 
 2.重要钩子
 
-render 更新时
+render 初始化渲染和状态更新时调用
 
-componentDidMount 挂载后
+```jsx
+class {
+	render(){
+    
+	}
+}
+```
 
-componentWillUnmount  卸载前
+
+
+componentDidUpdate 组件更新后调用一次
+
+```jsx
+```
+
+
+
+componentDidMount 组件挂载后调用一次
+
+```jsx
+class {
+	componentDidMount(){
+    
+	}
+}
+```
+
+
+
+componentWillUnmount  组件卸载前调用一次
+
+```jsx
+
+```
 
 
 
@@ -875,11 +978,37 @@ componentWillUpdate
 
 4.新增钩子
 
-使用场景非常罕见
+getDeruvedStateFromProps 
+
+```jsx
+//若state的值在任何时候都取决于props,则可以使用该钩子
+//必须为静态方法,接受props和state参数
+static getDerivedStateFromProps(props,state){
+  console.log()
+  //返回一个状态对象
+  return props
+}
+```
+
+
+
+getSbapshotBeforeUpdate
+
+```jsx
+//在更新之前获取快照
+getSbapshotBeforeUpdate(){
+  console.log()
+  return 'atguigu'
+}
+```
+
+
 
 
 
 ### 2.9 虚拟DOM与DIff算法
+
+虚拟DOM的最小力度是一个标签, 逐层对比, 只渲染发生改变的那层标签
 
 key是虚拟DOM对象的表示, 在更新时有及其重要的作用
 
