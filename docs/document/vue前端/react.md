@@ -1046,7 +1046,7 @@ key是虚拟DOM对象的表示, 在更新时有及其重要的作用
 
 
 
-### 3.2 案例 TodoList
+### 3.2 案例 TodoList ?
 
 
 
@@ -1080,22 +1080,32 @@ key是虚拟DOM对象的表示, 在更新时有及其重要的作用
 
 ### 4.2 配置代理解决跨域
 
-1.跨域限制是ajax的限制, 比如3000端口向5000发送 , 发送成功但是返回数据时候被3000拦截 , 需要在中间加入一个3000端口代理, 代理使用的是请求转发而不是ajax , 所以不受限制
+1.跨域限制是ajax的限制, 比如3000端口向5000发送 , 发送成功但是返回数据时候被3000拦截 , 需要在中间加入一个3000端口代理, 代理使用的是请求转发而不是ajax引擎 , 所以不受跨域限制
 
 
 
 2.如果只有一台服务器 ,可以在 package.json中配置proxy , 开启代理后,3000发送请求时 会先从自己的端口下寻找资源,如果找到了就不会再向5000请求, 所以可能请求到自己的数据
 
 ```js
-"proxy":"http://localhost:5000" 
+// package.json
+{
+  ... 
+  
+  //最后一行
+  "proxy":"http://localhost:5000"
+}
+
+//服务器运行在5000端口上,代码请求要请求3000的接口,会自动转发到5000端口
 ```
 
 
 
-3.如果有多台服务器, 需要创建文件
+3.如果有多台服务器, 需要创建配置文件
 
 ```js
-//src/setupProxy.js 
+// src/setupProxy.js 注意这个名字必须是setupProxy 
+// 注意该文件不能使用es6语法 要使用cjs语法
+
 const proxy = require('http-proxy-middleware')
 
 module.exports = function(app){
@@ -1136,7 +1146,7 @@ axios.get("/api1/students").then(
 
 
 
-### 4.3 案例 github搜索
+### 4.3 案例 github搜索  ?
 
 
 
@@ -1157,12 +1167,6 @@ import PubSub from 'pubsub-js'
 //commonJS风格引入组件
 const PubSub = require('pubsub-js')
 ```
-
-
-
-
-
-
 
 
 
@@ -1209,11 +1213,37 @@ spa意思是单页面应用 , 只有一个完整的页面
 
 
 
-### 5.2 路由相关api
-
-安装web开发的库
+安装针对web开发的库
 
 `yarn add react-router-dom`
+
+
+
+### 5.2 路由相关api
+
+内置组件
+
+```
+BrowerRouter
+HashRouter
+Route
+Redirect
+Link
+NavLink
+Switch
+```
+
+
+
+其他
+
+```
+history 对象
+match 对象
+withRouter 函数
+```
+
+
 
 
 
@@ -1232,8 +1262,9 @@ hash刷新后会丢失state参数,但有时可以解决一些路径错误的问�
 给App开启路由
 
 ```jsx
-//index.jsx
-//把 <App/> 外侧包裹路由
+//index.js
+
+//把 <App/> 外侧包裹路由 就不用在组件内部重复写该标签了
 ReactDOM.render(<BrowserRouter><App/></BrowserRouter>,
                 document.getElementById('root'))
 ```
@@ -1243,7 +1274,9 @@ ReactDOM.render(<BrowserRouter><App/></BrowserRouter>,
 组件内的语法
 
 ```jsx
-//菜单栏组件
+// app.jsx
+
+// 菜单栏组件
 <div>
   //普通的link 没有点击高亮
   <Link to="/about">About</Link>
@@ -1268,13 +1301,13 @@ ReactDOM.render(<BrowserRouter><App/></BrowserRouter>,
 
 一般组件写在 component 文件夹下, 使用时候用尖括号`<Home/>`
 
-路由组件写在 pages 文件夹下,使用时用路由` <Route component={Home}/>`
+路由组件写在 pages 文件夹下,使用时用路 由` <Route component={Home}/>`
 
 
 
 #### 5.3.3 路由组件的三个重要属性
 
-history 包括 go , goBack , goForward , push .replace
+history 包括 go , goBack , goForward , push , replace
 
 location 包括 pathname , search , state
 
@@ -1370,8 +1403,6 @@ react 默认使用的是模糊匹配
 
 为Route标签增加exact属性可开启
 
-
-
 ```jsx
  <Route exact path="/home" component={Index}/>
 ```
@@ -1381,8 +1412,6 @@ react 默认使用的是模糊匹配
 #### 5.3.8 重定向
 
 重定向写在最后一个Route标签后, 任何路由都匹配不上的时候重定向
-
-
 
 ```jsx
 <Switch>
@@ -1402,7 +1431,9 @@ react 默认使用的是模糊匹配
 
 路由的匹配是按照注册的顺序进行的
 
-
+```jsx
+<Link to="/home/message">消息</Link>
+```
 
 
 
