@@ -1433,6 +1433,16 @@ react 默认使用的是模糊匹配
 
 ```jsx
 <Link to="/home/message">消息</Link>
+
+//注册子路由
+<Switch>
+	<Route path="/home/news" component={News}></Route>
+  <Route path="/home/message" component={Message}></Route>
+ 
+  //实现默认显示该路由 当路由是/home的时候 跟以上两个都匹配不到 
+  //所以默认走下面的组件 可以实现默认显示该组件
+  <Redirect to="/home/news"/>
+</Switch>
 ```
 
 
@@ -1533,9 +1543,11 @@ replace模式 替换顶部的记录
 
 
 
-默认是push模式,开启replace需要在Link标签上声明
+默认是push模式 , 开启replace需要在Link标签上声明
 
-`<Link replace></Link>`
+```jsx
+<Link replace></Link>
+```
 
 
 
@@ -1586,9 +1598,9 @@ replaceShow = (id,title)=>{
 
 #### 5.6.3 一般组件的路由跳转
 
-只有路由组件才有history的api, 但是一般组件没有
+只有路由组件才有 `history` 的方法 , 但是一般组件没有
 
-需要 withRouter 进行封装一般组件 , 会给一般组件路由组件的特性
+需要 `withRouter` 进行封装一般组件 , 会给一般组件路由组件的特性
 
 
 
@@ -1650,7 +1662,7 @@ export default withRouter(Header)
 
 单一数据源
 
-state是只读的
+state是只读的 , 只能通过action进行修改
 
 使用纯函数进行修改
 
@@ -1662,11 +1674,13 @@ state是只读的
 
 
 
-2.action事件
+2.action动作
 
 只是描述有事情要发生，但没有实际去更新state
 
 本质是js对象， 必须包含type属性
+
+一般type会被定义为字符串常量
 
 
 
@@ -1680,11 +1694,11 @@ state是只读的
 
 4.store
 
-用来把action和reducer关联到一起
+用来把 action 和 reducer 关联到一起
 
-store.dispatch 提交action
+store.dispatch 提交 action
 
-store.getState 获取state
+store.getState 获取 state
 
 store.subscribe 注册监听
 
@@ -1698,7 +1712,7 @@ store.unsubscribe 注销监听
 
 安装 redux
 
-`npm install --save redux`
+`npm install redux`
 
 
 
@@ -1904,7 +1918,7 @@ exports.reducer = (state = initState,action) => {
 
 
 
-src/Pages/ComA/index.jsp
+src/Pages/ComA/index.jsx
 
 ```jsx
 import React, {Component} from "react";
@@ -1947,7 +1961,7 @@ export default connect(null,mapDispatchToProps)(ComA)
 
 
 
-src/Pages/ComB/index.jsp
+src/Pages/ComB/index.jsx
 
 ```jsx
 import React, {Component} from "react";
@@ -2029,14 +2043,6 @@ export default  createStore(
 
 
 
-###  7.6 serve库
-
-npm install -g serve
-
-快速启动一台服务器 , 不能在生产环境使用
-
-
-
 
 
 ## 第8章 新语法扩展
@@ -2112,7 +2118,7 @@ import Loading from './Loading'
 
 ### 8.5 refHook
 
-
+函数式组件可以使用refs功能
 
 
 
