@@ -352,7 +352,11 @@ class Weather extends React.Component{
     //箭头函数 将该方法放到实例对象上
 	changeWeather = () => {
   	  const isHot = this.state.isHot
-      this.setState({isHot: !isHot})
+      //setState方法是异步的,如果某些逻辑要在其之后调用,可以传入第二个参数, 一个回调回函,将要同步执行的内容放到函数里
+      this.setState({isHot: !isHot},()=>{
+          //该回调函数内的逻辑是	同步的
+          console.log(isHot))
+      })
 	}
 }
 
