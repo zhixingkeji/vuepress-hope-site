@@ -2159,3 +2159,64 @@ import Loading from './Loading'
 ### 8.10 ErrorBoundary
 
 用来捕获后代组件的错误
+
+
+
+
+
+## 第9章 项目实战cms-manager
+
+### 9.1 项目介绍
+
+项目简介
+
+
+
+创建项目
+
+```
+npx create-react-app cms-manage
+```
+
+
+
+安装依赖
+
+```
+cnpm i axios redux react-redux sass sass-loader react-router-dom antd
+```
+
+
+
+文件介绍
+
+
+
+
+
+### 9.2 接口封装
+
+
+
+### 9.3 组件库引入
+
+
+
+### 9.4 路由配置
+
+
+
+
+
+### 9.5 富文本编辑器
+
+
+
+### 9.6 redux状态管理
+
+
+
+
+
+
+
