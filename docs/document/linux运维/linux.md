@@ -661,3 +661,32 @@ service nginx status
 
 ## 第8章 centos
 
+### 8.1 centos安装jdk
+
+```sh
+# 搜索软件
+yum search java|grep jdk
+
+# 安装jdk
+yum install java-11-openjdk -y
+
+# 默认目录
+/usr/lib/jvm/java-11-openjdk-11.0.11.0.9-1.el7_9.x86_64
+
+#设置变量 /etc/profile
+vim /etc/profile
+
+# 加入下列信息
+export JAVA_HOME=/usr/local/jdk/jdk1.8.0_181
+export CLASSPATH=$:CLASSPATH:$JAVA_HOME/lib/
+export PATH=$PATH:$JAVA_HOME/bin
+
+# 使修改生效
+source /etc/profile
+
+# 验证
+java -version
+```
+
+
+

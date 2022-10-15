@@ -85,6 +85,33 @@ date: 2021-11-15 15:27:44
 
 ### 2.1 nacos 快速入门
 
+#### 2.1.1 心跳
+
+通过心跳确定服务是否存活
+
+
+
+#### 2.1.2 命名空间
+
+namespace 区分生产环境和开发环境
+
+分组 更细粒度的划分
+
+
+
+#### 2.1.3 临时实例
+
+```java
+// 当实例不健康的时候也不删除 而是永久保留
+spring.cloud.nacos.discovery.ephemeral=false;
+    
+// 保护阈值
+不用配置,使用熔断机制配置
+    
+// 权重
+
+```
+
 
 
 
@@ -157,6 +184,12 @@ db.password.0=root
 
 
 
+
+
+
+
+
+
 ### 2.3 客户端配置
 
 网卡配置
@@ -203,7 +236,7 @@ nginx
 
 轮训 RoundRobinRule
 
-重试 RetryRule
+轮训重试 RetryRule
 
 加权轮训 
 
@@ -226,9 +259,8 @@ nginx
 ```java
 package com.example.ribbon;
 
-
 //注意这个配置文件不能放在springApplication能自动扫描到的地方
-
+//会被扫描到然后共享 全局设置到所有服务上
 import com.netflix.loadbalancer.IRule;
 import com.netflix.loadbalancer.RoundRobinRule;
 import org.springframework.context.annotation.Bean;
@@ -241,22 +273,34 @@ public class RibbonConfig {
         // 默认负载均衡策略 轮询
         return new RoundRobinRule();
     }
-
 }
-
 ```
 
 
 
-在启动类上注解
+在启动类上注解哪个服务使用该策略 不推荐
 
 为某个服务开启自定义的ribbon
 
 ```java
-@RibbonClients(value={@RibbonClient(name="stock-service",configuration = RibbonConfig.class)})
+@RibbonClients(value = {
+    @RibbonClient(name="stock-service",
+                  configuration = RibbonConfig.class)
+})
 ```
 
 
+
+在配置类里配置负载均衡策略
+
+```yaml
+stock-service:
+  ribbon:
+    NFLoadBalancerRuleClassName:
+    // 根据nacos实例权重配置负载均衡策略
+    com.alibaba.cloud.nacos.ribbon.NacosRule
+    
+```
 
 
 
@@ -266,9 +310,11 @@ public class RibbonConfig {
 
 
 
+
+
 #### 2.4.6 使用 spring loadbalancer替换 ribbon
 
-暂时不用替换 
+暂时不用替换 不好用
 
 
 
@@ -326,11 +372,18 @@ public interface StockFeignServoce {
 在控制器内注入 调用
 
 ```java
- @Autowired
-    StockFeignServoce stockFeignServoce;
-
+@Autowired
+StockFeignServoce stockFeignServoce;
 
 String msg = stockFeignServoce.reduce();
+```
+
+
+
+启动类上开启注解
+
+```java
+@EnableFeignClients
 ```
 
 
@@ -341,13 +394,13 @@ String msg = stockFeignServoce.reduce();
 
 #### 3.3.1 日志级别 
 
-NONE   默认 
+NONE   默认的
 
-BASIC
+BASIC 基础的
 
-HEADERS
+HEADERS 加上请求头信息的
 
-FULL
+FULL 全部的
 
 
 
@@ -364,10 +417,9 @@ import feign.Logger;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-//添加@Configuration注解表示全局启用,不加则局部启用
+//添加Configuration注解表示全局启用,不加则局部启用
 @Configuration
 public class OpenFeignConfig {
-
     @Bean
     public Logger.Level openfeignLoggerLevel() {
         //日志级别
@@ -408,13 +460,11 @@ String msg2 = productFeignService.get(1);
 
 
 
-
-
 修改主配置yml文件
 
 ```yml
 # feign的默认级别是debug,spring默认是info,所以不会输出
-#单独为feign开启debug级别日志
+# 单独为feign开启debug级别日志
 logging:
   level:
     com.example.order.feign: debug
@@ -424,11 +474,9 @@ logging:
 
 ### 3.4 契约配置
 
-将适配springmvc的注解模式 修改为feign原生注解的模式
+将适配springmvc的注解模式 修改为feign原生注解的模式 (完全没必要)
 
 在配置类里增加一个bean
-
-
 
 ```java
 @Bean
@@ -439,8 +487,6 @@ public COntract feignContract(){
 
 
 
-
-
 ### 3.5 超时配置
 
 在配置里增加一个bean
@@ -448,6 +494,8 @@ public COntract feignContract(){
 ```java
 @Bean
 public Request.Options options() {
+    // $1 设置连接超时时间
+    // $2 设置处理超时时间
     return new Request.Options(5000,10000);
 }
 ```
@@ -460,7 +508,11 @@ public Request.Options options() {
 
 ### 3.6 自定义拦截器
 
+一般不使用, 通常会在网关层面配置拦截器
 
+
+
+创建自定义类继承接口
 
 ```java
 public class CustomFeignInterceptor implements RequestInterceptor{
@@ -470,8 +522,6 @@ public class CustomFeignInterceptor implements RequestInterceptor{
     
 }
 ```
-
-
 
 
 
@@ -509,9 +559,13 @@ public class CustomFeignInterceptor implements RequestInterceptor{
 
 **开启nacos服务端的权限**
 
-nacos安装目录下的 application.properties  (注意不是springboot的配置文件)
+nacos安装目录下的 conf/application.properties  
 
+注意不是springboot的配置文件
+
+```properties
 nacos.core.auth.enabled=true
+```
 
 
 
@@ -798,19 +852,11 @@ http://127.0.0.1:8858/   # 用户名 sentinel 密码 sentinel
 
 
 
-
-
 ### 5.3 流程控制
-
-服务提供端
-
-
 
 #### 5.3.1 阈值类型
 
 QPS流控  每秒访问次数
-
-
 
 线程流控  并发线程数
 
@@ -830,7 +876,15 @@ QPS流控  每秒访问次数
 
 当前有两个资源，一个生成订单，一个查询订单，当生成订单访问量大的时候，限流查询订单，以保证生成订单能占用到大量资源，查询订单和生成订单相比，生成订单更加重要。
 
-具体操作，点击查询订单资源的流控按钮，资源为查询订单（对谁流控资源就是谁），关联资源为生成订单（关联的资源压力大的时候，限制当前资源的访问）。
+
+
+具体操作
+
+点击查询订单资源的流控按钮，资源为查询订单（对谁流控资源就是谁）
+
+关联资源为生成订单（关联的资源压力大的时候，限制当前资源的访问）
+
+ 
 
 ![image-20220520174124326](./asset/image-20220520174124326.png)
 
@@ -927,13 +981,27 @@ public class OrderController {
 自定义异常处理
 
 ```java
-@SentinelResource(value="getUser",blockHandler="blockHandlerGerUser")
-public String getUser(){
+// value定义资源名 blockHandler定义处理方法
+@SentinelResource(
+    value="getUser",
+    blockHandler="blockHandlerGerUser",
+	fallback="fallbackHandlerGerUser"
+)
+public String getUser(int id){
     return "查询用户";
 }
 
-//自定义异常处理方法
-public String blockHandlerGerUser(BlockException e){
+//自定义熔断处理方法 优先级高于fallback
+//接受原方法的参数,和异常参数e
+public String blockHandlerGerUser(
+    int id, BlockException e){
+    return "查询用户";
+}
+
+//自定义接口异常处理方法
+//接受原方法的参数,和异常参数e
+public String fallbackHandlerGerUser(
+    int id, FallbackException e){
     return "查询用户";
 }
 ```
@@ -966,13 +1034,9 @@ public String blockHandlerGerUser(BlockException e){
 
 #### 5.4.2 熔断策略
 
-慢调用比例
-
-
+慢调用比例  
 
 异常比例
-
-
 
 异常数
 
@@ -980,61 +1044,135 @@ public String blockHandlerGerUser(BlockException e){
 
 ### 5.5 热点规则
 
+若某个商品为热点, id为1, 则可单独为该热点id设置流控
+
+请求getOrder资源的时候, 如果参数值为1, 且每秒请求超过2个则熔断
+
+![image-20221015180455471](./asset/image-20221015180455471.png)
+
 
 
 
 
 ### 5.6 系统规则
 
+兜底的保护规则
 
 
 
+-   类型
+
+LOAD
+
+RT
+
+线程数
+
+入口QPS
+
+CPU使用率
 
 
 
 ### 5.7 规则持久化
 
+-   原始模式
+
 sentinel 默认配置保存在内存中 重启服务后丢失
 
 
 
-pull 拉模式
+-   pull 拉模式
+
+不推荐 需要熟悉源码
 
 
 
-push 推模式 结合 nacos配置中心
+-   push 推模式 结合 nacos配置中心
 
-![image-20220520190744103](./asset/image-20220520190744103.png)
-
-只能从nacos中拉 , 在sentinel中修改配置后无法推送给nacos , 需要寻找其他方法
+只能从nacos中拉 , 在sentinel中修改配置后无法推送给nacos
 
 
 
-
-
-### 5.8 整合openfeign
-
-
-
-
-
-
-
-### 5.9 整合getway
-
-依赖
+添加依赖
 
 ```xml
-<!--        sentinel 整合gateway-->
+<!--        指定nacos为sentinel持久化-->
 <dependency>
-    <groupId>com.alibaba.cloud</groupId>
-    <artifactId>spring-cloud-alibaba-sentinel-gateway</artifactId>
+  <groupId>com.alibaba.csp</groupId>
+  <artifactId>sentinel-datasource-nacos</artifactId>
 </dependency>
 ```
 
-![image-20220520191811337](./asset/image-20220520191811337.png)
+配置yaml
 
+```yaml
+spring:
+  application:
+    name: order-sentinel
+  cloud:
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8858
+      # 开启链路模式
+      web-context-unify: true
+      # 持久化sentinel
+      datasource:
+        flow-rule:
+          nacos:
+            server-addr: 127.0.0.1:8848
+            username: nacos
+            password: nacos
+            data-id: order-sentinel-flow-rule
+            rule-type: flow
+```
 
+控制器方法
+
+```java
+@RestController
+@RequestMapping("/order")
+public class OrderController {
+
+	@GetMapping("/flow")
+    @SentinelResource(
+            value="flow",
+            blockHandler="blockHandlerGerUser"
+
+    )
+    public String flow(){
+
+        return "sentile持久化";
+    }
+    
+     public String blockHandlerGerUser(
+         int id, BlockException e){
+        return "流控";
+    }
+}
+
+```
+
+nacos新增配置 order-sentinel-flow-rule
+
+```json
+[
+    {
+        // 资源名 
+        "resource": "/order/flow",
+        // 流控效果 0-快速失败
+        "controlBehavior": 0,
+        //阈值
+        "count": 2,
+        //阈值类型 1-Qps
+        "grade": 1,
+        //针对来源
+        "limitApp": "default",
+        //流控模式 0-直接
+        "strategy": 0
+    }
+]
+```
 
 
 
@@ -1220,7 +1358,7 @@ seata / conf / file.conf
 
 ### 7.1 简介
 
-无网关的架构的问题
+-   无网关的架构的问题
 
 每个业务都需要鉴权 , 限流 , 跨域 等逻辑
 
@@ -1228,13 +1366,31 @@ seata / conf / file.conf
 
 
 
-采用网关的架构的优点
+-   网关优点
 
-![image-20220520202943046](./asset/image-20220520202943046.png)
+全局性流控 日志统计 防止sql注入 防止web攻击
 
-![image-20220520203415736](./asset/image-20220520203415736.png)
+黑白ip名单 证书加密解密 多级缓存 权限验证
 
 
+
+-   功能特征
+
+动态路由
+
+支持路径重写
+
+集成服务发现
+
+集成流控降级
+
+强大的断言和过滤器
+
+
+
+-   核心概念
+
+路由 断言 过滤器
 
 
 
@@ -1243,13 +1399,33 @@ seata / conf / file.conf
 **依赖**
 
 ```xml
-<!-- 不能加入springmvc依赖-->
+<!-- 注意不能加入springmvc依赖-->
 
 <!--        网关 场景-->
 <dependency>
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-gateway</artifactId>
 </dependency>
+
+<!--        nacos 发现-->
+<dependency>
+  <groupId>com.alibaba.cloud</groupId>
+  <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+</dependency>
+
+<!--        sentinel 场景-->
+<dependency>
+  <groupId>com.alibaba.cloud</groupId>
+  <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+</dependency>
+
+<!--        整合 sentinel_网关 场景-->
+<dependency>
+  <groupId>com.alibaba.cloud</groupId>
+  <artifactId>spring-cloud-alibaba-sentinel-gateway</artifactId>
+</dependency>
+
+
 ```
 
 
@@ -1272,9 +1448,13 @@ spring:
         password: nacos
         namespace: public
     gateway:
+    # 自动匹配服务名
       discovery:
         locator:
-          enabled: true # 自动匹配服务名
+          enabled: true
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8858      
           
 #      手动配置方式     
 #      routers:
@@ -1283,8 +1463,16 @@ spring:
 #          predicates:
 #            - Path=/order-serv/**
 #          filters:
+#             # 去掉第一层路径 即 /order-serv
 #            - StripPrefix=1
+```
 
+
+
+访问
+
+```
+http://localhost:8088/order-sentinel/order/flow
 ```
 
 
@@ -1301,29 +1489,153 @@ spring:
 
 
 
-**类型**
+基于Datatime类型的断言工厂
 
-内置
+```yaml
+- After=2019-12-31T23:59:59.789+08:00[Asia/Shanghai]
+```
 
 
 
-#### 基于Datatime类型的断言工厂
+基于远程地址的断言工厂
 
-#### 基于远程地址的断言工厂
+```yaml
+- RemoteAddr=192.168.1.1/24
+```
 
-#### 基于Cookie的断言工厂
 
-#### 基于Header的断言工厂
 
-#### 基于Host的断言工厂
+基于Cookie的断言工厂
 
-#### 基于Method请求方法的断言工厂
+```yaml
+- Cookie=chocolate, ch.
+```
 
-#### 基于Query请求参数的断言工厂
 
-#### 基于路由权重的断言工厂
 
-#### 自定义路由断言工厂
+基于Header的断言工厂
+
+```yaml
+- Header=X-Request-Id, \d+
+```
+
+
+
+基于Host的断言工厂
+
+```yaml
+- Host=**.testhost.org
+```
+
+
+
+基于Method请求方法的断言工厂
+
+```yaml
+- Method=GET
+```
+
+
+
+基于Path请求路径的断言工厂
+
+```yaml
+- Path=/foo/{segement}
+```
+
+
+
+基于Query请求参数的断言工厂
+
+```yaml
+- Query=baz, ba
+```
+
+
+
+基于路由权重的断言工厂
+
+```yaml
+routes:
+  -id: weight_route1
+  uri: host1
+  predicates:
+    -Path=/product/**
+    -Weight=group3,1
+  -id: weight_route2
+  uri: host2
+  predicates:
+    -Path=/product/**
+    -Weight=group3,9
+```
+
+
+
+自定义路由断言工厂
+
+```java
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
+package org.springframework.cloud.gateway.handler.predicate;
+
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+import java.util.function.Predicate;
+import javax.validation.constraints.NotEmpty;
+import org.springframework.util.StringUtils;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.server.ServerWebExchange;
+
+//该类名结尾必须是RoutePredicateFactory
+//必须集成抽象类AbstractRoutePredicateFactory
+public class CheckAuthRoutePredicateFactory extends AbstractRoutePredicateFactory<Config> {
+    public static final String PARAM_KEY = "param";
+  
+    public QueryRoutePredicateFactory() {
+        super(Config.class);
+    }
+
+    public List<String> shortcutFieldOrder() {
+        return Arrays.asList("name");
+    }
+
+    public Predicate<ServerWebExchange> 
+        apply(final Config config) {
+        return new GatewayPredicate() {
+            public boolean test(ServerWebExchange exchange) 			{
+                if(config.getName().equals("xushu")){
+                    return true;
+                }
+                return false;
+            }
+        };
+    }
+
+    // 获取参数信息
+    @Validated
+    public static class Config {
+        private String name;
+        public String getName(){
+            return name;
+        }
+        
+        public String setName(String name){
+            this.name = name;
+        }
+   
+    }
+}
+
+```
+
+```yaml
+# 只有当值为xushu才能通过
+- CheckAuth=xushu  
+```
 
 
 
@@ -1340,6 +1652,10 @@ spring:
 全局滤过器
 
 ![image-20220521184543666](./asset/image-20220521184543666.png)
+
+
+
+自定义过滤器
 
 
 
@@ -1382,35 +1698,6 @@ public class CorsConfig {
 
 
 
-
-
-
-### 7.6 集成 Sentinel
-
-添加依赖
-
-```xml
-   <!--        sentinel 场景-->
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
-        </dependency>
-
-
-        <!--        sentinel_网关 场景-->
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-alibaba-sentinel-gateway</artifactId>
-        </dependency>
-```
-
-
-
-配置
-
-```yml
-spring.could.sentinel.transport.dashboard: 127.0.0.1:8858
-```
 
 
 

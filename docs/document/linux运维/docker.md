@@ -27,8 +27,11 @@ docker是基于go语言实现得到云开源项目。docker的理念就是一次
 
 
 ```bash
+# 更新软件
+yum update
+
 # 卸载旧版本
-sudo yum remove docker \
+yum remove docker \
               docker-client \
               docker-client-latest \
               docker-common \
@@ -38,15 +41,19 @@ sudo yum remove docker \
               docker-engine
               
 # 更新工具
-sudo yum install -y yum-utils \
+yum install -y yum-utils \
   device-mapper-persistent-data \
   lvm2
   
 # 配置加速源
-sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 
 # 安装最新版本的Docker
 sudo yum install docker-ce docker-ce-cli containerd.io
+
+# 开机自动启动
+sudo systemctl start docker
+sudo systemctl enable docker
 ```
 
 
@@ -82,9 +89,14 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 
 # 配置国内镜像 输入以下内容
 vim /etc/docker/daemon.json
- 
+
 {
-    "registry-mirrors": ["https://cq20bk8v.mirror.aliyuncs.com"]
+    "registry-mirrors": [
+    	"https://cq20bk8v.mirror.aliyuncs.com",
+    	"http://hub-mirror.c.163.com",
+    	"https://registry.aliyuncs.com",
+    	"https://ustc-edu.aliyuncs.com"
+    ]
 }
 ```
 
