@@ -55,9 +55,35 @@ ES是一个开源的高扩展的分布式全文搜索引擎。
 注意 8.0版本以上默认开启ssl , 需要关闭该设置
 
 ```yml
-# elasticsearch.yml
+# /config/elasticsearch.yml
 xpack.security.enabled: false
 ```
+
+
+
+docker安装
+
+```
+# 拉取镜像
+docker pull elasticsearch:8.4.3
+
+# 运行容器
+docker run -d --name elasticsearch -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" elasticsearch:8.4.3
+
+# 查找容器信息
+docker ps 
+
+# 以root身份进入
+docker exec -it -u root 3718f73b385e bash
+
+# 更新软件源
+apt-get update
+
+# 安装vim
+apt-get install vim
+```
+
+
 
 
 
@@ -71,9 +97,9 @@ xpack.security.enabled: false
 
 
 
-安装elasticsearch-head
+安装elasticsearch-head可视化
 
-谷歌插件搜索 
+谷歌插件商店搜索
 
 
 
