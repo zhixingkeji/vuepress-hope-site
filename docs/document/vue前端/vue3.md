@@ -1000,7 +1000,7 @@ vue add element-plus
 
 安装 element icon
 
-```she
+```sh
 cnpm install --save @element-plus/icons-vue 
 ```
 

@@ -8,7 +8,7 @@ date: 2021-11-15 15:27:44
 
 
 
-## 第1章 Spring could - 简介
+## 第1章 Spring could
 
 ### 1.1 微服务概念
 
@@ -77,7 +77,7 @@ date: 2021-11-15 15:27:44
 
 
 
-## 第2章 阿里nacos - 服务注册与发现
+## 第2章 nacos discovery
 
 相关技术（eureka停更，consul，zookeeper）
 
@@ -322,7 +322,7 @@ stock-service:
 
 
 
-## 第3章 openFeign - 服务调用
+## 第3章 openFeign
 
 相关技术（Feign停更 , RestTemplate繁琐）
 
@@ -527,7 +527,7 @@ public class CustomFeignInterceptor implements RequestInterceptor{
 
 
 
-## 第4章 阿里 nacos - 服务配置
+## 第4章 nacos config
 
 相关技术（springcould config停更）
 
@@ -767,7 +767,7 @@ public class ConfigController {
 
 
 
-## 第5章  阿里 sentinel - 服务熔断
+## 第5章  sentinel
 
 相关技术（Hystrix停更）
 
@@ -1182,7 +1182,7 @@ nacos新增配置 order-sentinel-flow-rule
 
 
 
-## 第6章 阿里 seata - 事物
+## 第6章 seata
 
 相关技术（）
 
@@ -1350,7 +1350,7 @@ seata / conf / file.conf
 
 
 
-## 第7章 spring Cloud gateway - 服务网关
+## 第7章 gateway
 
 相关技术（zuul停更，zuul2停更）
 
@@ -1705,7 +1705,7 @@ public class CorsConfig {
 
 
 
-## 第8章 Apache SkyWalking - 服务跟踪
+## 第8章 SkyWalking
 
 相关技术spring could sleuth
 
@@ -1853,3 +1853,281 @@ storage:
 
 
 ### 8.6 告警
+
+
+
+
+
+
+
+## 第9章 SpringCloud Stream
+
+### 9.1 简介
+
+-   应用场景
+
+应用解耦 异步处理 流量削峰 日志处理
+
+一套规范 能无感知切换各种mq产品
+
+![image-20221016002330656](./asset/image-20221016002330656.png)
+
+
+
+-   核心概念
+
+1、Binder：跟外部消息中间件集成的组件，用来创建Binding，各消息中间件都有自己的Binder实现；
+
+
+
+2、Binding：包括InputBinding和OutputBinding
+
+Binding在消息中间件与应用程序提供的Provider和Consumer之间提供了一个桥梁，实现了开发者只需使用应用程序的 Provider 或 Consumer 生产或消费数据即可，屏蔽了开发者与底层消息中间件的接触；
+
+
+
+3、input：应用程序通过input（相当于消费者consumer）与Spring Cloud Stream 中Binder交互，而Binder负责与消息中间件交互，因此，我们只需关注如何与Binder交互即可，而无需关注与具体消息中间件的交互。
+
+
+
+4、output：output（相当于生产者producer）与Spring Cloud Stream中Binder交互；
+
+
+
+5、Message 消息发送者与消息消费者沟通的简单数据结构
+
+
+
+-   工作原理
+
+
+
+
+
+-   环境准备 
+
+
+
+### 9.2 基础
+
+入门案例
+
+添加依赖
+
+```xml
+<!--        rocket-->
+<dependency>
+  <groupId>com.alibaba.cloud</groupId>
+  <artifactId>spring-cloud-starter-stream-rocketmq</artifactId>
+</dependency>
+
+
+<!--        kafka-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-stream-binder-kafka</artifactId>-->
+<!--        </dependency>-->
+
+
+<!--        rabbit-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-stream-binder-rabbit</artifactId>-->
+<!--        </dependency>-->
+```
+
+
+
+
+
+### 9.3 入门案例
+
+
+
+
+
+## 第10章 Spring WebFlux
+
+### 10.1 WebFlux简介
+
+
+
+
+
+
+
+### 10.2 异步 servlet
+
+-   概念
+
+在 Servlet3.0 之前，Servlet 采用 Thread-Per-Request 的方式处理 Http 请求，即每一次请求都是由某一个线程从头到尾负责处理。
+
+
+
+如果一个请求需要进行 IO 操作，比如访问数据库、调用第三方服务接口等，那么其所对应的线程将同步地等待 IO 操作完成， 而 IO 操作是非常慢的，所以此时的线程并不能及时地释放回线程池以供后续使用，如果并发量很大的话，那肯定会造性能问题。
+
+
+
+传统的 MVC 框架如 SpringMVC 也无法摆脱 Servlet 的桎梏，他们都是基于 Servlet 来实现的。
+
+为了解决这一问题，Servlet3.0引入异步 Servlet，Servlet3.1引入非阻塞 IO 来进一步增强异步处理的性能
+
+
+
+-   流程
+
+声明 Servlet，增加 asyncSupported 属性，开启异步支持：`@WebServlet(urlPatterns = "/AsyncLongRunningServlet", asyncSupported = true)`
+
+
+
+通过 request 获取异步上下文 AsyncContext：`AsyncContext asyncCtx = request.startAsync();`
+
+
+
+开启业务逻辑处理线程，并将 AsyncContext 传递给业务线程：`executor.execute(new AsyncRequestProcessor(asyncCtx, secs));`
+
+
+
+在异步业务逻辑处理线程中，通过 asyncContext 获取 request 和 response，处理对应的业务
+
+
+
+业务逻辑处理线程处理完成逻辑之后，调用`AsyncContext.complete`方法：`asyncContext.complete();`结束该次异步线程处理
+
+
+
+
+
+### 10.3 流式编程
+
+-   定义
+
+有流的思想 lambda表示式
+
+
+
+-   惰性求值
+
+中间操作 依然是流 如map
+
+终止操作 返回结果 如sum
+
+没有终止操作调用的情况下, 中间操作不会执行
+
+
+
+-   流的创建
+
+```java
+//集合流
+List<Stirng> list = new ArrayList<>();
+list.stream();
+list.parallelStream();
+
+//数组流
+Arrays.stream(new int[]{2,3,5})
+
+//数字流
+IntStream.of(1,2,3);
+
+//随机流
+new Random().ints().limit(10);
+
+//自定义流
+Random random = new Random();
+Stream.generate(()-> random.nextInt()).limit(20);
+```
+
+
+
+-   中间操作
+
+无状态操作
+map 
+flatMap
+filter
+peek
+unordered
+
+有状态操作
+distinct
+sorted
+limit 
+skip
+
+
+
+装箱 boxed
+
+对于 intStream不是Stream的子类 需要进行装箱
+
+
+
+-   终止操作
+
+非短路操作
+forEach / forEachOrdered
+
+collect / toArray
+
+reduce
+
+```java
+String str = "my name is wangle";
+Optional<String> reduce = 
+    Stream.of(str.split(" "))
+    .reduce((s1, s2) -> s1 + "|" + s2);
+System.out.println(reduce.orElse(""));
+
+```
+
+
+
+min / max / count
+
+
+
+短路操作
+findFirst / findAny
+allMatch / anyMatch / noneMatch
+
+
+
+-   并行流
+
+
+
+
+
+-   收集流
+
+```java
+//测试数据
+List<Student> students = Arrays.asList(
+	new Student("小名",10),
+    new Student("小米",2),
+    new Student("小流",15),
+    new Student("小无",22),
+);
+
+//收集器
+List<Integer> ages = students.stream().map(Student::getAge)
+	.collect(Collectors.toList());
+System.out.printIn(ages)
+```
+
+
+
+
+
+-   流运行机制
+
+
+
+
+
+### 10.4 lambda表达式
+
+
+
+### 10.5 RouterFunction

@@ -164,7 +164,7 @@ tools.cmd org.apache.rocketmq.example.quickstart.Consumer
 拉取镜像
 
 ```sh
-docker pull apacherocketmq/rocketmq-dashboard:latest
+docker pull apacherocketmq/rocketmq-dashboard
 ```
 
 
@@ -174,7 +174,7 @@ docker pull apacherocketmq/rocketmq-dashboard:latest
 注意 namesrv.addr 填写宿主机地址 192.168.0.109
 
 ```sh
-docker run -d --name rocketmq-dashboard -e "JAVA_OPTS=-Drocketmq.namesrv.addr=192.168.0.109:9876" -p 8080:8080 -t apacherocketmq/rocketmq-dashboard:latest
+docker run -d --name rocketmq-dashboard -e "JAVA_OPTS=-Drocketmq.namesrv.addr=127.0.0.1:9876" -p 8080:8080 -t apacherocketmq/rocketmq-dashboard
 ```
 
 
@@ -1219,4 +1219,29 @@ ASYNC_FLUSH 异步刷盘
 一个主题里只放一个队列
 
 不能使用并发
+
+
+
+
+
+
+
+## 第6章 rabbit
+
+安装
+
+```
+docker pull rabbitmq:management
+docker run -d --hostname my-rabbit --name rabbit -p 15672:15672 -p 5672:5672 rabbitmq:management
+
+http://localhost:15672/
+```
+
+
+
+
+
+## 第7章 kafka
+
+
 
