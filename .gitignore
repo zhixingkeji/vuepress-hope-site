@@ -21,3 +21,8 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+
+# 缓存文件
+/docks/.vuepress/.cache
+/docks/.vuepress/.temp
