@@ -26,8 +26,8 @@ import {
   unref,
   watch,
   watchEffect
-} from "./chunk-GJFHGD2Z.js";
-import "./chunk-O7OP4E6C.js";
+} from "./chunk-ZMJ3B4XV.js";
+import "./chunk-DPQNMCNE.js";
 import {
   init_define_BACK_TO_TOP_LOCALES,
   init_define_CODE_COPY_LOCALES,
@@ -61,7 +61,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_@vueuse_core@9.1.1@@vueuse/core/index.mjs
+// node_modules/_@vueuse_core@9.3.0@@vueuse/core/index.mjs
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -77,7 +77,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_@vueuse_shared@9.1.1@@vueuse/shared/index.mjs
+// node_modules/_@vueuse_shared@9.3.0@@vueuse/shared/index.mjs
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -127,7 +127,7 @@ function del(target, key) {
   delete target[key];
 }
 
-// node_modules/_@vueuse_shared@9.1.1@@vueuse/shared/index.mjs
+// node_modules/_@vueuse_shared@9.3.0@@vueuse/shared/index.mjs
 var __defProp$9 = Object.defineProperty;
 var __defProps$6 = Object.defineProperties;
 var __getOwnPropDescs$6 = Object.getOwnPropertyDescriptors;
@@ -182,6 +182,7 @@ var rand = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 var isIOS = isClient && ((_a = window == null ? void 0 : window.navigator) == null ? void 0 : _a.userAgent) && /iP(ad|hone|od)/.test(window.navigator.userAgent);
+var hasOwn = (val, key) => Object.prototype.hasOwnProperty.call(val, key);
 function resolveUnref(r) {
   return typeof r === "function" ? r() : unref(r);
 }
@@ -802,8 +803,7 @@ function tryOnUnmounted(fn) {
   if (getCurrentInstance())
     onUnmounted(fn);
 }
-function until(r) {
-  let isNot = false;
+function createUntil(r, isNot = false) {
   function toMatch(condition, { flush = "sync", deep = false, timeout, throwOnTimeout } = {}) {
     let stop = null;
     const watcher = new Promise((resolve) => {
@@ -885,8 +885,7 @@ function until(r) {
       changed,
       changedTimes,
       get not() {
-        isNot = !isNot;
-        return this;
+        return createUntil(r, !isNot);
       }
     };
     return instance;
@@ -901,12 +900,14 @@ function until(r) {
       changed,
       changedTimes,
       get not() {
-        isNot = !isNot;
-        return this;
+        return createUntil(r, !isNot);
       }
     };
     return instance;
   }
+}
+function until(r) {
+  return createUntil(r);
 }
 function useArrayEvery(list, fn) {
   return computed(() => resolveUnref(list).every((element, index, array) => fn(resolveUnref(element), index, array)));
@@ -953,8 +954,15 @@ function useCounter(initialValue = 0, options = {}) {
   return { count, inc, dec, get: get2, set: set3, reset };
 }
 var REGEX_PARSE = /^(\d{4})[-/]?(\d{1,2})?[-/]?(\d{0,2})[Tt\s]*(\d{1,2})?:?(\d{1,2})?:?(\d{1,2})?[.:]?(\d+)?$/;
-var REGEX_FORMAT = /\[([^\]]+)]|Y{1,4}|M{1,4}|D{1,2}|d{1,4}|H{1,2}|h{1,2}|a|A|m{1,2}|s{1,2}|Z{1,2}|SSS/g;
-var formatDate = (date, formatStr, locales) => {
+var REGEX_FORMAT = /\[([^\]]+)]|Y{1,4}|M{1,4}|D{1,2}|d{1,4}|H{1,2}|h{1,2}|a{1,2}|A{1,2}|m{1,2}|s{1,2}|Z{1,2}|SSS/g;
+var defaultMeridiem = (hours, minutes, isLowercase, hasPeriod) => {
+  let m = hours < 12 ? "AM" : "PM";
+  if (hasPeriod)
+    m = m.split("").reduce((acc, curr) => acc += `${curr}.`, "");
+  return isLowercase ? m.toLowerCase() : m;
+};
+var formatDate = (date, formatStr, options) => {
+  var _a2;
   const years = date.getFullYear();
   const month = date.getMonth();
   const days = date.getDate();
@@ -963,11 +971,14 @@ var formatDate = (date, formatStr, locales) => {
   const seconds = date.getSeconds();
   const milliseconds = date.getMilliseconds();
   const day = date.getDay();
+  const meridiem = (_a2 = options.customMeridiem) != null ? _a2 : defaultMeridiem;
   const matches = {
     YY: () => String(years).slice(-2),
     YYYY: () => years,
     M: () => month + 1,
     MM: () => `${month + 1}`.padStart(2, "0"),
+    MMM: () => date.toLocaleDateString(options.locales, { month: "short" }),
+    MMMM: () => date.toLocaleDateString(options.locales, { month: "long" }),
     D: () => String(days),
     DD: () => `${days}`.padStart(2, "0"),
     H: () => String(hours),
@@ -980,9 +991,13 @@ var formatDate = (date, formatStr, locales) => {
     ss: () => `${seconds}`.padStart(2, "0"),
     SSS: () => `${milliseconds}`.padStart(3, "0"),
     d: () => day,
-    dd: () => date.toLocaleDateString(locales, { weekday: "narrow" }),
-    ddd: () => date.toLocaleDateString(locales, { weekday: "short" }),
-    dddd: () => date.toLocaleDateString(locales, { weekday: "long" })
+    dd: () => date.toLocaleDateString(options.locales, { weekday: "narrow" }),
+    ddd: () => date.toLocaleDateString(options.locales, { weekday: "short" }),
+    dddd: () => date.toLocaleDateString(options.locales, { weekday: "long" }),
+    A: () => meridiem(hours, minutes),
+    AA: () => meridiem(hours, minutes, false, true),
+    a: () => meridiem(hours, minutes, true),
+    aa: () => meridiem(hours, minutes, true, true)
   };
   return formatStr.replace(REGEX_FORMAT, (match, $1) => $1 || matches[match]());
 };
@@ -1004,7 +1019,7 @@ var normalizeDate = (date) => {
   return new Date(date);
 };
 function useDateFormat(date, formatStr = "HH:mm:ss", options = {}) {
-  return computed(() => formatDate(normalizeDate(resolveUnref(date)), resolveUnref(formatStr), options == null ? void 0 : options.locales));
+  return computed(() => formatDate(normalizeDate(resolveUnref(date)), resolveUnref(formatStr), options));
 }
 function useIntervalFn(cb, interval = 1e3, options = {}) {
   const {
@@ -1067,10 +1082,15 @@ var __spreadValues$6 = (a, b) => {
 function useInterval(interval = 1e3, options = {}) {
   const {
     controls: exposeControls = false,
-    immediate = true
+    immediate = true,
+    callback
   } = options;
   const counter = ref(0);
-  const controls = useIntervalFn(() => counter.value += 1, interval, { immediate });
+  const update = () => counter.value += 1;
+  const controls = useIntervalFn(callback ? () => {
+    update();
+    callback(counter.value);
+  } : update, interval, { immediate });
   if (exposeControls) {
     return __spreadValues$6({
       counter
@@ -1140,9 +1160,10 @@ var __spreadValues$5 = (a, b) => {
 };
 function useTimeout(interval = 1e3, options = {}) {
   const {
-    controls: exposeControls = false
+    controls: exposeControls = false,
+    callback
   } = options;
-  const controls = useTimeoutFn(noop, interval, options);
+  const controls = useTimeoutFn(callback != null ? callback : noop, interval, options);
   const ready = computed(() => !controls.isPending.value);
   if (exposeControls) {
     return __spreadValues$5({
@@ -1557,7 +1578,7 @@ function whenever(source, cb, options) {
   }, options);
 }
 
-// node_modules/_@vueuse_core@9.1.1@@vueuse/core/index.mjs
+// node_modules/_@vueuse_core@9.3.0@@vueuse/core/index.mjs
 function computedAsync(evaluationCallback, initialState, optionsOrRef) {
   let options;
   if (isRef(optionsOrRef)) {
@@ -1683,23 +1704,21 @@ function onClickOutside(target, handler, options = {}) {
   const listener = (event) => {
     window2.clearTimeout(fallback);
     const el = unrefElement(target);
-    const composedPath = event.composedPath();
-    if (!el || el === event.target || composedPath.includes(el) || !shouldListen.value)
+    if (!el || el === event.target || event.composedPath().includes(el) || !shouldListen.value)
       return;
-    if (ignore && ignore.length > 0) {
-      if (ignore.some((target2) => {
-        const el2 = unrefElement(target2);
-        return el2 && (event.target === el2 || composedPath.includes(el2));
-      }))
-        return;
-    }
     handler(event);
+  };
+  const shouldIgnore = (event) => {
+    return ignore && ignore.some((target2) => {
+      const el = unrefElement(target2);
+      return el && (event.target === el || event.composedPath().includes(el));
+    });
   };
   const cleanup = [
     useEventListener(window2, "click", listener, { passive: true, capture }),
     useEventListener(window2, "pointerdown", (e) => {
       const el = unrefElement(target);
-      shouldListen.value = !!el && !e.composedPath().includes(el);
+      shouldListen.value = !!el && !e.composedPath().includes(el) && !shouldIgnore(e);
     }, { passive: true }),
     useEventListener(window2, "pointerup", (e) => {
       if (e.button === 0) {
@@ -1718,25 +1737,25 @@ function onClickOutside(target, handler, options = {}) {
   const stop = () => cleanup.forEach((fn) => fn());
   return stop;
 }
-var __defProp$l = Object.defineProperty;
-var __defProps$8 = Object.defineProperties;
-var __getOwnPropDescs$8 = Object.getOwnPropertyDescriptors;
-var __getOwnPropSymbols$n = Object.getOwnPropertySymbols;
-var __hasOwnProp$n = Object.prototype.hasOwnProperty;
-var __propIsEnum$n = Object.prototype.propertyIsEnumerable;
-var __defNormalProp$l = (obj, key, value) => key in obj ? __defProp$l(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var __spreadValues$l = (a, b) => {
+var __defProp$m = Object.defineProperty;
+var __defProps$9 = Object.defineProperties;
+var __getOwnPropDescs$9 = Object.getOwnPropertyDescriptors;
+var __getOwnPropSymbols$o = Object.getOwnPropertySymbols;
+var __hasOwnProp$o = Object.prototype.hasOwnProperty;
+var __propIsEnum$o = Object.prototype.propertyIsEnumerable;
+var __defNormalProp$m = (obj, key, value) => key in obj ? __defProp$m(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues$m = (a, b) => {
   for (var prop in b || (b = {}))
-    if (__hasOwnProp$n.call(b, prop))
-      __defNormalProp$l(a, prop, b[prop]);
-  if (__getOwnPropSymbols$n)
-    for (var prop of __getOwnPropSymbols$n(b)) {
-      if (__propIsEnum$n.call(b, prop))
-        __defNormalProp$l(a, prop, b[prop]);
+    if (__hasOwnProp$o.call(b, prop))
+      __defNormalProp$m(a, prop, b[prop]);
+  if (__getOwnPropSymbols$o)
+    for (var prop of __getOwnPropSymbols$o(b)) {
+      if (__propIsEnum$o.call(b, prop))
+        __defNormalProp$m(a, prop, b[prop]);
     }
   return a;
 };
-var __spreadProps$8 = (a, b) => __defProps$8(a, __getOwnPropDescs$8(b));
+var __spreadProps$9 = (a, b) => __defProps$9(a, __getOwnPropDescs$9(b));
 var createKeyPredicate = (keyFilter) => {
   if (typeof keyFilter === "function")
     return keyFilter;
@@ -1744,12 +1763,29 @@ var createKeyPredicate = (keyFilter) => {
     return (event) => event.key === keyFilter;
   else if (Array.isArray(keyFilter))
     return (event) => keyFilter.includes(event.key);
-  else if (keyFilter)
-    return () => true;
-  else
-    return () => false;
+  return () => true;
 };
-function onKeyStroke(key, handler, options = {}) {
+function onKeyStroke(...args) {
+  let key;
+  let handler;
+  let options = {};
+  if (args.length === 3) {
+    key = args[0];
+    handler = args[1];
+    options = args[2];
+  } else if (args.length === 2) {
+    if (typeof args[1] === "object") {
+      key = true;
+      handler = args[0];
+      options = args[1];
+    } else {
+      key = args[0];
+      handler = args[1];
+    }
+  } else {
+    key = true;
+    handler = args[0];
+  }
   const { target = defaultWindow, eventName = "keydown", passive = false } = options;
   const predicate = createKeyPredicate(key);
   const listener = (e) => {
@@ -1759,23 +1795,23 @@ function onKeyStroke(key, handler, options = {}) {
   return useEventListener(target, eventName, listener, passive);
 }
 function onKeyDown(key, handler, options = {}) {
-  return onKeyStroke(key, handler, __spreadProps$8(__spreadValues$l({}, options), { eventName: "keydown" }));
+  return onKeyStroke(key, handler, __spreadProps$9(__spreadValues$m({}, options), { eventName: "keydown" }));
 }
 function onKeyPressed(key, handler, options = {}) {
-  return onKeyStroke(key, handler, __spreadProps$8(__spreadValues$l({}, options), { eventName: "keypress" }));
+  return onKeyStroke(key, handler, __spreadProps$9(__spreadValues$m({}, options), { eventName: "keypress" }));
 }
 function onKeyUp(key, handler, options = {}) {
-  return onKeyStroke(key, handler, __spreadProps$8(__spreadValues$l({}, options), { eventName: "keyup" }));
+  return onKeyStroke(key, handler, __spreadProps$9(__spreadValues$m({}, options), { eventName: "keyup" }));
 }
 var DEFAULT_DELAY = 500;
 function onLongPress(target, handler, options) {
   var _a2, _b;
   const elementRef = computed(() => unrefElement(target));
-  let timeout = null;
+  let timeout;
   function clear() {
-    if (timeout != null) {
+    if (timeout) {
       clearTimeout(timeout);
-      timeout = null;
+      timeout = void 0;
     }
   }
   function onDown(ev) {
@@ -2160,28 +2196,27 @@ function useMediaQuery(query, options = {}) {
   const isSupported = useSupported(() => window2 && "matchMedia" in window2 && typeof window2.matchMedia === "function");
   let mediaQuery;
   const matches = ref(false);
+  const cleanup = () => {
+    if (!mediaQuery)
+      return;
+    if ("removeEventListener" in mediaQuery)
+      mediaQuery.removeEventListener("change", update);
+    else
+      mediaQuery.removeListener(update);
+  };
   const update = () => {
     if (!isSupported.value)
       return;
-    if (!mediaQuery)
-      mediaQuery = window2.matchMedia(query);
+    cleanup();
+    mediaQuery = window2.matchMedia(resolveRef(query).value);
     matches.value = mediaQuery.matches;
-  };
-  tryOnBeforeMount(() => {
-    update();
-    if (!mediaQuery)
-      return;
     if ("addEventListener" in mediaQuery)
       mediaQuery.addEventListener("change", update);
     else
       mediaQuery.addListener(update);
-    tryOnScopeDispose(() => {
-      if ("removeEventListener" in mediaQuery)
-        mediaQuery.removeEventListener("change", update);
-      else
-        mediaQuery.removeListener(update);
-    });
-  });
+  };
+  watchEffect(update);
+  tryOnScopeDispose(() => cleanup());
   return matches;
 }
 var breakpointsTailwind = {
@@ -2227,19 +2262,19 @@ var breakpointsSematic = {
   laptopL: 1440,
   desktop4K: 2560
 };
-var __defProp$k = Object.defineProperty;
-var __getOwnPropSymbols$m = Object.getOwnPropertySymbols;
-var __hasOwnProp$m = Object.prototype.hasOwnProperty;
-var __propIsEnum$m = Object.prototype.propertyIsEnumerable;
-var __defNormalProp$k = (obj, key, value) => key in obj ? __defProp$k(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var __spreadValues$k = (a, b) => {
+var __defProp$l = Object.defineProperty;
+var __getOwnPropSymbols$n = Object.getOwnPropertySymbols;
+var __hasOwnProp$n = Object.prototype.hasOwnProperty;
+var __propIsEnum$n = Object.prototype.propertyIsEnumerable;
+var __defNormalProp$l = (obj, key, value) => key in obj ? __defProp$l(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues$l = (a, b) => {
   for (var prop in b || (b = {}))
-    if (__hasOwnProp$m.call(b, prop))
-      __defNormalProp$k(a, prop, b[prop]);
-  if (__getOwnPropSymbols$m)
-    for (var prop of __getOwnPropSymbols$m(b)) {
-      if (__propIsEnum$m.call(b, prop))
-        __defNormalProp$k(a, prop, b[prop]);
+    if (__hasOwnProp$n.call(b, prop))
+      __defNormalProp$l(a, prop, b[prop]);
+  if (__getOwnPropSymbols$n)
+    for (var prop of __getOwnPropSymbols$n(b)) {
+      if (__propIsEnum$n.call(b, prop))
+        __defNormalProp$l(a, prop, b[prop]);
     }
   return a;
 };
@@ -2258,30 +2293,42 @@ function useBreakpoints(breakpoints, options = {}) {
       return false;
     return window2.matchMedia(query).matches;
   }
-  const greater = (k) => {
+  const greaterOrEqual = (k) => {
     return useMediaQuery(`(min-width: ${getValue2(k)})`, options);
   };
   const shortcutMethods = Object.keys(breakpoints).reduce((shortcuts, k) => {
     Object.defineProperty(shortcuts, k, {
-      get: () => greater(k),
+      get: () => greaterOrEqual(k),
       enumerable: true,
       configurable: true
     });
     return shortcuts;
   }, {});
-  return __spreadValues$k({
-    greater,
+  return __spreadValues$l({
+    greater(k) {
+      return useMediaQuery(`(min-width: ${getValue2(k, 0.1)})`, options);
+    },
+    greaterOrEqual,
     smaller(k) {
       return useMediaQuery(`(max-width: ${getValue2(k, -0.1)})`, options);
+    },
+    smallerOrEqual(k) {
+      return useMediaQuery(`(max-width: ${getValue2(k)})`, options);
     },
     between(a, b) {
       return useMediaQuery(`(min-width: ${getValue2(a)}) and (max-width: ${getValue2(b, -0.1)})`, options);
     },
     isGreater(k) {
+      return match(`(min-width: ${getValue2(k, 0.1)})`);
+    },
+    isGreaterOrEqual(k) {
       return match(`(min-width: ${getValue2(k)})`);
     },
     isSmaller(k) {
       return match(`(max-width: ${getValue2(k, -0.1)})`);
+    },
+    isSmallerOrEqual(k) {
+      return match(`(max-width: ${getValue2(k)})`);
     },
     isInBetween(a, b) {
       return match(`(min-width: ${getValue2(a)}) and (max-width: ${getValue2(b, -0.1)})`);
@@ -2404,6 +2451,49 @@ function useClipboard(options = {}) {
     copied,
     copy
   };
+}
+var __defProp$k = Object.defineProperty;
+var __defProps$8 = Object.defineProperties;
+var __getOwnPropDescs$8 = Object.getOwnPropertyDescriptors;
+var __getOwnPropSymbols$m = Object.getOwnPropertySymbols;
+var __hasOwnProp$m = Object.prototype.hasOwnProperty;
+var __propIsEnum$m = Object.prototype.propertyIsEnumerable;
+var __defNormalProp$k = (obj, key, value) => key in obj ? __defProp$k(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues$k = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp$m.call(b, prop))
+      __defNormalProp$k(a, prop, b[prop]);
+  if (__getOwnPropSymbols$m)
+    for (var prop of __getOwnPropSymbols$m(b)) {
+      if (__propIsEnum$m.call(b, prop))
+        __defNormalProp$k(a, prop, b[prop]);
+    }
+  return a;
+};
+var __spreadProps$8 = (a, b) => __defProps$8(a, __getOwnPropDescs$8(b));
+function cloneFnJSON(source) {
+  return JSON.parse(JSON.stringify(source));
+}
+function useCloned(source, options = {}) {
+  const cloned = ref({});
+  const {
+    manual,
+    clone = cloneFnJSON,
+    deep = true,
+    immediate = true
+  } = options;
+  function sync() {
+    cloned.value = clone(unref(source));
+  }
+  if (!manual && isRef(source)) {
+    watch(source, sync, __spreadProps$8(__spreadValues$k({}, options), {
+      deep,
+      immediate
+    }));
+  } else {
+    sync();
+  }
+  return { cloned, sync };
 }
 var _global = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
 var globalKey = "__vueuse_ssr_handlers__";
@@ -2777,14 +2867,13 @@ function useDark(options = {}) {
   });
   return isDark;
 }
-var fnClone = (v) => JSON.parse(JSON.stringify(v));
 var fnBypass = (v) => v;
 var fnSetSource = (source, value) => source.value = value;
 function defaultDump(clone) {
-  return clone ? isFunction(clone) ? clone : fnClone : fnBypass;
+  return clone ? isFunction(clone) ? clone : cloneFnJSON : fnBypass;
 }
 function defaultParse(clone) {
-  return clone ? isFunction(clone) ? clone : fnClone : fnBypass;
+  return clone ? isFunction(clone) ? clone : cloneFnJSON : fnBypass;
 }
 function useManualRefHistory(source, options = {}) {
   const {
@@ -3004,20 +3093,6 @@ function useDeviceOrientation(options = {}) {
     gamma
   };
 }
-var DEVICE_PIXEL_RATIO_SCALES = [
-  1,
-  1.325,
-  1.4,
-  1.5,
-  1.8,
-  2,
-  2.4,
-  2.5,
-  2.75,
-  3,
-  3.5,
-  4
-];
 function useDevicePixelRatio({
   window: window2 = defaultWindow
 } = {}) {
@@ -3026,16 +3101,23 @@ function useDevicePixelRatio({
       pixelRatio: ref(1)
     };
   }
-  const pixelRatio = ref(window2.devicePixelRatio);
-  const handleDevicePixelRatio = () => {
-    pixelRatio.value = window2.devicePixelRatio;
+  const pixelRatio = ref(1);
+  const cleanups = [];
+  const cleanup = () => {
+    cleanups.map((i) => i());
+    cleanups.length = 0;
   };
-  useEventListener(window2, "resize", handleDevicePixelRatio, { passive: true });
-  DEVICE_PIXEL_RATIO_SCALES.forEach((dppx) => {
-    const mqlMin = useMediaQuery(`screen and (min-resolution: ${dppx}dppx)`);
-    const mqlMax = useMediaQuery(`screen and (max-resolution: ${dppx}dppx)`);
-    watch([mqlMin, mqlMax], handleDevicePixelRatio);
-  });
+  const observe = () => {
+    pixelRatio.value = window2.devicePixelRatio;
+    cleanup();
+    const media = window2.matchMedia(`(resolution: ${pixelRatio.value}dppx)`);
+    media.addEventListener("change", observe, { once: true });
+    cleanups.push(() => {
+      media.removeEventListener("change", observe);
+    });
+  };
+  observe();
+  tryOnScopeDispose(cleanup);
   return { pixelRatio };
 }
 function usePermission(permissionDesc, options = {}) {
@@ -3204,9 +3286,10 @@ var __spreadValues$e = (a, b) => {
 };
 var __spreadProps$42 = (a, b) => __defProps$42(a, __getOwnPropDescs$42(b));
 function useDraggable(target, options = {}) {
-  var _a2, _b;
+  var _a2, _b, _c;
   const draggingElement = (_a2 = options.draggingElement) != null ? _a2 : defaultWindow;
-  const position = ref((_b = resolveUnref(options.initialValue)) != null ? _b : { x: 0, y: 0 });
+  const draggingHandle = (_b = options.handle) != null ? _b : target;
+  const position = ref((_c = resolveUnref(options.initialValue)) != null ? _c : { x: 0, y: 0 });
   const pressedDelta = ref();
   const filterEvent = (e) => {
     if (options.pointerTypes)
@@ -3259,7 +3342,7 @@ function useDraggable(target, options = {}) {
     handleEvent(e);
   };
   if (isClient) {
-    useEventListener(target, "pointerdown", start, true);
+    useEventListener(draggingHandle, "pointerdown", start, true);
     useEventListener(draggingElement, "pointermove", move, true);
     useEventListener(draggingElement, "pointerup", end, true);
   }
@@ -3472,11 +3555,18 @@ function useElementHover(el) {
   return isHovered;
 }
 function useElementSize(target, initialSize = { width: 0, height: 0 }, options = {}) {
+  const { box = "content-box" } = options;
   const width = ref(initialSize.width);
   const height = ref(initialSize.height);
   useResizeObserver(target, ([entry]) => {
-    width.value = entry.contentRect.width;
-    height.value = entry.contentRect.height;
+    const boxSize = box === "border-box" ? entry.borderBoxSize : box === "content-box" ? entry.contentBoxSize : entry.devicePixelContentBoxSize;
+    if (boxSize) {
+      width.value = boxSize.reduce((acc, { inlineSize }) => acc + inlineSize, 0);
+      height.value = boxSize.reduce((acc, { blockSize }) => acc + blockSize, 0);
+    } else {
+      width.value = entry.contentRect.width;
+      height.value = entry.contentRect.height;
+    }
   }, options);
   watch(() => unrefElement(target), (ele) => {
     width.value = ele ? initialSize.width : 0;
@@ -3493,7 +3583,7 @@ function useElementVisibility(element, { window: window2 = defaultWindow, scroll
     if (!window2)
       return;
     const document2 = window2.document;
-    const el = resolveUnref(element);
+    const el = unrefElement(element);
     if (!el) {
       elementIsVisible.value = false;
     } else {
@@ -3501,9 +3591,12 @@ function useElementVisibility(element, { window: window2 = defaultWindow, scroll
       elementIsVisible.value = rect.top <= (window2.innerHeight || document2.documentElement.clientHeight) && rect.left <= (window2.innerWidth || document2.documentElement.clientWidth) && rect.bottom >= 0 && rect.right >= 0;
     }
   };
-  tryOnMounted(testBounding);
+  watch(() => unrefElement(element), () => testBounding(), { immediate: true, flush: "post" });
   if (window2) {
-    tryOnMounted(() => useEventListener(() => resolveUnref(scrollTarget) || window2, "scroll", testBounding, { capture: false, passive: true }));
+    useEventListener(scrollTarget || window2, "scroll", testBounding, {
+      capture: false,
+      passive: true
+    });
   }
   return elementIsVisible;
 }
@@ -3941,7 +4034,8 @@ function useFileDialog(options = {}) {
     const _options = __spreadValues$b(__spreadValues$b(__spreadValues$b({}, DEFAULT_OPTIONS), options), localOptions);
     input.multiple = _options.multiple;
     input.accept = _options.accept;
-    input.capture = _options.capture;
+    if (hasOwn(_options, "capture"))
+      input.capture = _options.capture;
     input.click();
   };
   const reset = () => {
@@ -4454,10 +4548,38 @@ function useScroll(element, options = {}) {
     eventListenerOptions = {
       capture: false,
       passive: true
-    }
+    },
+    behavior = "auto"
   } = options;
-  const x = ref(0);
-  const y = ref(0);
+  const internalX = ref(0);
+  const internalY = ref(0);
+  const x = computed({
+    get() {
+      return internalX.value;
+    },
+    set(x2) {
+      scrollTo(x2, void 0);
+    }
+  });
+  const y = computed({
+    get() {
+      return internalY.value;
+    },
+    set(y2) {
+      scrollTo(void 0, y2);
+    }
+  });
+  function scrollTo(_x, _y) {
+    var _a2, _b, _c;
+    const _element = resolveUnref(element);
+    if (!_element)
+      return;
+    (_c = _element instanceof Document ? document.body : _element) == null ? void 0 : _c.scrollTo({
+      top: (_a2 = resolveUnref(_y)) != null ? _a2 : y.value,
+      left: (_b = resolveUnref(_x)) != null ? _b : x.value,
+      behavior: resolveUnref(behavior)
+    });
+  }
   const isScrolling = ref(false);
   const arrivedState = reactive({
     left: true,
@@ -4482,19 +4604,19 @@ function useScroll(element, options = {}) {
   const onScrollHandler = (e) => {
     const eventTarget = e.target === document ? e.target.documentElement : e.target;
     const scrollLeft = eventTarget.scrollLeft;
-    directions.left = scrollLeft < x.value;
-    directions.right = scrollLeft > x.value;
+    directions.left = scrollLeft < internalX.value;
+    directions.right = scrollLeft > internalY.value;
     arrivedState.left = scrollLeft <= 0 + (offset.left || 0);
     arrivedState.right = scrollLeft + eventTarget.clientWidth >= eventTarget.scrollWidth - (offset.right || 0) - ARRIVED_STATE_THRESHOLD_PIXELS;
-    x.value = scrollLeft;
+    internalX.value = scrollLeft;
     let scrollTop = eventTarget.scrollTop;
     if (e.target === document && !scrollTop)
       scrollTop = document.body.scrollTop;
-    directions.top = scrollTop < y.value;
-    directions.bottom = scrollTop > y.value;
+    directions.top = scrollTop < internalY.value;
+    directions.bottom = scrollTop > internalY.value;
     arrivedState.top = scrollTop <= 0 + (offset.top || 0);
     arrivedState.bottom = scrollTop + eventTarget.clientHeight >= eventTarget.scrollHeight - (offset.bottom || 0) - ARRIVED_STATE_THRESHOLD_PIXELS;
-    y.value = scrollTop;
+    internalY.value = scrollTop;
     isScrolling.value = true;
     onScrollEnd(e);
     onScroll(e);
@@ -4939,7 +5061,7 @@ var getMapVue2Compat = () => {
   return {
     get: (key) => data[key],
     set: (key, value) => set(data, key, value),
-    has: (key) => Object.prototype.hasOwnProperty.call(data, key),
+    has: (key) => hasOwn(data, key),
     delete: (key) => del(data, key),
     clear: () => {
       Object.keys(data).forEach((key) => {
@@ -6475,7 +6597,8 @@ function useTimeAgo(time, options = {}) {
     max,
     updateInterval = 3e4,
     messages = DEFAULT_MESSAGES,
-    fullDateFormatter = DEFAULT_FORMATTER
+    fullDateFormatter = DEFAULT_FORMATTER,
+    showSecond = false
   } = options;
   const { abs, round } = Math;
   const _a2 = useNow({ interval: updateInterval, controls: true }), { now: now2 } = _a2, controls = __objRest2(_a2, ["now"]);
@@ -6483,7 +6606,7 @@ function useTimeAgo(time, options = {}) {
     var _a22;
     const diff = +now22 - +from;
     const absDiff = abs(diff);
-    if (absDiff < 6e4)
+    if (absDiff < 6e4 && !showSecond)
       return messages.justNow;
     if (typeof max === "number" && absDiff > max)
       return fullDateFormatter(new Date(from));
@@ -6566,11 +6689,16 @@ function useTimestamp(options = {}) {
     controls: exposeControls = false,
     offset = 0,
     immediate = true,
-    interval = "requestAnimationFrame"
+    interval = "requestAnimationFrame",
+    callback
   } = options;
   const ts = ref(timestamp() + offset);
   const update = () => ts.value = timestamp() + offset;
-  const controls = interval === "requestAnimationFrame" ? useRafFn(update, { immediate }) : useIntervalFn(update, interval, { immediate });
+  const cb = callback ? () => {
+    update();
+    callback(ts.value);
+  } : update;
+  const controls = interval === "requestAnimationFrame" ? useRafFn(cb, { immediate }) : useIntervalFn(cb, interval, { immediate });
   if (exposeControls) {
     return __spreadValues$12({
       timestamp: ts
@@ -6737,6 +6865,7 @@ function useUrlSearchParams(mode = "history", options = {}) {
     initialValue = {},
     removeNullishValues = true,
     removeFalsyValues = false,
+    write: enableWrite = true,
     window: window2 = defaultWindow
   } = options;
   if (!window2)
@@ -6800,6 +6929,8 @@ function useUrlSearchParams(mode = "history", options = {}) {
     resume();
   }
   function onChanged() {
+    if (!enableWrite)
+      return;
     write(read(), true);
   }
   useEventListener(window2, "popstate", onChanged, false);
@@ -6886,6 +7017,7 @@ function useUserMedia(options = {}) {
 function useVModel(props, key, emit, options = {}) {
   var _a2, _b, _c, _d, _e;
   const {
+    clone = false,
     passive = false,
     eventName,
     deep = false,
@@ -6905,16 +7037,16 @@ function useVModel(props, key, emit, options = {}) {
     }
   }
   event = eventName || event || `update:${key.toString()}`;
-  const getValue2 = () => isDef(props[key]) ? props[key] : defaultValue;
+  const cloneFn = (val) => !clone ? val : isFunction(clone) ? clone(val) : cloneFnJSON(val);
+  const getValue2 = () => isDef(props[key]) ? cloneFn(props[key]) : defaultValue;
   if (passive) {
-    const proxy = ref(getValue2());
-    watch(() => props[key], (v) => proxy.value = v);
+    const initialValue = getValue2();
+    const proxy = ref(initialValue);
+    watch(() => props[key], (v) => proxy.value = cloneFn(v));
     watch(proxy, (v) => {
       if (v !== props[key] || deep)
         _emit(event, v);
-    }, {
-      deep
-    });
+    }, { deep });
     return proxy;
   } else {
     return computed({
@@ -7161,6 +7293,7 @@ var useWebNotification = (defaultOptions2 = {}) => {
     onClose
   };
 };
+var DEFAULT_PING_MESSAGE = "ping";
 function resolveNestedOptions(options) {
   if (options === true)
     return {};
@@ -7184,6 +7317,7 @@ function useWebSocket(url, options = {}) {
   let explicitlyClosed = false;
   let retried = 0;
   let bufferedData = [];
+  let pongTimeoutWait;
   const close = (code = 1e3, reason) => {
     if (!wsRef.value)
       return;
@@ -7197,6 +7331,9 @@ function useWebSocket(url, options = {}) {
         wsRef.value.send(buffer);
       bufferedData = [];
     }
+  };
+  const resetHeartbeat = () => {
+    clearTimeout(pongTimeoutWait);
   };
   const send = (data2, useBuffer = true) => {
     if (!wsRef.value || status.value !== "OPEN") {
@@ -7242,16 +7379,30 @@ function useWebSocket(url, options = {}) {
       onError == null ? void 0 : onError(ws, e);
     };
     ws.onmessage = (e) => {
+      resetHeartbeat();
+      if (options.heartbeat) {
+        const {
+          message = DEFAULT_PING_MESSAGE
+        } = resolveNestedOptions(options.heartbeat);
+        if (e.data === message)
+          return;
+      }
       data.value = e.data;
       onMessage == null ? void 0 : onMessage(ws, e);
     };
   };
   if (options.heartbeat) {
     const {
-      message = "ping",
-      interval = 1e3
+      message = DEFAULT_PING_MESSAGE,
+      interval = 1e3,
+      pongTimeout = 1e3
     } = resolveNestedOptions(options.heartbeat);
-    const { pause, resume } = useIntervalFn(() => send(message, false), interval, { immediate: false });
+    const { pause, resume } = useIntervalFn(() => {
+      send(message, false);
+      pongTimeoutWait = setTimeout(() => {
+        close();
+      }, pongTimeout);
+    }, interval, { immediate: false });
     heartbeatPause = pause;
     heartbeatResume = resume;
   }
@@ -7438,14 +7589,20 @@ function useWindowSize(options = {}) {
     window: window2 = defaultWindow,
     initialWidth = Infinity,
     initialHeight = Infinity,
-    listenOrientation = true
+    listenOrientation = true,
+    includeScrollbar = true
   } = options;
   const width = ref(initialWidth);
   const height = ref(initialHeight);
   const update = () => {
     if (window2) {
-      width.value = window2.innerWidth;
-      height.value = window2.innerHeight;
+      if (includeScrollbar) {
+        width.value = window2.innerWidth;
+        height.value = window2.innerHeight;
+      } else {
+        width.value = window2.document.documentElement.clientWidth;
+        height.value = window2.document.documentElement.clientHeight;
+      }
     }
   };
   update();
@@ -7472,6 +7629,7 @@ export {
   breakpointsVuetify,
   bypassFilter,
   clamp,
+  cloneFnJSON,
   computedAsync,
   computedEager,
   computedInject,
@@ -7501,6 +7659,7 @@ export {
   formatDate,
   get,
   getSSRHandler,
+  hasOwn,
   identity,
   watchIgnorable as ignorableWatch,
   increaseWithUnit,
@@ -7581,6 +7740,7 @@ export {
   useBrowserLocation,
   useCached,
   useClipboard,
+  useCloned,
   useColorMode,
   useConfirmDialog,
   useCounter,

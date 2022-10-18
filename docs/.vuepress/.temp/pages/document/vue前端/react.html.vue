@@ -44,21 +44,44 @@ create-react-app react-study
 <span class="token function">npm</span> start
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_1-4-虚拟dom" tabindex="-1"><a class="header-anchor" href="#_1-4-虚拟dom" aria-hidden="true">#</a> 1.4 虚拟DOM</h3>
 <h3 id="_1-5-react-jsx" tabindex="-1"><a class="header-anchor" href="#_1-5-react-jsx" aria-hidden="true">#</a> 1.5 React JSX</h3>
-<p>1.语法</p>
+<h4 id="_1-5-1-语法" tabindex="-1"><a class="header-anchor" href="#_1-5-1-语法" aria-hidden="true">#</a> 1.5.1 语法</h4>
 <p>使用变量时 用单花括号</p>
-<p>class 更名为 className</p>
-<p>内联样式 style 要用 双花括号</p>
-<p>只能有一个根标签</p>
-<p>标签首字母小写会从html语法里寻找对应标签</p>
-<p>标签首字母大写会搜索React组件</p>
-<p>只能遍历数组 不能遍历对象</p>
-<p>可以写表达式 不能写语句</p>
-<p>注释的写法 要在外面加一层大括号</p>
-<div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token punctuation">{</span><span class="token comment">/*注释的内容 */</span> <span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>2.区分表达式和语句</p>
+<div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>myid<span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token punctuation">{</span>data<span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>class 更名为 className</p>
+<div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>内联样式 style 要用 双花括号</p>
+<div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">style</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span><span class="token literal-property property">color</span><span class="token operator">:</span><span class="token string">'white'</span><span class="token punctuation">,</span><span class="token literal-property property">fontSize</span><span class="token operator">:</span><span class="token string">'20px'</span><span class="token punctuation">}</span><span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>只能有一个根标签, 标签必须闭合</p>
+<div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+	// 代码...
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>input</span><span class="token punctuation">></span></span><span class="token plain-text">
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>	
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>标签首字母小写会从html语法里寻找对应标签, 首字母大写会搜索React组件</p>
+<div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>good</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>good</span><span class="token punctuation">></span></span>  <span class="token comment">//报错,html语法里没有该标签</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span> <span class="token comment">//创建html标签</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Good</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Good</span></span><span class="token punctuation">></span></span>  <span class="token comment">//创建组件</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>数组自动遍历, 传入对象会报错</p>
+<div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token keyword">function</span> <span class="token function">App</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">]</span>
+  <span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'wl'</span><span class="token punctuation">,</span> <span class="token literal-property property">age</span><span class="token operator">:</span> <span class="token number">18</span><span class="token punctuation">}</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token punctuation">{</span>data<span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>  <span class="token comment">// 结果 abc</span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token punctuation">{</span>obj<span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>   <span class="token comment">// 结果 报错</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>可以写表达式 不能写语句</p>
+<div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+	</span><span class="token punctuation">{</span>data<span class="token punctuation">}</span><span class="token plain-text">  // 大括号中可以写表达式
+    
+    </span><span class="token punctuation">{</span><span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token plain-text">  // 大括号中不能写语句
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>	
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>注释的写法 要在外面加一层大括号</p>
+<div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token punctuation">{</span><span class="token comment">/* 注释的内容 */</span><span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h4 id="_1-5-2-区分表达式和语句" tabindex="-1"><a class="header-anchor" href="#_1-5-2-区分表达式和语句" aria-hidden="true">#</a> 1.5.2 区分表达式和语句</h4>
 <p>表达式 : 左侧可以接值 , 包括函数调用 , 定义函数</p>
 <p>语句 :  包括 if  for  switch 等流程控制语句</p>
-<p>3.遍历一个数组实例</p>
+<h4 id="_1-5-3-遍历一个数组实例" tabindex="-1"><a class="header-anchor" href="#_1-5-3-遍历一个数组实例" aria-hidden="true">#</a> 1.5.3 遍历一个数组实例</h4>
 <div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">]</span>
 
 <span class="token keyword">const</span> <span class="token constant">VDOM</span> <span class="token operator">=</span> <span class="token punctuation">(</span>
@@ -73,55 +96,52 @@ create-react-app react-study
   </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 <span class="token punctuation">)</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_1-6-模块化与组件化" tabindex="-1"><a class="header-anchor" href="#_1-6-模块化与组件化" aria-hidden="true">#</a> 1.6 模块化与组件化</h3>
-<h4 id="_1-6-1-模块" tabindex="-1"><a class="header-anchor" href="#_1-6-1-模块" aria-hidden="true">#</a> 1.6.1 模块</h4>
-<p>一个业务逻辑 ,  放在一个js文件里</p>
-<h4 id="_1-6-2-组件" tabindex="-1"><a class="header-anchor" href="#_1-6-2-组件" aria-hidden="true">#</a> 1.6.2 组件</h4>
-<p>所有实现某个功能的 html , css , js , 图片 , 字体 , 音视频等资源的集合, 构成一个组件</p>
-<h4 id="_1-6-3-模块化" tabindex="-1"><a class="header-anchor" href="#_1-6-3-模块化" aria-hidden="true">#</a> 1.6.3 模块化</h4>
-<p>当应用的 js 都以模块来编写, 这个应用就是模块化的应用</p>
-<h4 id="_1-6-4-组件化" tabindex="-1"><a class="header-anchor" href="#_1-6-4-组件化" aria-hidden="true">#</a> 1.6.4 组件化</h4>
-<p>当应用多是以组件来编写, 这个应用就是组件化的应用</p>
+<p>模块: 一个业务逻辑 ,  放在一个js文件里</p>
+<p>组件: 所有实现某个功能的 html , css , js , 图片 , 字体 , 音视频等资源的集合, 构成一个组件</p>
+<p>模块化: 当应用的 js 都以模块来编写, 这个应用就是模块化的应用</p>
+<p>组件化: 当应用多是以组件来编写, 这个应用就是组件化的应用</p>
 <h2 id="第2章-react-组件化" tabindex="-1"><a class="header-anchor" href="#第2章-react-组件化" aria-hidden="true">#</a> 第2章 React 组件化</h2>
 <h3 id="_2-1-开发者工具" tabindex="-1"><a class="header-anchor" href="#_2-1-开发者工具" aria-hidden="true">#</a> 2.1 开发者工具</h3>
+<p>谷歌浏览器下载 react开发工具</p>
 <h3 id="_2-2-函数式组件和类式组件" tabindex="-1"><a class="header-anchor" href="#_2-2-函数式组件和类式组件" aria-hidden="true">#</a> 2.2 函数式组件和类式组件</h3>
 <h4 id="_2-2-1-函数式组件" tabindex="-1"><a class="header-anchor" href="#_2-2-1-函数式组件" aria-hidden="true">#</a> 2.2.1 函数式组件</h4>
-<p>1.函数定义的组件适用于简单组件</p>
-<div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code><span class="token comment">//创建函数式组件</span>
+<p>函数定义的组件适用于简单组件</p>
+<div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token comment">//创建函数式组件</span>
 <span class="token keyword">function</span> <span class="token function">MyComponent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
   <span class="token comment">//函数里的this是undifind，因为babel开启严格模式编译</span>
 	consolo<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
-  <span class="token keyword">return</span> <span class="token operator">&lt;</span>h2<span class="token operator">></span>我是函数式组件<span class="token operator">&lt;</span><span class="token operator">/</span>h2<span class="token operator">></span> 
+  <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span><span class="token plain-text">我是函数式组件</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span><span class="token punctuation">)</span> 
 <span class="token punctuation">}</span>
 
 <span class="token comment">//渲染组件到页面</span>
-ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>MyComponent<span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">,</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'text'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">MyComponent</span></span><span class="token punctuation">/></span></span><span class="token punctuation">,</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'text'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token comment">//首先react解析标签,找到该组件</span>
 <span class="token comment">//发现是函数式组件,调用该函数,将返回的虚拟dom转换为真实dom,呈现在页面里</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_2-2-2-类式组件" tabindex="-1"><a class="header-anchor" href="#_2-2-2-类式组件" aria-hidden="true">#</a> 2.2.2 类式组件</h4>
-<p>1.类式组件适用于复杂组件</p>
-<div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code><span class="token comment">//创建类式组件</span>
+<p>类式组件适用于复杂组件</p>
+<div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token comment">//创建类式组件</span>
 <span class="token keyword">class</span> <span class="token class-name">MyComponent</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span><span class="token punctuation">{</span>
   <span class="token comment">//render放在组件的原型对象上,供实例使用</span>
 	<span class="token comment">//render中的this指向组建的实例对象</span>
   <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span> <span class="token comment">//组件实例对象</span>
     <span class="token keyword">return</span> <span class="token punctuation">(</span>
-    	<span class="token operator">&lt;</span>div<span class="token operator">></span>我是类组件<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>	
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">我是类组件</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>	
     <span class="token punctuation">)</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 
 <span class="token comment">//渲染组件到页面</span>
-ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>MyComponent<span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">,</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'text'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">MyComponent</span></span><span class="token punctuation">/></span></span><span class="token punctuation">,</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'text'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token comment">//首先react解析标签,找到该组件</span>
 <span class="token comment">//发现是类式组件,new出该组件实例,通过实例调用到原型上的render方法</span>
 <span class="token comment">//将render返回的虚拟dom转换为真实dom,呈现在页面里</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_2-3-组件实例的三大属性-state" tabindex="-1"><a class="header-anchor" href="#_2-3-组件实例的三大属性-state" aria-hidden="true">#</a> 2.3 组件实例的三大属性 state</h3>
-<p>箭头函数的复习</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_2-3-组件实例的三大属性-state" tabindex="-1"><a class="header-anchor" href="#_2-3-组件实例的三大属性-state" aria-hidden="true">#</a> 2.3 组件实例的三大属性 state</h3>
 <p>使用构造器的方法</p>
 <div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code><span class="token comment">//通过点击 使页面的文字更改</span>
 <span class="token keyword">class</span> <span class="token class-name">Weather</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span><span class="token punctuation">{</span>
   
-  <span class="token comment">//构造器</span>
+  <span class="token comment">//构造器 new一次组件实例调用1次</span>
   <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span>
     
@@ -131,34 +151,44 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
       <span class="token literal-property property">wind</span><span class="token operator">:</span> <span class="token string">'微风'</span>
     <span class="token punctuation">}</span>
     
+    <span class="token comment">//react内部new的实例 获取不到this</span>
     <span class="token comment">//解决函数内this指向为undifind问题</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>changeWeather <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">changeWeather</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
     
   <span class="token punctuation">}</span>
   
   
-  <span class="token comment">//渲染</span>
+  <span class="token comment">//渲染次数:1+n次 初始化1次,更新几次数据调用几次render</span>
   <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token keyword">const</span> <span class="token punctuation">{</span>isHot<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state
     <span class="token keyword">return</span> <span class="token punctuation">(</span>
+        <span class="token comment">//必须加this,只有实例上才有该方法,不然就是直接调用</span>
+        <span class="token comment">//changeWeather作为onClick的回调调用,而不是通过实例调用</span>
+        <span class="token comment">//相当于 一个指针引用了堆内的该对象,所以丢失this</span>
     	<span class="token operator">&lt;</span>div onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>changeWeather<span class="token punctuation">}</span><span class="token operator">></span>
-      今天天气很<span class="token punctuation">{</span>isHot <span class="token operator">?</span> <span class="token string">'炎热'</span> <span class="token operator">:</span> <span class="token string">'凉爽'</span><span class="token punctuation">}</span>
-			<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>	
-    <span class="token punctuation">)</span><span class="token punctuation">}</span>
+      今天天气很 <span class="token punctuation">{</span>isHot <span class="token operator">?</span> <span class="token string">'炎热'</span> <span class="token operator">:</span> <span class="token string">'凉爽'</span><span class="token punctuation">}</span>
+ 		<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>	
+   <span class="token punctuation">)</span><span class="token punctuation">}</span>
     
-  <span class="token comment">//鼠标单击更改布尔值</span>
+  <span class="token comment">//改变天气方法 </span>
+   <span class="token comment">// render和构造器中的this指向是实例对象,但方法中会丢失this</span>
+   <span class="token comment">// changeWeather是作为onClick回调,而不是通过实例调用的</span>
+   <span class="token comment">// 类里默认开启了严格模式,this不允许指向window</span>
+   
   <span class="token function">changeWeather</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token comment">//获取isHot变量</span>
   	<span class="token keyword">const</span> isHot <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>isHot
-    <span class="token comment">//通过react认可的方法进行修改,合并不是替换</span>
+    <span class="token comment">//通过react认可的方法进行修改,合并不是替换,不然state就只有被修改的属性了</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token literal-property property">isHot</span><span class="token operator">:</span> <span class="token operator">!</span>isHot<span class="token punctuation">}</span><span class="token punctuation">)</span>
 	<span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 
 ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>Weather<span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">,</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'root'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>不使用构造器的方法</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>不使用构造器的方法 简写模式</p>
 <div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token comment">//通过点击 使页面的文字更改</span>
 <span class="token keyword">class</span> <span class="token class-name">Weather</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span><span class="token punctuation">{</span>
+    <span class="token comment">//简写state </span>
+    <span class="token comment">//类里面可以直接用赋值语句</span>
   state <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token literal-property property">isHot</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">}</span>
   
   <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -170,18 +200,35 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
     	<span class="token punctuation">)</span>
     <span class="token punctuation">}</span>
     
+    <span class="token comment">//箭头函数 将该方法放到实例对象上</span>
 	<span class="token function-variable function">changeWeather</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
-  		<span class="token keyword">const</span> isHot <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>isHot
-      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token literal-property property">isHot</span><span class="token operator">:</span> <span class="token operator">!</span>isHot<span class="token punctuation">}</span><span class="token punctuation">)</span>
+  	  <span class="token keyword">const</span> isHot <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>isHot
+      <span class="token comment">//setState方法是异步的,如果某些逻辑要在其之后调用,可以传入第二个参数, 一个回调回函,将要同步执行的内容放到函数里</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token literal-property property">isHot</span><span class="token operator">:</span> <span class="token operator">!</span>isHot<span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">{</span>
+          <span class="token comment">//该回调函数内的逻辑是	同步的</span>
+          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>isHot<span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
 	<span class="token punctuation">}</span>
-
-  
 <span class="token punctuation">}</span>
 
+
 ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Weather</span></span><span class="token punctuation">/></span></span><span class="token punctuation">,</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'root'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_2-4-组件实例的三大属性-props" tabindex="-1"><a class="header-anchor" href="#_2-4-组件实例的三大属性-props" aria-hidden="true">#</a> 2.4 组件实例的三大属性 props</h3>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_2-4-组件实例的三大属性-props" tabindex="-1"><a class="header-anchor" href="#_2-4-组件实例的三大属性-props" aria-hidden="true">#</a> 2.4 组件实例的三大属性 props</h3>
 <h4 id="_1-展开运算符的复习" tabindex="-1"><a class="header-anchor" href="#_1-展开运算符的复习" aria-hidden="true">#</a> 1.展开运算符的复习</h4>
-<h4 id="_2-批量传递props" tabindex="-1"><a class="header-anchor" href="#_2-批量传递props" aria-hidden="true">#</a> 2.批量传递props</h4>
+<div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code><span class="token comment">//数组拼接</span>
+<span class="token keyword">let</span> arr1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token keyword">let</span> arr2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span>
+<span class="token keyword">let</span> arr3 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>arr1<span class="token punctuation">,</span>arr2<span class="token punctuation">]</span> <span class="token comment">// arr3 = [1,2,3,4,5,6,]</span>
+
+
+<span class="token comment">//不定参函数</span>
+<span class="token keyword">function</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>numbers</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> numbers<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">pre<span class="token punctuation">,</span>current</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> pre <span class="token operator">+</span> current
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">sum</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_2-批量传递props" tabindex="-1"><a class="header-anchor" href="#_2-批量传递props" aria-hidden="true">#</a> 2.批量传递props</h4>
 <div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span><span class="token punctuation">{</span>
   
   <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -206,10 +253,18 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
 <span class="token keyword">const</span> p <span class="token operator">=</span> <span class="token punctuation">{</span>name<span class="token operator">=</span><span class="token string">"tom"</span> age<span class="token operator">=</span><span class="token string">"18"</span> sex<span class="token operator">=</span><span class="token string">"女"</span><span class="token punctuation">}</span>
 <span class="token comment">//使用展开运算符</span>
 ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span>
-  <span class="token operator">&lt;</span>Person <span class="token punctuation">{</span><span class="token operator">...</span>p<span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Person</span></span> <span class="token spread"><span class="token punctuation">{</span><span class="token operator">...</span>p<span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Person</span></span><span class="token punctuation">></span></span><span class="token punctuation">,</span>
   document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'root'</span><span class="token punctuation">)</span>
 <span class="token punctuation">)</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_3-对props的限制" tabindex="-1"><a class="header-anchor" href="#_3-对props的限制" aria-hidden="true">#</a> 3.对props的限制</h4>
+
+<span class="token comment">//展开运算符不能展开对象, 没有itreater接口</span>
+<span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"wl"</span><span class="token punctuation">,</span> age<span class="token operator">=</span> <span class="token number">18</span><span class="token punctuation">}</span>
+<span class="token keyword">let</span> p <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token operator">...</span>obj<span class="token punctuation">}</span>
+<span class="token comment">//复制对象并修改内容</span>
+<span class="token keyword">let</span> p1 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token operator">...</span>obj<span class="token punctuation">,</span>age<span class="token operator">=</span><span class="token number">14</span><span class="token punctuation">}</span>
+<span class="token comment">//复制对象并新增内容</span>
+<span class="token keyword">let</span> p2 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token operator">...</span>obj<span class="token punctuation">,</span>address<span class="token operator">=</span><span class="token string">"北京"</span><span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_3-对props的限制" tabindex="-1"><a class="header-anchor" href="#_3-对props的限制" aria-hidden="true">#</a> 3.对props的限制</h4>
 <div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span><span class="token punctuation">{</span>
   <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token keyword">const</span> <span class="token punctuation">{</span>name<span class="token punctuation">,</span>age<span class="token punctuation">,</span>sex<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>props
@@ -225,20 +280,21 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
 
 Person<span class="token punctuation">.</span>propTypes <span class="token operator">=</span> <span class="token punctuation">{</span>
   <span class="token comment">//对某个参数类型的限制</span>
-  <span class="token literal-property property">name</span><span class="token operator">:</span>PropTypes<span class="token punctuation">.</span>string
+  <span class="token literal-property property">name</span><span class="token operator">:</span> PropTypes<span class="token punctuation">.</span>string
   
   <span class="token comment">//对某个参数是否为必填的限制</span>
-  <span class="token literal-property property">age</span><span class="token operator">:</span>PropTypes<span class="token punctuation">.</span>number<span class="token punctuation">.</span>isRequired
+  <span class="token literal-property property">age</span><span class="token operator">:</span> PropTypes<span class="token punctuation">.</span>number<span class="token punctuation">.</span>isRequired
   
   <span class="token comment">//限制参数为函数要写成func</span>
-	<span class="token literal-property property">speak</span><span class="token operator">:</span>PropTypes<span class="token punctuation">.</span>func
+  <span class="token literal-property property">speak</span><span class="token operator">:</span> PropTypes<span class="token punctuation">.</span>func
 <span class="token punctuation">}</span>
 
 	
 
 <span class="token comment">//若某个参数没有,显示为默认值</span>
 Person<span class="token punctuation">.</span>defaultProps <span class="token operator">=</span> <span class="token punctuation">{</span>
-  <span class="token literal-property property">sex</span><span class="token operator">:</span><span class="token string">'不男不女'</span>
+  <span class="token literal-property property">sex</span><span class="token operator">:</span> <span class="token string">'不男不女'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">age</span><span class="token operator">:</span> <span class="token number">18</span>
 <span class="token punctuation">}</span>
 
 ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span>
@@ -249,19 +305,19 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
 <span class="token keyword">function</span> <span class="token function">speak</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   conlose<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"我说话了"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_4-props的简写方式" tabindex="-1"><a class="header-anchor" href="#_4-props的简写方式" aria-hidden="true">#</a> 4.props的简写方式</h4>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_4-props的简写方式" tabindex="-1"><a class="header-anchor" href="#_4-props的简写方式" aria-hidden="true">#</a> 4.props的简写方式</h4>
 <div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code><span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span><span class="token punctuation">{</span>
   state <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
   
   <span class="token comment">//通过static修饰,为类的原型上添加属性</span>
 	<span class="token keyword">static</span> defaultProps <span class="token operator">=</span> <span class="token punctuation">{</span>
-  	<span class="token literal-property property">sex</span><span class="token operator">:</span><span class="token string">'不男不女'</span>
+  		<span class="token literal-property property">sex</span><span class="token operator">:</span><span class="token string">'不男不女'</span>
 	<span class="token punctuation">}</span>
   
   <span class="token comment">//通过static修饰,为类的原型上添加属性</span>
-	propTypes <span class="token operator">=</span> <span class="token punctuation">{</span>
+	<span class="token keyword">static</span> propTypes <span class="token operator">=</span> <span class="token punctuation">{</span>
   	<span class="token comment">//对某个参数类型的限制</span>
-  	<span class="token literal-property property">name</span><span class="token operator">:</span>PropTypes<span class="token punctuation">.</span>string
+  		<span class="token literal-property property">name</span><span class="token operator">:</span> PropTypes<span class="token punctuation">.</span>string
 	<span class="token punctuation">}</span>
   
   
@@ -293,7 +349,7 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
   <span class="token keyword">const</span> <span class="token punctuation">{</span>name<span class="token punctuation">,</span>age<span class="token punctuation">,</span>sex<span class="token punctuation">}</span> <span class="token operator">=</span> props
   <span class="token keyword">return</span> <span class="token punctuation">(</span>
      <span class="token operator">&lt;</span>ul<span class="token operator">></span>
-      <span class="token operator">&lt;</span>li<span class="token operator">></span>姓名<span class="token operator">:</span> <span class="token punctuation">{</span>name<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span>
+       <span class="token operator">&lt;</span>li<span class="token operator">></span>姓名<span class="token operator">:</span> <span class="token punctuation">{</span>name<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span>
        <span class="token operator">&lt;</span>li<span class="token operator">></span>性别<span class="token operator">:</span> <span class="token punctuation">{</span>sex<span class="token punctuation">}</span> <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span>
        <span class="token operator">&lt;</span>li<span class="token operator">></span>年龄<span class="token operator">:</span> <span class="token punctuation">{</span>age<span class="token punctuation">}</span> <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span>
      <span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">></span>    		
@@ -316,18 +372,20 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
 <h4 id="_2-5-1-refs简介" tabindex="-1"><a class="header-anchor" href="#_2-5-1-refs简介" aria-hidden="true">#</a> 2.5.1 refs简介</h4>
 <p>组件内的标签可以定义ref属性来标识自己</p>
 <h4 id="_2-5-2-字符串形式ref-已经废弃" tabindex="-1"><a class="header-anchor" href="#_2-5-2-字符串形式ref-已经废弃" aria-hidden="true">#</a> 2.5.2 字符串形式ref (已经废弃)</h4>
-<div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>inp1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>input</span><span class="token punctuation">></span></span>
-
+<div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token comment">//标识ref</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>inp1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>input</span><span class="token punctuation">></span></span>
+<span class="token comment">//组件内获取ref</span>
 <span class="token keyword">const</span> <span class="token punctuation">{</span>inp1<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>refs
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_2-5-3-回调形式ref" tabindex="-1"><a class="header-anchor" href="#_2-5-3-回调形式ref" aria-hidden="true">#</a> 2.5.3 回调形式ref</h4>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_2-5-3-回调形式ref" tabindex="-1"><a class="header-anchor" href="#_2-5-3-回调形式ref" aria-hidden="true">#</a> 2.5.3 回调形式ref</h4>
 <p>内联形式</p>
 <div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token comment">//currentNode为当前形参 使用任何名称都可以</span>
 <span class="token comment">//input1 是为这个节点起的名字,react调用ref函数直接挂载到类的属性上</span>
+<span class="token comment">//箭头函数this寻找到了该类的实例,指向了实例</span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">ref</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token parameter">currentNode</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>input1 <span class="token operator">=</span> currentNode<span class="token punctuation">}</span><span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>input</span><span class="token punctuation">></span></span>
 
 <span class="token comment">//在类上直接通过this接受</span>
 <span class="token keyword">const</span> <span class="token punctuation">{</span>input1<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>内联形式在更新时会调用两次</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>内联形式在更新时会调用两次</p>
 <p>第一次先传入一个null , 第二次才传入节点</p>
 <p>解决办法</p>
 <p>类绑定的回调  在类上定义方法</p>
@@ -345,7 +403,7 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
   myRef1 <span class="token operator">=</span> React<span class="token punctuation">.</span><span class="token function">createRef</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
   myRef2 <span class="token operator">=</span> React<span class="token punctuation">.</span><span class="token function">createRef</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
   
-  <span class="token comment">//展示数据</span>
+  <span class="token comment">//展示数据 current是节点的key</span>
   <span class="token function-variable function">shouwData1</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">{</span>
   	<span class="token function">alert</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>myRef1<span class="token punctuation">.</span>current<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
   <span class="token punctuation">}</span>
@@ -386,7 +444,10 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
 <p>使用受控组件</p>
 <h3 id="_2-6-收集表单数据" tabindex="-1"><a class="header-anchor" href="#_2-6-收集表单数据" aria-hidden="true">#</a> 2.6 收集表单数据</h3>
 <h4 id="_2-6-1-非受控组件" tabindex="-1"><a class="header-anchor" href="#_2-6-1-非受控组件" aria-hidden="true">#</a> 2.6.1 非受控组件</h4>
+<p>现用现取</p>
 <div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token keyword">class</span> <span class="token class-name">Login</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span><span class="token punctuation">{</span>
+  
+  <span class="token comment">//表单提交方法</span>
   <span class="token function-variable function">hadleSubmit</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">{</span>
     event<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//阻止表单提交</span>
     <span class="token keyword">const</span> <span class="token punctuation">{</span>username<span class="token punctuation">,</span>password<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span>
@@ -396,6 +457,7 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
     你输入的密码是:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>password<span class="token punctuation">.</span>value<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
   <span class="token punctuation">}</span> 
   
+  <span class="token comment">//渲染</span>
   <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token punctuation">(</span>
      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">onSubmit</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>hadleSubmit<span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text">
@@ -415,7 +477,8 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Person</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tom<span class="token punctuation">"</span></span> <span class="token attr-name">age</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token number">18</span><span class="token punctuation">}</span></span> <span class="token attr-name">sex</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>女<span class="token punctuation">"</span></span> <span class="token attr-name">spake</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>spake<span class="token punctuation">}</span></span><span class="token punctuation">/></span></span><span class="token punctuation">,</span>
   document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'root'</span><span class="token punctuation">)</span>
 <span class="token punctuation">)</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_2-6-2-受控组件" tabindex="-1"><a class="header-anchor" href="#_2-6-2-受控组件" aria-hidden="true">#</a> 2.6.2 受控组件</h4>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_2-6-2-受控组件" tabindex="-1"><a class="header-anchor" href="#_2-6-2-受控组件" aria-hidden="true">#</a> 2.6.2 受控组件</h4>
+<p>随着输入维护到状态中, 不需要ref , 推荐</p>
 <div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token keyword">class</span> <span class="token class-name">Login</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span><span class="token punctuation">{</span>
   
   <span class="token comment">//初始化状态</span>
@@ -426,12 +489,12 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
   
   <span class="token comment">//保存用户名到状态</span>
   <span class="token function-variable function">saveUsername</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span><span class="token operator">=></span> <span class="token punctuation">{</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token literal-property property">username</span><span class="token operator">:</span>event<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token literal-property property">username</span><span class="token operator">:</span> event<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">}</span><span class="token punctuation">)</span>
   <span class="token punctuation">}</span>
   
   <span class="token comment">//保存密码到状态</span>
    <span class="token function-variable function">savePassword</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span><span class="token operator">=></span> <span class="token punctuation">{</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token literal-property property">password</span><span class="token operator">:</span>event<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token literal-property property">password</span><span class="token operator">:</span> event<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">}</span><span class="token punctuation">)</span>
   <span class="token punctuation">}</span>
   
   <span class="token comment">//表单提交回调</span>
@@ -465,7 +528,7 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
 <p>若A函数接受的参数是一个函数,A就是高阶函数</p>
 <p>若A函数调用的返回值依然是一个函数,A就是高阶函数</p>
 <p>2.函数的柯里化</p>
-<p>通过函数调用继续返回函数的方式,实现多次接受参数最后统一处理的函数编码形式</p>
+<p>通过函数调用继续返回函数的方式, 实现多次接受参数最后统一处理的函数编码形式</p>
 <p>3.使用了高阶函数和柯里化</p>
 <div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token keyword">class</span> <span class="token class-name">Login</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span><span class="token punctuation">{</span>
   
@@ -477,7 +540,8 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
   
   <span class="token comment">//保存表单数据到状态中</span>
   <span class="token function-variable function">saveFormData</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">dataType</span><span class="token punctuation">)</span><span class="token operator">=></span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span><span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">{</span>
+    <span class="token comment">//在返回值返回一个真正的函数,则组件上可以调用该函数</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">{</span>
       <span class="token comment">//不加方括号,是字符串,等于多加了个dataType属性</span>
       <span class="token comment">//加上方括号,等于读变量,才是正常</span>
       <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">[</span>dataType<span class="token punctuation">]</span><span class="token operator">:</span>event<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">}</span><span class="token punctuation">)</span>
@@ -497,6 +561,7 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
     <span class="token keyword">return</span> <span class="token punctuation">(</span>
      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">onSubmit</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>hadleSubmit<span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text">
         //如果加上小括号,则调用的是saveFormData函数的返回值
+        //不加小括号是调用该函数,此处情况必须有小括号
      用户名:&lt;input onChange=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">saveFormData</span><span class="token punctuation">(</span><span class="token string">'username'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text"> type="text" name="username"}></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>input</span><span class="token punctuation">></span></span><span class="token plain-text">
         
      密码:&lt;input onChange=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">saveFormData</span><span class="token punctuation">(</span><span class="token string">'password'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text"> type="password" name="password"}></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>input</span><span class="token punctuation">></span></span><span class="token plain-text">
@@ -510,7 +575,7 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
 ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Login</span></span><span class="token punctuation">/></span></span><span class="token punctuation">,</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'root'</span><span class="token punctuation">)</span>
 <span class="token punctuation">)</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>4.不使用高阶函数和柯里化</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>4.不使用高阶函数和柯里化</p>
 <div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token keyword">class</span> <span class="token class-name">Login</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span><span class="token punctuation">{</span>
   
   <span class="token comment">//初始化状态</span>
@@ -557,18 +622,46 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
 <p>更新阶段 调用this.setState或者父组件重新render触发</p>
 <p>getDerivedStateFromProps → shouldComponentUpdatae → remder → getSnapshotBeforeUpdate → componntDidUpdate</p>
 <p>卸载组件 由ReactDOM.unmountComponentAtNode触发</p>
-<p>componentWillUnmoount</p>
-<p>2.重要钩子</p>
-<p>render 更新时</p>
-<p>componentDidMount 挂载后</p>
-<p>componentWillUnmount  卸载前</p>
-<p>3.废弃钩子</p>
+<div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token function-variable function">death</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  ReactDOM<span class="token punctuation">.</span><span class="token function">unmountComponentAtNode</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'test'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>2.重要钩子</p>
+<p>render 初始化渲染和状态更新时调用</p>
+<div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token keyword">class</span> <span class="token punctuation">{</span>
+	<span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>componentDidUpdate 组件更新后调用一次</p>
+<div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code></code></pre><div class="line-numbers" aria-hidden="true"></div></div><p>componentDidMount 组件挂载后调用一次</p>
+<div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token keyword">class</span> <span class="token punctuation">{</span>
+	<span class="token function">componentDidMount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>componentWillUnmount  组件卸载前调用一次</p>
+<div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>3.废弃钩子</p>
 <p>componentWillMount</p>
 <p>componentWillReceiveProps</p>
 <p>componentWillUpdate</p>
 <p>4.新增钩子</p>
-<p>使用场景非常罕见</p>
-<h3 id="_2-9-虚拟dom与diff算法" tabindex="-1"><a class="header-anchor" href="#_2-9-虚拟dom与diff算法" aria-hidden="true">#</a> 2.9 虚拟DOM与DIff算法</h3>
+<p>getDeruvedStateFromProps</p>
+<div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token comment">//若state的值在任何时候都取决于props,则可以使用该钩子</span>
+<span class="token comment">//必须为静态方法,接受props和state参数</span>
+<span class="token keyword">static</span> <span class="token function">getDerivedStateFromProps</span><span class="token punctuation">(</span><span class="token parameter">props<span class="token punctuation">,</span>state</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token comment">//返回一个状态对象</span>
+  <span class="token keyword">return</span> props
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>getSbapshotBeforeUpdate</p>
+<div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token comment">//在更新之前获取快照</span>
+<span class="token function">getSbapshotBeforeUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token string">'atguigu'</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_2-9-虚拟dom与diff算法" tabindex="-1"><a class="header-anchor" href="#_2-9-虚拟dom与diff算法" aria-hidden="true">#</a> 2.9 虚拟DOM与DIff算法</h3>
+<p>虚拟DOM的最小力度是一个标签, 逐层对比, 只渲染发生改变的那层标签</p>
 <p>key是虚拟DOM对象的表示, 在更新时有及其重要的作用</p>
 <p>只是简单展示数据而不会删除或增加,可以使用index作为key</p>
 <p>如果需要添加删除等操作, 使用index可能会大大降低效率, 破坏diff算法</p>
@@ -583,17 +676,27 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
 <p>在需要的标签内使用 <code v-pre>&lt;div classsName={aaa.xxx}&gt;&lt;/div&gt;</code></p>
 <p><code v-pre>xxx</code> 是 css文件中的某个 <code v-pre>.xxx{样式}</code></p>
 <p>一般很少用css模块化 , 基本上使用 less 或者 scss</p>
-<h3 id="_3-2-案例-todolist" tabindex="-1"><a class="header-anchor" href="#_3-2-案例-todolist" aria-hidden="true">#</a> 3.2 案例 TodoList</h3>
+<h3 id="_3-2-案例-todolist" tabindex="-1"><a class="header-anchor" href="#_3-2-案例-todolist" aria-hidden="true">#</a> 3.2 案例 TodoList ?</h3>
 <h2 id="第4章-react-ajax" tabindex="-1"><a class="header-anchor" href="#第4章-react-ajax" aria-hidden="true">#</a> 第4章 React ajax</h2>
 <h3 id="_4-1-axios" tabindex="-1"><a class="header-anchor" href="#_4-1-axios" aria-hidden="true">#</a> 4.1 axios</h3>
 <p>安装 axios</p>
 <p><code v-pre>npm install axios</code></p>
 <h3 id="_4-2-配置代理解决跨域" tabindex="-1"><a class="header-anchor" href="#_4-2-配置代理解决跨域" aria-hidden="true">#</a> 4.2 配置代理解决跨域</h3>
-<p>1.跨域限制是ajax的限制, 比如3000端口向5000发送 , 发送成功但是返回数据时候被3000拦截 , 需要在中间加入一个3000端口代理, 代理使用的是请求转发而不是ajax , 所以不受限制</p>
+<p>1.跨域限制是ajax的限制, 比如3000端口向5000发送 , 发送成功但是返回数据时候被3000拦截 , 需要在中间加入一个3000端口代理, 代理使用的是请求转发而不是ajax引擎 , 所以不受跨域限制</p>
 <p>2.如果只有一台服务器 ,可以在 package.json中配置proxy , 开启代理后,3000发送请求时 会先从自己的端口下寻找资源,如果找到了就不会再向5000请求, 所以可能请求到自己的数据</p>
-<div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code><span class="token string-property property">"proxy"</span><span class="token operator">:</span><span class="token string">"http://localhost:5000"</span> 
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>3.如果有多台服务器, 需要创建文件</p>
-<div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code><span class="token comment">//src/setupProxy.js </span>
+<div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code><span class="token comment">// package.json</span>
+<span class="token punctuation">{</span>
+  <span class="token operator">...</span> 
+  
+  <span class="token comment">//最后一行</span>
+  <span class="token string-property property">"proxy"</span><span class="token operator">:</span><span class="token string">"http://localhost:5000"</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//服务器运行在5000端口上,代码请求要请求3000的接口,会自动转发到5000端口</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>3.如果有多台服务器, 需要创建配置文件</p>
+<div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code><span class="token comment">// src/setupProxy.js 注意这个名字必须是setupProxy </span>
+<span class="token comment">// 注意该文件不能使用es6语法 要使用cjs语法</span>
+
 <span class="token keyword">const</span> proxy <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http-proxy-middleware'</span><span class="token punctuation">)</span>
 
 module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">app</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -628,7 +731,7 @@ axios<span class="token punctuation">.</span><span class="token function">get</s
 	<span class="token parameter">response</span> <span class="token operator">=></span><span class="token punctuation">{</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token parameter">error</span> <span class="token operator">=></span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
 <span class="token punctuation">)</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_4-3-案例-github搜索" tabindex="-1"><a class="header-anchor" href="#_4-3-案例-github搜索" aria-hidden="true">#</a> 4.3 案例 github搜索</h3>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_4-3-案例-github搜索" tabindex="-1"><a class="header-anchor" href="#_4-3-案例-github搜索" aria-hidden="true">#</a> 4.3 案例 github搜索  ?</h3>
 <h3 id="_4-4-消息订阅与发布" tabindex="-1"><a class="header-anchor" href="#_4-4-消息订阅与发布" aria-hidden="true">#</a> 4.4 消息订阅与发布</h3>
 <p>1.pubsub组件库安装</p>
 <div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token comment">//安装组件</span>
@@ -658,20 +761,35 @@ PubSub<span class="token punctuation">.</span><span class="token function">publi
 <p>spa意思是单页面应用 , 只有一个完整的页面</p>
 <p>不会刷新页面 , 只对局部更新</p>
 <p>前端路由是路径匹配组件, 后端路由是路径匹配函数</p>
-<h3 id="_5-2-路由相关api" tabindex="-1"><a class="header-anchor" href="#_5-2-路由相关api" aria-hidden="true">#</a> 5.2 路由相关api</h3>
-<p>安装web开发的库</p>
+<p>安装针对web开发的库</p>
 <p><code v-pre>yarn add react-router-dom</code></p>
-<p>hash 和 browser 路由的区别</p>
+<h3 id="_5-2-路由相关api" tabindex="-1"><a class="header-anchor" href="#_5-2-路由相关api" aria-hidden="true">#</a> 5.2 路由相关api</h3>
+<p>内置组件</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>BrowerRouter
+HashRouter
+Route
+Redirect
+Link
+NavLink
+Switch
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>其他</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>history 对象
+match 对象
+withRouter 函数
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>hash 和 browser 路由的区别</p>
 <p>hash刷新后会丢失state参数,但有时可以解决一些路径错误的问题</p>
 <h3 id="_5-3-基本路由" tabindex="-1"><a class="header-anchor" href="#_5-3-基本路由" aria-hidden="true">#</a> 5.3 基本路由</h3>
 <h4 id="_5-3-1-路由的基本使用" tabindex="-1"><a class="header-anchor" href="#_5-3-1-路由的基本使用" aria-hidden="true">#</a> 5.3.1 路由的基本使用</h4>
 <p>给App开启路由</p>
-<div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token comment">//index.jsx</span>
-<span class="token comment">//把 &lt;App/> 外侧包裹路由</span>
+<div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token comment">//index.js</span>
+
+<span class="token comment">//把 &lt;App/> 外侧包裹路由 就不用在组件内部重复写该标签了</span>
 ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">BrowserRouter</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">App</span></span><span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">BrowserRouter</span></span><span class="token punctuation">></span></span><span class="token punctuation">,</span>
                 document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'root'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>组件内的语法</p>
-<div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token comment">//菜单栏组件</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>组件内的语法</p>
+<div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token comment">// app.jsx</span>
+
+<span class="token comment">// 菜单栏组件</span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
   //普通的link 没有点击高亮
   </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Link</span></span> <span class="token attr-name">to</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/about<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">About</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Link</span></span><span class="token punctuation">></span></span><span class="token plain-text">
@@ -688,11 +806,11 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
   </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Route</span></span> <span class="token attr-name">path</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/home<span class="token punctuation">"</span></span> <span class="token attr-name">component</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>Home<span class="token punctuation">}</span></span><span class="token punctuation">/></span></span><span class="token plain-text">
 </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">/></span></span><span class="token plain-text">
   
-</span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_5-3-2-一般组件和路由组件" tabindex="-1"><a class="header-anchor" href="#_5-3-2-一般组件和路由组件" aria-hidden="true">#</a> 5.3.2 一般组件和路由组件</h4>
+</span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_5-3-2-一般组件和路由组件" tabindex="-1"><a class="header-anchor" href="#_5-3-2-一般组件和路由组件" aria-hidden="true">#</a> 5.3.2 一般组件和路由组件</h4>
 <p>一般组件写在 component 文件夹下, 使用时候用尖括号<code v-pre>&lt;Home/&gt;</code></p>
-<p>路由组件写在 pages 文件夹下,使用时用路由<code v-pre> &lt;Route component={Home}/&gt;</code></p>
+<p>路由组件写在 pages 文件夹下,使用时用路 由<code v-pre> &lt;Route component={Home}/&gt;</code></p>
 <h4 id="_5-3-3-路由组件的三个重要属性" tabindex="-1"><a class="header-anchor" href="#_5-3-3-路由组件的三个重要属性" aria-hidden="true">#</a> 5.3.3 路由组件的三个重要属性</h4>
-<p>history 包括 go , goBack , goForward , push .replace</p>
+<p>history 包括 go , goBack , goForward , push , replace</p>
 <p>location 包括 pathname , search , state</p>
 <p>match 包括 params , path , url</p>
 <h4 id="_5-3-4-封装navlink" tabindex="-1"><a class="header-anchor" href="#_5-3-4-封装navlink" aria-hidden="true">#</a> 5.3.4 封装NavLink</h4>
@@ -744,7 +862,18 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_5-4-嵌套路由" tabindex="-1"><a class="header-anchor" href="#_5-4-嵌套路由" aria-hidden="true">#</a> 5.4 嵌套路由</h3>
 <p>注册子路由要写上父路由的path</p>
 <p>路由的匹配是按照注册的顺序进行的</p>
-<h3 id="_5-5-路由传参" tabindex="-1"><a class="header-anchor" href="#_5-5-路由传参" aria-hidden="true">#</a> 5.5 路由传参</h3>
+<div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Link</span></span> <span class="token attr-name">to</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/home/message<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">消息</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Link</span></span><span class="token punctuation">></span></span>
+
+<span class="token comment">//注册子路由</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Switch</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+	</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Route</span></span> <span class="token attr-name">path</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/home/news<span class="token punctuation">"</span></span> <span class="token attr-name">component</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>News<span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Route</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Route</span></span> <span class="token attr-name">path</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/home/message<span class="token punctuation">"</span></span> <span class="token attr-name">component</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>Message<span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Route</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+ 
+  //实现默认显示该路由 当路由是/home的时候 跟以上两个都匹配不到 
+  //所以默认走下面的组件 可以实现默认显示该组件
+  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Redirect</span></span> <span class="token attr-name">to</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/home/news<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span><span class="token plain-text">
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Switch</span></span><span class="token punctuation">></span></span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_5-5-路由传参" tabindex="-1"><a class="header-anchor" href="#_5-5-路由传参" aria-hidden="true">#</a> 5.5 路由传参</h3>
 <h4 id="_5-5-1-通过params传参" tabindex="-1"><a class="header-anchor" href="#_5-5-1-通过params传参" aria-hidden="true">#</a> 5.5.1 通过params传参</h4>
 <p>在父级路由组件传参</p>
 <div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token comment">//在导航栏向路由组件传递参数</span>
@@ -789,9 +918,9 @@ qs<span class="token punctuation">.</span><span class="token function">parse</sp
 <h4 id="_5-6-1-标签式路由导航" tabindex="-1"><a class="header-anchor" href="#_5-6-1-标签式路由导航" aria-hidden="true">#</a> 5.6.1 标签式路由导航</h4>
 <p>push模式 压入路由可以后退</p>
 <p>replace模式 替换顶部的记录</p>
-<p>默认是push模式,开启replace需要在Link标签上声明</p>
-<p><code v-pre>&lt;Link replace&gt;&lt;/Link&gt;</code></p>
-<h4 id="_5-6-2-编程式路由导航" tabindex="-1"><a class="header-anchor" href="#_5-6-2-编程式路由导航" aria-hidden="true">#</a> 5.6.2 编程式路由导航</h4>
+<p>默认是push模式 , 开启replace需要在Link标签上声明</p>
+<div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Link</span></span> <span class="token attr-name">replace</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Link</span></span><span class="token punctuation">></span></span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h4 id="_5-6-2-编程式路由导航" tabindex="-1"><a class="header-anchor" href="#_5-6-2-编程式路由导航" aria-hidden="true">#</a> 5.6.2 编程式路由导航</h4>
 <p>1.后退, 前进, 跳转</p>
 <div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token comment">//后退函数</span>
 <span class="token function-variable function">back</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">{</span>
@@ -824,8 +953,8 @@ qs<span class="token punctuation">.</span><span class="token function">parse</sp
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">pushShow</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span>id<span class="token punctuation">,</span>obj<span class="token punctuation">.</span>title<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text">
 </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">replaceShow</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span>id<span class="token punctuation">,</span>obj<span class="token punctuation">.</span>title<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text">
 </span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_5-6-3-一般组件的路由跳转" tabindex="-1"><a class="header-anchor" href="#_5-6-3-一般组件的路由跳转" aria-hidden="true">#</a> 5.6.3 一般组件的路由跳转</h4>
-<p>只有路由组件才有history的api, 但是一般组件没有</p>
-<p>需要 withRouter 进行封装一般组件 , 会给一般组件路由组件的特性</p>
+<p>只有路由组件才有 <code v-pre>history</code> 的方法 , 但是一般组件没有</p>
+<p>需要 <code v-pre>withRouter</code> 进行封装一般组件 , 会给一般组件路由组件的特性</p>
 <div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token keyword">import</span> React <span class="token punctuation">,</span><span class="token punctuation">{</span>Component<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span>
 <span class="token keyword">import</span> <span class="token punctuation">{</span>withRouter<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react-router-dom'</span>
 
@@ -843,25 +972,26 @@ qs<span class="token punctuation">.</span><span class="token function">parse</sp
 <p>1.redux是一个用于javascript的状态管理</p>
 <p>2.redux三大核心</p>
 <p>单一数据源</p>
-<p>state是只读的</p>
+<p>state是只读的 , 只能通过action进行修改</p>
 <p>使用纯函数进行修改</p>
 <h3 id="_7-2-redux组成" tabindex="-1"><a class="header-anchor" href="#_7-2-redux组成" aria-hidden="true">#</a> 7.2 redux组成</h3>
 <p>1.state状态</p>
-<p>2.action事件</p>
+<p>2.action动作</p>
 <p>只是描述有事情要发生，但没有实际去更新state</p>
 <p>本质是js对象， 必须包含type属性</p>
+<p>一般type会被定义为字符串常量</p>
 <p>3.reducer</p>
 <p>本质是函数，接收初始的state，和action</p>
 <p>响应发送来的action，必须有return返回值</p>
 <p>4.store</p>
-<p>用来把action和reducer关联到一起</p>
-<p>store.dispatch 提交action</p>
-<p>store.getState 获取state</p>
+<p>用来把 action 和 reducer 关联到一起</p>
+<p>store.dispatch 提交 action</p>
+<p>store.getState 获取 state</p>
 <p>store.subscribe 注册监听</p>
 <p>store.unsubscribe 注销监听</p>
 <h3 id="_7-3-redux案例" tabindex="-1"><a class="header-anchor" href="#_7-3-redux案例" aria-hidden="true">#</a> 7.3 redux案例</h3>
 <p>安装 redux</p>
-<p><code v-pre>npm install --save redux</code></p>
+<p><code v-pre>npm install redux</code></p>
 <p>1.构建action , 创建一个函数, 返回一个包含type属性的对象</p>
 <p>2.构建reducer, 用来响应action , 通过return把数据传给store</p>
 <p>3.使用createStore创建store,传递reducer</p>
@@ -948,29 +1078,31 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code>npm install <span class="token operator">--</span>save redux
 npm install <span class="token operator">--</span>save react<span class="token operator">-</span>redux
 npm install <span class="token operator">--</span>save<span class="token operator">-</span>dev redux<span class="token operator">-</span>devtools
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>src/App.js</p>
-<div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token keyword">import</span> store <span class="token keyword">from</span> <span class="token string">'./store'</span>
-<span class="token keyword">import</span> ComA <span class="token keyword">from</span> <span class="token string">'./pages/ComA'</span>
-<span class="token keyword">import</span> ComB <span class="token keyword">from</span> <span class="token string">'./pages/ComB'</span>
-<span class="token keyword">import</span> <span class="token punctuation">{</span>Provider<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react-redux'</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>src/index.js</p>
+<div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> ReactDOM <span class="token keyword">from</span> <span class="token string">'react-dom'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'./index.css'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> reportWebVitals <span class="token keyword">from</span> <span class="token string">'./reportWebVitals'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Router <span class="token keyword">from</span> <span class="token string">'./router'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span>Provider<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react-redux"</span>
+<span class="token keyword">import</span> store <span class="token keyword">from</span> <span class="token string">"./store"</span>
 
-<span class="token keyword">function</span> <span class="token function">App</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> <span class="token punctuation">(</span>
-    <span class="token comment">//最外层包裹provider,传入store属性</span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Provider</span></span> <span class="token attr-name">store</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>store<span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text">
-          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>App<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
-              </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">ComA</span></span><span class="token punctuation">/></span></span><span class="token plain-text">
-              </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">ComB</span></span><span class="token punctuation">/></span></span><span class="token plain-text">
-          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
-      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Provider</span></span><span class="token punctuation">></span></span>
-  <span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<span class="token keyword">const</span> root <span class="token operator">=</span> ReactDOM<span class="token punctuation">.</span><span class="token function">createRoot</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'root'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+root<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">React.StrictMode</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Provider</span></span> <span class="token attr-name">store</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>store<span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Router</span></span> <span class="token punctuation">/></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Provider</span></span><span class="token punctuation">></span></span><span class="token plain-text">
 
-<span class="token keyword">export</span> <span class="token keyword">default</span> App<span class="token punctuation">;</span>
+  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">React.StrictMode</span></span><span class="token punctuation">></span></span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>src/store.js</p>
+
+<span class="token function">reportWebVitals</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>src/store.js</p>
 <div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span>createStore<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'redux'</span>
-<span class="token keyword">import</span> <span class="token punctuation">{</span>reducer<span class="token punctuation">}</span> <span class="token keyword">from</span>  <span class="token string">'../reducer'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span>reducer<span class="token punctuation">}</span> <span class="token keyword">from</span>  <span class="token string">'./reducer'</span>
 <span class="token keyword">const</span> store <span class="token operator">=</span> <span class="token function">createStore</span><span class="token punctuation">(</span>reducer<span class="token punctuation">)</span>
 <span class="token keyword">export</span> <span class="token keyword">default</span> store
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>src/reducer/index.js</p>
@@ -986,25 +1118,33 @@ exports<span class="token punctuation">.</span><span class="token function-varia
         		<span class="token keyword">return</span> state
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>src/Pages/ComA/index.jsp</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>src/Pages/ComA/index.jsx</p>
+<<<<<<< HEAD
+<<<<<<< HEAD
 <div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span>Component<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
+=======
+<div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
+>>>>>>> 815481ce3079460341bfa9ef9afd3199c8319e8d
+=======
+<div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
+>>>>>>> 815481ce3079460341bfa9ef9afd3199c8319e8d
 <span class="token keyword">import</span> <span class="token punctuation">{</span>connect<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react-redux"</span><span class="token punctuation">;</span>
 
-<span class="token keyword">class</span> <span class="token class-name">ComA</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+<span class="token keyword">function</span> <span class="token function">ComA</span> <span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   	<span class="token comment">//按钮点击回调</span>
     <span class="token function-variable function">handleClick</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
-        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"A组件的props:"</span><span class="token punctuation">,</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">)</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"A组件的props:"</span><span class="token punctuation">,</span>props<span class="token punctuation">)</span>
       	<span class="token comment">//提交sendAction的action</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span><span class="token function">sendAction</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        props<span class="token punctuation">.</span><span class="token function">sendAction</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
     <span class="token punctuation">}</span>
 
-    <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  
         <span class="token keyword">return</span> <span class="token punctuation">(</span>
             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
                 </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>handleClick<span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text">+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><span class="token plain-text">
             </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
         <span class="token punctuation">)</span>
-    <span class="token punctuation">}</span>
+   
 <span class="token punctuation">}</span>
 
 <span class="token comment">//实现发送方的mapDispatchToProps参数</span>
@@ -1023,17 +1163,26 @@ exports<span class="token punctuation">.</span><span class="token function-varia
 <span class="token comment">//发送方实现第二个参数mapDispatchToProps</span>
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">connect</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span>mapDispatchToProps<span class="token punctuation">)</span><span class="token punctuation">(</span>ComA<span class="token punctuation">)</span>
 
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>src/Pages/ComB/index.jsp</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>src/Pages/ComB/index.jsx</p>
+<<<<<<< HEAD
+<<<<<<< HEAD
 <div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span>Component<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
+=======
+<div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
+>>>>>>> 815481ce3079460341bfa9ef9afd3199c8319e8d
+=======
+<div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
+>>>>>>> 815481ce3079460341bfa9ef9afd3199c8319e8d
 <span class="token keyword">import</span> <span class="token punctuation">{</span>connect<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react-redux"</span><span class="token punctuation">;</span>
 
-<span class="token keyword">class</span> <span class="token class-name">ComB</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
-    <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"B组件的props"</span><span class="token punctuation">,</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">)</span>
-        <span class="token keyword">return</span> <span class="token punctuation">(</span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token plain-text"> </span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>count<span class="token punctuation">}</span><span class="token plain-text"> </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-        <span class="token punctuation">)</span>
-    <span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">ComB</span> <span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"B组件的props"</span><span class="token punctuation">,</span>props<span class="token punctuation">)</span>
+    
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token plain-text"> </span><span class="token punctuation">{</span>props<span class="token punctuation">.</span>count<span class="token punctuation">}</span><span class="token plain-text"> </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token punctuation">)</span>
+   
 <span class="token punctuation">}</span>
 
 <span class="token keyword">const</span> <span class="token function-variable function">mapStateToProps</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">state</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
@@ -1045,7 +1194,7 @@ exports<span class="token punctuation">.</span><span class="token function-varia
 <span class="token comment">//接收方只实现第一个参数mapStateToProps</span>
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">connect</span><span class="token punctuation">(</span>mapStateToProps<span class="token punctuation">)</span><span class="token punctuation">(</span>ComB<span class="token punctuation">)</span>
 
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_7-5-redux-devtools" tabindex="-1"><a class="header-anchor" href="#_7-5-redux-devtools" aria-hidden="true">#</a> 7.5 redux devtools</h3>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_7-5-redux-devtools" tabindex="-1"><a class="header-anchor" href="#_7-5-redux-devtools" aria-hidden="true">#</a> 7.5 redux devtools</h3>
 <p>1.首先，我们要安装到项目的一些基本使用，如： react、redux、react-redux等</p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>npm install  redux-devtools-extension --save-dev
 npm install --save redux
@@ -1075,10 +1224,7 @@ npm install --save react-redux
   <span class="token comment">//applyMiddleware()如果有异步的话放在小括号里</span>
     <span class="token function">composeWithDevTools</span><span class="token punctuation">(</span><span class="token function">applyMiddleware</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_7-6-serve库" tabindex="-1"><a class="header-anchor" href="#_7-6-serve库" aria-hidden="true">#</a> 7.6 serve库</h3>
-<p>npm install -g serve</p>
-<p>快速启动一台服务器 , 不能在生产环境使用</p>
-<h2 id="第8章-新语法扩展" tabindex="-1"><a class="header-anchor" href="#第8章-新语法扩展" aria-hidden="true">#</a> 第8章 新语法扩展</h2>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="第8章-新语法扩展" tabindex="-1"><a class="header-anchor" href="#第8章-新语法扩展" aria-hidden="true">#</a> 第8章 新语法扩展</h2>
 <h3 id="_8-1-setstate" tabindex="-1"><a class="header-anchor" href="#_8-1-setstate" aria-hidden="true">#</a> 8.1 setState</h3>
 <p>1.对象式写法</p>
 <p>setState(stateChange, [ callback ])</p>
@@ -1114,6 +1260,7 @@ npm install --save react-redux
 <h3 id="_8-4-effecthook" tabindex="-1"><a class="header-anchor" href="#_8-4-effecthook" aria-hidden="true">#</a> 8.4 effectHook</h3>
 <p>函数式组件可以使用生命周期钩子</p>
 <h3 id="_8-5-refhook" tabindex="-1"><a class="header-anchor" href="#_8-5-refhook" aria-hidden="true">#</a> 8.5 refHook</h3>
+<p>函数式组件可以使用refs功能</p>
 <h3 id="_8-6-fragment" tabindex="-1"><a class="header-anchor" href="#_8-6-fragment" aria-hidden="true">#</a> 8.6 FragMent</h3>
 <p>因为每个组件都必须有根标签div,导致div太多太复杂</p>
 <p>使用Fragment当作根标签, 不会真实渲染出来, 就跟没有根标签一样,同时也满足语法</p>
@@ -1127,4 +1274,17 @@ npm install --save react-redux
 <p>类似vue中的slot技术</p>
 <h3 id="_8-10-errorboundary" tabindex="-1"><a class="header-anchor" href="#_8-10-errorboundary" aria-hidden="true">#</a> 8.10 ErrorBoundary</h3>
 <p>用来捕获后代组件的错误</p>
+<h2 id="第9章-项目实战cms-manager" tabindex="-1"><a class="header-anchor" href="#第9章-项目实战cms-manager" aria-hidden="true">#</a> 第9章 项目实战cms-manager</h2>
+<h3 id="_9-1-项目介绍" tabindex="-1"><a class="header-anchor" href="#_9-1-项目介绍" aria-hidden="true">#</a> 9.1 项目介绍</h3>
+<p>项目简介</p>
+<p>创建项目</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>npx create-react-app cms-manage
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>安装依赖</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>cnpm i axios redux react-redux sass sass-loader react-router-dom antd
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>文件介绍</p>
+<h3 id="_9-2-接口封装" tabindex="-1"><a class="header-anchor" href="#_9-2-接口封装" aria-hidden="true">#</a> 9.2 接口封装</h3>
+<h3 id="_9-3-组件库引入" tabindex="-1"><a class="header-anchor" href="#_9-3-组件库引入" aria-hidden="true">#</a> 9.3 组件库引入</h3>
+<h3 id="_9-4-路由配置" tabindex="-1"><a class="header-anchor" href="#_9-4-路由配置" aria-hidden="true">#</a> 9.4 路由配置</h3>
+<h3 id="_9-5-富文本编辑器" tabindex="-1"><a class="header-anchor" href="#_9-5-富文本编辑器" aria-hidden="true">#</a> 9.5 富文本编辑器</h3>
+<h3 id="_9-6-redux状态管理" tabindex="-1"><a class="header-anchor" href="#_9-6-redux状态管理" aria-hidden="true">#</a> 9.6 redux状态管理</h3>
 </div></template>

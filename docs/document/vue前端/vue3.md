@@ -1000,7 +1000,7 @@ vue add element-plus
 
 安装 element icon
 
-```she
+```sh
 cnpm install --save @element-plus/icons-vue 
 ```
 
@@ -2471,3 +2471,12 @@ $(window).scroll(function(){
 
 
 
+### 8.12 滚动弹幕
+
+
+
+### 8.13 多语言切换
+
+
+
+### 8.14 3d可视化

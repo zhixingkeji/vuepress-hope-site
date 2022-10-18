@@ -32,7 +32,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/index.js
+// node_modules/_echarts@5.4.0@echarts/index.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -48,7 +48,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/extension.js
+// node_modules/_echarts@5.4.0@echarts/lib/extension.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -64,7 +64,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/core/echarts.js
+// node_modules/_echarts@5.4.0@echarts/lib/core/echarts.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -115,7 +115,7 @@ function __extends(d, b) {
   d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 }
 
-// node_modules/_zrender@5.3.2@zrender/lib/zrender.js
+// node_modules/_zrender@5.4.0@zrender/lib/zrender.js
 var zrender_exports = {};
 __export(zrender_exports, {
   dispose: () => dispose,
@@ -140,7 +140,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/core/env.js
+// node_modules/_zrender@5.4.0@zrender/lib/core/env.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -225,7 +225,7 @@ function detect(ua, env2) {
 }
 var env_default = env;
 
-// node_modules/_zrender@5.3.2@zrender/lib/core/util.js
+// node_modules/_zrender@5.4.0@zrender/lib/core/util.js
 var util_exports = {};
 __export(util_exports, {
   HashMap: () => HashMap,
@@ -294,7 +294,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/core/platform.js
+// node_modules/_zrender@5.4.0@zrender/lib/core/platform.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -379,7 +379,7 @@ function setPlatformAPI(newPlatformApis) {
   }
 }
 
-// node_modules/_zrender@5.3.2@zrender/lib/core/util.js
+// node_modules/_zrender@5.4.0@zrender/lib/core/util.js
 var BUILTIN_OBJECT = reduce([
   "Function",
   "RegExp",
@@ -847,7 +847,7 @@ function noop() {
 }
 var RADIAN_TO_DEGREE = 180 / Math.PI;
 
-// node_modules/_zrender@5.3.2@zrender/lib/Handler.js
+// node_modules/_zrender@5.4.0@zrender/lib/Handler.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -863,7 +863,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/core/vector.js
+// node_modules/_zrender@5.4.0@zrender/lib/core/vector.js
 var vector_exports = {};
 __export(vector_exports, {
   add: () => add,
@@ -1016,7 +1016,7 @@ function max(out2, v12, v22) {
   return out2;
 }
 
-// node_modules/_zrender@5.3.2@zrender/lib/mixin/Draggable.js
+// node_modules/_zrender@5.4.0@zrender/lib/mixin/Draggable.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -1098,7 +1098,7 @@ var Draggable = function() {
 }();
 var Draggable_default = Draggable;
 
-// node_modules/_zrender@5.3.2@zrender/lib/core/Eventful.js
+// node_modules/_zrender@5.4.0@zrender/lib/core/Eventful.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -1265,7 +1265,7 @@ var Eventful = function() {
 }();
 var Eventful_default = Eventful;
 
-// node_modules/_zrender@5.3.2@zrender/lib/core/event.js
+// node_modules/_zrender@5.4.0@zrender/lib/core/event.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -1281,7 +1281,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/core/dom.js
+// node_modules/_zrender@5.4.0@zrender/lib/core/dom.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -1297,7 +1297,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/core/fourPointsTransform.js
+// node_modules/_zrender@5.4.0@zrender/lib/core/fourPointsTransform.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -1369,7 +1369,7 @@ function buildTransformer(src, dest) {
   };
 }
 
-// node_modules/_zrender@5.3.2@zrender/lib/core/dom.js
+// node_modules/_zrender@5.4.0@zrender/lib/core/dom.js
 var EVENT_SAVED_PROP = "___zrEVENTSAVED";
 var _calcOut = [];
 function transformLocalCoord(out2, elFrom, elTarget, inX, inY) {
@@ -1441,8 +1441,21 @@ function preparePointerTransformer(markers, saved, inverse) {
 function isCanvasEl(el) {
   return el.nodeName.toUpperCase() === "CANVAS";
 }
+var replaceReg = /([&<>"'])/g;
+var replaceMap = {
+  "&": "&amp;",
+  "<": "&lt;",
+  ">": "&gt;",
+  '"': "&quot;",
+  "'": "&#39;"
+};
+function encodeHTML(source) {
+  return source == null ? "" : (source + "").replace(replaceReg, function(str, c) {
+    return replaceMap[c];
+  });
+}
 
-// node_modules/_zrender@5.3.2@zrender/lib/core/event.js
+// node_modules/_zrender@5.4.0@zrender/lib/core/event.js
 var MOUSE_EVENT_REG = /^(?:mouse|pointer|contextmenu|drag|drop)|click/;
 var _calcOut2 = [];
 var firefoxNotSupportOffsetXY = env_default.browser.firefox && +env_default.browser.version.split(".")[0] < 39;
@@ -1533,7 +1546,7 @@ function isMiddleOrRightButtonOnMouseUpDown(e2) {
   return e2.which === 2 || e2.which === 3;
 }
 
-// node_modules/_zrender@5.3.2@zrender/lib/core/GestureMgr.js
+// node_modules/_zrender@5.4.0@zrender/lib/core/GestureMgr.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -1626,7 +1639,495 @@ var recognizers = {
   }
 };
 
-// node_modules/_zrender@5.3.2@zrender/lib/Handler.js
+// node_modules/_zrender@5.4.0@zrender/lib/core/BoundingRect.js
+init_define_BACK_TO_TOP_LOCALES();
+init_define_CODE_COPY_LOCALES();
+init_define_CODE_COPY_OPTIONS();
+init_define_CODE_DEMO_OPTIONS();
+init_define_COMMENT_OPTIONS();
+init_define_MERMAID_OPTIONS();
+init_define_PHOTO_SWIPE_LOCALES();
+init_define_PHOTO_SWIPE_OPTIONS();
+init_define_PLAYGROUND_OPTIONS();
+init_define_PWA_LOCALES();
+init_define_READING_TIME_LOCALES();
+init_define_REVEAL_CONFIG();
+init_define_WALINE_LOCALES();
+init_define_EXTERNAL_LINK_ICON_LOCALES();
+
+// node_modules/_zrender@5.4.0@zrender/lib/core/matrix.js
+var matrix_exports = {};
+__export(matrix_exports, {
+  clone: () => clone3,
+  copy: () => copy2,
+  create: () => create2,
+  identity: () => identity,
+  invert: () => invert,
+  mul: () => mul2,
+  rotate: () => rotate,
+  scale: () => scale2,
+  translate: () => translate
+});
+init_define_BACK_TO_TOP_LOCALES();
+init_define_CODE_COPY_LOCALES();
+init_define_CODE_COPY_OPTIONS();
+init_define_CODE_DEMO_OPTIONS();
+init_define_COMMENT_OPTIONS();
+init_define_MERMAID_OPTIONS();
+init_define_PHOTO_SWIPE_LOCALES();
+init_define_PHOTO_SWIPE_OPTIONS();
+init_define_PLAYGROUND_OPTIONS();
+init_define_PWA_LOCALES();
+init_define_READING_TIME_LOCALES();
+init_define_REVEAL_CONFIG();
+init_define_WALINE_LOCALES();
+init_define_EXTERNAL_LINK_ICON_LOCALES();
+function create2() {
+  return [1, 0, 0, 1, 0, 0];
+}
+function identity(out2) {
+  out2[0] = 1;
+  out2[1] = 0;
+  out2[2] = 0;
+  out2[3] = 1;
+  out2[4] = 0;
+  out2[5] = 0;
+  return out2;
+}
+function copy2(out2, m2) {
+  out2[0] = m2[0];
+  out2[1] = m2[1];
+  out2[2] = m2[2];
+  out2[3] = m2[3];
+  out2[4] = m2[4];
+  out2[5] = m2[5];
+  return out2;
+}
+function mul2(out2, m1, m2) {
+  var out0 = m1[0] * m2[0] + m1[2] * m2[1];
+  var out1 = m1[1] * m2[0] + m1[3] * m2[1];
+  var out22 = m1[0] * m2[2] + m1[2] * m2[3];
+  var out3 = m1[1] * m2[2] + m1[3] * m2[3];
+  var out4 = m1[0] * m2[4] + m1[2] * m2[5] + m1[4];
+  var out5 = m1[1] * m2[4] + m1[3] * m2[5] + m1[5];
+  out2[0] = out0;
+  out2[1] = out1;
+  out2[2] = out22;
+  out2[3] = out3;
+  out2[4] = out4;
+  out2[5] = out5;
+  return out2;
+}
+function translate(out2, a, v) {
+  out2[0] = a[0];
+  out2[1] = a[1];
+  out2[2] = a[2];
+  out2[3] = a[3];
+  out2[4] = a[4] + v[0];
+  out2[5] = a[5] + v[1];
+  return out2;
+}
+function rotate(out2, a, rad) {
+  var aa = a[0];
+  var ac = a[2];
+  var atx = a[4];
+  var ab = a[1];
+  var ad = a[3];
+  var aty = a[5];
+  var st = Math.sin(rad);
+  var ct = Math.cos(rad);
+  out2[0] = aa * ct + ab * st;
+  out2[1] = -aa * st + ab * ct;
+  out2[2] = ac * ct + ad * st;
+  out2[3] = -ac * st + ct * ad;
+  out2[4] = ct * atx + st * aty;
+  out2[5] = ct * aty - st * atx;
+  return out2;
+}
+function scale2(out2, a, v) {
+  var vx = v[0];
+  var vy = v[1];
+  out2[0] = a[0] * vx;
+  out2[1] = a[1] * vy;
+  out2[2] = a[2] * vx;
+  out2[3] = a[3] * vy;
+  out2[4] = a[4] * vx;
+  out2[5] = a[5] * vy;
+  return out2;
+}
+function invert(out2, a) {
+  var aa = a[0];
+  var ac = a[2];
+  var atx = a[4];
+  var ab = a[1];
+  var ad = a[3];
+  var aty = a[5];
+  var det = aa * ad - ab * ac;
+  if (!det) {
+    return null;
+  }
+  det = 1 / det;
+  out2[0] = ad * det;
+  out2[1] = -ab * det;
+  out2[2] = -ac * det;
+  out2[3] = aa * det;
+  out2[4] = (ac * aty - ad * atx) * det;
+  out2[5] = (ab * atx - aa * aty) * det;
+  return out2;
+}
+function clone3(a) {
+  var b = create2();
+  copy2(b, a);
+  return b;
+}
+
+// node_modules/_zrender@5.4.0@zrender/lib/core/Point.js
+init_define_BACK_TO_TOP_LOCALES();
+init_define_CODE_COPY_LOCALES();
+init_define_CODE_COPY_OPTIONS();
+init_define_CODE_DEMO_OPTIONS();
+init_define_COMMENT_OPTIONS();
+init_define_MERMAID_OPTIONS();
+init_define_PHOTO_SWIPE_LOCALES();
+init_define_PHOTO_SWIPE_OPTIONS();
+init_define_PLAYGROUND_OPTIONS();
+init_define_PWA_LOCALES();
+init_define_READING_TIME_LOCALES();
+init_define_REVEAL_CONFIG();
+init_define_WALINE_LOCALES();
+init_define_EXTERNAL_LINK_ICON_LOCALES();
+var Point = function() {
+  function Point2(x, y) {
+    this.x = x || 0;
+    this.y = y || 0;
+  }
+  Point2.prototype.copy = function(other) {
+    this.x = other.x;
+    this.y = other.y;
+    return this;
+  };
+  Point2.prototype.clone = function() {
+    return new Point2(this.x, this.y);
+  };
+  Point2.prototype.set = function(x, y) {
+    this.x = x;
+    this.y = y;
+    return this;
+  };
+  Point2.prototype.equal = function(other) {
+    return other.x === this.x && other.y === this.y;
+  };
+  Point2.prototype.add = function(other) {
+    this.x += other.x;
+    this.y += other.y;
+    return this;
+  };
+  Point2.prototype.scale = function(scalar) {
+    this.x *= scalar;
+    this.y *= scalar;
+  };
+  Point2.prototype.scaleAndAdd = function(other, scalar) {
+    this.x += other.x * scalar;
+    this.y += other.y * scalar;
+  };
+  Point2.prototype.sub = function(other) {
+    this.x -= other.x;
+    this.y -= other.y;
+    return this;
+  };
+  Point2.prototype.dot = function(other) {
+    return this.x * other.x + this.y * other.y;
+  };
+  Point2.prototype.len = function() {
+    return Math.sqrt(this.x * this.x + this.y * this.y);
+  };
+  Point2.prototype.lenSquare = function() {
+    return this.x * this.x + this.y * this.y;
+  };
+  Point2.prototype.normalize = function() {
+    var len2 = this.len();
+    this.x /= len2;
+    this.y /= len2;
+    return this;
+  };
+  Point2.prototype.distance = function(other) {
+    var dx = this.x - other.x;
+    var dy = this.y - other.y;
+    return Math.sqrt(dx * dx + dy * dy);
+  };
+  Point2.prototype.distanceSquare = function(other) {
+    var dx = this.x - other.x;
+    var dy = this.y - other.y;
+    return dx * dx + dy * dy;
+  };
+  Point2.prototype.negate = function() {
+    this.x = -this.x;
+    this.y = -this.y;
+    return this;
+  };
+  Point2.prototype.transform = function(m2) {
+    if (!m2) {
+      return;
+    }
+    var x = this.x;
+    var y = this.y;
+    this.x = m2[0] * x + m2[2] * y + m2[4];
+    this.y = m2[1] * x + m2[3] * y + m2[5];
+    return this;
+  };
+  Point2.prototype.toArray = function(out2) {
+    out2[0] = this.x;
+    out2[1] = this.y;
+    return out2;
+  };
+  Point2.prototype.fromArray = function(input) {
+    this.x = input[0];
+    this.y = input[1];
+  };
+  Point2.set = function(p, x, y) {
+    p.x = x;
+    p.y = y;
+  };
+  Point2.copy = function(p, p2) {
+    p.x = p2.x;
+    p.y = p2.y;
+  };
+  Point2.len = function(p) {
+    return Math.sqrt(p.x * p.x + p.y * p.y);
+  };
+  Point2.lenSquare = function(p) {
+    return p.x * p.x + p.y * p.y;
+  };
+  Point2.dot = function(p0, p1) {
+    return p0.x * p1.x + p0.y * p1.y;
+  };
+  Point2.add = function(out2, p0, p1) {
+    out2.x = p0.x + p1.x;
+    out2.y = p0.y + p1.y;
+  };
+  Point2.sub = function(out2, p0, p1) {
+    out2.x = p0.x - p1.x;
+    out2.y = p0.y - p1.y;
+  };
+  Point2.scale = function(out2, p0, scalar) {
+    out2.x = p0.x * scalar;
+    out2.y = p0.y * scalar;
+  };
+  Point2.scaleAndAdd = function(out2, p0, p1, scalar) {
+    out2.x = p0.x + p1.x * scalar;
+    out2.y = p0.y + p1.y * scalar;
+  };
+  Point2.lerp = function(out2, p0, p1, t) {
+    var onet = 1 - t;
+    out2.x = onet * p0.x + t * p1.x;
+    out2.y = onet * p0.y + t * p1.y;
+  };
+  return Point2;
+}();
+var Point_default = Point;
+
+// node_modules/_zrender@5.4.0@zrender/lib/core/BoundingRect.js
+var mathMin = Math.min;
+var mathMax = Math.max;
+var lt = new Point_default();
+var rb = new Point_default();
+var lb = new Point_default();
+var rt = new Point_default();
+var minTv = new Point_default();
+var maxTv = new Point_default();
+var BoundingRect = function() {
+  function BoundingRect2(x, y, width, height) {
+    if (width < 0) {
+      x = x + width;
+      width = -width;
+    }
+    if (height < 0) {
+      y = y + height;
+      height = -height;
+    }
+    this.x = x;
+    this.y = y;
+    this.width = width;
+    this.height = height;
+  }
+  BoundingRect2.prototype.union = function(other) {
+    var x = mathMin(other.x, this.x);
+    var y = mathMin(other.y, this.y);
+    if (isFinite(this.x) && isFinite(this.width)) {
+      this.width = mathMax(other.x + other.width, this.x + this.width) - x;
+    } else {
+      this.width = other.width;
+    }
+    if (isFinite(this.y) && isFinite(this.height)) {
+      this.height = mathMax(other.y + other.height, this.y + this.height) - y;
+    } else {
+      this.height = other.height;
+    }
+    this.x = x;
+    this.y = y;
+  };
+  BoundingRect2.prototype.applyTransform = function(m2) {
+    BoundingRect2.applyTransform(this, this, m2);
+  };
+  BoundingRect2.prototype.calculateTransform = function(b) {
+    var a = this;
+    var sx = b.width / a.width;
+    var sy = b.height / a.height;
+    var m2 = create2();
+    translate(m2, m2, [-a.x, -a.y]);
+    scale2(m2, m2, [sx, sy]);
+    translate(m2, m2, [b.x, b.y]);
+    return m2;
+  };
+  BoundingRect2.prototype.intersect = function(b, mtv) {
+    if (!b) {
+      return false;
+    }
+    if (!(b instanceof BoundingRect2)) {
+      b = BoundingRect2.create(b);
+    }
+    var a = this;
+    var ax0 = a.x;
+    var ax1 = a.x + a.width;
+    var ay0 = a.y;
+    var ay1 = a.y + a.height;
+    var bx0 = b.x;
+    var bx1 = b.x + b.width;
+    var by0 = b.y;
+    var by1 = b.y + b.height;
+    var overlap = !(ax1 < bx0 || bx1 < ax0 || ay1 < by0 || by1 < ay0);
+    if (mtv) {
+      var dMin = Infinity;
+      var dMax = 0;
+      var d0 = Math.abs(ax1 - bx0);
+      var d1 = Math.abs(bx1 - ax0);
+      var d2 = Math.abs(ay1 - by0);
+      var d3 = Math.abs(by1 - ay0);
+      var dx = Math.min(d0, d1);
+      var dy = Math.min(d2, d3);
+      if (ax1 < bx0 || bx1 < ax0) {
+        if (dx > dMax) {
+          dMax = dx;
+          if (d0 < d1) {
+            Point_default.set(maxTv, -d0, 0);
+          } else {
+            Point_default.set(maxTv, d1, 0);
+          }
+        }
+      } else {
+        if (dx < dMin) {
+          dMin = dx;
+          if (d0 < d1) {
+            Point_default.set(minTv, d0, 0);
+          } else {
+            Point_default.set(minTv, -d1, 0);
+          }
+        }
+      }
+      if (ay1 < by0 || by1 < ay0) {
+        if (dy > dMax) {
+          dMax = dy;
+          if (d2 < d3) {
+            Point_default.set(maxTv, 0, -d2);
+          } else {
+            Point_default.set(maxTv, 0, d3);
+          }
+        }
+      } else {
+        if (dx < dMin) {
+          dMin = dx;
+          if (d2 < d3) {
+            Point_default.set(minTv, 0, d2);
+          } else {
+            Point_default.set(minTv, 0, -d3);
+          }
+        }
+      }
+    }
+    if (mtv) {
+      Point_default.copy(mtv, overlap ? minTv : maxTv);
+    }
+    return overlap;
+  };
+  BoundingRect2.prototype.contain = function(x, y) {
+    var rect = this;
+    return x >= rect.x && x <= rect.x + rect.width && y >= rect.y && y <= rect.y + rect.height;
+  };
+  BoundingRect2.prototype.clone = function() {
+    return new BoundingRect2(this.x, this.y, this.width, this.height);
+  };
+  BoundingRect2.prototype.copy = function(other) {
+    BoundingRect2.copy(this, other);
+  };
+  BoundingRect2.prototype.plain = function() {
+    return {
+      x: this.x,
+      y: this.y,
+      width: this.width,
+      height: this.height
+    };
+  };
+  BoundingRect2.prototype.isFinite = function() {
+    return isFinite(this.x) && isFinite(this.y) && isFinite(this.width) && isFinite(this.height);
+  };
+  BoundingRect2.prototype.isZero = function() {
+    return this.width === 0 || this.height === 0;
+  };
+  BoundingRect2.create = function(rect) {
+    return new BoundingRect2(rect.x, rect.y, rect.width, rect.height);
+  };
+  BoundingRect2.copy = function(target, source) {
+    target.x = source.x;
+    target.y = source.y;
+    target.width = source.width;
+    target.height = source.height;
+  };
+  BoundingRect2.applyTransform = function(target, source, m2) {
+    if (!m2) {
+      if (target !== source) {
+        BoundingRect2.copy(target, source);
+      }
+      return;
+    }
+    if (m2[1] < 1e-5 && m2[1] > -1e-5 && m2[2] < 1e-5 && m2[2] > -1e-5) {
+      var sx = m2[0];
+      var sy = m2[3];
+      var tx = m2[4];
+      var ty = m2[5];
+      target.x = source.x * sx + tx;
+      target.y = source.y * sy + ty;
+      target.width = source.width * sx;
+      target.height = source.height * sy;
+      if (target.width < 0) {
+        target.x += target.width;
+        target.width = -target.width;
+      }
+      if (target.height < 0) {
+        target.y += target.height;
+        target.height = -target.height;
+      }
+      return;
+    }
+    lt.x = lb.x = source.x;
+    lt.y = rt.y = source.y;
+    rb.x = rt.x = source.x + source.width;
+    rb.y = lb.y = source.y + source.height;
+    lt.transform(m2);
+    rt.transform(m2);
+    rb.transform(m2);
+    lb.transform(m2);
+    target.x = mathMin(lt.x, rb.x, lb.x, rt.x);
+    target.y = mathMin(lt.y, rb.y, lb.y, rt.y);
+    var maxX = mathMax(lt.x, rb.x, lb.x, rt.x);
+    var maxY = mathMax(lt.y, rb.y, lb.y, rt.y);
+    target.width = maxX - target.x;
+    target.height = maxY - target.y;
+  };
+  return BoundingRect2;
+}();
+var BoundingRect_default = BoundingRect;
+
+// node_modules/_zrender@5.4.0@zrender/lib/Handler.js
 var SILENT = "silent";
 function makeEventPacket(eveType, targetInfo, event) {
   return {
@@ -1680,14 +2181,16 @@ var handlerNames = [
   "mousemove",
   "contextmenu"
 ];
+var tmpRect = new BoundingRect_default(0, 0, 0, 0);
 var Handler = function(_super) {
   __extends(Handler2, _super);
-  function Handler2(storage2, painter, proxy, painterRoot) {
+  function Handler2(storage2, painter, proxy, painterRoot, pointerSize) {
     var _this = _super.call(this) || this;
     _this._hovered = new HoveredResult(0, 0);
     _this.storage = storage2;
     _this.painter = painter;
     _this.painterRoot = painterRoot;
+    _this._pointerSize = pointerSize;
     proxy = proxy || new EmptyProxy();
     _this.proxy = null;
     _this.setHandlerProxy(proxy);
@@ -1787,13 +2290,37 @@ var Handler = function(_super) {
   Handler2.prototype.findHover = function(x, y, exclude) {
     var list = this.storage.getDisplayList();
     var out2 = new HoveredResult(x, y);
-    for (var i = list.length - 1; i >= 0; i--) {
-      var hoverCheckResult = void 0;
-      if (list[i] !== exclude && !list[i].ignore && (hoverCheckResult = isHover(list[i], x, y))) {
-        !out2.topTarget && (out2.topTarget = list[i]);
-        if (hoverCheckResult !== SILENT) {
-          out2.target = list[i];
-          break;
+    setHoverTarget(list, out2, x, y, exclude);
+    if (this._pointerSize && !out2.target) {
+      var candidates = [];
+      var pointerSize = this._pointerSize;
+      var targetSizeHalf = pointerSize / 2;
+      var pointerRect = new BoundingRect_default(x - targetSizeHalf, y - targetSizeHalf, pointerSize, pointerSize);
+      for (var i = list.length - 1; i >= 0; i--) {
+        var el = list[i];
+        if (el !== exclude && !el.ignore && !el.ignoreCoarsePointer && (!el.parent || !el.parent.ignoreCoarsePointer)) {
+          tmpRect.copy(el.getBoundingRect());
+          if (el.transform) {
+            tmpRect.applyTransform(el.transform);
+          }
+          if (tmpRect.intersect(pointerRect)) {
+            candidates.push(el);
+          }
+        }
+      }
+      if (candidates.length) {
+        var rStep = 4;
+        var thetaStep = Math.PI / 12;
+        var PI210 = Math.PI * 2;
+        for (var r = 0; r < targetSizeHalf; r += rStep) {
+          for (var theta = 0; theta < PI210; theta += thetaStep) {
+            var x1 = x + r * Math.cos(theta);
+            var y1 = y + r * Math.sin(theta);
+            setHoverTarget(candidates, out2, x1, y1, exclude);
+            if (out2.target) {
+              return out2;
+            }
+          }
         }
       }
     }
@@ -1868,13 +2395,26 @@ function isHover(displayable, x, y) {
   }
   return false;
 }
+function setHoverTarget(list, out2, x, y, exclude) {
+  for (var i = list.length - 1; i >= 0; i--) {
+    var el = list[i];
+    var hoverCheckResult = void 0;
+    if (el !== exclude && !el.ignore && (hoverCheckResult = isHover(el, x, y))) {
+      !out2.topTarget && (out2.topTarget = el);
+      if (hoverCheckResult !== SILENT) {
+        out2.target = el;
+        break;
+      }
+    }
+  }
+}
 function isOutsideBoundary(handlerInstance, x, y) {
   var painter = handlerInstance.painter;
   return x < 0 || x > painter.getWidth() || y < 0 || y > painter.getHeight();
 }
 var Handler_default = Handler;
 
-// node_modules/_zrender@5.3.2@zrender/lib/Storage.js
+// node_modules/_zrender@5.4.0@zrender/lib/Storage.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -1890,7 +2430,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/core/timsort.js
+// node_modules/_zrender@5.4.0@zrender/lib/core/timsort.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -2422,7 +2962,7 @@ function sort(array, compare2, lo, hi) {
   ts.forceMergeRuns();
 }
 
-// node_modules/_zrender@5.3.2@zrender/lib/graphic/constants.js
+// node_modules/_zrender@5.4.0@zrender/lib/graphic/constants.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -2441,7 +2981,7 @@ var REDRAW_BIT = 1;
 var STYLE_CHANGED_BIT = 2;
 var SHAPE_CHANGED_BIT = 4;
 
-// node_modules/_zrender@5.3.2@zrender/lib/Storage.js
+// node_modules/_zrender@5.4.0@zrender/lib/Storage.js
 var invalidZErrorLogged = false;
 function logInvalidZError() {
   if (invalidZErrorLogged) {
@@ -2594,7 +3134,7 @@ var Storage = function() {
 }();
 var Storage_default = Storage;
 
-// node_modules/_zrender@5.3.2@zrender/lib/animation/Animation.js
+// node_modules/_zrender@5.4.0@zrender/lib/animation/Animation.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -2610,7 +3150,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/animation/requestAnimationFrame.js
+// node_modules/_zrender@5.4.0@zrender/lib/animation/requestAnimationFrame.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -2631,7 +3171,7 @@ requestAnimationFrame = env_default.hasGlobalWindow && (window.requestAnimationF
 };
 var requestAnimationFrame_default = requestAnimationFrame;
 
-// node_modules/_zrender@5.3.2@zrender/lib/animation/Animator.js
+// node_modules/_zrender@5.4.0@zrender/lib/animation/Animator.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -2647,7 +3187,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/animation/Clip.js
+// node_modules/_zrender@5.4.0@zrender/lib/animation/Clip.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -2663,7 +3203,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/animation/easing.js
+// node_modules/_zrender@5.4.0@zrender/lib/animation/easing.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -2864,7 +3404,7 @@ var easingFuncs = {
 };
 var easing_default = easingFuncs;
 
-// node_modules/_zrender@5.3.2@zrender/lib/animation/cubicEasing.js
+// node_modules/_zrender@5.4.0@zrender/lib/animation/cubicEasing.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -2880,7 +3420,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/core/curve.js
+// node_modules/_zrender@5.4.0@zrender/lib/core/curve.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -3223,7 +3763,7 @@ function quadraticLength(x0, y0, x1, y1, x2, y2, iteration) {
   return d;
 }
 
-// node_modules/_zrender@5.3.2@zrender/lib/animation/cubicEasing.js
+// node_modules/_zrender@5.4.0@zrender/lib/animation/cubicEasing.js
 var regexp = /cubic-bezier\(([0-9,\.e ]+)\)/;
 function createCubicEasingFunc(cubicEasingStr) {
   var cubic = cubicEasingStr && regexp.exec(cubicEasingStr);
@@ -3243,7 +3783,7 @@ function createCubicEasingFunc(cubicEasingStr) {
   }
 }
 
-// node_modules/_zrender@5.3.2@zrender/lib/animation/Clip.js
+// node_modules/_zrender@5.4.0@zrender/lib/animation/Clip.js
 var Clip = function() {
   function Clip2(opts) {
     this._inited = false;
@@ -3303,7 +3843,7 @@ var Clip = function() {
 }();
 var Clip_default = Clip;
 
-// node_modules/_zrender@5.3.2@zrender/lib/tool/color.js
+// node_modules/_zrender@5.4.0@zrender/lib/tool/color.js
 var color_exports = {};
 __export(color_exports, {
   fastLerp: () => fastLerp,
@@ -3334,7 +3874,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/core/LRU.js
+// node_modules/_zrender@5.4.0@zrender/lib/core/LRU.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -3454,7 +3994,7 @@ var LRU = function() {
 }();
 var LRU_default = LRU;
 
-// node_modules/_zrender@5.3.2@zrender/lib/tool/color.js
+// node_modules/_zrender@5.4.0@zrender/lib/tool/color.js
 var kCSSColorTable = {
   "transparent": [0, 0, 0, 0],
   "aliceblue": [240, 248, 255, 1],
@@ -3724,13 +4264,14 @@ function parse(colorStr, rgbaArr) {
         }
         alpha = parseCssFloat(params.pop());
       case "rgb":
-        if (params.length !== 3) {
+        if (params.length >= 3) {
+          setRgba(rgbaArr, parseCssInt(params[0]), parseCssInt(params[1]), parseCssInt(params[2]), params.length === 3 ? alpha : parseCssFloat(params[3]));
+          putToCache(colorStr, rgbaArr);
+          return rgbaArr;
+        } else {
           setRgba(rgbaArr, 0, 0, 0, 1);
           return;
         }
-        setRgba(rgbaArr, parseCssInt(params[0]), parseCssInt(params[1]), parseCssInt(params[2]), alpha);
-        putToCache(colorStr, rgbaArr);
-        return rgbaArr;
       case "hsla":
         if (params.length !== 4) {
           setRgba(rgbaArr, 0, 0, 0, 1);
@@ -3918,7 +4459,7 @@ function random() {
   ], "rgb");
 }
 
-// node_modules/_zrender@5.3.2@zrender/lib/svg/helper.js
+// node_modules/_zrender@5.4.0@zrender/lib/svg/helper.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -4060,7 +4601,7 @@ var encodeBase64 = function() {
   };
 }();
 
-// node_modules/_zrender@5.3.2@zrender/lib/animation/Animator.js
+// node_modules/_zrender@5.4.0@zrender/lib/animation/Animator.js
 var arraySlice = Array.prototype.slice;
 function interpolateNumber(p0, p1, percent) {
   return (p1 - p0) * percent + p0;
@@ -4754,7 +5295,7 @@ var Animator = function() {
 }();
 var Animator_default = Animator;
 
-// node_modules/_zrender@5.3.2@zrender/lib/animation/Animation.js
+// node_modules/_zrender@5.4.0@zrender/lib/animation/Animation.js
 function getTime() {
   return new Date().getTime();
 }
@@ -4895,7 +5436,7 @@ var Animation = function(_super) {
 }(Eventful_default);
 var Animation_default = Animation;
 
-// node_modules/_zrender@5.3.2@zrender/lib/dom/HandlerProxy.js
+// node_modules/_zrender@5.4.0@zrender/lib/dom/HandlerProxy.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -5204,7 +5745,7 @@ var HandlerDomProxy = function(_super) {
 }(Eventful_default);
 var HandlerProxy_default = HandlerDomProxy;
 
-// node_modules/_zrender@5.3.2@zrender/lib/config.js
+// node_modules/_zrender@5.4.0@zrender/lib/config.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -5229,7 +5770,7 @@ var DARK_LABEL_COLOR = "#333";
 var LIGHT_LABEL_COLOR = "#ccc";
 var LIGHTER_LABEL_COLOR = "#eee";
 
-// node_modules/_zrender@5.3.2@zrender/lib/graphic/Group.js
+// node_modules/_zrender@5.4.0@zrender/lib/graphic/Group.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -5245,7 +5786,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/Element.js
+// node_modules/_zrender@5.4.0@zrender/lib/Element.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -5261,7 +5802,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/core/Transformable.js
+// node_modules/_zrender@5.4.0@zrender/lib/core/Transformable.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -5276,134 +5817,6 @@ init_define_READING_TIME_LOCALES();
 init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
-
-// node_modules/_zrender@5.3.2@zrender/lib/core/matrix.js
-var matrix_exports = {};
-__export(matrix_exports, {
-  clone: () => clone3,
-  copy: () => copy2,
-  create: () => create2,
-  identity: () => identity,
-  invert: () => invert,
-  mul: () => mul2,
-  rotate: () => rotate,
-  scale: () => scale2,
-  translate: () => translate
-});
-init_define_BACK_TO_TOP_LOCALES();
-init_define_CODE_COPY_LOCALES();
-init_define_CODE_COPY_OPTIONS();
-init_define_CODE_DEMO_OPTIONS();
-init_define_COMMENT_OPTIONS();
-init_define_MERMAID_OPTIONS();
-init_define_PHOTO_SWIPE_LOCALES();
-init_define_PHOTO_SWIPE_OPTIONS();
-init_define_PLAYGROUND_OPTIONS();
-init_define_PWA_LOCALES();
-init_define_READING_TIME_LOCALES();
-init_define_REVEAL_CONFIG();
-init_define_WALINE_LOCALES();
-init_define_EXTERNAL_LINK_ICON_LOCALES();
-function create2() {
-  return [1, 0, 0, 1, 0, 0];
-}
-function identity(out2) {
-  out2[0] = 1;
-  out2[1] = 0;
-  out2[2] = 0;
-  out2[3] = 1;
-  out2[4] = 0;
-  out2[5] = 0;
-  return out2;
-}
-function copy2(out2, m2) {
-  out2[0] = m2[0];
-  out2[1] = m2[1];
-  out2[2] = m2[2];
-  out2[3] = m2[3];
-  out2[4] = m2[4];
-  out2[5] = m2[5];
-  return out2;
-}
-function mul2(out2, m1, m2) {
-  var out0 = m1[0] * m2[0] + m1[2] * m2[1];
-  var out1 = m1[1] * m2[0] + m1[3] * m2[1];
-  var out22 = m1[0] * m2[2] + m1[2] * m2[3];
-  var out3 = m1[1] * m2[2] + m1[3] * m2[3];
-  var out4 = m1[0] * m2[4] + m1[2] * m2[5] + m1[4];
-  var out5 = m1[1] * m2[4] + m1[3] * m2[5] + m1[5];
-  out2[0] = out0;
-  out2[1] = out1;
-  out2[2] = out22;
-  out2[3] = out3;
-  out2[4] = out4;
-  out2[5] = out5;
-  return out2;
-}
-function translate(out2, a, v) {
-  out2[0] = a[0];
-  out2[1] = a[1];
-  out2[2] = a[2];
-  out2[3] = a[3];
-  out2[4] = a[4] + v[0];
-  out2[5] = a[5] + v[1];
-  return out2;
-}
-function rotate(out2, a, rad) {
-  var aa = a[0];
-  var ac = a[2];
-  var atx = a[4];
-  var ab = a[1];
-  var ad = a[3];
-  var aty = a[5];
-  var st = Math.sin(rad);
-  var ct = Math.cos(rad);
-  out2[0] = aa * ct + ab * st;
-  out2[1] = -aa * st + ab * ct;
-  out2[2] = ac * ct + ad * st;
-  out2[3] = -ac * st + ct * ad;
-  out2[4] = ct * atx + st * aty;
-  out2[5] = ct * aty - st * atx;
-  return out2;
-}
-function scale2(out2, a, v) {
-  var vx = v[0];
-  var vy = v[1];
-  out2[0] = a[0] * vx;
-  out2[1] = a[1] * vy;
-  out2[2] = a[2] * vx;
-  out2[3] = a[3] * vy;
-  out2[4] = a[4] * vx;
-  out2[5] = a[5] * vy;
-  return out2;
-}
-function invert(out2, a) {
-  var aa = a[0];
-  var ac = a[2];
-  var atx = a[4];
-  var ab = a[1];
-  var ad = a[3];
-  var aty = a[5];
-  var det = aa * ad - ab * ac;
-  if (!det) {
-    return null;
-  }
-  det = 1 / det;
-  out2[0] = ad * det;
-  out2[1] = -ab * det;
-  out2[2] = -ac * det;
-  out2[3] = aa * det;
-  out2[4] = (ac * aty - ad * atx) * det;
-  out2[5] = (ab * atx - aa * aty) * det;
-  return out2;
-}
-function clone3(a) {
-  var b = create2();
-  copy2(b, a);
-  return b;
-}
-
-// node_modules/_zrender@5.3.2@zrender/lib/core/Transformable.js
 var mIdentity = identity;
 var EPSILON3 = 5e-5;
 function isNotAroundZero2(val) {
@@ -5631,369 +6044,7 @@ function copyTransform(target, source) {
 }
 var Transformable_default = Transformable;
 
-// node_modules/_zrender@5.3.2@zrender/lib/core/BoundingRect.js
-init_define_BACK_TO_TOP_LOCALES();
-init_define_CODE_COPY_LOCALES();
-init_define_CODE_COPY_OPTIONS();
-init_define_CODE_DEMO_OPTIONS();
-init_define_COMMENT_OPTIONS();
-init_define_MERMAID_OPTIONS();
-init_define_PHOTO_SWIPE_LOCALES();
-init_define_PHOTO_SWIPE_OPTIONS();
-init_define_PLAYGROUND_OPTIONS();
-init_define_PWA_LOCALES();
-init_define_READING_TIME_LOCALES();
-init_define_REVEAL_CONFIG();
-init_define_WALINE_LOCALES();
-init_define_EXTERNAL_LINK_ICON_LOCALES();
-
-// node_modules/_zrender@5.3.2@zrender/lib/core/Point.js
-init_define_BACK_TO_TOP_LOCALES();
-init_define_CODE_COPY_LOCALES();
-init_define_CODE_COPY_OPTIONS();
-init_define_CODE_DEMO_OPTIONS();
-init_define_COMMENT_OPTIONS();
-init_define_MERMAID_OPTIONS();
-init_define_PHOTO_SWIPE_LOCALES();
-init_define_PHOTO_SWIPE_OPTIONS();
-init_define_PLAYGROUND_OPTIONS();
-init_define_PWA_LOCALES();
-init_define_READING_TIME_LOCALES();
-init_define_REVEAL_CONFIG();
-init_define_WALINE_LOCALES();
-init_define_EXTERNAL_LINK_ICON_LOCALES();
-var Point = function() {
-  function Point2(x, y) {
-    this.x = x || 0;
-    this.y = y || 0;
-  }
-  Point2.prototype.copy = function(other) {
-    this.x = other.x;
-    this.y = other.y;
-    return this;
-  };
-  Point2.prototype.clone = function() {
-    return new Point2(this.x, this.y);
-  };
-  Point2.prototype.set = function(x, y) {
-    this.x = x;
-    this.y = y;
-    return this;
-  };
-  Point2.prototype.equal = function(other) {
-    return other.x === this.x && other.y === this.y;
-  };
-  Point2.prototype.add = function(other) {
-    this.x += other.x;
-    this.y += other.y;
-    return this;
-  };
-  Point2.prototype.scale = function(scalar) {
-    this.x *= scalar;
-    this.y *= scalar;
-  };
-  Point2.prototype.scaleAndAdd = function(other, scalar) {
-    this.x += other.x * scalar;
-    this.y += other.y * scalar;
-  };
-  Point2.prototype.sub = function(other) {
-    this.x -= other.x;
-    this.y -= other.y;
-    return this;
-  };
-  Point2.prototype.dot = function(other) {
-    return this.x * other.x + this.y * other.y;
-  };
-  Point2.prototype.len = function() {
-    return Math.sqrt(this.x * this.x + this.y * this.y);
-  };
-  Point2.prototype.lenSquare = function() {
-    return this.x * this.x + this.y * this.y;
-  };
-  Point2.prototype.normalize = function() {
-    var len2 = this.len();
-    this.x /= len2;
-    this.y /= len2;
-    return this;
-  };
-  Point2.prototype.distance = function(other) {
-    var dx = this.x - other.x;
-    var dy = this.y - other.y;
-    return Math.sqrt(dx * dx + dy * dy);
-  };
-  Point2.prototype.distanceSquare = function(other) {
-    var dx = this.x - other.x;
-    var dy = this.y - other.y;
-    return dx * dx + dy * dy;
-  };
-  Point2.prototype.negate = function() {
-    this.x = -this.x;
-    this.y = -this.y;
-    return this;
-  };
-  Point2.prototype.transform = function(m2) {
-    if (!m2) {
-      return;
-    }
-    var x = this.x;
-    var y = this.y;
-    this.x = m2[0] * x + m2[2] * y + m2[4];
-    this.y = m2[1] * x + m2[3] * y + m2[5];
-    return this;
-  };
-  Point2.prototype.toArray = function(out2) {
-    out2[0] = this.x;
-    out2[1] = this.y;
-    return out2;
-  };
-  Point2.prototype.fromArray = function(input) {
-    this.x = input[0];
-    this.y = input[1];
-  };
-  Point2.set = function(p, x, y) {
-    p.x = x;
-    p.y = y;
-  };
-  Point2.copy = function(p, p2) {
-    p.x = p2.x;
-    p.y = p2.y;
-  };
-  Point2.len = function(p) {
-    return Math.sqrt(p.x * p.x + p.y * p.y);
-  };
-  Point2.lenSquare = function(p) {
-    return p.x * p.x + p.y * p.y;
-  };
-  Point2.dot = function(p0, p1) {
-    return p0.x * p1.x + p0.y * p1.y;
-  };
-  Point2.add = function(out2, p0, p1) {
-    out2.x = p0.x + p1.x;
-    out2.y = p0.y + p1.y;
-  };
-  Point2.sub = function(out2, p0, p1) {
-    out2.x = p0.x - p1.x;
-    out2.y = p0.y - p1.y;
-  };
-  Point2.scale = function(out2, p0, scalar) {
-    out2.x = p0.x * scalar;
-    out2.y = p0.y * scalar;
-  };
-  Point2.scaleAndAdd = function(out2, p0, p1, scalar) {
-    out2.x = p0.x + p1.x * scalar;
-    out2.y = p0.y + p1.y * scalar;
-  };
-  Point2.lerp = function(out2, p0, p1, t) {
-    var onet = 1 - t;
-    out2.x = onet * p0.x + t * p1.x;
-    out2.y = onet * p0.y + t * p1.y;
-  };
-  return Point2;
-}();
-var Point_default = Point;
-
-// node_modules/_zrender@5.3.2@zrender/lib/core/BoundingRect.js
-var mathMin = Math.min;
-var mathMax = Math.max;
-var lt = new Point_default();
-var rb = new Point_default();
-var lb = new Point_default();
-var rt = new Point_default();
-var minTv = new Point_default();
-var maxTv = new Point_default();
-var BoundingRect = function() {
-  function BoundingRect2(x, y, width, height) {
-    if (width < 0) {
-      x = x + width;
-      width = -width;
-    }
-    if (height < 0) {
-      y = y + height;
-      height = -height;
-    }
-    this.x = x;
-    this.y = y;
-    this.width = width;
-    this.height = height;
-  }
-  BoundingRect2.prototype.union = function(other) {
-    var x = mathMin(other.x, this.x);
-    var y = mathMin(other.y, this.y);
-    if (isFinite(this.x) && isFinite(this.width)) {
-      this.width = mathMax(other.x + other.width, this.x + this.width) - x;
-    } else {
-      this.width = other.width;
-    }
-    if (isFinite(this.y) && isFinite(this.height)) {
-      this.height = mathMax(other.y + other.height, this.y + this.height) - y;
-    } else {
-      this.height = other.height;
-    }
-    this.x = x;
-    this.y = y;
-  };
-  BoundingRect2.prototype.applyTransform = function(m2) {
-    BoundingRect2.applyTransform(this, this, m2);
-  };
-  BoundingRect2.prototype.calculateTransform = function(b) {
-    var a = this;
-    var sx = b.width / a.width;
-    var sy = b.height / a.height;
-    var m2 = create2();
-    translate(m2, m2, [-a.x, -a.y]);
-    scale2(m2, m2, [sx, sy]);
-    translate(m2, m2, [b.x, b.y]);
-    return m2;
-  };
-  BoundingRect2.prototype.intersect = function(b, mtv) {
-    if (!b) {
-      return false;
-    }
-    if (!(b instanceof BoundingRect2)) {
-      b = BoundingRect2.create(b);
-    }
-    var a = this;
-    var ax0 = a.x;
-    var ax1 = a.x + a.width;
-    var ay0 = a.y;
-    var ay1 = a.y + a.height;
-    var bx0 = b.x;
-    var bx1 = b.x + b.width;
-    var by0 = b.y;
-    var by1 = b.y + b.height;
-    var overlap = !(ax1 < bx0 || bx1 < ax0 || ay1 < by0 || by1 < ay0);
-    if (mtv) {
-      var dMin = Infinity;
-      var dMax = 0;
-      var d0 = Math.abs(ax1 - bx0);
-      var d1 = Math.abs(bx1 - ax0);
-      var d2 = Math.abs(ay1 - by0);
-      var d3 = Math.abs(by1 - ay0);
-      var dx = Math.min(d0, d1);
-      var dy = Math.min(d2, d3);
-      if (ax1 < bx0 || bx1 < ax0) {
-        if (dx > dMax) {
-          dMax = dx;
-          if (d0 < d1) {
-            Point_default.set(maxTv, -d0, 0);
-          } else {
-            Point_default.set(maxTv, d1, 0);
-          }
-        }
-      } else {
-        if (dx < dMin) {
-          dMin = dx;
-          if (d0 < d1) {
-            Point_default.set(minTv, d0, 0);
-          } else {
-            Point_default.set(minTv, -d1, 0);
-          }
-        }
-      }
-      if (ay1 < by0 || by1 < ay0) {
-        if (dy > dMax) {
-          dMax = dy;
-          if (d2 < d3) {
-            Point_default.set(maxTv, 0, -d2);
-          } else {
-            Point_default.set(maxTv, 0, d3);
-          }
-        }
-      } else {
-        if (dx < dMin) {
-          dMin = dx;
-          if (d2 < d3) {
-            Point_default.set(minTv, 0, d2);
-          } else {
-            Point_default.set(minTv, 0, -d3);
-          }
-        }
-      }
-    }
-    if (mtv) {
-      Point_default.copy(mtv, overlap ? minTv : maxTv);
-    }
-    return overlap;
-  };
-  BoundingRect2.prototype.contain = function(x, y) {
-    var rect = this;
-    return x >= rect.x && x <= rect.x + rect.width && y >= rect.y && y <= rect.y + rect.height;
-  };
-  BoundingRect2.prototype.clone = function() {
-    return new BoundingRect2(this.x, this.y, this.width, this.height);
-  };
-  BoundingRect2.prototype.copy = function(other) {
-    BoundingRect2.copy(this, other);
-  };
-  BoundingRect2.prototype.plain = function() {
-    return {
-      x: this.x,
-      y: this.y,
-      width: this.width,
-      height: this.height
-    };
-  };
-  BoundingRect2.prototype.isFinite = function() {
-    return isFinite(this.x) && isFinite(this.y) && isFinite(this.width) && isFinite(this.height);
-  };
-  BoundingRect2.prototype.isZero = function() {
-    return this.width === 0 || this.height === 0;
-  };
-  BoundingRect2.create = function(rect) {
-    return new BoundingRect2(rect.x, rect.y, rect.width, rect.height);
-  };
-  BoundingRect2.copy = function(target, source) {
-    target.x = source.x;
-    target.y = source.y;
-    target.width = source.width;
-    target.height = source.height;
-  };
-  BoundingRect2.applyTransform = function(target, source, m2) {
-    if (!m2) {
-      if (target !== source) {
-        BoundingRect2.copy(target, source);
-      }
-      return;
-    }
-    if (m2[1] < 1e-5 && m2[1] > -1e-5 && m2[2] < 1e-5 && m2[2] > -1e-5) {
-      var sx = m2[0];
-      var sy = m2[3];
-      var tx = m2[4];
-      var ty = m2[5];
-      target.x = source.x * sx + tx;
-      target.y = source.y * sy + ty;
-      target.width = source.width * sx;
-      target.height = source.height * sy;
-      if (target.width < 0) {
-        target.x += target.width;
-        target.width = -target.width;
-      }
-      if (target.height < 0) {
-        target.y += target.height;
-        target.height = -target.height;
-      }
-      return;
-    }
-    lt.x = lb.x = source.x;
-    lt.y = rt.y = source.y;
-    rb.x = rt.x = source.x + source.width;
-    rb.y = lb.y = source.y + source.height;
-    lt.transform(m2);
-    rt.transform(m2);
-    rb.transform(m2);
-    lb.transform(m2);
-    target.x = mathMin(lt.x, rb.x, lb.x, rt.x);
-    target.y = mathMin(lt.y, rb.y, lb.y, rt.y);
-    var maxX = mathMax(lt.x, rb.x, lb.x, rt.x);
-    var maxY = mathMax(lt.y, rb.y, lb.y, rt.y);
-    target.width = maxX - target.x;
-    target.height = maxY - target.y;
-  };
-  return BoundingRect2;
-}();
-var BoundingRect_default = BoundingRect;
-
-// node_modules/_zrender@5.3.2@zrender/lib/contain/text.js
+// node_modules/_zrender@5.4.0@zrender/lib/contain/text.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -6169,7 +6220,7 @@ function calculateTextPosition(out2, opts, rect) {
   return out2;
 }
 
-// node_modules/_zrender@5.3.2@zrender/lib/Element.js
+// node_modules/_zrender@5.4.0@zrender/lib/Element.js
 var PRESERVED_NORMAL_STATE = "__zr_normal__";
 var PRIMARY_STATES_KEYS = TRANSFORMABLE_PROPS.concat(["ignore"]);
 var DEFAULT_ANIMATABLE_MAP = reduce(TRANSFORMABLE_PROPS, function(obj, key) {
@@ -7151,7 +7202,7 @@ function animateToShallow(animatable, topKey, animateObj, target, cfg, animation
 }
 var Element_default = Element;
 
-// node_modules/_zrender@5.3.2@zrender/lib/graphic/Group.js
+// node_modules/_zrender@5.4.0@zrender/lib/graphic/Group.js
 var Group = function(_super) {
   __extends(Group5, _super);
   function Group5(opts) {
@@ -7299,7 +7350,7 @@ var Group = function(_super) {
     }
   };
   Group5.prototype.getBoundingRect = function(includeChildren) {
-    var tmpRect2 = new BoundingRect_default(0, 0, 0, 0);
+    var tmpRect3 = new BoundingRect_default(0, 0, 0, 0);
     var children = includeChildren || this._children;
     var tmpMat = [];
     var rect = null;
@@ -7311,22 +7362,22 @@ var Group = function(_super) {
       var childRect = child.getBoundingRect();
       var transform2 = child.getLocalTransform(tmpMat);
       if (transform2) {
-        BoundingRect_default.applyTransform(tmpRect2, childRect, transform2);
-        rect = rect || tmpRect2.clone();
-        rect.union(tmpRect2);
+        BoundingRect_default.applyTransform(tmpRect3, childRect, transform2);
+        rect = rect || tmpRect3.clone();
+        rect.union(tmpRect3);
       } else {
         rect = rect || childRect.clone();
         rect.union(childRect);
       }
     }
-    return rect || tmpRect2;
+    return rect || tmpRect3;
   };
   return Group5;
 }(Element_default);
 Group.prototype.type = "group";
 var Group_default = Group;
 
-// node_modules/_zrender@5.3.2@zrender/lib/zrender.js
+// node_modules/_zrender@5.4.0@zrender/lib/zrender.js
 var painterCtors = {};
 var instances = {};
 function delInstance(id) {
@@ -7377,7 +7428,14 @@ var ZRender = function() {
     this.storage = storage2;
     this.painter = painter;
     var handerProxy = !env_default.node && !env_default.worker && !ssrMode ? new HandlerProxy_default(painter.getViewportRoot(), painter.root) : null;
-    this.handler = new Handler_default(storage2, painter, handerProxy, painter.root);
+    var useCoarsePointer = opts.useCoarsePointer;
+    var usePointerSize = useCoarsePointer == null || useCoarsePointer === "auto" ? env_default.touchEventsSupported : !!useCoarsePointer;
+    var defaultPointerSize = 44;
+    var pointerSize;
+    if (usePointerSize) {
+      pointerSize = retrieve2(opts.pointerSize, defaultPointerSize);
+    }
+    this.handler = new Handler_default(storage2, painter, handerProxy, painter.root, pointerSize);
     this.animation = new Animation_default({
       stage: {
         update: ssrMode ? null : function() {
@@ -7556,9 +7614,9 @@ function getInstance(id) {
 function registerPainter(name, Ctor) {
   painterCtors[name] = Ctor;
 }
-var version = "5.3.2";
+var version = "5.4.0";
 
-// node_modules/_echarts@5.3.3@echarts/lib/model/Global.js
+// node_modules/_echarts@5.4.0@echarts/lib/model/Global.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -7574,7 +7632,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/util/model.js
+// node_modules/_echarts@5.4.0@echarts/lib/util/model.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -7590,7 +7648,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/util/number.js
+// node_modules/_echarts@5.4.0@echarts/lib/util/number.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -7717,11 +7775,15 @@ function getPercentWithPrecision(valueList, idx, precision) {
   if (!valueList[idx]) {
     return 0;
   }
+  var seats = getPercentSeats(valueList, precision);
+  return seats[idx] || 0;
+}
+function getPercentSeats(valueList, precision) {
   var sum2 = reduce(valueList, function(acc, val) {
     return acc + (isNaN(val) ? 0 : val);
   }, 0);
   if (sum2 === 0) {
-    return 0;
+    return [];
   }
   var digits = Math.pow(10, precision);
   var votesPerQuota = map(valueList, function(val) {
@@ -7734,8 +7796,8 @@ function getPercentWithPrecision(valueList, idx, precision) {
   var currentSum = reduce(seats, function(acc, val) {
     return acc + val;
   }, 0);
-  var remainder = map(votesPerQuota, function(votes, idx2) {
-    return votes - seats[idx2];
+  var remainder = map(votesPerQuota, function(votes, idx) {
+    return votes - seats[idx];
   });
   while (currentSum < targetSeats) {
     var max3 = Number.NEGATIVE_INFINITY;
@@ -7750,7 +7812,9 @@ function getPercentWithPrecision(valueList, idx, precision) {
     remainder[maxId] = 0;
     ++currentSum;
   }
-  return seats[idx] / digits;
+  return map(seats, function(seat) {
+    return seat / digits;
+  });
 }
 function addSafe(val0, val1) {
   var maxPrecision = Math.max(getPrecision(val0), getPrecision(val1));
@@ -7895,7 +7959,7 @@ function getLeastCommonMultiple(a, b) {
   return a * b / getGreatestCommonDividor(a, b);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/util/log.js
+// node_modules/_echarts@5.4.0@echarts/lib/util/log.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -7981,7 +8045,7 @@ function throwError(msg) {
   throw new Error(msg);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/util/model.js
+// node_modules/_echarts@5.4.0@echarts/lib/util/model.js
 function interpolateNumber2(p0, p1, percent) {
   return (p1 - p0) * percent + p0;
 }
@@ -8422,7 +8486,7 @@ function interpolateRawValues(data, precision, sourceValue, targetValue, percent
   }
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/model/Model.js
+// node_modules/_echarts@5.4.0@echarts/lib/model/Model.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -8438,7 +8502,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/util/clazz.js
+// node_modules/_echarts@5.4.0@echarts/lib/util/clazz.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -8607,7 +8671,7 @@ function enableClassManagement(target) {
   }
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/model/mixin/areaStyle.js
+// node_modules/_echarts@5.4.0@echarts/lib/model/mixin/areaStyle.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -8623,7 +8687,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/model/mixin/makeStyleMapper.js
+// node_modules/_echarts@5.4.0@echarts/lib/model/mixin/makeStyleMapper.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -8661,7 +8725,7 @@ function makeStyleMapper(properties, ignoreParent) {
   };
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/model/mixin/areaStyle.js
+// node_modules/_echarts@5.4.0@echarts/lib/model/mixin/areaStyle.js
 var AREA_STYLE_KEY_MAP = [
   ["fill", "color"],
   ["shadowBlur"],
@@ -8680,7 +8744,7 @@ var AreaStyleMixin = function() {
   return AreaStyleMixin2;
 }();
 
-// node_modules/_echarts@5.3.3@echarts/lib/model/mixin/textStyle.js
+// node_modules/_echarts@5.4.0@echarts/lib/model/mixin/textStyle.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -8696,7 +8760,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/label/labelStyle.js
+// node_modules/_echarts@5.4.0@echarts/lib/label/labelStyle.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -8712,7 +8776,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/graphic/Text.js
+// node_modules/_zrender@5.4.0@zrender/lib/graphic/Text.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -8728,7 +8792,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/graphic/helper/parseText.js
+// node_modules/_zrender@5.4.0@zrender/lib/graphic/helper/parseText.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -8744,7 +8808,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/graphic/helper/image.js
+// node_modules/_zrender@5.4.0@zrender/lib/graphic/helper/image.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -8808,7 +8872,7 @@ function isImageReady(image) {
   return image && image.width && image.height;
 }
 
-// node_modules/_zrender@5.3.2@zrender/lib/graphic/helper/parseText.js
+// node_modules/_zrender@5.4.0@zrender/lib/graphic/helper/parseText.js
 var STYLE_REG = /\{([a-zA-Z0-9_]+)\|([^}]*)\}/g;
 function truncateText(text, containerWidth, font, ellipsis, options) {
   if (!containerWidth) {
@@ -9247,7 +9311,7 @@ function wrapText(text, font, lineWidth, isBreakAll, lastAccumWidth) {
   };
 }
 
-// node_modules/_zrender@5.3.2@zrender/lib/graphic/TSpan.js
+// node_modules/_zrender@5.4.0@zrender/lib/graphic/TSpan.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -9263,7 +9327,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/graphic/Displayable.js
+// node_modules/_zrender@5.4.0@zrender/lib/graphic/Displayable.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -9571,20 +9635,20 @@ var Displayable = function(_super) {
   }();
   return Displayable2;
 }(Element_default);
-var tmpRect = new BoundingRect_default(0, 0, 0, 0);
+var tmpRect2 = new BoundingRect_default(0, 0, 0, 0);
 var viewRect = new BoundingRect_default(0, 0, 0, 0);
 function isDisplayableCulled(el, width, height) {
-  tmpRect.copy(el.getBoundingRect());
+  tmpRect2.copy(el.getBoundingRect());
   if (el.transform) {
-    tmpRect.applyTransform(el.transform);
+    tmpRect2.applyTransform(el.transform);
   }
   viewRect.width = width;
   viewRect.height = height;
-  return !tmpRect.intersect(viewRect);
+  return !tmpRect2.intersect(viewRect);
 }
 var Displayable_default = Displayable;
 
-// node_modules/_zrender@5.3.2@zrender/lib/graphic/Path.js
+// node_modules/_zrender@5.4.0@zrender/lib/graphic/Path.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -9600,7 +9664,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/core/PathProxy.js
+// node_modules/_zrender@5.4.0@zrender/lib/core/PathProxy.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -9616,7 +9680,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/core/bbox.js
+// node_modules/_zrender@5.4.0@zrender/lib/core/bbox.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -9753,7 +9817,7 @@ function fromArc(x, y, rx, ry, startAngle, endAngle, anticlockwise, min3, max3) 
   }
 }
 
-// node_modules/_zrender@5.3.2@zrender/lib/core/PathProxy.js
+// node_modules/_zrender@5.4.0@zrender/lib/core/PathProxy.js
 var CMD = {
   M: 1,
   L: 2,
@@ -10442,7 +10506,7 @@ var PathProxy = function() {
 }();
 var PathProxy_default = PathProxy;
 
-// node_modules/_zrender@5.3.2@zrender/lib/contain/path.js
+// node_modules/_zrender@5.4.0@zrender/lib/contain/path.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -10458,7 +10522,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/contain/line.js
+// node_modules/_zrender@5.4.0@zrender/lib/contain/line.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -10494,7 +10558,7 @@ function containStroke(x0, y0, x1, y1, lineWidth, x, y) {
   return _s <= _l / 2 * _l / 2;
 }
 
-// node_modules/_zrender@5.3.2@zrender/lib/contain/cubic.js
+// node_modules/_zrender@5.4.0@zrender/lib/contain/cubic.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -10521,7 +10585,7 @@ function containStroke2(x0, y0, x1, y1, x2, y2, x3, y3, lineWidth, x, y) {
   return d <= _l / 2;
 }
 
-// node_modules/_zrender@5.3.2@zrender/lib/contain/quadratic.js
+// node_modules/_zrender@5.4.0@zrender/lib/contain/quadratic.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -10548,7 +10612,7 @@ function containStroke3(x0, y0, x1, y1, x2, y2, lineWidth, x, y) {
   return d <= _l / 2;
 }
 
-// node_modules/_zrender@5.3.2@zrender/lib/contain/arc.js
+// node_modules/_zrender@5.4.0@zrender/lib/contain/arc.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -10564,7 +10628,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/contain/util.js
+// node_modules/_zrender@5.4.0@zrender/lib/contain/util.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -10588,7 +10652,7 @@ function normalizeRadian(angle) {
   return angle;
 }
 
-// node_modules/_zrender@5.3.2@zrender/lib/contain/arc.js
+// node_modules/_zrender@5.4.0@zrender/lib/contain/arc.js
 var PI24 = Math.PI * 2;
 function containStroke4(cx, cy, r, startAngle, endAngle, anticlockwise, lineWidth, x, y) {
   if (lineWidth === 0) {
@@ -10622,7 +10686,7 @@ function containStroke4(cx, cy, r, startAngle, endAngle, anticlockwise, lineWidt
   return angle >= startAngle && angle <= endAngle || angle + PI24 >= startAngle && angle + PI24 <= endAngle;
 }
 
-// node_modules/_zrender@5.3.2@zrender/lib/contain/windingLine.js
+// node_modules/_zrender@5.4.0@zrender/lib/contain/windingLine.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -10653,7 +10717,7 @@ function windingLine(x0, y0, x1, y1, x, y) {
   return x_ === x ? Infinity : x_ > x ? dir3 : 0;
 }
 
-// node_modules/_zrender@5.3.2@zrender/lib/contain/path.js
+// node_modules/_zrender@5.4.0@zrender/lib/contain/path.js
 var CMD2 = PathProxy_default.CMD;
 var PI25 = Math.PI * 2;
 var EPSILON4 = 1e-4;
@@ -10933,7 +10997,7 @@ function containStroke5(pathProxy, lineWidth, x, y) {
   return containPath(pathProxy, lineWidth, true, x, y);
 }
 
-// node_modules/_zrender@5.3.2@zrender/lib/graphic/Path.js
+// node_modules/_zrender@5.4.0@zrender/lib/graphic/Path.js
 var DEFAULT_PATH_STYLE = defaults({
   fill: "#000",
   stroke: null,
@@ -11315,7 +11379,7 @@ var Path = function(_super) {
 }(Displayable_default);
 var Path_default = Path;
 
-// node_modules/_zrender@5.3.2@zrender/lib/graphic/TSpan.js
+// node_modules/_zrender@5.4.0@zrender/lib/graphic/TSpan.js
 var DEFAULT_TSPAN_STYLE = defaults({
   strokeFirst: true,
   font: DEFAULT_FONT,
@@ -11374,7 +11438,7 @@ var TSpan = function(_super) {
 TSpan.prototype.type = "tspan";
 var TSpan_default = TSpan;
 
-// node_modules/_zrender@5.3.2@zrender/lib/graphic/Image.js
+// node_modules/_zrender@5.4.0@zrender/lib/graphic/Image.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -11455,7 +11519,7 @@ var ZRImage = function(_super) {
 ZRImage.prototype.type = "image";
 var Image_default = ZRImage;
 
-// node_modules/_zrender@5.3.2@zrender/lib/graphic/shape/Rect.js
+// node_modules/_zrender@5.4.0@zrender/lib/graphic/shape/Rect.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -11471,7 +11535,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/graphic/helper/roundRect.js
+// node_modules/_zrender@5.4.0@zrender/lib/graphic/helper/roundRect.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -11557,7 +11621,7 @@ function buildPath(ctx, shape) {
   r1 !== 0 && ctx.arc(x + r1, y + r1, r1, Math.PI, Math.PI * 1.5);
 }
 
-// node_modules/_zrender@5.3.2@zrender/lib/graphic/helper/subPixelOptimize.js
+// node_modules/_zrender@5.4.0@zrender/lib/graphic/helper/subPixelOptimize.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -11627,7 +11691,7 @@ function subPixelOptimize(position2, lineWidth, positiveOrNegative) {
   return (doubledPosition + round2(lineWidth)) % 2 === 0 ? doubledPosition / 2 : (doubledPosition + (positiveOrNegative ? 1 : -1)) / 2;
 }
 
-// node_modules/_zrender@5.3.2@zrender/lib/graphic/shape/Rect.js
+// node_modules/_zrender@5.4.0@zrender/lib/graphic/shape/Rect.js
 var RectShape = function() {
   function RectShape2() {
     this.x = 0;
@@ -11679,7 +11743,7 @@ var Rect = function(_super) {
 Rect.prototype.type = "rect";
 var Rect_default = Rect;
 
-// node_modules/_zrender@5.3.2@zrender/lib/graphic/Text.js
+// node_modules/_zrender@5.4.0@zrender/lib/graphic/Text.js
 var DEFAULT_RICH_TEXT_COLOR = {
   fill: "#000"
 };
@@ -11780,7 +11844,7 @@ var ZRText = function(_super) {
       this._updateSubTexts();
     }
     if (!this._rect) {
-      var tmpRect2 = new BoundingRect_default(0, 0, 0, 0);
+      var tmpRect3 = new BoundingRect_default(0, 0, 0, 0);
       var children = this._children;
       var tmpMat = [];
       var rect = null;
@@ -11789,16 +11853,16 @@ var ZRText = function(_super) {
         var childRect = child.getBoundingRect();
         var transform2 = child.getLocalTransform(tmpMat);
         if (transform2) {
-          tmpRect2.copy(childRect);
-          tmpRect2.applyTransform(transform2);
-          rect = rect || tmpRect2.clone();
-          rect.union(tmpRect2);
+          tmpRect3.copy(childRect);
+          tmpRect3.applyTransform(transform2);
+          rect = rect || tmpRect3.clone();
+          rect.union(tmpRect3);
         } else {
           rect = rect || childRect.clone();
           rect.union(childRect);
         }
       }
-      this._rect = rect || tmpRect2;
+      this._rect = rect || tmpRect3;
     }
     return this._rect;
   };
@@ -12169,7 +12233,7 @@ function needDrawBackground(style) {
 }
 var Text_default = ZRText;
 
-// node_modules/_echarts@5.3.3@echarts/lib/util/states.js
+// node_modules/_echarts@5.4.0@echarts/lib/util/states.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -12185,7 +12249,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/util/innerStore.js
+// node_modules/_echarts@5.4.0@echarts/lib/util/innerStore.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -12218,7 +12282,7 @@ var setCommonECData = function(seriesIndex, dataType, dataIdx, el) {
   }
 };
 
-// node_modules/_echarts@5.3.3@echarts/lib/util/states.js
+// node_modules/_echarts@5.4.0@echarts/lib/util/states.js
 var _highlightNextDigit = 1;
 var _highlightKeyMap = {};
 var getSavedStates = makeInner();
@@ -12761,7 +12825,7 @@ function savePathStates(el) {
   store.selectStroke = selectState.style && selectState.style.stroke || null;
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/util/graphic.js
+// node_modules/_echarts@5.4.0@echarts/lib/util/graphic.js
 var graphic_exports = {};
 __export(graphic_exports, {
   Arc: () => Arc_default,
@@ -12828,7 +12892,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/tool/path.js
+// node_modules/_zrender@5.4.0@zrender/lib/tool/path.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -12844,7 +12908,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/tool/transformPath.js
+// node_modules/_zrender@5.4.0@zrender/lib/tool/transformPath.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -12939,7 +13003,7 @@ function transformPath(path, m2) {
   path.increaseVersion();
 }
 
-// node_modules/_zrender@5.3.2@zrender/lib/tool/path.js
+// node_modules/_zrender@5.4.0@zrender/lib/tool/path.js
 var mathSqrt3 = Math.sqrt;
 var mathSin3 = Math.sin;
 var mathCos3 = Math.cos;
@@ -13292,7 +13356,7 @@ function clonePath(sourcePath, opts) {
   return path;
 }
 
-// node_modules/_zrender@5.3.2@zrender/lib/graphic/shape/Circle.js
+// node_modules/_zrender@5.4.0@zrender/lib/graphic/shape/Circle.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -13332,7 +13396,7 @@ var Circle = function(_super) {
 Circle.prototype.type = "circle";
 var Circle_default = Circle;
 
-// node_modules/_zrender@5.3.2@zrender/lib/graphic/shape/Ellipse.js
+// node_modules/_zrender@5.4.0@zrender/lib/graphic/shape/Ellipse.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -13384,7 +13448,7 @@ var Ellipse = function(_super) {
 Ellipse.prototype.type = "ellipse";
 var Ellipse_default = Ellipse;
 
-// node_modules/_zrender@5.3.2@zrender/lib/graphic/shape/Sector.js
+// node_modules/_zrender@5.4.0@zrender/lib/graphic/shape/Sector.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -13400,7 +13464,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/graphic/helper/roundSector.js
+// node_modules/_zrender@5.4.0@zrender/lib/graphic/helper/roundSector.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -13630,7 +13694,7 @@ function buildPath2(ctx, shape) {
   ctx.closePath();
 }
 
-// node_modules/_zrender@5.3.2@zrender/lib/graphic/shape/Sector.js
+// node_modules/_zrender@5.4.0@zrender/lib/graphic/shape/Sector.js
 var SectorShape = function() {
   function SectorShape2() {
     this.cx = 0;
@@ -13663,7 +13727,7 @@ var Sector = function(_super) {
 Sector.prototype.type = "sector";
 var Sector_default = Sector;
 
-// node_modules/_zrender@5.3.2@zrender/lib/graphic/shape/Ring.js
+// node_modules/_zrender@5.4.0@zrender/lib/graphic/shape/Ring.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -13709,7 +13773,7 @@ var Ring = function(_super) {
 Ring.prototype.type = "ring";
 var Ring_default = Ring;
 
-// node_modules/_zrender@5.3.2@zrender/lib/graphic/shape/Polygon.js
+// node_modules/_zrender@5.4.0@zrender/lib/graphic/shape/Polygon.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -13725,7 +13789,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/graphic/helper/poly.js
+// node_modules/_zrender@5.4.0@zrender/lib/graphic/helper/poly.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -13741,7 +13805,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/graphic/helper/smoothBezier.js
+// node_modules/_zrender@5.4.0@zrender/lib/graphic/helper/smoothBezier.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -13817,7 +13881,7 @@ function smoothBezier(points4, smooth, isLoop, constraint) {
   return cps;
 }
 
-// node_modules/_zrender@5.3.2@zrender/lib/graphic/helper/poly.js
+// node_modules/_zrender@5.4.0@zrender/lib/graphic/helper/poly.js
 function buildPath3(ctx, shape, closePath) {
   var smooth = shape.smooth;
   var points4 = shape.points;
@@ -13842,7 +13906,7 @@ function buildPath3(ctx, shape, closePath) {
   }
 }
 
-// node_modules/_zrender@5.3.2@zrender/lib/graphic/shape/Polygon.js
+// node_modules/_zrender@5.4.0@zrender/lib/graphic/shape/Polygon.js
 var PolygonShape = function() {
   function PolygonShape2() {
     this.points = null;
@@ -13867,7 +13931,7 @@ var Polygon = function(_super) {
 Polygon.prototype.type = "polygon";
 var Polygon_default = Polygon;
 
-// node_modules/_zrender@5.3.2@zrender/lib/graphic/shape/Polyline.js
+// node_modules/_zrender@5.4.0@zrender/lib/graphic/shape/Polyline.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -13913,7 +13977,7 @@ var Polyline = function(_super) {
 Polyline.prototype.type = "polyline";
 var Polyline_default = Polyline;
 
-// node_modules/_zrender@5.3.2@zrender/lib/graphic/shape/Line.js
+// node_modules/_zrender@5.4.0@zrender/lib/graphic/shape/Line.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -13993,7 +14057,7 @@ var Line = function(_super) {
 Line.prototype.type = "line";
 var Line_default = Line;
 
-// node_modules/_zrender@5.3.2@zrender/lib/graphic/shape/BezierCurve.js
+// node_modules/_zrender@5.4.0@zrender/lib/graphic/shape/BezierCurve.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -14100,7 +14164,7 @@ var BezierCurve = function(_super) {
 BezierCurve.prototype.type = "bezier-curve";
 var BezierCurve_default = BezierCurve;
 
-// node_modules/_zrender@5.3.2@zrender/lib/graphic/shape/Arc.js
+// node_modules/_zrender@5.4.0@zrender/lib/graphic/shape/Arc.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -14157,7 +14221,7 @@ var Arc = function(_super) {
 Arc.prototype.type = "arc";
 var Arc_default = Arc;
 
-// node_modules/_zrender@5.3.2@zrender/lib/graphic/CompoundPath.js
+// node_modules/_zrender@5.4.0@zrender/lib/graphic/CompoundPath.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -14220,7 +14284,7 @@ var CompoundPath = function(_super) {
 }(Path_default);
 var CompoundPath_default = CompoundPath;
 
-// node_modules/_zrender@5.3.2@zrender/lib/graphic/LinearGradient.js
+// node_modules/_zrender@5.4.0@zrender/lib/graphic/LinearGradient.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -14236,7 +14300,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/graphic/Gradient.js
+// node_modules/_zrender@5.4.0@zrender/lib/graphic/Gradient.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -14265,7 +14329,7 @@ var Gradient = function() {
 }();
 var Gradient_default = Gradient;
 
-// node_modules/_zrender@5.3.2@zrender/lib/graphic/LinearGradient.js
+// node_modules/_zrender@5.4.0@zrender/lib/graphic/LinearGradient.js
 var LinearGradient = function(_super) {
   __extends(LinearGradient2, _super);
   function LinearGradient2(x, y, x2, y2, colorStops, globalCoord) {
@@ -14282,7 +14346,7 @@ var LinearGradient = function(_super) {
 }(Gradient_default);
 var LinearGradient_default = LinearGradient;
 
-// node_modules/_zrender@5.3.2@zrender/lib/graphic/RadialGradient.js
+// node_modules/_zrender@5.4.0@zrender/lib/graphic/RadialGradient.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -14312,7 +14376,7 @@ var RadialGradient = function(_super) {
 }(Gradient_default);
 var RadialGradient_default = RadialGradient;
 
-// node_modules/_zrender@5.3.2@zrender/lib/core/OrientedBoundingRect.js
+// node_modules/_zrender@5.4.0@zrender/lib/core/OrientedBoundingRect.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -14444,7 +14508,7 @@ var OrientedBoundingRect = function() {
 }();
 var OrientedBoundingRect_default = OrientedBoundingRect;
 
-// node_modules/_zrender@5.3.2@zrender/lib/graphic/IncrementalDisplayable.js
+// node_modules/_zrender@5.4.0@zrender/lib/graphic/IncrementalDisplayable.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -14568,7 +14632,7 @@ var IncrementalDisplayable = function(_super) {
 }(Displayable_default);
 var IncrementalDisplayable_default = IncrementalDisplayable;
 
-// node_modules/_echarts@5.3.3@echarts/lib/animation/basicTrasition.js
+// node_modules/_echarts@5.4.0@echarts/lib/animation/basicTransition.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -14721,7 +14785,7 @@ function getOldStyle(el) {
   return transitionStore(el).oldStyle;
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/util/graphic.js
+// node_modules/_echarts@5.4.0@echarts/lib/util/graphic.js
 var mathMax5 = Math.max;
 var mathMin5 = Math.min;
 var _customShapeMap = {};
@@ -14799,9 +14863,11 @@ function resizePath(path, rect) {
   var m2 = pathRect.calculateTransform(rect);
   path.applyTransform(m2);
 }
-function subPixelOptimizeLine2(param) {
-  subPixelOptimizeLine(param.shape, param.shape, param.style);
-  return param;
+function subPixelOptimizeLine2(shape, lineWidth) {
+  subPixelOptimizeLine(shape, shape, {
+    lineWidth
+  });
+  return shape;
 }
 function subPixelOptimizeRect2(param) {
   subPixelOptimizeRect(param.shape, param.shape, param.style);
@@ -15018,7 +15084,7 @@ registerShape("line", Line_default);
 registerShape("bezierCurve", BezierCurve_default);
 registerShape("arc", Arc_default);
 
-// node_modules/_echarts@5.3.3@echarts/lib/label/labelStyle.js
+// node_modules/_echarts@5.4.0@echarts/lib/label/labelStyle.js
 var EMPTY_OBJ = {};
 function setLabelText(label, labelTexts) {
   for (var i = 0; i < SPECIAL_STATES.length; i++) {
@@ -15378,7 +15444,7 @@ function animateLabelValue(textEl, dataIndex, data, animatableModel, labelFetche
   }, animatableModel, dataIndex, null, during);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/model/mixin/textStyle.js
+// node_modules/_echarts@5.4.0@echarts/lib/model/mixin/textStyle.js
 var PATH_COLOR = ["textStyle", "color"];
 var textStyleParams = ["fontStyle", "fontWeight", "fontSize", "fontFamily", "padding", "lineHeight", "rich", "width", "height", "overflow"];
 var tmpText = new Text_default();
@@ -15413,7 +15479,7 @@ var TextStyleMixin = function() {
 }();
 var textStyle_default = TextStyleMixin;
 
-// node_modules/_echarts@5.3.3@echarts/lib/model/mixin/lineStyle.js
+// node_modules/_echarts@5.4.0@echarts/lib/model/mixin/lineStyle.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -15452,7 +15518,7 @@ var LineStyleMixin = function() {
   return LineStyleMixin2;
 }();
 
-// node_modules/_echarts@5.3.3@echarts/lib/model/mixin/itemStyle.js
+// node_modules/_echarts@5.4.0@echarts/lib/model/mixin/itemStyle.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -15492,7 +15558,7 @@ var ItemStyleMixin = function() {
   return ItemStyleMixin2;
 }();
 
-// node_modules/_echarts@5.3.3@echarts/lib/model/Model.js
+// node_modules/_echarts@5.4.0@echarts/lib/model/Model.js
 var Model = function() {
   function Model2(option, parentModel, ecModel) {
     this.parentModel = parentModel;
@@ -15588,7 +15654,7 @@ mixin(Model, AreaStyleMixin);
 mixin(Model, textStyle_default);
 var Model_default = Model;
 
-// node_modules/_echarts@5.3.3@echarts/lib/model/Component.js
+// node_modules/_echarts@5.4.0@echarts/lib/model/Component.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -15604,7 +15670,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/util/component.js
+// node_modules/_echarts@5.4.0@echarts/lib/util/component.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -15727,7 +15793,7 @@ function inheritDefaultOption(superOption, subOption) {
   return merge(merge({}, superOption, true), subOption, true);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/util/layout.js
+// node_modules/_echarts@5.4.0@echarts/lib/util/layout.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -15743,7 +15809,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/util/format.js
+// node_modules/_echarts@5.4.0@echarts/lib/util/format.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -15759,7 +15825,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/util/time.js
+// node_modules/_echarts@5.4.0@echarts/lib/util/time.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -15775,7 +15841,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/core/locale.js
+// node_modules/_echarts@5.4.0@echarts/lib/core/locale.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -15791,7 +15857,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/i18n/langEN.js
+// node_modules/_echarts@5.4.0@echarts/lib/i18n/langEN.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -15916,7 +15982,7 @@ var langEN_default = {
   }
 };
 
-// node_modules/_echarts@5.3.3@echarts/lib/i18n/langZH.js
+// node_modules/_echarts@5.4.0@echarts/lib/i18n/langZH.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -16041,7 +16107,7 @@ var langZH_default = {
   }
 };
 
-// node_modules/_echarts@5.3.3@echarts/lib/core/locale.js
+// node_modules/_echarts@5.4.0@echarts/lib/core/locale.js
 var LOCALE_ZH = "ZH";
 var LOCALE_EN = "EN";
 var DEFAULT_LOCALE = LOCALE_EN;
@@ -16077,7 +16143,7 @@ function getDefaultLocaleModel() {
 registerLocale(LOCALE_EN, langEN_default);
 registerLocale(LOCALE_ZH, langZH_default);
 
-// node_modules/_echarts@5.3.3@echarts/lib/util/time.js
+// node_modules/_echarts@5.4.0@echarts/lib/util/time.js
 var ONE_SECOND = 1e3;
 var ONE_MINUTE = ONE_SECOND * 60;
 var ONE_HOUR = ONE_MINUTE * 60;
@@ -16294,7 +16360,7 @@ function millisecondsSetterName(isUTC) {
   return isUTC ? "setUTCMilliseconds" : "setMilliseconds";
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/legacy/getTextRect.js
+// node_modules/_echarts@5.4.0@echarts/lib/legacy/getTextRect.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -16325,7 +16391,7 @@ function getTextRect(text, font, align, verticalAlign, padding, rich, truncate, 
   return textEl.getBoundingRect();
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/util/format.js
+// node_modules/_echarts@5.4.0@echarts/lib/util/format.js
 function addCommas(x) {
   if (!isNumeric(x)) {
     return isString(x) ? x : "-";
@@ -16343,19 +16409,6 @@ function toCamelCase(str, upperCaseFirst) {
   return str;
 }
 var normalizeCssArray2 = normalizeCssArray;
-var replaceReg = /([&<>"'])/g;
-var replaceMap = {
-  "&": "&amp;",
-  "<": "&lt;",
-  ">": "&gt;",
-  '"': "&quot;",
-  "'": "&#39;"
-};
-function encodeHTML(source) {
-  return source == null ? "" : (source + "").replace(replaceReg, function(str, c) {
-    return replaceMap[c];
-  });
-}
 function makeValueReadable(value, valueType, useUTC) {
   var USER_READABLE_DEFUALT_TIME_PATTERN = "{yyyy}-{MM}-{dd} {HH}:{mm}:{ss}";
   function stringToUserReadable(str) {
@@ -16480,7 +16533,7 @@ function windowOpen(link, target) {
   }
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/util/layout.js
+// node_modules/_echarts@5.4.0@echarts/lib/util/layout.js
 var each2 = each;
 var LOCATION_PARAMS = ["left", "right", "top", "bottom", "width", "height"];
 var HV_NAMES = [["width", "left", "right"], ["height", "top", "bottom"]];
@@ -16735,7 +16788,7 @@ function copyLayoutParams(target, source) {
   return target;
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/model/Component.js
+// node_modules/_echarts@5.4.0@echarts/lib/model/Component.js
 var inner = makeInner();
 var ComponentModel = function(_super) {
   __extends(ComponentModel2, _super);
@@ -16843,7 +16896,7 @@ function getDependencies(componentType) {
 }
 var Component_default = ComponentModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/model/globalDefault.js
+// node_modules/_echarts@5.4.0@echarts/lib/model/globalDefault.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -16928,7 +16981,7 @@ var globalDefault_default = {
   useUTC: false
 };
 
-// node_modules/_echarts@5.3.3@echarts/lib/data/helper/sourceHelper.js
+// node_modules/_echarts@5.4.0@echarts/lib/data/helper/sourceHelper.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -16944,7 +16997,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/util/types.js
+// node_modules/_echarts@5.4.0@echarts/lib/util/types.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -16969,7 +17022,7 @@ var SOURCE_FORMAT_UNKNOWN = "unknown";
 var SERIES_LAYOUT_BY_COLUMN = "column";
 var SERIES_LAYOUT_BY_ROW = "row";
 
-// node_modules/_echarts@5.3.3@echarts/lib/data/helper/sourceHelper.js
+// node_modules/_echarts@5.4.0@echarts/lib/data/helper/sourceHelper.js
 var BE_ORDINAL = {
   Must: 1,
   Might: 2,
@@ -17200,7 +17253,7 @@ function doGuessOrdinal(data, sourceFormat, seriesLayoutBy, dimensionsDefine, st
   return BE_ORDINAL.Not;
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/model/internalComponentCreator.js
+// node_modules/_echarts@5.4.0@echarts/lib/model/internalComponentCreator.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -17237,7 +17290,7 @@ function concatInternalOptions(ecModel, mainType, newCmptOptionList) {
   return newCmptOptionList.concat(internalOptions);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/model/mixin/palette.js
+// node_modules/_echarts@5.4.0@echarts/lib/model/mixin/palette.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -17305,7 +17358,7 @@ function clearPalette(that, inner23) {
   inner23(that).paletteNameMap = {};
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/model/Global.js
+// node_modules/_echarts@5.4.0@echarts/lib/model/Global.js
 var reCreateSeriesIndices;
 var assertSeriesInitialized;
 var initBase;
@@ -17854,7 +17907,7 @@ function normalizeSetOptionInput(opts) {
 mixin(GlobalModel, PaletteMixin);
 var Global_default = GlobalModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/core/ExtensionAPI.js
+// node_modules/_echarts@5.4.0@echarts/lib/core/ExtensionAPI.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -17896,7 +17949,7 @@ var ExtensionAPI = function() {
 }();
 var ExtensionAPI_default = ExtensionAPI;
 
-// node_modules/_echarts@5.3.3@echarts/lib/core/CoordinateSystem.js
+// node_modules/_echarts@5.4.0@echarts/lib/core/CoordinateSystem.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -17942,7 +17995,7 @@ var CoordinateSystemManager = function() {
 }();
 var CoordinateSystem_default = CoordinateSystemManager;
 
-// node_modules/_echarts@5.3.3@echarts/lib/model/OptionManager.js
+// node_modules/_echarts@5.4.0@echarts/lib/model/OptionManager.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -18137,7 +18190,7 @@ function indicesEquals(indices1, indices2) {
 }
 var OptionManager_default = OptionManager;
 
-// node_modules/_echarts@5.3.3@echarts/lib/preprocessor/backwardCompat.js
+// node_modules/_echarts@5.4.0@echarts/lib/preprocessor/backwardCompat.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -18153,7 +18206,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/preprocessor/helper/compatStyle.js
+// node_modules/_echarts@5.4.0@echarts/lib/preprocessor/helper/compatStyle.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -18431,7 +18484,7 @@ function globalCompatStyle(option, isTheme) {
   compatTextStyle(toObj(option.tooltip).axisPointer, "label");
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/preprocessor/backwardCompat.js
+// node_modules/_echarts@5.4.0@echarts/lib/preprocessor/backwardCompat.js
 function get(opt, path) {
   var pathArr = path.split(",");
   var obj = opt;
@@ -18638,7 +18691,7 @@ function globalBackwardCompat(option, isTheme) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/processor/dataStack.js
+// node_modules/_echarts@5.4.0@echarts/lib/processor/dataStack.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -18720,7 +18773,7 @@ function calculateStack(stackInfoList) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/model/Series.js
+// node_modules/_echarts@5.4.0@echarts/lib/model/Series.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -18736,7 +18789,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/model/mixin/dataFormat.js
+// node_modules/_echarts@5.4.0@echarts/lib/model/mixin/dataFormat.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -18752,7 +18805,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/data/helper/dataProvider.js
+// node_modules/_echarts@5.4.0@echarts/lib/data/helper/dataProvider.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -18768,7 +18821,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/data/Source.js
+// node_modules/_echarts@5.4.0@echarts/lib/data/Source.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -18988,7 +19041,7 @@ function shouldRetrieveDataByName(source) {
   return sourceFormat === SOURCE_FORMAT_OBJECT_ROWS || sourceFormat === SOURCE_FORMAT_KEYED_COLUMNS;
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/data/helper/dataProvider.js
+// node_modules/_echarts@5.4.0@echarts/lib/data/helper/dataProvider.js
 var _a;
 var _b;
 var _c;
@@ -19233,7 +19286,7 @@ function retrieveRawValue(data, dataIndex, dim) {
   }
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/model/mixin/dataFormat.js
+// node_modules/_echarts@5.4.0@echarts/lib/model/mixin/dataFormat.js
 var DIMENSION_LABEL_REG = /\{@(.+?)\}/g;
 var DataFormatMixin = function() {
   function DataFormatMixin2() {
@@ -19340,7 +19393,7 @@ function normalizeTooltipFormatResult(result) {
   };
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/core/task.js
+// node_modules/_echarts@5.4.0@echarts/lib/core/task.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -19531,7 +19584,7 @@ var iterator = function() {
   }
 }();
 
-// node_modules/_echarts@5.3.3@echarts/lib/data/helper/sourceManager.js
+// node_modules/_echarts@5.4.0@echarts/lib/data/helper/sourceManager.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -19547,7 +19600,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/data/helper/transform.js
+// node_modules/_echarts@5.4.0@echarts/lib/data/helper/transform.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -19563,7 +19616,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/data/helper/dataValueHelper.js
+// node_modules/_echarts@5.4.0@echarts/lib/data/helper/dataValueHelper.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -19690,7 +19743,7 @@ function createFilterComparator(op, rval) {
   return op === "eq" || op === "ne" ? new FilterEqualityComparator(op === "eq", rval) : hasOwn(ORDER_COMPARISON_OP_MAP, op) ? new FilterOrderComparator(op, rval) : null;
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/data/helper/transform.js
+// node_modules/_echarts@5.4.0@echarts/lib/data/helper/transform.js
 var ExternalSource = function() {
   function ExternalSource2() {
   }
@@ -19972,7 +20025,7 @@ function isSupportedSourceFormat(sourceFormat) {
   return sourceFormat === SOURCE_FORMAT_ARRAY_ROWS || sourceFormat === SOURCE_FORMAT_OBJECT_ROWS;
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/data/DataStore.js
+// node_modules/_echarts@5.4.0@echarts/lib/data/DataStore.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -20761,7 +20814,7 @@ var DataStore = function() {
 }();
 var DataStore_default = DataStore;
 
-// node_modules/_echarts@5.3.3@echarts/lib/data/helper/sourceManager.js
+// node_modules/_echarts@5.4.0@echarts/lib/data/helper/sourceManager.js
 var SourceManager = function() {
   function SourceManager2(sourceHost) {
     this._sourceList = [];
@@ -20982,7 +21035,7 @@ function doThrow(errMsg) {
   throw new Error(errMsg);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/tooltip/seriesFormatTooltip.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/tooltip/seriesFormatTooltip.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -20998,7 +21051,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/tooltip/tooltipMarkup.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/tooltip/tooltipMarkup.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -21240,7 +21293,7 @@ var TooltipMarkupStyleCreator = function() {
   return TooltipMarkupStyleCreator2;
 }();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/tooltip/seriesFormatTooltip.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/tooltip/seriesFormatTooltip.js
 function defaultSeriesFormatTooltip(opt) {
   var series = opt.series;
   var dataIndex = opt.dataIndex;
@@ -21323,7 +21376,7 @@ function formatTooltipArrayValue(value, series, dataIndex, tooltipDims, colorStr
   };
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/model/Series.js
+// node_modules/_echarts@5.4.0@echarts/lib/model/Series.js
 var inner2 = makeInner();
 function getSelectionKey(data, dataIndex) {
   return data.getName(dataIndex) || data.getId(dataIndex);
@@ -21685,7 +21738,7 @@ function getCurrentTask(seriesModel) {
 }
 var Series_default = SeriesModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/view/Component.js
+// node_modules/_echarts@5.4.0@echarts/lib/view/Component.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -21731,7 +21784,7 @@ enableClassExtend(ComponentView);
 enableClassManagement(ComponentView);
 var Component_default2 = ComponentView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/view/Chart.js
+// node_modules/_echarts@5.4.0@echarts/lib/view/Chart.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -21747,7 +21800,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/helper/createRenderPlanner.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/helper/createRenderPlanner.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -21775,7 +21828,7 @@ function createRenderPlanner() {
   };
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/view/Chart.js
+// node_modules/_echarts@5.4.0@echarts/lib/view/Chart.js
 var inner3 = makeInner();
 var renderPlanner = createRenderPlanner();
 var ChartView = function() {
@@ -21895,7 +21948,7 @@ var progressMethodMap = {
 };
 var Chart_default = ChartView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/util/throttle.js
+// node_modules/_echarts@5.4.0@echarts/lib/util/throttle.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -21990,7 +22043,7 @@ function clear(obj, fnAttr) {
   }
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/visual/style.js
+// node_modules/_echarts@5.4.0@echarts/lib/visual/style.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -22153,7 +22206,7 @@ var dataColorPaletteTask = {
   }
 };
 
-// node_modules/_echarts@5.3.3@echarts/lib/loading/default.js
+// node_modules/_echarts@5.4.0@echarts/lib/loading/default.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -22269,7 +22322,7 @@ function defaultLoading(api, opts) {
   return group;
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/core/Scheduler.js
+// node_modules/_echarts@5.4.0@echarts/lib/core/Scheduler.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -22626,7 +22679,7 @@ function mockMethods(target, Clz) {
 }
 var Scheduler_default = Scheduler;
 
-// node_modules/_echarts@5.3.3@echarts/lib/theme/light.js
+// node_modules/_echarts@5.4.0@echarts/lib/theme/light.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -22647,7 +22700,7 @@ var light_default = {
   colorLayer: [["#37A2DA", "#ffd85c", "#fd7b5f"], ["#37A2DA", "#67E0E3", "#FFDB5C", "#ff9f7f", "#E062AE", "#9d96f5"], ["#37A2DA", "#32C5E9", "#9FE6B8", "#FFDB5C", "#ff9f7f", "#fb7293", "#e7bcf3", "#8378EA", "#96BFFF"], colorAll]
 };
 
-// node_modules/_echarts@5.3.3@echarts/lib/theme/dark.js
+// node_modules/_echarts@5.4.0@echarts/lib/theme/dark.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -22839,7 +22892,7 @@ var theme = {
 theme.categoryAxis.splitLine.show = false;
 var dark_default = theme;
 
-// node_modules/_echarts@5.3.3@echarts/lib/util/ECEventProcessor.js
+// node_modules/_echarts@5.4.0@echarts/lib/util/ECEventProcessor.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -22926,7 +22979,7 @@ var ECEventProcessor = function() {
   return ECEventProcessor2;
 }();
 
-// node_modules/_echarts@5.3.3@echarts/lib/visual/symbol.js
+// node_modules/_echarts@5.4.0@echarts/lib/visual/symbol.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -23016,7 +23069,7 @@ var dataSymbolTask = {
   }
 };
 
-// node_modules/_echarts@5.3.3@echarts/lib/visual/helper.js
+// node_modules/_echarts@5.4.0@echarts/lib/visual/helper.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -23087,7 +23140,7 @@ function setItemVisualFromData(data, dataIndex, key, value) {
   }
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/legacy/dataSelectAction.js
+// node_modules/_echarts@5.4.0@echarts/lib/legacy/dataSelectAction.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -23171,7 +23224,7 @@ function handleLegacySelectEvents(messageCenter, ecIns, api) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/util/event.js
+// node_modules/_echarts@5.4.0@echarts/lib/util/event.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -23200,7 +23253,7 @@ function findEventDispatcher(target, det, returnFirstMatch) {
   return found;
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/visual/decal.js
+// node_modules/_echarts@5.4.0@echarts/lib/visual/decal.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -23216,7 +23269,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/util/decal.js
+// node_modules/_echarts@5.4.0@echarts/lib/util/decal.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -23232,7 +23285,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/core/WeakMap.js
+// node_modules/_zrender@5.4.0@zrender/lib/core/WeakMap.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -23289,7 +23342,7 @@ var WeakMap = function() {
 }();
 var WeakMap_default = WeakMap;
 
-// node_modules/_echarts@5.3.3@echarts/lib/util/symbol.js
+// node_modules/_echarts@5.4.0@echarts/lib/util/symbol.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -23555,7 +23608,7 @@ function normalizeSymbolOffset(symbolOffset, symbolSize) {
   return [parsePercent2(symbolOffset[0], symbolSize[0]) || 0, parsePercent2(retrieve2(symbolOffset[1], symbolOffset[0]), symbolSize[1]) || 0];
 }
 
-// node_modules/_zrender@5.3.2@zrender/lib/canvas/graphic.js
+// node_modules/_zrender@5.4.0@zrender/lib/canvas/graphic.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -23571,7 +23624,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/canvas/helper.js
+// node_modules/_zrender@5.4.0@zrender/lib/canvas/helper.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -23662,7 +23715,7 @@ function getSize(root, whIdx, opts) {
   return (root[cwh] || parseInt10(stl[wh]) || parseInt10(root.style[wh])) - (parseInt10(stl[plt]) || 0) - (parseInt10(stl[prb]) || 0) | 0;
 }
 
-// node_modules/_zrender@5.3.2@zrender/lib/canvas/dashStyle.js
+// node_modules/_zrender@5.4.0@zrender/lib/canvas/dashStyle.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -23699,7 +23752,7 @@ function getLineDash(el) {
   return [lineDash, lineDashOffset];
 }
 
-// node_modules/_zrender@5.3.2@zrender/lib/canvas/graphic.js
+// node_modules/_zrender@5.4.0@zrender/lib/canvas/graphic.js
 var pathProxyForDraw = new PathProxy_default(true);
 function styleHasStroke(style) {
   var stroke = style.stroke;
@@ -24206,7 +24259,7 @@ function brushIncremental(ctx, el, scope) {
   ctx.restore();
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/util/decal.js
+// node_modules/_echarts@5.4.0@echarts/lib/util/decal.js
 var decalMap = new WeakMap_default();
 var decalCache = new LRU_default(100);
 var decalKeys = ["symbol", "symbolSize", "symbolKeepAspect", "color", "backgroundColor", "dashArrayX", "dashArrayY", "maxTileWidth", "maxTileHeight"];
@@ -24489,7 +24542,7 @@ function getLineBlockLengthY(dash) {
   return blockLength;
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/visual/decal.js
+// node_modules/_echarts@5.4.0@echarts/lib/visual/decal.js
 function decalVisual(ecModel, api) {
   ecModel.eachRawSeries(function(seriesModel) {
     if (ecModel.isSeriesFiltered(seriesModel)) {
@@ -24513,7 +24566,7 @@ function decalVisual(ecModel, api) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/core/lifecycle.js
+// node_modules/_echarts@5.4.0@echarts/lib/core/lifecycle.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -24531,7 +24584,7 @@ init_define_EXTERNAL_LINK_ICON_LOCALES();
 var lifecycle = new Eventful_default();
 var lifecycle_default = lifecycle;
 
-// node_modules/_echarts@5.3.3@echarts/lib/core/impl.js
+// node_modules/_echarts@5.4.0@echarts/lib/core/impl.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -24564,11 +24617,11 @@ function getImpl(name) {
   return implsStore[name];
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/core/echarts.js
+// node_modules/_echarts@5.4.0@echarts/lib/core/echarts.js
 var hasWindow = typeof window !== "undefined";
-var version2 = "5.3.3";
+var version2 = "5.4.0";
 var dependencies = {
-  zrender: "5.3.2"
+  zrender: "5.4.0"
 };
 var TEST_FRAME_REMAIN_TIME = 1;
 var PRIORITY_PROCESSOR_SERIES_FILTER = 800;
@@ -24682,10 +24735,12 @@ var ECharts = function(_super) {
     }
     _this._dom = dom;
     var defaultRenderer = "canvas";
+    var defaultCoarsePointer = "auto";
     var defaultUseDirtyRect = false;
     if (true) {
       var root = hasWindow ? window : global;
       defaultRenderer = root.__ECHARTS__DEFAULT__RENDERER__ || defaultRenderer;
+      defaultCoarsePointer = retrieve2(root.__ECHARTS__DEFAULT__COARSE_POINTER, defaultCoarsePointer);
       var devUseDirtyRect = root.__ECHARTS__DEFAULT__USE_DIRTY_RECT__;
       defaultUseDirtyRect = devUseDirtyRect == null ? defaultUseDirtyRect : devUseDirtyRect;
     }
@@ -24695,7 +24750,9 @@ var ECharts = function(_super) {
       width: opts.width,
       height: opts.height,
       ssr: opts.ssr,
-      useDirtyRect: opts.useDirtyRect == null ? defaultUseDirtyRect : opts.useDirtyRect
+      useDirtyRect: retrieve2(opts.useDirtyRect, defaultUseDirtyRect),
+      useCoarsePointer: retrieve2(opts.useCoarsePointer, defaultCoarsePointer),
+      pointerSize: opts.pointerSize
     });
     _this._ssr = opts.ssr;
     _this._throttledZrFlush = throttle(bind(zr.flush, zr), 17);
@@ -26328,7 +26385,7 @@ registerTheme("light", light_default);
 registerTheme("dark", dark_default);
 var dataTool = {};
 
-// node_modules/_echarts@5.3.3@echarts/lib/extension.js
+// node_modules/_echarts@5.4.0@echarts/lib/extension.js
 var extensions = [];
 var extensionRegisters = {
   registerPreprocessor,
@@ -26387,7 +26444,7 @@ function use(ext) {
   ext.install(extensionRegisters);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/export/core.js
+// node_modules/_echarts@5.4.0@echarts/lib/export/core.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -26403,7 +26460,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/export/api.js
+// node_modules/_echarts@5.4.0@echarts/lib/export/api.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -26419,7 +26476,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/data/SeriesData.js
+// node_modules/_echarts@5.4.0@echarts/lib/data/SeriesData.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -26435,7 +26492,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/data/DataDiffer.js
+// node_modules/_echarts@5.4.0@echarts/lib/data/DataDiffer.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -26599,7 +26656,7 @@ var DataDiffer = function() {
 }();
 var DataDiffer_default = DataDiffer;
 
-// node_modules/_echarts@5.3.3@echarts/lib/data/helper/dimensionHelper.js
+// node_modules/_echarts@5.4.0@echarts/lib/data/helper/dimensionHelper.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -26708,7 +26765,7 @@ function mayLabelDimType(dimType) {
   return !(dimType === "ordinal" || dimType === "time");
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/data/SeriesDimensionDefine.js
+// node_modules/_echarts@5.4.0@echarts/lib/data/SeriesDimensionDefine.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -26734,7 +26791,7 @@ var SeriesDimensionDefine = function() {
 }();
 var SeriesDimensionDefine_default = SeriesDimensionDefine;
 
-// node_modules/_echarts@5.3.3@echarts/lib/data/helper/SeriesDataSchema.js
+// node_modules/_echarts@5.4.0@echarts/lib/data/helper/SeriesDataSchema.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -26881,7 +26938,7 @@ function shouldOmitUnusedDimensions(dimCount) {
   return dimCount > 30;
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/data/SeriesData.js
+// node_modules/_echarts@5.4.0@echarts/lib/data/SeriesData.js
 var isObject3 = isObject;
 var map2 = map;
 var CtorInt32Array2 = typeof Int32Array === "undefined" ? Array : Int32Array;
@@ -27537,7 +27594,7 @@ var SeriesData = function() {
 }();
 var SeriesData_default = SeriesData;
 
-// node_modules/_echarts@5.3.3@echarts/lib/export/api/helper.js
+// node_modules/_echarts@5.4.0@echarts/lib/export/api/helper.js
 var helper_exports2 = {};
 __export(helper_exports2, {
   createDimensions: () => createDimensions,
@@ -27566,7 +27623,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/helper/createSeriesData.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/helper/createSeriesData.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -27582,7 +27639,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/data/helper/createDimensions.js
+// node_modules/_echarts@5.4.0@echarts/lib/data/helper/createDimensions.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -27802,7 +27859,7 @@ function genCoordDimName(name, map3, fromZero) {
   return name;
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/model/referHelper.js
+// node_modules/_echarts@5.4.0@echarts/lib/model/referHelper.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -27921,7 +27978,7 @@ function isCategory(axisModel) {
   return axisModel.get("type") === "category";
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/data/helper/dataStackHelper.js
+// node_modules/_echarts@5.4.0@echarts/lib/data/helper/dataStackHelper.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -28035,7 +28092,7 @@ function getStackedDimension(data, targetDim) {
   return isDimensionStacked(data, targetDim) ? data.getCalculationInfo("stackResultDimension") : targetDim;
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/helper/createSeriesData.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/helper/createSeriesData.js
 function getCoordSysDimDefs(seriesModel, coordSysInfo) {
   var coordSysName = seriesModel.get("coordinateSystem");
   var registeredCoordSys = CoordinateSystem_default.get(coordSysName);
@@ -28140,7 +28197,7 @@ function firstDataNotNull(arr) {
 }
 var createSeriesData_default = createSeriesData;
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/axisHelper.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/axisHelper.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -28156,7 +28213,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/scale/Ordinal.js
+// node_modules/_echarts@5.4.0@echarts/lib/scale/Ordinal.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -28172,7 +28229,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/scale/Scale.js
+// node_modules/_echarts@5.4.0@echarts/lib/scale/Scale.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -28229,7 +28286,7 @@ var Scale = function() {
 enableClassManagement(Scale);
 var Scale_default = Scale;
 
-// node_modules/_echarts@5.3.3@echarts/lib/data/OrdinalMeta.js
+// node_modules/_echarts@5.4.0@echarts/lib/data/OrdinalMeta.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -28304,7 +28361,7 @@ function getName(obj) {
 }
 var OrdinalMeta_default = OrdinalMeta;
 
-// node_modules/_echarts@5.3.3@echarts/lib/scale/helper.js
+// node_modules/_echarts@5.4.0@echarts/lib/scale/helper.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -28384,7 +28441,7 @@ function scale3(val, extent3) {
   return val * (extent3[1] - extent3[0]) + extent3[0];
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/scale/Ordinal.js
+// node_modules/_echarts@5.4.0@echarts/lib/scale/Ordinal.js
 var OrdinalScale = function(_super) {
   __extends(OrdinalScale2, _super);
   function OrdinalScale2(setting) {
@@ -28501,7 +28558,7 @@ var OrdinalScale = function(_super) {
 Scale_default.registerClass(OrdinalScale);
 var Ordinal_default = OrdinalScale;
 
-// node_modules/_echarts@5.3.3@echarts/lib/scale/Interval.js
+// node_modules/_echarts@5.4.0@echarts/lib/scale/Interval.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -28664,7 +28721,7 @@ var IntervalScale = function(_super) {
     var extent3 = this._extent;
     if (extent3[0] === extent3[1]) {
       if (extent3[0] !== 0) {
-        var expandSize = extent3[0];
+        var expandSize = Math.abs(extent3[0]);
         if (!opt.fixMax) {
           extent3[1] += expandSize / 2;
           extent3[0] -= expandSize / 2;
@@ -28698,7 +28755,7 @@ var IntervalScale = function(_super) {
 Scale_default.registerClass(IntervalScale);
 var Interval_default = IntervalScale;
 
-// node_modules/_echarts@5.3.3@echarts/lib/layout/barGrid.js
+// node_modules/_echarts@5.4.0@echarts/lib/layout/barGrid.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -28714,7 +28771,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/util/vendor.js
+// node_modules/_echarts@5.4.0@echarts/lib/util/vendor.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -28738,7 +28795,7 @@ function createFloat32Array(arg) {
   return new Float32ArrayCtor(arg);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/layout/barGrid.js
+// node_modules/_echarts@5.4.0@echarts/lib/layout/barGrid.js
 var STACK_PREFIX = "__ec_stack_";
 function getSeriesStackId(seriesModel) {
   return seriesModel.get("stack") || STACK_PREFIX + seriesModel.seriesIndex;
@@ -29117,7 +29174,7 @@ function getValueAxisStart(baseAxis, valueAxis2) {
   return valueAxis2.toGlobalCoord(valueAxis2.dataToCoord(valueAxis2.type === "log" ? 1 : 0));
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/scale/Time.js
+// node_modules/_echarts@5.4.0@echarts/lib/scale/Time.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -29495,7 +29552,7 @@ function getIntervalTicks(bottomUnitName, approxInterval, isUTC, extent3) {
 Scale_default.registerClass(TimeScale);
 var Time_default = TimeScale;
 
-// node_modules/_echarts@5.3.3@echarts/lib/scale/Log.js
+// node_modules/_echarts@5.4.0@echarts/lib/scale/Log.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -29543,9 +29600,9 @@ var LogScale = function(_super) {
     }, this);
   };
   LogScale2.prototype.setExtent = function(start2, end2) {
-    var base2 = this.base;
-    start2 = mathLog(start2) / mathLog(base2);
-    end2 = mathLog(end2) / mathLog(base2);
+    var base2 = mathLog(this.base);
+    start2 = mathLog(Math.max(0, start2)) / base2;
+    end2 = mathLog(Math.max(0, end2)) / base2;
     intervalScaleProto.setExtent.call(this, start2, end2);
   };
   LogScale2.prototype.getExtent = function() {
@@ -29620,7 +29677,7 @@ function fixRoundingError(val, originalVal) {
 Scale_default.registerClass(LogScale);
 var Log_default = LogScale;
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/scaleRawExtentInfo.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/scaleRawExtentInfo.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -29765,7 +29822,7 @@ function parseAxisModelMinMax(scale4, minMax) {
   return minMax == null ? null : eqNaN(minMax) ? NaN : scale4.parse(minMax);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/axisHelper.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/axisHelper.js
 function getScaleExtent(scale4, model) {
   var scaleType = scale4.type;
   var rawExtentResult = ensureScaleRawExtentInfo(scale4, model, scale4.getExtent()).calculate();
@@ -29974,7 +30031,7 @@ function unionAxisExtentFromData(dataExtent, data, axisDim) {
   }
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/axisModelCommonMixin.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/axisModelCommonMixin.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -30002,7 +30059,7 @@ var AxisModelCommonMixin = function() {
   return AxisModelCommonMixin2;
 }();
 
-// node_modules/_echarts@5.3.3@echarts/lib/export/api/helper.js
+// node_modules/_echarts@5.4.0@echarts/lib/export/api/helper.js
 function createList(seriesModel) {
   return createSeriesData_default(null, seriesModel);
 }
@@ -30029,7 +30086,7 @@ function createTextStyle2(textStyleModel, opts) {
   return createTextStyle(textStyleModel, null, null, opts.state !== "normal");
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/geo/parseGeoJson.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/geo/parseGeoJson.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -30045,7 +30102,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/geo/Region.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/geo/Region.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -30061,7 +30118,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/contain/polygon.js
+// node_modules/_zrender@5.4.0@zrender/lib/contain/polygon.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -30098,7 +30155,7 @@ function contain3(points4, x, y) {
   return w !== 0;
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/geo/Region.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/geo/Region.js
 var TMP_TRANSFORM = [];
 function transformPoints(points4, transform2) {
   for (var p = 0; p < points4.length; p++) {
@@ -30308,7 +30365,7 @@ var GeoSVGRegion = function(_super) {
   return GeoSVGRegion2;
 }(Region);
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/geo/parseGeoJson.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/geo/parseGeoJson.js
 function decode(json) {
   if (!json.UTF8Encoding) {
     return json;
@@ -30399,7 +30456,7 @@ function parseGeoJSON(geoJson, nameProperty) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/export/api/number.js
+// node_modules/_echarts@5.4.0@echarts/lib/export/api/number.js
 var number_exports2 = {};
 __export(number_exports2, {
   MAX_SAFE_INTEGER: () => MAX_SAFE_INTEGER,
@@ -30436,7 +30493,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/export/api/time.js
+// node_modules/_echarts@5.4.0@echarts/lib/export/api/time.js
 var time_exports = {};
 __export(time_exports, {
   format: () => format,
@@ -30457,7 +30514,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/export/api/graphic.js
+// node_modules/_echarts@5.4.0@echarts/lib/export/api/graphic.js
 var graphic_exports2 = {};
 __export(graphic_exports2, {
   Arc: () => Arc_default,
@@ -30508,7 +30565,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/export/api/format.js
+// node_modules/_echarts@5.4.0@echarts/lib/export/api/format.js
 var format_exports2 = {};
 __export(format_exports2, {
   addCommas: () => addCommas,
@@ -30537,7 +30594,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/export/api/util.js
+// node_modules/_echarts@5.4.0@echarts/lib/export/api/util.js
 var util_exports2 = {};
 __export(util_exports2, {
   bind: () => bind,
@@ -30572,7 +30629,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/Axis.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/Axis.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -30588,7 +30645,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/axisTickLabelBuilder.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/axisTickLabelBuilder.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -30819,7 +30876,7 @@ function makeLabelsByCustomizedCategoryInterval(axis, categoryInterval, onlyTick
   return result;
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/Axis.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/Axis.js
 var NORMALIZED_EXTENT = [0, 1];
 var Axis = function() {
   function Axis2(dim, scale4, extent3) {
@@ -30987,7 +31044,7 @@ function fixOnBandTicksCoords(axis, ticksCoords, alignWithLabel, clamp2) {
 }
 var Axis_default = Axis;
 
-// node_modules/_echarts@5.3.3@echarts/lib/export/api.js
+// node_modules/_echarts@5.4.0@echarts/lib/export/api.js
 function extendComponentModel(proto2) {
   var Model2 = Component_default.extend(proto2);
   Component_default.registerClass(Model2);
@@ -31009,7 +31066,7 @@ function extendChartView(proto2) {
   return View2;
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/label/installLabelLayout.js
+// node_modules/_echarts@5.4.0@echarts/lib/label/installLabelLayout.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -31025,7 +31082,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/label/LabelManager.js
+// node_modules/_echarts@5.4.0@echarts/lib/label/LabelManager.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -31041,7 +31098,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/label/labelGuideHelper.js
+// node_modules/_echarts@5.4.0@echarts/lib/label/labelGuideHelper.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -31480,7 +31537,7 @@ function getLabelLineStatesModels(itemModel, labelLineName) {
   return statesModels;
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/label/labelLayoutHelper.js
+// node_modules/_echarts@5.4.0@echarts/lib/label/labelLayoutHelper.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -31714,7 +31771,7 @@ function hideOverlap(labelList) {
   }
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/label/LabelManager.js
+// node_modules/_echarts@5.4.0@echarts/lib/label/LabelManager.js
 function cloneArr(points4) {
   if (points4) {
     var newPoints = [];
@@ -32054,7 +32111,7 @@ var LabelManager = function() {
 }();
 var LabelManager_default = LabelManager;
 
-// node_modules/_echarts@5.3.3@echarts/lib/label/installLabelLayout.js
+// node_modules/_echarts@5.4.0@echarts/lib/label/installLabelLayout.js
 var getLabelManager = makeInner();
 function installLabelLayout(registers) {
   registers.registerUpdateLifecycle("series:beforeupdate", function(ecModel, api, params) {
@@ -32075,10 +32132,10 @@ function installLabelLayout(registers) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/export/core.js
+// node_modules/_echarts@5.4.0@echarts/lib/export/core.js
 use(installLabelLayout);
 
-// node_modules/_echarts@5.3.3@echarts/lib/export/renderers.js
+// node_modules/_echarts@5.4.0@echarts/lib/export/renderers.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -32094,7 +32151,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/renderer/installSVGRenderer.js
+// node_modules/_echarts@5.4.0@echarts/lib/renderer/installSVGRenderer.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -32110,7 +32167,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/svg/Painter.js
+// node_modules/_zrender@5.4.0@zrender/lib/svg/Painter.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -32126,7 +32183,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/svg/graphic.js
+// node_modules/_zrender@5.4.0@zrender/lib/svg/graphic.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -32142,7 +32199,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/svg/SVGPathRebuilder.js
+// node_modules/_zrender@5.4.0@zrender/lib/svg/SVGPathRebuilder.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -32256,7 +32313,7 @@ var SVGPathRebuilder = function() {
 }();
 var SVGPathRebuilder_default = SVGPathRebuilder;
 
-// node_modules/_zrender@5.3.2@zrender/lib/svg/mapStyleToAttrs.js
+// node_modules/_zrender@5.4.0@zrender/lib/svg/mapStyleToAttrs.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -32341,7 +32398,7 @@ function mapStyleToAttrs(updateAttr2, style, el, forceUpdate) {
   }
 }
 
-// node_modules/_zrender@5.3.2@zrender/lib/svg/core.js
+// node_modules/_zrender@5.4.0@zrender/lib/svg/core.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -32396,7 +32453,7 @@ function vNodeToString(el, opts) {
   var S = opts.newline ? "\n" : "";
   function convertElToString(el2) {
     var children = el2.children, tag = el2.tag, attrs = el2.attrs;
-    return createElementOpen(tag, attrs) + (el2.text || "") + (children ? "" + S + map(children, function(child) {
+    return createElementOpen(tag, attrs) + encodeHTML(el2.text) + (children ? "" + S + map(children, function(child) {
       return convertElToString(child);
     }).join(S) + S : "") + createElementClose(tag);
   }
@@ -32458,7 +32515,7 @@ function createSVGVNode(width, height, children, useViewBox) {
   }, children);
 }
 
-// node_modules/_zrender@5.3.2@zrender/lib/svg/cssAnimation.js
+// node_modules/_zrender@5.4.0@zrender/lib/svg/cssAnimation.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -32737,7 +32794,7 @@ function createCSSAnimation(el, attrs, scope, onlyShape) {
   }
 }
 
-// node_modules/_zrender@5.3.2@zrender/lib/svg/graphic.js
+// node_modules/_zrender@5.4.0@zrender/lib/svg/graphic.js
 var round5 = Math.round;
 function isImageLike2(val) {
   return val && isString(val.src);
@@ -33120,7 +33177,7 @@ function setClipPath(clipPath, attrs, scope) {
   attrs["clip-path"] = getIdURL(clipPathId);
 }
 
-// node_modules/_zrender@5.3.2@zrender/lib/svg/patch.js
+// node_modules/_zrender@5.4.0@zrender/lib/svg/patch.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -33136,7 +33193,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/svg/domapi.js
+// node_modules/_zrender@5.4.0@zrender/lib/svg/domapi.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -33173,7 +33230,7 @@ function setTextContent(node, text) {
   node.textContent = text;
 }
 
-// node_modules/_zrender@5.3.2@zrender/lib/svg/patch.js
+// node_modules/_zrender@5.4.0@zrender/lib/svg/patch.js
 var colonChar = 58;
 var xChar = 120;
 var emptyNode = createVNode("", "");
@@ -33397,7 +33454,7 @@ function patch(oldVnode, vnode) {
   return vnode;
 }
 
-// node_modules/_zrender@5.3.2@zrender/lib/svg/Painter.js
+// node_modules/_zrender@5.4.0@zrender/lib/svg/Painter.js
 var svgId = 0;
 var SVGPainter = function() {
   function SVGPainter2(root, storage2, opts) {
@@ -33621,12 +33678,12 @@ function createMethodNotSupport(method) {
 }
 var Painter_default = SVGPainter;
 
-// node_modules/_echarts@5.3.3@echarts/lib/renderer/installSVGRenderer.js
+// node_modules/_echarts@5.4.0@echarts/lib/renderer/installSVGRenderer.js
 function install(registers) {
   registers.registerPainter("svg", Painter_default);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/renderer/installCanvasRenderer.js
+// node_modules/_echarts@5.4.0@echarts/lib/renderer/installCanvasRenderer.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -33642,7 +33699,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/canvas/Painter.js
+// node_modules/_zrender@5.4.0@zrender/lib/canvas/Painter.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -33658,7 +33715,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/canvas/Layer.js
+// node_modules/_zrender@5.4.0@zrender/lib/canvas/Layer.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -33913,6 +33970,8 @@ var Layer = function(_super) {
           });
           clearColor.__canvasGradient = clearColorGradientOrPattern;
         } else if (isImagePatternObject(clearColor)) {
+          clearColor.scaleX = clearColor.scaleX || dpr2;
+          clearColor.scaleY = clearColor.scaleY || dpr2;
           clearColorGradientOrPattern = createCanvasPattern(ctx, clearColor, {
             dirty: function() {
               self2.setUnpainted();
@@ -33945,7 +34004,7 @@ var Layer = function(_super) {
 }(Eventful_default);
 var Layer_default = Layer;
 
-// node_modules/_zrender@5.3.2@zrender/lib/canvas/Painter.js
+// node_modules/_zrender@5.4.0@zrender/lib/canvas/Painter.js
 var HOVER_LAYER_ZLEVEL = 1e5;
 var CANVAS_ZLEVEL = 314159;
 var EL_AFTER_INCREMENTAL_INC = 0.01;
@@ -34553,12 +34612,12 @@ var CanvasPainter = function() {
 }();
 var Painter_default2 = CanvasPainter;
 
-// node_modules/_echarts@5.3.3@echarts/lib/renderer/installCanvasRenderer.js
+// node_modules/_echarts@5.4.0@echarts/lib/renderer/installCanvasRenderer.js
 function install2(registers) {
   registers.registerPainter("canvas", Painter_default2);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/export/charts.js
+// node_modules/_echarts@5.4.0@echarts/lib/export/charts.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -34574,7 +34633,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/line/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/line/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -34590,7 +34649,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/line/LineSeries.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/line/LineSeries.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -34690,7 +34749,7 @@ var LineSeriesModel = function(_super) {
 }(Series_default);
 var LineSeries_default = LineSeriesModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/line/LineView.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/line/LineView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -34706,7 +34765,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/helper/SymbolDraw.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/helper/SymbolDraw.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -34722,7 +34781,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/helper/Symbol.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/helper/Symbol.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -34738,7 +34797,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/helper/labelHelper.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/helper/labelHelper.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -34782,7 +34841,7 @@ function getDefaultInterpolatedLabel(data, interpolatedValue) {
   return vals.join(" ");
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/helper/Symbol.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/helper/Symbol.js
 var Symbol2 = function(_super) {
   __extends(Symbol3, _super);
   function Symbol3(data, idx, seriesScope, opts) {
@@ -34961,11 +35020,9 @@ var Symbol2 = function(_super) {
     emphasisState.style = emphasisItemStyle;
     symbolPath.ensureState("select").style = selectItemStyle;
     symbolPath.ensureState("blur").style = blurItemStyle;
-    if (hoverScale) {
-      var scaleRatio = Math.max(isNumber(hoverScale) ? hoverScale : 1.1, 3 / this._sizeY);
-      emphasisState.scaleX = this._sizeX * scaleRatio;
-      emphasisState.scaleY = this._sizeY * scaleRatio;
-    }
+    var scaleRatio = hoverScale == null || hoverScale === true ? Math.max(1.1, 3 / this._sizeY) : isFinite(hoverScale) && hoverScale > 0 ? +hoverScale : 1;
+    emphasisState.scaleX = this._sizeX * scaleRatio;
+    emphasisState.scaleY = this._sizeY * scaleRatio;
     this.setSymbolScale(1);
     toggleHoverEmphasis(this, focus, blurScope, emphasisDisabled);
   };
@@ -35017,7 +35074,7 @@ function driftSymbol(dx, dy) {
 }
 var Symbol_default = Symbol2;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/helper/SymbolDraw.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/helper/SymbolDraw.js
 function symbolNeedsDraw(data, point, idx, opt) {
   return point && !isNaN(point[0]) && !isNaN(point[1]) && !(opt.isIgnore && opt.isIgnore(idx)) && !(opt.clipShape && !opt.clipShape.contain(point[0], point[1])) && data.getItemVisual(idx, "symbol") !== "none";
 }
@@ -35169,7 +35226,7 @@ var SymbolDraw = function() {
 }();
 var SymbolDraw_default = SymbolDraw;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/line/lineAnimationDiff.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/line/lineAnimationDiff.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -35185,7 +35242,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/line/helper.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/line/helper.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -35273,7 +35330,7 @@ function getStackedOnPoint(dataCoordInfo, coordSys, data, idx) {
   return coordSys.dataToPoint(stackedData);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/line/lineAnimationDiff.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/line/lineAnimationDiff.js
 function diffData(oldData, newData) {
   var diffResult = [];
   newData.diff(oldData).add(function(idx) {
@@ -35382,7 +35439,7 @@ function lineAnimationDiff(oldData, newData, oldStackedOnPoints, newStackedOnPoi
   };
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/line/poly.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/line/poly.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -35681,7 +35738,7 @@ var ECPolygon = function(_super) {
   return ECPolygon2;
 }(Path_default);
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/helper/createClipPathFromCoordSys.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/helper/createClipPathFromCoordSys.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -35788,7 +35845,7 @@ function createClipPath(coordSys, hasAnimation, seriesModel, done, during) {
   return null;
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/CoordinateSystem.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/CoordinateSystem.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -35807,7 +35864,7 @@ function isCoordinateSystemType(coordSys, type) {
   return coordSys.type === type;
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/line/LineView.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/line/LineView.js
 function isPointsSame(points1, points22) {
   if (points1.length !== points22.length) {
     return;
@@ -36391,8 +36448,8 @@ var LineView = function(_super) {
         if (this._clipShapeForSymbol && !this._clipShapeForSymbol.contain(x, y)) {
           return;
         }
-        var zlevel = seriesModel.get("zlevel");
-        var z = seriesModel.get("z");
+        var zlevel = seriesModel.get("zlevel") || 0;
+        var z = seriesModel.get("z") || 0;
         symbol = new Symbol_default(data, dataIndex);
         symbol.x = x;
         symbol.y = y;
@@ -36751,7 +36808,7 @@ var LineView = function(_super) {
 }(Chart_default);
 var LineView_default = LineView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/layout/points.js
+// node_modules/_echarts@5.4.0@echarts/lib/layout/points.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -36822,7 +36879,7 @@ function pointsLayout(seriesType2, forceStoreInTypedArray) {
   };
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/processor/dataSample.js
+// node_modules/_echarts@5.4.0@echarts/lib/processor/dataSample.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -36911,7 +36968,7 @@ function dataSample(seriesType2) {
   };
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/line/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/line/install.js
 function install3(registers) {
   registers.registerChartView(LineView_default);
   registers.registerSeriesModel(LineSeries_default);
@@ -36930,7 +36987,7 @@ function install3(registers) {
   registers.registerProcessor(registers.PRIORITY.PROCESSOR.STATISTIC, dataSample("line"));
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/bar/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/bar/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -36946,7 +37003,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/bar/BarSeries.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/bar/BarSeries.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -36962,7 +37019,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/bar/BaseBarSeries.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/bar/BaseBarSeries.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -37019,7 +37076,7 @@ var BaseBarSeriesModel = function(_super) {
 Series_default.registerClass(BaseBarSeriesModel);
 var BaseBarSeries_default = BaseBarSeriesModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/bar/BarSeries.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/bar/BarSeries.js
 var BarSeriesModel = function(_super) {
   __extends(BarSeriesModel2, _super);
   function BarSeriesModel2() {
@@ -37076,7 +37133,7 @@ var BarSeriesModel = function(_super) {
 }(BaseBarSeries_default);
 var BarSeries_default = BarSeriesModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/bar/BarView.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/bar/BarView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -37092,7 +37149,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/util/shape/sausage.js
+// node_modules/_echarts@5.4.0@echarts/lib/util/shape/sausage.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -37164,7 +37221,7 @@ var SausagePath = function(_super) {
 }(Path_default);
 var sausage_default = SausagePath;
 
-// node_modules/_echarts@5.3.3@echarts/lib/label/sectorLabel.js
+// node_modules/_echarts@5.4.0@echarts/lib/label/sectorLabel.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -37326,7 +37383,7 @@ function adjustAngleDistanceY(angle, distance2, isEnd) {
   return distance2 * Math.cos(angle) * (isEnd ? 1 : -1);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/bar/BarView.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/bar/BarView.js
 var mathMax7 = Math.max;
 var mathMin7 = Math.min;
 function getClipArea(coord, data) {
@@ -38000,6 +38057,7 @@ function createLarge(seriesModel, group, progressiveEls, incremental) {
       points: data.getLayout("largePoints")
     },
     incremental: !!incremental,
+    ignoreCoarsePointer: true,
     z2: 1
   });
   el.baseDimIdx = baseDimIdx;
@@ -38076,7 +38134,7 @@ function createBackgroundEl(coord, isHorizontalOrRadial, layout5) {
 }
 var BarView_default = BarView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/bar/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/bar/install.js
 function install4(registers) {
   registers.registerChartView(BarView_default);
   registers.registerSeriesModel(BarSeries_default);
@@ -38100,7 +38158,7 @@ function install4(registers) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/pie/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/pie/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -38116,7 +38174,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/pie/pieLayout.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/pie/pieLayout.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -38152,10 +38210,19 @@ function getBasicPieLayout(seriesModel, api) {
   var width = parsePercent2(viewRect2.width, api.getWidth());
   var height = parsePercent2(viewRect2.height, api.getHeight());
   var size = Math.min(width, height);
-  var cx = parsePercent2(center3[0], width) + viewRect2.x;
-  var cy = parsePercent2(center3[1], height) + viewRect2.y;
   var r0 = parsePercent2(radius[0], size / 2);
   var r = parsePercent2(radius[1], size / 2);
+  var cx;
+  var cy;
+  var coordSys = seriesModel.coordinateSystem;
+  if (coordSys) {
+    var point = coordSys.dataToPoint(center3);
+    cx = point[0] || 0;
+    cy = point[1] || 0;
+  } else {
+    cx = parsePercent2(center3[0], width) + viewRect2.x;
+    cy = parsePercent2(center3[1], height) + viewRect2.y;
+  }
   return {
     cx,
     cy,
@@ -38257,7 +38324,7 @@ function pieLayout(seriesType2, ecModel, api) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/processor/dataFilter.js
+// node_modules/_echarts@5.4.0@echarts/lib/processor/dataFilter.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -38296,7 +38363,7 @@ function dataFilter(seriesType2) {
   };
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/pie/PieView.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/pie/PieView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -38312,7 +38379,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/pie/labelLayout.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/pie/labelLayout.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -38554,7 +38621,8 @@ function pieLabelLayout(seriesModel) {
     labelLineLen2 = parsePercent2(labelLineLen2, viewWidth);
     if (Math.abs(sectorShape.endAngle - sectorShape.startAngle) < minShowLabelRadian) {
       each(label2.states, setNotShow);
-      label2.ignore = true;
+      each(labelLine2.states, setNotShow);
+      label2.ignore = labelLine2.ignore = true;
       return;
     }
     if (!isLabelShown(label2)) {
@@ -38702,7 +38770,7 @@ function pieLabelLayout(seriesModel) {
   }
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/helper/pieHelper.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/helper/pieHelper.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -38735,7 +38803,7 @@ function getSectorCornerRadius(model, shape, zeroIfNull) {
   };
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/pie/PieView.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/pie/PieView.js
 var PiePiece = function(_super) {
   __extends(PiePiece2, _super);
   function PiePiece2(data, idx, startAngle) {
@@ -38943,7 +39011,7 @@ var PieView = function(_super) {
 }(Chart_default);
 var PieView_default = PieView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/pie/PieSeries.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/pie/PieSeries.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -38959,7 +39027,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/helper/createSeriesDataSimply.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/helper/createSeriesDataSimply.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -38987,7 +39055,7 @@ function createSeriesDataSimply(seriesModel, opt, nameList) {
   return list;
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/visual/LegendVisualProvider.js
+// node_modules/_echarts@5.4.0@echarts/lib/visual/LegendVisualProvider.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -39027,7 +39095,7 @@ var LegendVisualProvider = function() {
 }();
 var LegendVisualProvider_default = LegendVisualProvider;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/pie/PieSeries.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/pie/PieSeries.js
 var PieSeriesModel = function(_super) {
   __extends(PieSeriesModel2, _super);
   function PieSeriesModel2() {
@@ -39042,19 +39110,20 @@ var PieSeriesModel = function(_super) {
     _super.prototype.mergeOption.apply(this, arguments);
   };
   PieSeriesModel2.prototype.getInitialData = function() {
-    return createSeriesDataSimply(this, {
+    var data = createSeriesDataSimply(this, {
       coordDimensions: ["value"],
       encodeDefaulter: curry(makeSeriesEncodeForNameBased, this)
     });
-  };
-  PieSeriesModel2.prototype.getDataParams = function(dataIndex) {
-    var data = this.getData();
-    var params = _super.prototype.getDataParams.call(this, dataIndex);
     var valueList = [];
     data.each(data.mapDimension("value"), function(value) {
       valueList.push(value);
     });
-    params.percent = getPercentWithPrecision(valueList, dataIndex, data.hostModel.get("percentPrecision"));
+    this.seats = getPercentSeats(valueList, data.hostModel.get("percentPrecision"));
+    return data;
+  };
+  PieSeriesModel2.prototype.getDataParams = function(dataIndex) {
+    var params = _super.prototype.getDataParams.call(this, dataIndex);
+    params.percent = this.seats[dataIndex];
     params.$vars.push("percent");
     return params;
   };
@@ -39135,7 +39204,7 @@ var PieSeriesModel = function(_super) {
 }(Series_default);
 var PieSeries_default = PieSeriesModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/processor/negativeDataFilter.js
+// node_modules/_echarts@5.4.0@echarts/lib/processor/negativeDataFilter.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -39167,7 +39236,7 @@ function negativeDataFilter(seriesType2) {
   };
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/pie/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/pie/install.js
 function install5(registers) {
   registers.registerChartView(PieView_default);
   registers.registerSeriesModel(PieSeries_default);
@@ -39177,7 +39246,7 @@ function install5(registers) {
   registers.registerProcessor(negativeDataFilter("pie"));
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/scatter/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/scatter/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -39193,7 +39262,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/scatter/ScatterSeries.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/scatter/ScatterSeries.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -39270,7 +39339,7 @@ var ScatterSeriesModel = function(_super) {
 }(Series_default);
 var ScatterSeries_default = ScatterSeriesModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/scatter/ScatterView.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/scatter/ScatterView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -39286,7 +39355,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/helper/LargeSymbolDraw.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/helper/LargeSymbolDraw.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -39495,6 +39564,7 @@ var LargeSymbolDraw = function() {
     var symbolEl = new LargeSymbolPath({
       cursor: "default"
     });
+    symbolEl.ignoreCoarsePointer = true;
     this.group.add(symbolEl);
     this._newAdded.push(symbolEl);
     return symbolEl;
@@ -39537,7 +39607,7 @@ var LargeSymbolDraw = function() {
 }();
 var LargeSymbolDraw_default = LargeSymbolDraw;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/scatter/ScatterView.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/scatter/ScatterView.js
 var ScatterView = function(_super) {
   __extends(ScatterView2, _super);
   function ScatterView2() {
@@ -39616,7 +39686,7 @@ var ScatterView = function(_super) {
 }(Chart_default);
 var ScatterView_default = ScatterView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/grid/installSimple.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/grid/installSimple.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -39632,7 +39702,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/cartesian/GridModel.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/cartesian/GridModel.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -39671,7 +39741,7 @@ var GridModel = function(_super) {
 }(Component_default);
 var GridModel_default = GridModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/cartesian/AxisModel.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/cartesian/AxisModel.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -39699,7 +39769,7 @@ var CartesianAxisModel = function(_super) {
 }(Component_default);
 mixin(CartesianAxisModel, AxisModelCommonMixin);
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/axisModelCreator.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/axisModelCreator.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -39715,7 +39785,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/axisDefault.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/axisDefault.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -39856,7 +39926,7 @@ var axisDefault_default = {
   log: logAxis
 };
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/axisCommonTypes.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/axisCommonTypes.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -39878,7 +39948,7 @@ var AXIS_TYPES = {
   log: 1
 };
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/axisModelCreator.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/axisModelCreator.js
 function axisModelCreator(registers, axisName, BaseAxisModelClass, extraDefaultOption) {
   each(AXIS_TYPES, function(v, axisType) {
     var defaultOption3 = merge(merge({}, axisDefault_default[axisType], true), extraDefaultOption, true);
@@ -39930,7 +40000,7 @@ function getAxisType(option) {
   return option.type || (option.data ? "category" : "value");
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/cartesian/Grid.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/cartesian/Grid.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -39946,7 +40016,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/cartesian/Cartesian2D.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/cartesian/Cartesian2D.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -39962,7 +40032,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/cartesian/Cartesian.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/cartesian/Cartesian.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -40007,7 +40077,7 @@ var Cartesian = function() {
 }();
 var Cartesian_default = Cartesian;
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/cartesian/Cartesian2D.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/cartesian/Cartesian2D.js
 var cartesian2DDimensions = ["x", "y"];
 function canCalculateAffineTransform(scale4) {
   return scale4.type === "interval" || scale4.type === "time";
@@ -40113,7 +40183,7 @@ var Cartesian2D = function(_super) {
 }(Cartesian_default);
 var Cartesian2D_default = Cartesian2D;
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/cartesian/Axis2D.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/cartesian/Axis2D.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -40162,7 +40232,7 @@ var Axis2D = function(_super) {
 }(Axis_default);
 var Axis2D_default = Axis2D;
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/cartesian/cartesianAxisHelper.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/cartesian/cartesianAxisHelper.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -40243,7 +40313,7 @@ function findAxisModels(seriesModel) {
   return axisModelMap;
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/axisAlignTicks.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/axisAlignTicks.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -40336,7 +40406,7 @@ function alignScaleTicks(scale4, axisModel, alignToScale) {
   }
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/cartesian/Grid.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/cartesian/Grid.js
 var Grid = function() {
   function Grid2(gridModel, ecModel, api) {
     this.type = "grid";
@@ -40706,7 +40776,7 @@ function updateAxisTransform(axis, coordBase) {
 }
 var Grid_default = Grid;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/axis/CartesianAxisView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/axis/CartesianAxisView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -40722,7 +40792,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/axis/AxisBuilder.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/axis/AxisBuilder.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -40821,6 +40891,7 @@ var builders = {
     var matrix = transformGroup.transform;
     var pt12 = [extent3[0], 0];
     var pt22 = [extent3[1], 0];
+    var inverse = pt12[0] > pt22[0];
     if (matrix) {
       applyTransform(pt12, pt12, matrix);
       applyTransform(pt22, pt22, matrix);
@@ -40829,7 +40900,6 @@ var builders = {
       lineCap: "round"
     }, axisModel.getModel(["axisLine", "lineStyle"]).getLineStyle());
     var line = new Line_default({
-      subPixelOptimize: true,
       shape: {
         x1: pt12[0],
         y1: pt12[1],
@@ -40841,6 +40911,7 @@ var builders = {
       silent: true,
       z2: 1
     });
+    subPixelOptimizeLine2(line.shape, line.style.lineWidth);
     line.anid = "line";
     group.add(line);
     var arrows = axisModel.get(["axisLine", "symbol"]);
@@ -40867,10 +40938,11 @@ var builders = {
         if (arrows[index] !== "none" && arrows[index] != null) {
           var symbol = createSymbol(arrows[index], -symbolWidth_1 / 2, -symbolHeight_1 / 2, symbolWidth_1, symbolHeight_1, lineStyle.stroke, true);
           var r = point.r + point.offset;
+          var pt = inverse ? pt22 : pt12;
           symbol.attr({
             rotation: point.rotate,
-            x: pt12[0] + r * Math.cos(opt.rotation),
-            y: pt12[1] - r * Math.sin(opt.rotation),
+            x: pt[0] + r * Math.cos(opt.rotation),
+            y: pt[1] - r * Math.sin(opt.rotation),
             silent: true,
             z2: 11
           });
@@ -41072,7 +41144,6 @@ function createTicks(ticksCoords, tickTransform, tickEndCoord, tickLineStyle, an
       applyTransform(pt22, pt22, tickTransform);
     }
     var tickEl = new Line_default({
-      subPixelOptimize: true,
       shape: {
         x1: pt12[0],
         y1: pt12[1],
@@ -41084,6 +41155,7 @@ function createTicks(ticksCoords, tickTransform, tickEndCoord, tickLineStyle, an
       autoBatch: true,
       silent: true
     });
+    subPixelOptimizeLine2(tickEl.shape, tickEl.style.lineWidth);
     tickEl.anid = anidPrefix + "_" + ticksCoords[i].tickValue;
     tickEls.push(tickEl);
   }
@@ -41197,7 +41269,7 @@ function buildAxisLabel(group, transformGroup, axisModel, opt) {
 }
 var AxisBuilder_default = AxisBuilder;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/axis/AxisView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/axis/AxisView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -41213,7 +41285,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/axisPointer/modelHelper.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/axisPointer/modelHelper.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -41403,7 +41475,7 @@ function makeKey(model) {
   return model.type + "||" + model.id;
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/axis/AxisView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/axis/AxisView.js
 var axisPointerClazz = {};
 var AxisView = function(_super) {
   __extends(AxisView2, _super);
@@ -41458,7 +41530,7 @@ var AxisView = function(_super) {
 }(Component_default2);
 var AxisView_default = AxisView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/axis/axisSplitHelper.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/axis/axisSplitHelper.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -41549,7 +41621,7 @@ function rectCoordAxisHandleRemove(axisView) {
   inner7(axisView).splitAreaColors = null;
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/axis/CartesianAxisView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/axis/CartesianAxisView.js
 var axisBuilderAttrs = ["axisLine", "axisTickLabel", "axisName"];
 var selfBuilderAttrs = ["splitArea", "splitLine", "minorSplitLine"];
 var CartesianAxisView = function(_super) {
@@ -41634,9 +41706,8 @@ var axisElementBuilders = {
       }
       var colorIndex = lineCount++ % lineColors.length;
       var tickValue = ticksCoords[i].tickValue;
-      axisGroup.add(new Line_default({
+      var line = new Line_default({
         anid: tickValue != null ? "line_" + ticksCoords[i].tickValue : null,
-        subPixelOptimize: true,
         autoBatch: true,
         shape: {
           x1: p1[0],
@@ -41648,7 +41719,9 @@ var axisElementBuilders = {
           stroke: lineColors[colorIndex]
         }, lineStyle),
         silent: true
-      }));
+      });
+      subPixelOptimizeLine2(line.shape, lineStyle.lineWidth);
+      axisGroup.add(line);
     }
   },
   minorSplitLine: function(axisView, axisGroup, axisModel, gridModel) {
@@ -41678,9 +41751,8 @@ var axisElementBuilders = {
           p2[0] = gridRect.x + gridRect.width;
           p2[1] = tickCoord;
         }
-        axisGroup.add(new Line_default({
+        var line = new Line_default({
           anid: "minor_line_" + minorTicksCoords[i][k].tickValue,
-          subPixelOptimize: true,
           autoBatch: true,
           shape: {
             x1: p1[0],
@@ -41690,7 +41762,9 @@ var axisElementBuilders = {
           },
           style: lineStyle,
           silent: true
-        }));
+        });
+        subPixelOptimizeLine2(line.shape, lineStyle.lineWidth);
+        axisGroup.add(line);
       }
     }
   },
@@ -41719,7 +41793,7 @@ var CartesianYAxisView = function(_super) {
   return CartesianYAxisView2;
 }(CartesianAxisView);
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/grid/installSimple.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/grid/installSimple.js
 var GridView = function(_super) {
   __extends(GridView2, _super);
   function GridView2() {
@@ -41761,7 +41835,7 @@ function install6(registers) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/scatter/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/scatter/install.js
 function install7(registers) {
   use(install6);
   registers.registerSeriesModel(ScatterSeries_default);
@@ -41769,7 +41843,7 @@ function install7(registers) {
   registers.registerLayout(pointsLayout("scatter"));
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/radar/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/radar/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -41785,7 +41859,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/radar/radarLayout.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/radar/radarLayout.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -41832,7 +41906,7 @@ function getValueMissingPoint(coordSys) {
   return [coordSys.cx, coordSys.cy];
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/radar/backwardCompat.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/radar/backwardCompat.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -41877,7 +41951,7 @@ function radarBackwardCompat(option) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/radar/RadarView.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/radar/RadarView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -42062,7 +42136,7 @@ var RadarView = function(_super) {
 }(Chart_default);
 var RadarView_default = RadarView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/radar/RadarSeries.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/radar/RadarSeries.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -42154,7 +42228,7 @@ var RadarSeriesModel = function(_super) {
 }(Series_default);
 var RadarSeries_default = RadarSeriesModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/radar/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/radar/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -42170,7 +42244,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/radar/RadarModel.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/radar/RadarModel.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -42282,7 +42356,7 @@ var RadarModel = function(_super) {
 }(Component_default);
 var RadarModel_default = RadarModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/radar/RadarView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/radar/RadarView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -42449,7 +42523,7 @@ var RadarView2 = function(_super) {
 }(Component_default2);
 var RadarView_default2 = RadarView2;
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/radar/Radar.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/radar/Radar.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -42465,7 +42539,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/radar/IndicatorAxis.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/radar/IndicatorAxis.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -42493,7 +42567,7 @@ var IndicatorAxis = function(_super) {
 }(Axis_default);
 var IndicatorAxis_default = IndicatorAxis;
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/radar/Radar.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/radar/Radar.js
 var Radar = function() {
   function Radar2(radarModel, ecModel, api) {
     this.dimensions = [];
@@ -42622,7 +42696,7 @@ var Radar = function() {
 }();
 var Radar_default = Radar;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/radar/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/radar/install.js
 function install8(registers) {
   registers.registerCoordinateSystem("radar", Radar_default);
   registers.registerComponentModel(RadarModel_default);
@@ -42639,7 +42713,7 @@ function install8(registers) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/radar/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/radar/install.js
 function install9(registers) {
   use(install8);
   registers.registerChartView(RadarView_default);
@@ -42649,7 +42723,7 @@ function install9(registers) {
   registers.registerPreprocessor(radarBackwardCompat);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/map/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/map/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -42665,7 +42739,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/map/MapView.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/map/MapView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -42681,7 +42755,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/helper/MapDraw.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/helper/MapDraw.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -42697,7 +42771,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/helper/RoamController.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/helper/RoamController.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -42713,7 +42787,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/helper/interactionMutex.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/helper/interactionMutex.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -42752,7 +42826,7 @@ registerAction({
   update: "update"
 }, noop);
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/helper/RoamController.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/helper/RoamController.js
 var RoamController = function(_super) {
   __extends(RoamController2, _super);
   function RoamController2(zr) {
@@ -42806,8 +42880,15 @@ var RoamController = function(_super) {
     this.disable();
   };
   RoamController2.prototype._mousedownHandler = function(e2) {
-    if (isMiddleOrRightButtonOnMouseUpDown(e2) || e2.target && e2.target.draggable) {
+    if (isMiddleOrRightButtonOnMouseUpDown(e2)) {
       return;
+    }
+    var el = e2.target;
+    while (el) {
+      if (el.draggable) {
+        return;
+      }
+      el = el.__hostTarget || el.parent;
     }
     var x = e2.offsetX;
     var y = e2.offsetY;
@@ -42906,7 +42987,7 @@ function isAvailableBehavior(behaviorToCheck, e2, settings) {
 }
 var RoamController_default = RoamController;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/helper/roamHelper.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/helper/roamHelper.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -42946,7 +43027,7 @@ function updateViewOnZoom(controllerHost, zoomDelta, zoomX, zoomY) {
   target.dirty();
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/helper/cursorHelper.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/helper/cursorHelper.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -42972,7 +43053,7 @@ function onIrrelevantElement(e2, api, targetCoordSysModel) {
   return model && model !== targetCoordSysModel && !IRRELEVANT_EXCLUDES.hasOwnProperty(model.mainType) && coordSys && coordSys.model !== targetCoordSysModel;
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/geo/geoSourceManager.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/geo/geoSourceManager.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -42988,7 +43069,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/geo/GeoSVGResource.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/geo/GeoSVGResource.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -43004,7 +43085,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/tool/parseSVG.js
+// node_modules/_zrender@5.4.0@zrender/lib/tool/parseSVG.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -43020,7 +43101,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/tool/parseXML.js
+// node_modules/_zrender@5.4.0@zrender/lib/tool/parseXML.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -43050,7 +43131,7 @@ function parseXML(svg) {
   return svgNode;
 }
 
-// node_modules/_zrender@5.3.2@zrender/lib/tool/parseSVG.js
+// node_modules/_zrender@5.4.0@zrender/lib/tool/parseSVG.js
 var nodeParsers;
 var INHERITABLE_STYLE_ATTRIBUTES_MAP = {
   "fill": "fill",
@@ -43664,7 +43745,7 @@ function parseSVG(xml, opt) {
   return parser.parse(xml, opt);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/geo/GeoSVGResource.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/geo/GeoSVGResource.js
 var REGION_AVAILABLE_SVG_TAG_MAP = createHashMap([
   "rect",
   "circle",
@@ -43820,7 +43901,7 @@ function createRegions(named) {
   };
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/geo/GeoJSONResource.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/geo/GeoJSONResource.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -43836,7 +43917,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/geo/fix/nanhai.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/geo/fix/nanhai.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -43880,7 +43961,7 @@ function fixNanhai(mapType, regions) {
   }
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/geo/fix/textCoord.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/geo/fix/textCoord.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -43914,7 +43995,7 @@ function fixTextCoords(mapType, region) {
   }
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/geo/fix/diaoyuIsland.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/geo/fix/diaoyuIsland.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -43939,7 +44020,7 @@ function fixDiaoyuIsland(mapType, region) {
   }
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/geo/GeoJSONResource.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/geo/GeoJSONResource.js
 var DEFAULT_NAME_PROPERTY = "name";
 var GeoJSONResource = function() {
   function GeoJSONResource2(mapName, geoJSON, specialAreas) {
@@ -44018,7 +44099,7 @@ function parseInput(source) {
   return !isString(source) ? source : typeof JSON !== "undefined" && JSON.parse ? JSON.parse(source) : new Function("return (" + source + ");")();
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/geo/geoSourceManager.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/geo/geoSourceManager.js
 var storage = createHashMap();
 var geoSourceManager_default = {
   registerMap: function(mapName, rawDef, rawSpecialAreas) {
@@ -44055,7 +44136,7 @@ var geoSourceManager_default = {
   }
 };
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/helper/MapDraw.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/helper/MapDraw.js
 var OPTION_STYLE_ENABLED_TAGS = ["rect", "circle", "line", "ellipse", "polygon", "polyline", "path"];
 var OPTION_STYLE_ENABLED_TAG_MAP = createHashMap(OPTION_STYLE_ENABLED_TAGS);
 var STATE_TRIGGER_TAG_MAP = createHashMap(OPTION_STYLE_ENABLED_TAGS.concat(["g"]));
@@ -44547,7 +44628,7 @@ function projectPolys(rings, createStream, isLine) {
 }
 var MapDraw_default = MapDraw;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/map/MapView.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/map/MapView.js
 var MapView = function(_super) {
   __extends(MapView2, _super);
   function MapView2() {
@@ -44650,7 +44731,7 @@ var MapView = function(_super) {
 }(Chart_default);
 var MapView_default = MapView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/map/MapSeries.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/map/MapSeries.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -44807,7 +44888,7 @@ var MapSeries = function(_super) {
 }(Series_default);
 var MapSeries_default = MapSeries;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/map/mapDataStatistic.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/map/mapDataStatistic.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -44880,7 +44961,7 @@ function mapDataStatistic(ecModel) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/map/mapSymbolLayout.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/map/mapSymbolLayout.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -44934,7 +45015,7 @@ function mapSymbolLayout(ecModel) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/geo/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/geo/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -44950,7 +45031,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/geo/GeoModel.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/geo/GeoModel.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -44966,7 +45047,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/geo/geoCreator.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/geo/geoCreator.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -44982,7 +45063,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/geo/Geo.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/geo/Geo.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -44998,7 +45079,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/View.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/View.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -45167,7 +45248,7 @@ function getCoordSys(finder) {
 }
 var View_default = View;
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/geo/Geo.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/geo/Geo.js
 var GEO_DEFAULT_PARAMS = {
   "geoJSON": {
     aspectScale: 0.75,
@@ -45305,7 +45386,7 @@ function getCoordSys2(finder) {
 }
 var Geo_default = Geo;
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/geo/geoCreator.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/geo/geoCreator.js
 function resizeGeo(geoModel, api) {
   var boundingCoords = geoModel.get("boundingCoords");
   if (boundingCoords != null) {
@@ -45471,7 +45552,7 @@ var GeoCreator = function() {
 var geoCreator = new GeoCreator();
 var geoCreator_default = geoCreator;
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/geo/GeoModel.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/geo/GeoModel.js
 var GeoModel = function(_super) {
   __extends(GeoModel2, _super);
   function GeoModel2() {
@@ -45602,7 +45683,7 @@ var GeoModel = function(_super) {
 }(Component_default);
 var GeoModel_default = GeoModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/action/roamHelper.js
+// node_modules/_echarts@5.4.0@echarts/lib/action/roamHelper.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -45652,7 +45733,7 @@ function updateCenterAndZoom(view, payload, zoomLimit, api) {
   };
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/geo/GeoView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/geo/GeoView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -45729,7 +45810,7 @@ var GeoView = function(_super) {
 }(Component_default2);
 var GeoView_default = GeoView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/geo/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/geo/install.js
 function registerMap2(mapName, geoJson, specialAreas) {
   geoSourceManager_default.registerMap(mapName, geoJson, specialAreas);
 }
@@ -45810,7 +45891,7 @@ function install10(registers) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/map/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/map/install.js
 function install11(registers) {
   use(install10);
   registers.registerChartView(MapView_default);
@@ -45820,7 +45901,7 @@ function install11(registers) {
   createLegacyDataSelectAction("map", registers.registerAction);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/tree/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/tree/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -45836,7 +45917,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/tree/TreeView.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/tree/TreeView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -45852,7 +45933,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/tree/layoutHelper.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/tree/layoutHelper.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -46017,7 +46098,7 @@ function defaultSeparation(node1, node2) {
   return node1.parentNode === node2.parentNode ? 1 : 2;
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/tree/TreeView.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/tree/TreeView.js
 var TreeEdgeShape = function() {
   function TreeEdgeShape2() {
     this.parentPoint = [];
@@ -46553,7 +46634,7 @@ function getEdgeShape(layoutOpt, orient, curvature, sourceLayout, targetLayout) 
 }
 var TreeView_default = TreeView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/tree/TreeSeries.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/tree/TreeSeries.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -46569,7 +46650,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/data/Tree.js
+// node_modules/_echarts@5.4.0@echarts/lib/data/Tree.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -46585,7 +46666,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/data/helper/linkSeriesData.js
+// node_modules/_echarts@5.4.0@echarts/lib/data/helper/linkSeriesData.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -46682,7 +46763,7 @@ function linkSingle(data, dataType, mainData, opt) {
 }
 var linkSeriesData_default = linkSeriesData;
 
-// node_modules/_echarts@5.3.3@echarts/lib/data/Tree.js
+// node_modules/_echarts@5.4.0@echarts/lib/data/Tree.js
 var TreeNode = function() {
   function TreeNode2(name, hostTree) {
     this.depth = 0;
@@ -46915,7 +46996,7 @@ function addChild(child, node) {
 }
 var Tree_default = Tree;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/helper/treeHelper.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/helper/treeHelper.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -46977,7 +47058,7 @@ function wrapTreePathInfo(node, seriesModel) {
   return treePathInfo;
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/tree/TreeSeries.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/tree/TreeSeries.js
 var TreeSeriesModel = function(_super) {
   __extends(TreeSeriesModel2, _super);
   function TreeSeriesModel2() {
@@ -47096,7 +47177,7 @@ var TreeSeriesModel = function(_super) {
 }(Series_default);
 var TreeSeries_default = TreeSeriesModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/tree/treeLayout.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/tree/treeLayout.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -47112,7 +47193,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/tree/traversalHelper.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/tree/traversalHelper.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -47162,7 +47243,7 @@ function eachBefore(root, callback) {
   }
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/tree/treeLayout.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/tree/treeLayout.js
 function treeLayout(ecModel, api) {
   ecModel.eachSeriesByType("tree", function(seriesModel) {
     commonLayout(seriesModel, api);
@@ -47257,7 +47338,7 @@ function commonLayout(seriesModel, api) {
   }
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/tree/treeVisual.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/tree/treeVisual.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -47285,7 +47366,7 @@ function treeVisual(ecModel) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/tree/treeAction.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/tree/treeAction.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -47335,7 +47416,7 @@ function installTreeAction(registers) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/tree/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/tree/install.js
 function install12(registers) {
   registers.registerChartView(TreeView_default);
   registers.registerSeriesModel(TreeSeries_default);
@@ -47344,7 +47425,7 @@ function install12(registers) {
   installTreeAction(registers);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/treemap/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/treemap/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -47360,7 +47441,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/treemap/treemapAction.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/treemap/treemapAction.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -47406,7 +47487,7 @@ function installTreemapAction(registers) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/treemap/TreemapSeries.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/treemap/TreemapSeries.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -47422,7 +47503,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/helper/enableAriaDecalForTree.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/helper/enableAriaDecalForTree.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -47451,7 +47532,7 @@ function enableAriaDecalForTree(seriesModel) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/treemap/TreemapSeries.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/treemap/TreemapSeries.js
 var TreemapSeriesModel = function(_super) {
   __extends(TreemapSeriesModel2, _super);
   function TreemapSeriesModel2() {
@@ -47564,6 +47645,11 @@ var TreemapSeriesModel = function(_super) {
         textStyle: {
           color: "#fff"
         }
+      },
+      emphasis: {
+        itemStyle: {
+          color: "rgba(0,0,0,0.9)"
+        }
       }
     },
     label: {
@@ -47662,7 +47748,7 @@ function setDefault(levels, ecModel) {
 }
 var TreemapSeries_default = TreemapSeriesModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/treemap/TreemapView.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/treemap/TreemapView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -47678,7 +47764,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/treemap/Breadcrumb.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/treemap/Breadcrumb.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -47709,7 +47795,9 @@ var Breadcrumb = function() {
       return;
     }
     var normalStyleModel = model.getModel("itemStyle");
+    var emphasisModel = model.getModel("emphasis");
     var textStyleModel = normalStyleModel.getModel("textStyle");
+    var emphasisTextStyleModel = emphasisModel.getModel(["itemStyle", "textStyle"]);
     var layoutParam = {
       pos: {
         left: model.get("left"),
@@ -47726,7 +47814,7 @@ var Breadcrumb = function() {
       renderList: []
     };
     this._prepare(targetNode, layoutParam, textStyleModel);
-    this._renderContent(seriesModel, layoutParam, normalStyleModel, textStyleModel, onSelect);
+    this._renderContent(seriesModel, layoutParam, normalStyleModel, emphasisModel, textStyleModel, emphasisTextStyleModel, onSelect);
     positionElement(thisGroup, layoutParam.pos, layoutParam.box);
   };
   Breadcrumb2.prototype._prepare = function(targetNode, layoutParam, textStyleModel) {
@@ -47742,13 +47830,14 @@ var Breadcrumb = function() {
       });
     }
   };
-  Breadcrumb2.prototype._renderContent = function(seriesModel, layoutParam, normalStyleModel, textStyleModel, onSelect) {
+  Breadcrumb2.prototype._renderContent = function(seriesModel, layoutParam, normalStyleModel, emphasisModel, textStyleModel, emphasisTextStyleModel, onSelect) {
     var lastX = 0;
     var emptyItemWidth = layoutParam.emptyItemWidth;
     var height = seriesModel.get(["breadcrumb", "height"]);
     var availableSize = getAvailableSize(layoutParam.pos, layoutParam.box);
     var totalWidth = layoutParam.totalWidth;
     var renderList = layoutParam.renderList;
+    var emphasisItemStyle = emphasisModel.getModel("itemStyle").getItemStyle();
     for (var i = renderList.length - 1; i >= 0; i--) {
       var item = renderList[i];
       var itemNode = item.node;
@@ -47767,11 +47856,9 @@ var Breadcrumb = function() {
           lineJoin: "bevel"
         }),
         textContent: new Text_default({
-          style: {
-            text,
-            fill: textStyleModel.getTextColor(),
-            font: textStyleModel.getFont()
-          }
+          style: createTextStyle(textStyleModel, {
+            text
+          })
         }),
         textConfig: {
           position: "inside"
@@ -47780,6 +47867,11 @@ var Breadcrumb = function() {
         onclick: curry(onSelect, itemNode)
       });
       el.disableLabelAnimation = true;
+      el.getTextContent().ensureState("emphasis").style = createTextStyle(emphasisTextStyleModel, {
+        text
+      });
+      el.ensureState("emphasis").style = emphasisItemStyle;
+      toggleHoverEmphasis(el, emphasisModel.get("focus"), emphasisModel.get("blurScope"), emphasisModel.get("disabled"));
       this.group.add(el);
       packEventData(el, seriesModel, itemNode);
       lastX += itemWidth + ITEM_GAP;
@@ -47814,7 +47906,7 @@ function packEventData(el, seriesModel, itemNode) {
 }
 var Breadcrumb_default = Breadcrumb;
 
-// node_modules/_echarts@5.3.3@echarts/lib/util/animation.js
+// node_modules/_echarts@5.4.0@echarts/lib/util/animation.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -47882,7 +47974,7 @@ function createWrap() {
   return new AnimationWrap();
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/treemap/TreemapView.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/treemap/TreemapView.js
 var Group2 = Group_default;
 var Rect2 = Rect_default;
 var DRAG_THRESHOLD = 3;
@@ -48555,7 +48647,7 @@ function calculateZ2(depth, z2InLevel) {
 }
 var TreemapView_default = TreemapView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/treemap/treemapVisual.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/treemap/treemapVisual.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -48571,7 +48663,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/visual/VisualMapping.js
+// node_modules/_echarts@5.4.0@echarts/lib/visual/VisualMapping.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -48945,7 +49037,7 @@ function littleThan(close, a, b) {
 }
 var VisualMapping_default = VisualMapping;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/treemap/treemapVisual.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/treemap/treemapVisual.js
 var ITEM_STYLE_NORMAL = "itemStyle";
 var inner10 = makeInner();
 var treemapVisual_default = {
@@ -49077,7 +49169,7 @@ function mapVisual(nodeModel, visuals, child, index, mapping, seriesModel) {
   return childVisuals;
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/treemap/treemapLayout.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/treemap/treemapLayout.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -49442,7 +49534,7 @@ function getUpperLabelHeight(model) {
   return model.get(PATH_UPPER_LABEL_SHOW) ? model.get(PATH_UPPER_LABEL_HEIGHT) : 0;
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/treemap/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/treemap/install.js
 function install13(registers) {
   registers.registerSeriesModel(TreemapSeries_default);
   registers.registerChartView(TreemapView_default);
@@ -49451,7 +49543,7 @@ function install13(registers) {
   installTreemapAction(registers);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/graph/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/graph/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -49467,7 +49559,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/graph/categoryFilter.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/graph/categoryFilter.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -49512,7 +49604,7 @@ function categoryFilter(ecModel) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/graph/categoryVisual.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/graph/categoryVisual.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -49571,7 +49663,7 @@ function categoryVisual(ecModel) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/graph/edgeVisual.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/graph/edgeVisual.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -49631,7 +49723,7 @@ function graphEdgeVisual(ecModel) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/graph/simpleLayout.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/graph/simpleLayout.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -49647,7 +49739,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/graph/simpleLayoutHelper.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/graph/simpleLayoutHelper.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -49663,7 +49755,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/helper/multipleGraphEdgeHelper.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/helper/multipleGraphEdgeHelper.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -49793,7 +49885,7 @@ function getCurvenessForEdge(edge, seriesModel, index, needReverse) {
   }
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/graph/simpleLayoutHelper.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/graph/simpleLayoutHelper.js
 function simpleLayout(seriesModel) {
   var coordSys = seriesModel.coordinateSystem;
   if (coordSys && coordSys.type !== "view") {
@@ -49819,7 +49911,7 @@ function simpleLayoutEdge(graph, seriesModel) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/graph/simpleLayout.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/graph/simpleLayout.js
 function graphSimpleLayout(ecModel, api) {
   ecModel.eachSeriesByType("graph", function(seriesModel) {
     var layout5 = seriesModel.get("layout");
@@ -49853,7 +49945,7 @@ function graphSimpleLayout(ecModel, api) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/graph/circularLayout.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/graph/circularLayout.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -49869,7 +49961,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/graph/circularLayoutHelper.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/graph/circularLayoutHelper.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -49885,7 +49977,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/graph/graphHelper.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/graph/graphHelper.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -49919,10 +50011,10 @@ function getSymbolSize(node) {
   return +symbolSize;
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/graph/circularLayoutHelper.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/graph/circularLayoutHelper.js
 var PI8 = Math.PI;
 var _symbolRadiansHalf = [];
-function circularLayout(seriesModel, basedOn) {
+function circularLayout(seriesModel, basedOn, draggingNode, pointer) {
   var coordSys = seriesModel.coordinateSystem;
   if (coordSys && coordSys.type !== "view") {
     return;
@@ -49940,6 +50032,15 @@ function circularLayout(seriesModel, basedOn) {
   });
   if (!count2) {
     return;
+  }
+  if (draggingNode) {
+    var _a2 = coordSys.pointToData(pointer), tempX = _a2[0], tempY = _a2[1];
+    var v = [tempX - cx, tempY - cy];
+    normalize(v, v);
+    scale(v, v, r);
+    draggingNode.setLayout([cx + v[0], cy + v[1]], true);
+    var circularRotateLabel = seriesModel.get(["circular", "rotateLabel"]);
+    rotateNodeLabel(draggingNode, circularRotateLabel, cx, cy);
   }
   _layoutNodesBasedOn[basedOn](seriesModel, graph, nodeData, r, cx, cy, count2);
   graph.eachEdge(function(edge, index) {
@@ -49988,13 +50089,47 @@ var _layoutNodesBasedOn = {
     graph.eachNode(function(node) {
       var radianHalf = halfRemainRadian + _symbolRadiansHalf[node.dataIndex];
       angle += radianHalf;
-      node.setLayout([r * Math.cos(angle) + cx, r * Math.sin(angle) + cy]);
+      (!node.getLayout() || !node.getLayout().fixed) && node.setLayout([r * Math.cos(angle) + cx, r * Math.sin(angle) + cy]);
       angle += radianHalf;
     });
   }
 };
+function rotateNodeLabel(node, circularRotateLabel, cx, cy) {
+  var el = node.getGraphicEl();
+  if (!el) {
+    return;
+  }
+  var nodeModel = node.getModel();
+  var labelRotate = nodeModel.get(["label", "rotate"]) || 0;
+  var symbolPath = el.getSymbolPath();
+  if (circularRotateLabel) {
+    var pos = node.getLayout();
+    var rad = Math.atan2(pos[1] - cy, pos[0] - cx);
+    if (rad < 0) {
+      rad = Math.PI * 2 + rad;
+    }
+    var isLeft = pos[0] < cx;
+    if (isLeft) {
+      rad = rad - Math.PI;
+    }
+    var textPosition = isLeft ? "left" : "right";
+    symbolPath.setTextConfig({
+      rotation: -rad,
+      position: textPosition,
+      origin: "center"
+    });
+    var emphasisState = symbolPath.ensureState("emphasis");
+    extend(emphasisState.textConfig || (emphasisState.textConfig = {}), {
+      position: textPosition
+    });
+  } else {
+    symbolPath.setTextConfig({
+      rotation: labelRotate *= Math.PI / 180
+    });
+  }
+}
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/graph/circularLayout.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/graph/circularLayout.js
 function graphCircularLayout(ecModel) {
   ecModel.eachSeriesByType("graph", function(seriesModel) {
     if (seriesModel.get("layout") === "circular") {
@@ -50003,7 +50138,7 @@ function graphCircularLayout(ecModel) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/graph/forceLayout.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/graph/forceLayout.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -50019,7 +50154,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/graph/forceHelper.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/graph/forceHelper.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -50131,7 +50266,7 @@ function forceLayout(inNodes, inEdges, opts) {
   };
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/graph/forceLayout.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/graph/forceLayout.js
 function graphForceLayout(ecModel) {
   ecModel.eachSeriesByType("graph", function(graphSeries) {
     var coordSys = graphSeries.coordinateSystem;
@@ -50237,7 +50372,7 @@ function graphForceLayout(ecModel) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/graph/createView.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/graph/createView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -50304,7 +50439,7 @@ function createViewCoordSys(ecModel, api) {
   return viewList;
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/graph/GraphView.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/graph/GraphView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -50320,7 +50455,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/helper/LineDraw.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/helper/LineDraw.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -50336,7 +50471,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/helper/Line.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/helper/Line.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -50352,7 +50487,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/helper/LinePath.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/helper/LinePath.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -50428,7 +50563,7 @@ var ECLinePath = function(_super) {
 }(Path_default);
 var LinePath_default = ECLinePath;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/helper/Line.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/helper/Line.js
 var SYMBOL_CATEGORIES = ["fromSymbol", "toSymbol"];
 function makeSymbolTypeKey(symbolCategory) {
   return "_" + symbolCategory + "Type";
@@ -50760,7 +50895,7 @@ var Line2 = function(_super) {
 }(Group_default);
 var Line_default2 = Line2;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/helper/LineDraw.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/helper/LineDraw.js
 var LineDraw = function() {
   function LineDraw2(LineCtor) {
     this.group = new Group_default();
@@ -50879,7 +51014,7 @@ function lineNeedsDraw(pts) {
 }
 var LineDraw_default = LineDraw;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/graph/adjustEdge.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/graph/adjustEdge.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -51009,7 +51144,7 @@ function adjustEdge(graph, scale4) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/graph/GraphView.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/graph/GraphView.js
 function isViewCoordSys(coordSys) {
   return coordSys.type === "view";
 }
@@ -51067,6 +51202,7 @@ var GraphView = function(_super) {
     if (forceLayout2) {
       this._startForceLayoutIteration(forceLayout2, layoutAnimation);
     }
+    var layout5 = seriesModel.get("layout");
     data.graph.eachNode(function(node) {
       var idx = node.dataIndex;
       var el = node.getGraphicEl();
@@ -51077,12 +51213,28 @@ var GraphView = function(_super) {
       el.off("drag").off("dragend");
       var draggable = itemModel.get("draggable");
       if (draggable) {
-        el.on("drag", function() {
-          if (forceLayout2) {
-            forceLayout2.warmUp();
-            !_this._layouting && _this._startForceLayoutIteration(forceLayout2, layoutAnimation);
-            forceLayout2.setFixed(idx);
-            data.setItemLayout(idx, [el.x, el.y]);
+        el.on("drag", function(e2) {
+          switch (layout5) {
+            case "force":
+              forceLayout2.warmUp();
+              !_this._layouting && _this._startForceLayoutIteration(forceLayout2, layoutAnimation);
+              forceLayout2.setFixed(idx);
+              data.setItemLayout(idx, [el.x, el.y]);
+              break;
+            case "circular":
+              data.setItemLayout(idx, [el.x, el.y]);
+              node.setLayout({
+                fixed: true
+              }, true);
+              circularLayout(seriesModel, "symbolSize", node, [e2.offsetX, e2.offsetY]);
+              _this.updateLayout(seriesModel);
+              break;
+            case "none":
+            default:
+              data.setItemLayout(idx, [el.x, el.y]);
+              simpleLayoutEdge(seriesModel.getGraph(), seriesModel);
+              _this.updateLayout(seriesModel);
+              break;
           }
         }).on("dragend", function() {
           if (forceLayout2) {
@@ -51112,35 +51264,8 @@ var GraphView = function(_super) {
     var circularRotateLabel = seriesModel.get("layout") === "circular" && seriesModel.get(["circular", "rotateLabel"]);
     var cx = data.getLayout("cx");
     var cy = data.getLayout("cy");
-    data.eachItemGraphicEl(function(el, idx) {
-      var itemModel = data.getItemModel(idx);
-      var labelRotate = itemModel.get(["label", "rotate"]) || 0;
-      var symbolPath = el.getSymbolPath();
-      if (circularRotateLabel) {
-        var pos = data.getItemLayout(idx);
-        var rad = Math.atan2(pos[1] - cy, pos[0] - cx);
-        if (rad < 0) {
-          rad = Math.PI * 2 + rad;
-        }
-        var isLeft = pos[0] < cx;
-        if (isLeft) {
-          rad = rad - Math.PI;
-        }
-        var textPosition = isLeft ? "left" : "right";
-        symbolPath.setTextConfig({
-          rotation: -rad,
-          position: textPosition,
-          origin: "center"
-        });
-        var emphasisState = symbolPath.ensureState("emphasis");
-        extend(emphasisState.textConfig || (emphasisState.textConfig = {}), {
-          position: textPosition
-        });
-      } else {
-        symbolPath.setTextConfig({
-          rotation: labelRotate *= Math.PI / 180
-        });
-      }
+    data.graph.eachNode(function(node) {
+      rotateNodeLabel(node, circularRotateLabel, cx, cy);
     });
     this._firstRender = false;
   };
@@ -51219,7 +51344,7 @@ var GraphView = function(_super) {
 }(Chart_default);
 var GraphView_default = GraphView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/graph/GraphSeries.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/graph/GraphSeries.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -51235,7 +51360,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/helper/createGraphFromNodeEdge.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/helper/createGraphFromNodeEdge.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -51251,7 +51376,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/data/Graph.js
+// node_modules/_echarts@5.4.0@echarts/lib/data/Graph.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -51548,7 +51673,7 @@ mixin(GraphNode, createGraphDataProxyMixin("hostGraph", "data"));
 mixin(GraphEdge, createGraphDataProxyMixin("hostGraph", "edgeData"));
 var Graph_default = Graph;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/helper/createGraphFromNodeEdge.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/helper/createGraphFromNodeEdge.js
 function createGraphFromNodeEdge(nodes, edges, seriesModel, directed, beforeLink) {
   var graph = new Graph_default(directed);
   for (var i = 0; i < nodes.length; i++) {
@@ -51608,7 +51733,7 @@ function createGraphFromNodeEdge(nodes, edges, seriesModel, directed, beforeLink
   return graph;
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/graph/GraphSeries.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/graph/GraphSeries.js
 var GraphSeriesModel = function(_super) {
   __extends(GraphSeriesModel2, _super);
   function GraphSeriesModel2() {
@@ -51797,7 +51922,7 @@ var GraphSeriesModel = function(_super) {
 }(Series_default);
 var GraphSeries_default = GraphSeriesModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/graph/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/graph/install.js
 var actionInfo = {
   type: "graphRoam",
   event: "graphRoam",
@@ -51839,7 +51964,7 @@ function install14(registers) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/gauge/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/gauge/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -51855,7 +51980,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/gauge/GaugeView.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/gauge/GaugeView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -51871,7 +51996,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/gauge/PointerPath.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/gauge/PointerPath.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -51925,7 +52050,7 @@ var PointerPath = function(_super) {
 }(Path_default);
 var PointerPath_default = PointerPath;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/gauge/GaugeView.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/gauge/GaugeView.js
 function parsePosition(seriesModel, api) {
   var center3 = seriesModel.get("center");
   var width = api.getWidth();
@@ -52073,18 +52198,50 @@ var GaugeView = function(_super) {
         var distance2 = labelModel.get("distance") + splitLineDistance;
         var label = formatLabel(round(i / splitNumber * (maxVal - minVal) + minVal), labelModel.get("formatter"));
         var autoColor = getColor(i / splitNumber);
-        group.add(new Text_default({
-          style: createTextStyle(labelModel, {
-            text: label,
-            x: unitX * (r - splitLineLen - distance2) + cx,
-            y: unitY * (r - splitLineLen - distance2) + cy,
-            verticalAlign: unitY < -0.8 ? "top" : unitY > 0.8 ? "bottom" : "middle",
-            align: unitX < -0.4 ? "left" : unitX > 0.4 ? "right" : "center"
-          }, {
-            inheritColor: autoColor
-          }),
-          silent: true
-        }));
+        var textStyleX = unitX * (r - splitLineLen - distance2) + cx;
+        var textStyleY = unitY * (r - splitLineLen - distance2) + cy;
+        var rotateType = labelModel.get("rotate");
+        var rotate2 = 0;
+        if (rotateType === "radial") {
+          rotate2 = -angle + 2 * Math.PI;
+          if (rotate2 > Math.PI / 2) {
+            rotate2 += Math.PI;
+          }
+        } else if (rotateType === "tangential") {
+          rotate2 = -angle - Math.PI / 2;
+        } else if (isNumber(rotateType)) {
+          rotate2 = rotateType * Math.PI / 180;
+        }
+        if (rotate2 === 0) {
+          group.add(new Text_default({
+            style: createTextStyle(labelModel, {
+              text: label,
+              x: textStyleX,
+              y: textStyleY,
+              verticalAlign: unitY < -0.8 ? "top" : unitY > 0.8 ? "bottom" : "middle",
+              align: unitX < -0.4 ? "left" : unitX > 0.4 ? "right" : "center"
+            }, {
+              inheritColor: autoColor
+            }),
+            silent: true
+          }));
+        } else {
+          group.add(new Text_default({
+            style: createTextStyle(labelModel, {
+              text: label,
+              x: textStyleX,
+              y: textStyleY,
+              verticalAlign: "middle",
+              align: "center"
+            }, {
+              inheritColor: autoColor
+            }),
+            silent: true,
+            originX: textStyleX,
+            originY: textStyleY,
+            rotation: rotate2
+          }));
+        }
       }
       if (tickModel.get("show") && i !== splitNumber) {
         var distance2 = tickModel.get("distance");
@@ -52382,7 +52539,7 @@ var GaugeView = function(_super) {
 }(Chart_default);
 var GaugeView_default = GaugeView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/gauge/GaugeSeries.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/gauge/GaugeSeries.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -52461,7 +52618,8 @@ var GaugeSeriesModel = function(_super) {
       show: true,
       distance: 15,
       color: "#464646",
-      fontSize: 12
+      fontSize: 12,
+      rotate: 0
     },
     pointer: {
       icon: null,
@@ -52512,13 +52670,13 @@ var GaugeSeriesModel = function(_super) {
 }(Series_default);
 var GaugeSeries_default = GaugeSeriesModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/gauge/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/gauge/install.js
 function install15(registers) {
   registers.registerChartView(GaugeView_default);
   registers.registerSeriesModel(GaugeSeries_default);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/funnel/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/funnel/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -52534,7 +52692,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/funnel/FunnelView.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/funnel/FunnelView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -52694,7 +52852,7 @@ var FunnelView = function(_super) {
 }(Chart_default);
 var FunnelView_default = FunnelView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/funnel/FunnelSeries.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/funnel/FunnelSeries.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -52788,7 +52946,7 @@ var FunnelSeriesModel = function(_super) {
 }(Series_default);
 var FunnelSeries_default = FunnelSeriesModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/funnel/funnelLayout.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/funnel/funnelLayout.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -53090,7 +53248,7 @@ function funnelLayout(ecModel, api) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/funnel/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/funnel/install.js
 function install16(registers) {
   registers.registerChartView(FunnelView_default);
   registers.registerSeriesModel(FunnelSeries_default);
@@ -53098,7 +53256,7 @@ function install16(registers) {
   registers.registerProcessor(dataFilter("funnel"));
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/parallel/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/parallel/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -53114,7 +53272,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/parallel/ParallelView.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/parallel/ParallelView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -53274,7 +53432,7 @@ function isEmptyValue(val, axisType) {
 }
 var ParallelView_default = ParallelView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/parallel/ParallelSeries.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/parallel/ParallelSeries.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -53358,7 +53516,7 @@ function convertDimNameToNumber(dimName) {
 }
 var ParallelSeries_default = ParallelSeriesModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/parallel/parallelVisual.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/parallel/parallelVisual.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -53400,7 +53558,7 @@ var parallelVisual = {
 };
 var parallelVisual_default = parallelVisual;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/parallel/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/parallel/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -53416,7 +53574,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/parallel/parallelPreprocessor.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/parallel/parallelPreprocessor.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -53463,7 +53621,7 @@ function mergeAxisOptionFromParallel(option) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/parallel/ParallelView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/parallel/ParallelView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -53558,7 +53716,7 @@ function checkTrigger(view, triggerOn) {
 }
 var ParallelView_default2 = ParallelView2;
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/parallel/ParallelModel.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/parallel/ParallelModel.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -53637,7 +53795,7 @@ var ParallelModel = function(_super) {
 }(Component_default);
 var ParallelModel_default = ParallelModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/parallel/parallelCreator.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/parallel/parallelCreator.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -53653,7 +53811,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/parallel/Parallel.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/parallel/Parallel.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -53669,7 +53827,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/parallel/ParallelAxis.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/parallel/ParallelAxis.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -53699,7 +53857,7 @@ var ParallelAxis = function(_super) {
 }(Axis_default);
 var ParallelAxis_default = ParallelAxis;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/helper/sliderMove.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/helper/sliderMove.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -53759,7 +53917,7 @@ function restrict(value, extend2) {
   return Math.min(extend2[1] != null ? extend2[1] : Infinity, Math.max(extend2[0] != null ? extend2[0] : -Infinity, value));
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/parallel/Parallel.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/parallel/Parallel.js
 var each6 = each;
 var mathMin9 = Math.min;
 var mathMax9 = Math.max;
@@ -54056,7 +54214,7 @@ function layoutAxisWithExpand(axisIndex, layoutInfo) {
 }
 var Parallel_default = Parallel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/parallel/parallelCreator.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/parallel/parallelCreator.js
 function createParallelCoordSys(ecModel, api) {
   var coordSysList = [];
   ecModel.eachComponent("parallel", function(parallelModel, idx) {
@@ -54080,7 +54238,7 @@ var parallelCoordSysCreator = {
 };
 var parallelCreator_default = parallelCoordSysCreator;
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/parallel/AxisModel.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/parallel/AxisModel.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -54147,7 +54305,7 @@ var ParallelAxisModel = function(_super) {
 mixin(ParallelAxisModel, AxisModelCommonMixin);
 var AxisModel_default = ParallelAxisModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/axis/ParallelAxisView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/axis/ParallelAxisView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -54163,7 +54321,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/helper/BrushController.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/helper/BrushController.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -54816,7 +54974,7 @@ function getLineRenderer(xyIndex) {
 }
 var BrushController_default = BrushController;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/helper/brushHelper.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/helper/brushHelper.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -54856,7 +55014,7 @@ function normalizeRect(rect) {
   return BoundingRect_default.create(rect);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/axis/ParallelAxisView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/axis/ParallelAxisView.js
 var elementList = ["axisLine", "axisTickLabel", "axisName"];
 var ParallelAxisView = function(_super) {
   __extends(ParallelAxisView2, _super);
@@ -54967,7 +55125,7 @@ function getCoordSysModel(axisModel, ecModel) {
 }
 var ParallelAxisView_default = ParallelAxisView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/axis/parallelAxisAction.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/axis/parallelAxisAction.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -55005,7 +55163,7 @@ function installParallelActions(registers) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/parallel/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/parallel/install.js
 var defaultAxisOption = {
   type: "value",
   areaSelectStyle: {
@@ -55029,7 +55187,7 @@ function install17(registers) {
   installParallelActions(registers);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/parallel/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/parallel/install.js
 function install18(registers) {
   use(install17);
   registers.registerChartView(ParallelView_default);
@@ -55037,7 +55195,7 @@ function install18(registers) {
   registers.registerVisual(registers.PRIORITY.VISUAL.BRUSH, parallelVisual_default);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/sankey/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/sankey/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -55053,7 +55211,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/sankey/SankeyView.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/sankey/SankeyView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -55307,7 +55465,7 @@ function createGridClipShape2(rect, seriesModel, cb) {
 }
 var SankeyView_default = SankeyView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/sankey/SankeySeries.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/sankey/SankeySeries.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -55469,7 +55627,7 @@ var SankeySeriesModel = function(_super) {
 }(Series_default);
 var SankeySeries_default = SankeySeriesModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/sankey/sankeyLayout.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/sankey/sankeyLayout.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -55865,7 +56023,7 @@ function computeEdgeDepths(nodes, orient) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/sankey/sankeyVisual.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/sankey/sankeyVisual.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -55921,7 +56079,7 @@ function sankeyVisual(ecModel) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/sankey/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/sankey/install.js
 function install19(registers) {
   registers.registerChartView(SankeyView_default);
   registers.registerSeriesModel(SankeySeries_default);
@@ -55942,7 +56100,7 @@ function install19(registers) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/boxplot/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/boxplot/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -55958,7 +56116,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/boxplot/BoxplotSeries.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/boxplot/BoxplotSeries.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -55974,7 +56132,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/helper/whiskerBoxCommon.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/helper/whiskerBoxCommon.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -56064,7 +56222,7 @@ var WhiskerBoxCommonMixin = function() {
   return WhiskerBoxCommonMixin2;
 }();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/boxplot/BoxplotSeries.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/boxplot/BoxplotSeries.js
 var BoxplotSeriesModel = function(_super) {
   __extends(BoxplotSeriesModel2, _super);
   function BoxplotSeriesModel2() {
@@ -56118,7 +56276,7 @@ var BoxplotSeriesModel = function(_super) {
 mixin(BoxplotSeriesModel, WhiskerBoxCommonMixin, true);
 var BoxplotSeries_default = BoxplotSeriesModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/boxplot/BoxplotView.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/boxplot/BoxplotView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -56254,7 +56412,7 @@ function transInit(points4, dim, itemLayout) {
 }
 var BoxplotView_default = BoxplotView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/boxplot/boxplotVisual.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/boxplot/boxplotVisual.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -56272,7 +56430,7 @@ init_define_EXTERNAL_LINK_ICON_LOCALES();
 function boxplotVisual(ecModel, api) {
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/boxplot/boxplotLayout.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/boxplot/boxplotLayout.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -56415,7 +56573,7 @@ function layoutSingleSeries(seriesModel, offset, boxWidth) {
   }
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/boxplot/boxplotTransform.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/boxplot/boxplotTransform.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -56431,7 +56589,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/boxplot/prepareBoxplotData.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/boxplot/prepareBoxplotData.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -56481,7 +56639,7 @@ function prepareBoxplotData(rawData, opt) {
   };
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/boxplot/boxplotTransform.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/boxplot/boxplotTransform.js
 var boxplotTransform = {
   type: "echarts:boxplot",
   transform: function transform(params) {
@@ -56503,7 +56661,7 @@ var boxplotTransform = {
   }
 };
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/boxplot/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/boxplot/install.js
 function install20(registers) {
   registers.registerSeriesModel(BoxplotSeries_default);
   registers.registerChartView(BoxplotView_default);
@@ -56512,7 +56670,7 @@ function install20(registers) {
   registers.registerTransform(boxplotTransform);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/candlestick/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/candlestick/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -56528,7 +56686,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/candlestick/CandlestickView.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/candlestick/CandlestickView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -56771,14 +56929,16 @@ function createLarge2(seriesModel, group, progressiveEls, incremental) {
     shape: {
       points: largePoints
     },
-    __sign: 1
+    __sign: 1,
+    ignoreCoarsePointer: true
   });
   group.add(elP);
   var elN = new LargeBoxPath({
     shape: {
       points: largePoints
     },
-    __sign: -1
+    __sign: -1,
+    ignoreCoarsePointer: true
   });
   group.add(elN);
   setLargeStyle(1, elP, seriesModel, data);
@@ -56800,7 +56960,7 @@ function setLargeStyle(sign, el, seriesModel, data) {
 }
 var CandlestickView_default = CandlestickView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/candlestick/CandlestickSeries.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/candlestick/CandlestickSeries.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -56879,7 +57039,7 @@ var CandlestickSeriesModel = function(_super) {
 mixin(CandlestickSeriesModel, WhiskerBoxCommonMixin, true);
 var CandlestickSeries_default = CandlestickSeriesModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/candlestick/preprocessor.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/candlestick/preprocessor.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -56905,7 +57065,7 @@ function candlestickPreprocessor(option) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/candlestick/candlestickVisual.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/candlestick/candlestickVisual.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -56957,7 +57117,7 @@ var candlestickVisual = {
 };
 var candlestickVisual_default = candlestickVisual;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/candlestick/candlestickLayout.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/candlestick/candlestickLayout.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -57109,7 +57269,7 @@ function calculateCandleWidth(seriesModel, data) {
 }
 var candlestickLayout_default = candlestickLayout;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/candlestick/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/candlestick/install.js
 function install21(registers) {
   registers.registerChartView(CandlestickView_default);
   registers.registerSeriesModel(CandlestickSeries_default);
@@ -57118,7 +57278,7 @@ function install21(registers) {
   registers.registerLayout(candlestickLayout_default);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/effectScatter/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/effectScatter/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -57134,7 +57294,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/effectScatter/EffectScatterView.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/effectScatter/EffectScatterView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -57150,7 +57310,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/helper/EffectSymbol.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/helper/EffectSymbol.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -57308,7 +57468,7 @@ var EffectSymbol = function(_super) {
 }(Group_default);
 var EffectSymbol_default = EffectSymbol;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/effectScatter/EffectScatterView.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/effectScatter/EffectScatterView.js
 var EffectScatterView = function(_super) {
   __extends(EffectScatterView2, _super);
   function EffectScatterView2() {
@@ -57360,7 +57520,7 @@ var EffectScatterView = function(_super) {
 }(Chart_default);
 var EffectScatterView_default = EffectScatterView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/effectScatter/EffectScatterSeries.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/effectScatter/EffectScatterSeries.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -57416,14 +57576,14 @@ var EffectScatterSeriesModel = function(_super) {
 }(Series_default);
 var EffectScatterSeries_default = EffectScatterSeriesModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/effectScatter/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/effectScatter/install.js
 function install22(registers) {
   registers.registerChartView(EffectScatterView_default);
   registers.registerSeriesModel(EffectScatterSeries_default);
   registers.registerLayout(pointsLayout("effectScatter"));
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/lines/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/lines/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -57439,7 +57599,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/lines/LinesView.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/lines/LinesView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -57455,7 +57615,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/helper/EffectLine.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/helper/EffectLine.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -57519,6 +57679,7 @@ var EffectLine = function(_super) {
     var points4 = lineData.getItemLayout(idx);
     var period = effectModel.get("period") * 1e3;
     var loop = effectModel.get("loop");
+    var roundTrip = effectModel.get("roundTrip");
     var constantSpeed = effectModel.get("constantSpeed");
     var delayExpr = retrieve(effectModel.get("delay"), function(idx2) {
       return idx2 / lineData.count() * period / 3;
@@ -57528,7 +57689,7 @@ var EffectLine = function(_super) {
     if (constantSpeed > 0) {
       period = this._getLineLength(symbol) / constantSpeed * 1e3;
     }
-    if (period !== this._period || loop !== this._loop) {
+    if (period !== this._period || loop !== this._loop || roundTrip !== this._roundTrip) {
       symbol.stopAnimation();
       var delayNum = void 0;
       if (isFunction(delayExpr)) {
@@ -57539,17 +57700,18 @@ var EffectLine = function(_super) {
       if (symbol.__t > 0) {
         delayNum = -period * symbol.__t;
       }
-      this._animateSymbol(symbol, period, delayNum, loop);
+      this._animateSymbol(symbol, period, delayNum, loop, roundTrip);
     }
     this._period = period;
     this._loop = loop;
+    this._roundTrip = roundTrip;
   };
-  EffectLine2.prototype._animateSymbol = function(symbol, period, delayNum, loop) {
+  EffectLine2.prototype._animateSymbol = function(symbol, period, delayNum, loop, roundTrip) {
     if (period > 0) {
       symbol.__t = 0;
       var self_1 = this;
-      var animator = symbol.animate("", loop).when(period, {
-        __t: 1
+      var animator = symbol.animate("", loop).when(roundTrip ? period * 2 : period, {
+        __t: roundTrip ? 2 : 1
       }).delay(delayNum).during(function() {
         self_1._updateSymbolPosition(symbol);
       });
@@ -57577,15 +57739,15 @@ var EffectLine = function(_super) {
     var p1 = symbol.__p1;
     var p2 = symbol.__p2;
     var cp1 = symbol.__cp1;
-    var t = symbol.__t;
+    var t = symbol.__t < 1 ? symbol.__t : 2 - symbol.__t;
     var pos = [symbol.x, symbol.y];
     var lastPos = pos.slice();
     var quadraticAt3 = quadraticAt;
     var quadraticDerivativeAt2 = quadraticDerivativeAt;
     pos[0] = quadraticAt3(p1[0], cp1[0], p2[0], t);
     pos[1] = quadraticAt3(p1[1], cp1[1], p2[1], t);
-    var tx = quadraticDerivativeAt2(p1[0], cp1[0], p2[0], t);
-    var ty = quadraticDerivativeAt2(p1[1], cp1[1], p2[1], t);
+    var tx = symbol.__t < 1 ? quadraticDerivativeAt2(p1[0], cp1[0], p2[0], t) : quadraticDerivativeAt2(p2[0], cp1[0], p1[0], 1 - t);
+    var ty = symbol.__t < 1 ? quadraticDerivativeAt2(p1[1], cp1[1], p2[1], t) : quadraticDerivativeAt2(p2[1], cp1[1], p1[1], 1 - t);
     symbol.rotation = -Math.atan2(ty, tx) - Math.PI / 2;
     if (this._symbolType === "line" || this._symbolType === "rect" || this._symbolType === "roundRect") {
       if (symbol.__lastT !== void 0 && symbol.__lastT < symbol.__t) {
@@ -57614,7 +57776,7 @@ var EffectLine = function(_super) {
 }(Group_default);
 var EffectLine_default = EffectLine;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/helper/Polyline.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/helper/Polyline.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -57690,7 +57852,7 @@ var Polyline2 = function(_super) {
 }(Group_default);
 var Polyline_default2 = Polyline2;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/helper/EffectPolyline.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/helper/EffectPolyline.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -57743,7 +57905,7 @@ var EffectPolyline = function(_super) {
   };
   ;
   EffectPolyline2.prototype._updateSymbolPosition = function(symbol) {
-    var t = symbol.__t;
+    var t = symbol.__t < 1 ? symbol.__t : 2 - symbol.__t;
     var points4 = this._points;
     var offsets = this._offsets;
     var len2 = points4.length;
@@ -57773,8 +57935,8 @@ var EffectPolyline = function(_super) {
     var p1 = points4[frame + 1];
     symbol.x = p0[0] * (1 - p) + p * p1[0];
     symbol.y = p0[1] * (1 - p) + p * p1[1];
-    var tx = p1[0] - p0[0];
-    var ty = p1[1] - p0[1];
+    var tx = symbol.__t < 1 ? p1[0] - p0[0] : p0[0] - p1[0];
+    var ty = symbol.__t < 1 ? p1[1] - p0[1] : p0[1] - p1[1];
     symbol.rotation = -Math.atan2(ty, tx) - Math.PI / 2;
     this._lastFrame = frame;
     this._lastFramePercent = t;
@@ -57785,7 +57947,7 @@ var EffectPolyline = function(_super) {
 }(EffectLine_default);
 var EffectPolyline_default = EffectPolyline;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/helper/LargeLineDraw.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/helper/LargeLineDraw.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -57993,7 +58155,8 @@ var LargeLineDraw = function() {
   };
   LargeLineDraw2.prototype._create = function() {
     var lineEl = new LargeLinesPath({
-      cursor: "default"
+      cursor: "default",
+      ignoreCoarsePointer: true
     });
     this._newAdded.push(lineEl);
     this.group.add(lineEl);
@@ -58032,7 +58195,7 @@ var LargeLineDraw = function() {
 }();
 var LargeLineDraw_default = LargeLineDraw;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/lines/linesLayout.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/lines/linesLayout.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -58115,7 +58278,7 @@ var linesLayout = {
 };
 var linesLayout_default = linesLayout;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/lines/LinesView.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/lines/LinesView.js
 var LinesView = function(_super) {
   __extends(LinesView2, _super);
   function LinesView2() {
@@ -58238,7 +58401,7 @@ var LinesView = function(_super) {
 }(Chart_default);
 var LinesView_default = LinesView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/lines/LinesSeries.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/lines/LinesSeries.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -58496,7 +58659,7 @@ var LinesSeriesModel = function(_super) {
 }(Series_default);
 var LinesSeries_default = LinesSeriesModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/lines/linesVisual.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/lines/linesVisual.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -58543,7 +58706,7 @@ var linesVisual = {
 };
 var linesVisual_default = linesVisual;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/lines/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/lines/install.js
 function install23(registers) {
   registers.registerChartView(LinesView_default);
   registers.registerSeriesModel(LinesSeries_default);
@@ -58551,7 +58714,7 @@ function install23(registers) {
   registers.registerVisual(linesVisual_default);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/heatmap/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/heatmap/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -58567,7 +58730,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/heatmap/HeatmapView.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/heatmap/HeatmapView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -58583,7 +58746,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/heatmap/HeatmapLayer.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/heatmap/HeatmapLayer.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -58693,7 +58856,7 @@ var HeatmapLayer = function() {
 }();
 var HeatmapLayer_default = HeatmapLayer;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/heatmap/HeatmapView.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/heatmap/HeatmapView.js
 function getIsInPiecewiseRange(dataExtent, pieceList, selected) {
   var dataSpan = dataExtent[1] - dataExtent[0];
   pieceList = map(pieceList, function(piece) {
@@ -58934,7 +59097,7 @@ var HeatmapView = function(_super) {
 }(Chart_default);
 var HeatmapView_default = HeatmapView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/heatmap/HeatmapSeries.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/heatmap/HeatmapSeries.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -58987,13 +59150,13 @@ var HeatmapSeriesModel = function(_super) {
 }(Series_default);
 var HeatmapSeries_default = HeatmapSeriesModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/heatmap/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/heatmap/install.js
 function install24(registers) {
   registers.registerChartView(HeatmapView_default);
   registers.registerSeriesModel(HeatmapSeries_default);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/bar/installPictorialBar.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/bar/installPictorialBar.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -59009,7 +59172,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/bar/PictorialBarView.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/bar/PictorialBarView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -59550,7 +59713,7 @@ function toIntTimes(times) {
 }
 var PictorialBarView_default = PictorialBarView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/bar/PictorialBarSeries.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/bar/PictorialBarSeries.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -59607,7 +59770,7 @@ var PictorialBarSeriesModel = function(_super) {
 }(BaseBarSeries_default);
 var PictorialBarSeries_default = PictorialBarSeriesModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/bar/installPictorialBar.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/bar/installPictorialBar.js
 function install25(registers) {
   registers.registerChartView(PictorialBarView_default);
   registers.registerSeriesModel(PictorialBarSeries_default);
@@ -59615,7 +59778,7 @@ function install25(registers) {
   registers.registerLayout(registers.PRIORITY.VISUAL.PROGRESSIVE_LAYOUT, createProgressiveLayout("pictorialBar"));
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/themeRiver/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/themeRiver/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -59631,7 +59794,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/themeRiver/ThemeRiverView.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/themeRiver/ThemeRiverView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -59776,7 +59939,7 @@ function createGridClipShape3(rect, seriesModel, cb) {
 }
 var ThemeRiverView_default = ThemeRiverView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/themeRiver/ThemeRiverSeries.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/themeRiver/ThemeRiverSeries.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -59961,7 +60124,7 @@ var ThemeRiverSeriesModel = function(_super) {
 }(Series_default);
 var ThemeRiverSeries_default = ThemeRiverSeriesModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/themeRiver/themeRiverLayout.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/themeRiver/themeRiverLayout.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -60072,7 +60235,7 @@ function computeBaseline(data) {
   };
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/themeRiver/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/themeRiver/install.js
 function install26(registers) {
   registers.registerChartView(ThemeRiverView_default);
   registers.registerSeriesModel(ThemeRiverSeries_default);
@@ -60080,7 +60243,7 @@ function install26(registers) {
   registers.registerProcessor(dataFilter("themeRiver"));
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/sunburst/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/sunburst/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -60096,7 +60259,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/sunburst/SunburstView.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/sunburst/SunburstView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -60112,7 +60275,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/sunburst/SunburstPiece.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/sunburst/SunburstPiece.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -60299,7 +60462,7 @@ var SunburstPiece = function(_super) {
 }(Sector_default);
 var SunburstPiece_default = SunburstPiece;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/sunburst/sunburstAction.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/sunburst/sunburstAction.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -60355,7 +60518,7 @@ function installSunburstAction(registers) {
       }
     }
     if (true) {
-      deprecateReplaceLog("highlight", "sunburstHighlight");
+      deprecateReplaceLog("sunburstHighlight", "highlight");
     }
     api.dispatchAction(extend(payload, {
       type: "highlight"
@@ -60367,7 +60530,7 @@ function installSunburstAction(registers) {
   }, function(payload, ecModel, api) {
     payload = extend({}, payload);
     if (true) {
-      deprecateReplaceLog("downplay", "sunburstUnhighlight");
+      deprecateReplaceLog("sunburstUnhighlight", "downplay");
     }
     api.dispatchAction(extend(payload, {
       type: "downplay"
@@ -60375,7 +60538,7 @@ function installSunburstAction(registers) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/sunburst/SunburstView.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/sunburst/SunburstView.js
 var SunburstView = function(_super) {
   __extends(SunburstView2, _super);
   function SunburstView2() {
@@ -60511,7 +60674,7 @@ var SunburstView = function(_super) {
 }(Chart_default);
 var SunburstView_default = SunburstView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/sunburst/SunburstSeries.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/sunburst/SunburstSeries.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -60650,7 +60813,7 @@ function completeTreeValue2(dataNode) {
 }
 var SunburstSeries_default = SunburstSeriesModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/sunburst/sunburstLayout.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/sunburst/sunburstLayout.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -60808,7 +60971,7 @@ function sort3(children, sortOrder) {
   }
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/sunburst/sunburstVisual.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/sunburst/sunburstVisual.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -60851,7 +61014,7 @@ function sunburstVisual(ecModel) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/sunburst/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/sunburst/install.js
 function install27(registers) {
   registers.registerChartView(SunburstView_default);
   registers.registerSeriesModel(SunburstSeries_default);
@@ -60861,7 +61024,7 @@ function install27(registers) {
   installSunburstAction(registers);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/custom/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/custom/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -60877,7 +61040,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/custom/CustomSeries.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/custom/CustomSeries.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -60937,7 +61100,7 @@ var CustomSeriesModel = function(_super) {
 }(Series_default);
 var CustomSeries_default = CustomSeriesModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/custom/CustomView.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/custom/CustomView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -60953,7 +61116,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/cartesian/prepareCustom.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/cartesian/prepareCustom.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -60996,7 +61159,7 @@ function cartesianPrepareCustom(coordSys) {
   };
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/geo/prepareCustom.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/geo/prepareCustom.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -61044,7 +61207,7 @@ function geoPrepareCustom(coordSys) {
   };
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/single/prepareCustom.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/single/prepareCustom.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -61084,7 +61247,7 @@ function singlePrepareCustom(coordSys) {
   };
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/polar/prepareCustom.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/polar/prepareCustom.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -61139,7 +61302,7 @@ function polarPrepareCustom(coordSys) {
   };
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/calendar/prepareCustom.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/calendar/prepareCustom.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -61181,7 +61344,7 @@ function calendarPrepareCustom(coordSys) {
   };
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/util/styleCompat.js
+// node_modules/_echarts@5.4.0@echarts/lib/util/styleCompat.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -61335,7 +61498,7 @@ function warnDeprecated(deprecated, insteadApproach) {
   }
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/animation/customGraphicTransition.js
+// node_modules/_echarts@5.4.0@echarts/lib/animation/customGraphicTransition.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -61722,7 +61885,7 @@ if (true) {
   };
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/animation/customGraphicKeyframeAnimation.js
+// node_modules/_echarts@5.4.0@echarts/lib/animation/customGraphicKeyframeAnimation.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -61820,7 +61983,7 @@ function applyKeyframeAnimation(el, animationOpts, animatableModel) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/custom/CustomView.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/custom/CustomView.js
 var EMPHASIS = "emphasis";
 var NORMAL = "normal";
 var BLUR = "blur";
@@ -61893,7 +62056,7 @@ var CustomChartView = function(_super) {
       createOrUpdateItem(api, null, newIdx, renderItem(newIdx, payload), customSeries, group, data);
     }).remove(function(oldIdx) {
       var el = oldData.getItemGraphicEl(oldIdx);
-      applyLeaveTransition(el, customInnerStore(el).option, customSeries);
+      el && applyLeaveTransition(el, customInnerStore(el).option, customSeries);
     }).update(function(newIdx, oldIdx) {
       var oldEl = oldData.getItemGraphicEl(oldIdx);
       createOrUpdateItem(api, oldEl, newIdx, renderItem(newIdx, payload), customSeries, group, data);
@@ -62427,12 +62590,27 @@ function mergeChildren(api, el, dataIndex, elOption, seriesModel) {
   notMerge && el.removeAll();
   var index = 0;
   for (; index < newLen; index++) {
-    newChildren[index] && doCreateOrUpdateEl(api, el.childAt(index), dataIndex, newChildren[index], seriesModel, el);
+    var newChild = newChildren[index];
+    var oldChild = el.childAt(index);
+    if (newChild) {
+      if (newChild.ignore == null) {
+        newChild.ignore = false;
+      }
+      doCreateOrUpdateEl(api, oldChild, dataIndex, newChild, seriesModel, el);
+    } else {
+      if (true) {
+        assert(oldChild, "renderItem should not return a group containing elements as null/undefined/{} if they do not exist before.");
+      }
+      oldChild.ignore = true;
+    }
   }
   for (var i = el.childCount() - 1; i >= index; i--) {
     var child = el.childAt(i);
-    applyLeaveTransition(child, customInnerStore(el).option, seriesModel);
+    removeChildFromGroup(el, child, seriesModel);
   }
+}
+function removeChildFromGroup(group, child, seriesModel) {
+  child && applyLeaveTransition(child, customInnerStore(group).option, seriesModel);
 }
 function diffGroupChildren(context) {
   new DataDiffer_default(context.oldChildren, context.newChildren, getKey, getKey, context).add(processAddUpdate).update(processAddUpdate).remove(processRemove).execute();
@@ -62450,7 +62628,7 @@ function processAddUpdate(newIndex, oldIndex) {
 function processRemove(oldIndex) {
   var context = this.context;
   var child = context.oldChildren[oldIndex];
-  applyLeaveTransition(child, customInnerStore(child).option, context.seriesModel);
+  child && applyLeaveTransition(child, customInnerStore(child).option, context.seriesModel);
 }
 function getPathData(shape) {
   return shape && (shape.pathData || shape.d);
@@ -62459,13 +62637,13 @@ function hasOwnPathData(shape) {
   return shape && (hasOwn(shape, "pathData") || hasOwn(shape, "d"));
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/chart/custom/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/chart/custom/install.js
 function install28(registers) {
   registers.registerChartView(CustomView_default);
   registers.registerSeriesModel(CustomSeries_default);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/export/components.js
+// node_modules/_echarts@5.4.0@echarts/lib/export/components.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -62481,7 +62659,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/grid/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/grid/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -62497,7 +62675,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/axisPointer/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/axisPointer/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -62513,7 +62691,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/axisPointer/CartesianAxisPointer.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/axisPointer/CartesianAxisPointer.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -62529,7 +62707,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/axisPointer/BaseAxisPointer.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/axisPointer/BaseAxisPointer.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -62812,7 +62990,7 @@ function updateMandatoryProps(group, axisPointerModel, silent) {
 }
 var BaseAxisPointer_default = BaseAxisPointer;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/axisPointer/viewHelper.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/axisPointer/viewHelper.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -62961,7 +63139,7 @@ function makeSectorShape(cx, cy, r0, r, startAngle, endAngle) {
   };
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/axisPointer/CartesianAxisPointer.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/axisPointer/CartesianAxisPointer.js
 var CartesianAxisPointer = function(_super) {
   __extends(CartesianAxisPointer2, _super);
   function CartesianAxisPointer2() {
@@ -63058,7 +63236,7 @@ function getAxisDimIndex(axis) {
 }
 var CartesianAxisPointer_default = CartesianAxisPointer;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/axisPointer/AxisPointerModel.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/axisPointer/AxisPointerModel.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -63129,7 +63307,7 @@ var AxisPointerModel = function(_super) {
 }(Component_default);
 var AxisPointerModel_default = AxisPointerModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/axisPointer/AxisPointerView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/axisPointer/AxisPointerView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -63145,7 +63323,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/axisPointer/globalListener.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/axisPointer/globalListener.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -63240,7 +63418,7 @@ function unregister(key, api) {
   }
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/axisPointer/AxisPointerView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/axisPointer/AxisPointerView.js
 var AxisPointerView = function(_super) {
   __extends(AxisPointerView2, _super);
   function AxisPointerView2() {
@@ -63273,7 +63451,7 @@ var AxisPointerView = function(_super) {
 }(Component_default2);
 var AxisPointerView_default = AxisPointerView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/axisPointer/axisTrigger.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/axisPointer/axisTrigger.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -63289,7 +63467,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/axisPointer/findPointFromSeries.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/axisPointer/findPointFromSeries.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -63352,7 +63530,7 @@ function findPointFromSeries(finder, ecModel) {
   };
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/axisPointer/axisTrigger.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/axisPointer/axisTrigger.js
 var inner13 = makeInner();
 function axisTrigger(payload, ecModel, api) {
   var currTrigger = payload.currTrigger;
@@ -63628,7 +63806,7 @@ function illegalPoint(point) {
   return !point || point[0] == null || isNaN(point[0]) || point[1] == null || isNaN(point[1]);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/axisPointer/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/axisPointer/install.js
 function install29(registers) {
   AxisView_default.registerAxisPointerClass("CartesianAxisPointer", CartesianAxisPointer_default);
   registers.registerComponentModel(AxisPointerModel_default);
@@ -63652,13 +63830,13 @@ function install29(registers) {
   }, axisTrigger);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/grid/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/grid/install.js
 function install30(registers) {
   use(install6);
   use(install29);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/polar/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/polar/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -63674,7 +63852,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/axisPointer/PolarAxisPointer.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/axisPointer/PolarAxisPointer.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -63784,7 +63962,7 @@ var pointerShapeBuilder2 = {
 };
 var PolarAxisPointer_default = PolarAxisPointer;
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/polar/PolarModel.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/polar/PolarModel.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -63827,7 +64005,7 @@ var PolarModel = function(_super) {
 }(Component_default);
 var PolarModel_default = PolarModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/polar/AxisModel.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/polar/AxisModel.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -63875,7 +64053,7 @@ var RadiusAxisModel = function(_super) {
   return RadiusAxisModel2;
 }(PolarAxisModel);
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/polar/polarCreator.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/polar/polarCreator.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -63891,7 +64069,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/polar/Polar.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/polar/Polar.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -63907,7 +64085,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/polar/RadiusAxis.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/polar/RadiusAxis.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -63936,7 +64114,7 @@ RadiusAxis.prototype.dataToRadius = Axis_default.prototype.dataToCoord;
 RadiusAxis.prototype.radiusToData = Axis_default.prototype.coordToData;
 var RadiusAxis_default = RadiusAxis;
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/polar/AngleAxis.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/polar/AngleAxis.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -63994,7 +64172,7 @@ AngleAxis.prototype.dataToAngle = Axis_default.prototype.dataToCoord;
 AngleAxis.prototype.angleToData = Axis_default.prototype.coordToData;
 var AngleAxis_default = AngleAxis;
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/polar/Polar.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/polar/Polar.js
 var polarDimensions = ["radius", "angle"];
 var Polar = function() {
   function Polar2(name) {
@@ -64124,7 +64302,7 @@ function getCoordSys3(finder) {
 }
 var Polar_default = Polar;
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/polar/polarCreator.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/polar/polarCreator.js
 function resizePolar(polar, polarModel, api) {
   var center3 = polarModel.get("center");
   var width = api.getWidth();
@@ -64218,7 +64396,7 @@ var polarCreator = {
 };
 var polarCreator_default = polarCreator;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/axis/AngleAxisView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/axis/AngleAxisView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -64491,7 +64669,7 @@ var angelAxisElementsBuilders = {
 };
 var AngleAxisView_default = AngleAxisView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/axis/RadiusAxisView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/axis/RadiusAxisView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -64649,7 +64827,7 @@ function layoutAxis(polar, radiusAxisModel, axisAngle) {
 }
 var RadiusAxisView_default = RadiusAxisView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/layout/barPolar.js
+// node_modules/_echarts@5.4.0@echarts/lib/layout/barPolar.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -64844,7 +65022,7 @@ function calRadialBar(barSeries) {
 }
 var barPolar_default = barLayoutPolar;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/polar/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/polar/install.js
 var angleAxisExtraOption = {
   startAngle: 90,
   clockwise: true,
@@ -64879,7 +65057,7 @@ function install31(registers) {
   registers.registerLayout(curry(barPolar_default, "bar"));
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/singleAxis/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/singleAxis/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -64895,7 +65073,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/axis/SingleAxisView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/axis/SingleAxisView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -64911,7 +65089,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/single/singleAxisHelper.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/single/singleAxisHelper.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -64971,7 +65149,7 @@ function layout3(axisModel, opt) {
   return layout5;
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/axis/SingleAxisView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/axis/SingleAxisView.js
 var axisBuilderAttrs4 = ["axisLine", "axisTickLabel", "axisName"];
 var selfBuilderAttrs3 = ["splitArea", "splitLine"];
 var SingleAxisView = function(_super) {
@@ -65016,6 +65194,7 @@ var axisElementBuilders3 = {
     var lineStyleModel = splitLineModel.getModel("lineStyle");
     var lineColors = lineStyleModel.get("color");
     lineColors = lineColors instanceof Array ? lineColors : [lineColors];
+    var lineWidth = lineStyleModel.get("width");
     var gridRect = axisModel.coordinateSystem.getRect();
     var isHorizontal = axis.isHorizontal();
     var splitLines = [];
@@ -65038,10 +65217,7 @@ var axisElementBuilders3 = {
         p2[0] = gridRect.x + gridRect.width;
         p2[1] = tickCoord;
       }
-      var colorIndex = lineCount++ % lineColors.length;
-      splitLines[colorIndex] = splitLines[colorIndex] || [];
-      splitLines[colorIndex].push(new Line_default({
-        subPixelOptimize: true,
+      var line = new Line_default({
         shape: {
           x1: p1[0],
           y1: p1[1],
@@ -65049,7 +65225,11 @@ var axisElementBuilders3 = {
           y2: p2[1]
         },
         silent: true
-      }));
+      });
+      subPixelOptimizeLine2(line.shape, lineWidth);
+      var colorIndex = lineCount++ % lineColors.length;
+      splitLines[colorIndex] = splitLines[colorIndex] || [];
+      splitLines[colorIndex].push(line);
     }
     var lineStyle = lineStyleModel.getLineStyle(["color"]);
     for (var i = 0; i < splitLines.length; ++i) {
@@ -65067,7 +65247,7 @@ var axisElementBuilders3 = {
 };
 var SingleAxisView_default = SingleAxisView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/single/AxisModel.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/single/AxisModel.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -65136,7 +65316,7 @@ var SingleAxisModel = function(_super) {
 mixin(SingleAxisModel, AxisModelCommonMixin.prototype);
 var AxisModel_default2 = SingleAxisModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/single/singleCreator.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/single/singleCreator.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -65152,7 +65332,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/single/Single.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/single/Single.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -65168,7 +65348,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/single/SingleAxis.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/single/SingleAxis.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -65202,7 +65382,7 @@ var SingleAxis = function(_super) {
 }(Axis_default);
 var SingleAxis_default = SingleAxis;
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/single/Single.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/single/Single.js
 var singleDimensions = ["single"];
 var Single = function() {
   function Single2(axisModel, ecModel, api) {
@@ -65258,7 +65438,7 @@ var Single = function() {
     var axis = this._axis;
     var isHorizontal = axis.isHorizontal();
     var extent3 = isHorizontal ? [0, rect.width] : [0, rect.height];
-    var idx = axis.reverse ? 1 : 0;
+    var idx = axis.inverse ? 1 : 0;
     axis.setExtent(extent3[idx], extent3[1 - idx]);
     this._updateAxisTransform(axis, isHorizontal ? rect.x : rect.y);
   };
@@ -65335,7 +65515,7 @@ function getCoordSys4(finder) {
 }
 var Single_default = Single;
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/single/singleCreator.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/single/singleCreator.js
 function create3(ecModel, api) {
   var singles = [];
   ecModel.eachComponent("singleAxis", function(axisModel, idx) {
@@ -65359,7 +65539,7 @@ var singleCreator = {
 };
 var singleCreator_default = singleCreator;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/axisPointer/SingleAxisPointer.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/axisPointer/SingleAxisPointer.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -65468,7 +65648,7 @@ function getGlobalExtent(coordSys, dimIndex) {
 }
 var SingleAxisPointer_default = SingleAxisPointer;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/singleAxis/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/singleAxis/install.js
 var SingleView = function(_super) {
   __extends(SingleView2, _super);
   function SingleView2() {
@@ -65489,7 +65669,7 @@ function install32(registers) {
   registers.registerCoordinateSystem("single", singleCreator_default);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/calendar/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/calendar/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -65505,7 +65685,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/calendar/CalendarModel.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/calendar/CalendarModel.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -65611,7 +65791,7 @@ function mergeAndNormalizeLayoutParams(target, raw) {
 }
 var CalendarModel_default = CalendarModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/calendar/CalendarView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/calendar/CalendarView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -65945,7 +66125,7 @@ var CalendarView = function(_super) {
 }(Component_default2);
 var CalendarView_default = CalendarView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/coord/calendar/Calendar.js
+// node_modules/_echarts@5.4.0@echarts/lib/coord/calendar/Calendar.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -66216,14 +66396,14 @@ function getCoordSys5(finder) {
 }
 var Calendar_default = Calendar;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/calendar/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/calendar/install.js
 function install33(registers) {
   registers.registerComponentModel(CalendarModel_default);
   registers.registerComponentView(CalendarView_default);
   registers.registerCoordinateSystem("calendar", Calendar_default);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/graphic/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/graphic/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -66239,7 +66419,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/graphic/GraphicModel.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/graphic/GraphicModel.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -66408,7 +66588,7 @@ var GraphicComponentModel = function(_super) {
   return GraphicComponentModel2;
 }(Component_default);
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/graphic/GraphicView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/graphic/GraphicView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -66712,7 +66892,7 @@ function setEventData(el, graphicModel, elOption) {
   }
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/graphic/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/graphic/install.js
 function install34(registers) {
   registers.registerComponentModel(GraphicComponentModel);
   registers.registerComponentView(GraphicComponentView);
@@ -66734,7 +66914,7 @@ function install34(registers) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/toolbox/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/toolbox/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -66750,7 +66930,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/dataZoom/installDataZoomSelect.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/dataZoom/installDataZoomSelect.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -66766,7 +66946,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/dataZoom/SelectZoomModel.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/dataZoom/SelectZoomModel.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -66782,7 +66962,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/dataZoom/DataZoomModel.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/dataZoom/DataZoomModel.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -66798,7 +66978,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/dataZoom/helper.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/dataZoom/helper.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -66900,7 +67080,7 @@ function collectReferCoordSysModelInfo(dataZoomModel) {
   return coordSysInfoWrap;
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/dataZoom/DataZoomModel.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/dataZoom/DataZoomModel.js
 var DataZoomAxisInfo = function() {
   function DataZoomAxisInfo2() {
     this.indexList = [];
@@ -67187,7 +67367,7 @@ function retrieveRawOption(option) {
 }
 var DataZoomModel_default = DataZoomModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/dataZoom/SelectZoomModel.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/dataZoom/SelectZoomModel.js
 var SelectDataZoomModel = function(_super) {
   __extends(SelectDataZoomModel2, _super);
   function SelectDataZoomModel2() {
@@ -67200,7 +67380,7 @@ var SelectDataZoomModel = function(_super) {
 }(DataZoomModel_default);
 var SelectZoomModel_default = SelectDataZoomModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/dataZoom/SelectZoomView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/dataZoom/SelectZoomView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -67216,7 +67396,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/dataZoom/DataZoomView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/dataZoom/DataZoomView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -67248,7 +67428,7 @@ var DataZoomView = function(_super) {
 }(Component_default2);
 var DataZoomView_default = DataZoomView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/dataZoom/SelectZoomView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/dataZoom/SelectZoomView.js
 var SelectDataZoomView = function(_super) {
   __extends(SelectDataZoomView2, _super);
   function SelectDataZoomView2() {
@@ -67261,7 +67441,7 @@ var SelectDataZoomView = function(_super) {
 }(DataZoomView_default);
 var SelectZoomView_default = SelectDataZoomView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/dataZoom/installCommon.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/dataZoom/installCommon.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -67277,7 +67457,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/dataZoom/dataZoomProcessor.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/dataZoom/dataZoomProcessor.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -67293,7 +67473,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/dataZoom/AxisProxy.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/dataZoom/AxisProxy.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -67506,7 +67686,7 @@ function calculateDataExtent(axisProxy, axisDim, seriesModels) {
 }
 var AxisProxy_default = AxisProxy;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/dataZoom/dataZoomProcessor.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/dataZoom/dataZoomProcessor.js
 var dataZoomProcessor = {
   getTargetSeries: function(ecModel) {
     function eachAxisModel(cb) {
@@ -67561,7 +67741,7 @@ var dataZoomProcessor = {
 };
 var dataZoomProcessor_default = dataZoomProcessor;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/dataZoom/dataZoomAction.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/dataZoom/dataZoomAction.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -67590,7 +67770,7 @@ function installDataZoomAction(registers) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/dataZoom/installCommon.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/dataZoom/installCommon.js
 var installed = false;
 function installCommon(registers) {
   if (installed) {
@@ -67604,14 +67784,14 @@ function installCommon(registers) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/dataZoom/installDataZoomSelect.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/dataZoom/installDataZoomSelect.js
 function install35(registers) {
   registers.registerComponentModel(SelectZoomModel_default);
   registers.registerComponentView(SelectZoomView_default);
   installCommon(registers);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/toolbox/ToolboxModel.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/toolbox/ToolboxModel.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -67627,7 +67807,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/toolbox/featureManager.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/toolbox/featureManager.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -67655,7 +67835,7 @@ function getFeature(name) {
   return features[name];
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/toolbox/ToolboxModel.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/toolbox/ToolboxModel.js
 var ToolboxModel = function(_super) {
   __extends(ToolboxModel2, _super);
   function ToolboxModel2() {
@@ -67713,7 +67893,7 @@ var ToolboxModel = function(_super) {
 }(Component_default);
 var ToolboxModel_default = ToolboxModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/toolbox/ToolboxView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/toolbox/ToolboxView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -67729,7 +67909,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/helper/listComponent.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/helper/listComponent.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -67774,7 +67954,7 @@ function makeBackground(rect, componentModel) {
   return rect;
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/toolbox/ToolboxView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/toolbox/ToolboxView.js
 var ToolboxView = function(_super) {
   __extends(ToolboxView2, _super);
   function ToolboxView2() {
@@ -67981,7 +68161,7 @@ function isUserFeatureName(featureName) {
 }
 var ToolboxView_default = ToolboxView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/toolbox/feature/SaveAsImage.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/toolbox/feature/SaveAsImage.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -68078,7 +68258,7 @@ var SaveAsImage = function(_super) {
 }(ToolboxFeature);
 var SaveAsImage_default = SaveAsImage;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/toolbox/feature/MagicType.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/toolbox/feature/MagicType.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -68239,7 +68419,7 @@ registerAction({
 });
 var MagicType_default = MagicType;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/toolbox/feature/DataView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/toolbox/feature/DataView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -68609,7 +68789,7 @@ registerAction({
 });
 var DataView_default = DataView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/toolbox/feature/Restore.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/toolbox/feature/Restore.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -68625,7 +68805,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/dataZoom/history.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/dataZoom/history.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -68700,7 +68880,7 @@ function getStoreSnapshots(ecModel) {
   return store.snapshots;
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/toolbox/feature/Restore.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/toolbox/feature/Restore.js
 var RestoreOption = function(_super) {
   __extends(RestoreOption2, _super);
   function RestoreOption2() {
@@ -68732,7 +68912,7 @@ registerAction({
 });
 var Restore_default = RestoreOption;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/toolbox/feature/DataZoom.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/toolbox/feature/DataZoom.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -68748,7 +68928,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/helper/BrushTargetManager.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/helper/BrushTargetManager.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -69020,7 +69200,7 @@ function getSize2(xyMinMax) {
 }
 var BrushTargetManager_default = BrushTargetManager;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/toolbox/feature/DataZoom.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/toolbox/feature/DataZoom.js
 var each11 = each;
 var DATA_ZOOM_ID_BASE = makeInternalComponentId("toolbox-dataZoom_");
 var DataZoomFeature = function(_super) {
@@ -69209,7 +69389,7 @@ registerInternalOptionCreator("dataZoom", function(ecModel) {
 });
 var DataZoom_default = DataZoomFeature;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/toolbox/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/toolbox/install.js
 function install36(registers) {
   registers.registerComponentModel(ToolboxModel_default);
   registers.registerComponentView(ToolboxView_default);
@@ -69221,7 +69401,7 @@ function install36(registers) {
   use(install35);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/tooltip/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/tooltip/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -69237,7 +69417,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/tooltip/TooltipModel.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/tooltip/TooltipModel.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -69306,7 +69486,7 @@ var TooltipModel = function(_super) {
 }(Component_default);
 var TooltipModel_default = TooltipModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/tooltip/TooltipView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/tooltip/TooltipView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -69322,7 +69502,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/tooltip/TooltipHTMLContent.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/tooltip/TooltipHTMLContent.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -69338,7 +69518,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/tooltip/helper.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/tooltip/helper.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -69384,7 +69564,7 @@ function getComputedStyle(el, style) {
   return stl ? style ? stl[style] : stl : null;
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/tooltip/TooltipHTMLContent.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/tooltip/TooltipHTMLContent.js
 var CSS_TRANSITION_VENDOR = toCSSVendorPrefix(TRANSITION_VENDOR, "transition");
 var CSS_TRANSFORM_VENDOR = toCSSVendorPrefix(TRANSFORM_VENDOR, "transform");
 var gCssText = "position:absolute;display:block;border-style:solid;white-space:nowrap;z-index:9999999;" + (env_default.transform3dSupported ? "will-change:transform;" : "");
@@ -69663,7 +69843,7 @@ var TooltipHTMLContent = function() {
 }();
 var TooltipHTMLContent_default = TooltipHTMLContent;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/tooltip/TooltipRichContent.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/tooltip/TooltipRichContent.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -69821,7 +70001,7 @@ function makeStyleCoord2(out2, zr, zrX, zrY) {
 }
 var TooltipRichContent_default = TooltipRichContent;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/tooltip/TooltipView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/tooltip/TooltipView.js
 var proxyRect = new Rect_default({
   shape: {
     x: -1,
@@ -70471,7 +70651,7 @@ function findComponentReference(payload, ecModel, api) {
 }
 var TooltipView_default = TooltipView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/tooltip/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/tooltip/install.js
 function install37(registers) {
   use(install29);
   registers.registerComponentModel(TooltipModel_default);
@@ -70488,7 +70668,7 @@ function install37(registers) {
   }, noop);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/brush/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/brush/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -70504,7 +70684,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/brush/preprocessor.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/brush/preprocessor.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -70562,7 +70742,7 @@ function removeDuplicate(arr) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/brush/BrushView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/brush/BrushView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -70578,7 +70758,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/brush/visualEncoding.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/brush/visualEncoding.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -70594,7 +70774,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/visual/visualSolution.js
+// node_modules/_echarts@5.4.0@echarts/lib/visual/visualSolution.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -70735,7 +70915,7 @@ function incrementalApplyVisual(stateList, visualMappings, getValueState, dim) {
   };
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/brush/selector.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/brush/selector.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -70818,7 +70998,7 @@ function inLineRange(p, range) {
   return range[0] <= p && p <= range[1];
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/brush/visualEncoding.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/brush/visualEncoding.js
 var STATE_LIST = ["inBrush", "outOfBrush"];
 var DISPATCH_METHOD = "__ecBrushSelect";
 var DISPATCH_FLAG = "__ecInBrushSelectEvent";
@@ -70992,7 +71172,7 @@ function getBoundingRectFromMinMax(minMax) {
   return new BoundingRect_default(minMax[0][0], minMax[1][0], minMax[0][1] - minMax[0][0], minMax[1][1] - minMax[1][0]);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/brush/BrushView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/brush/BrushView.js
 var BrushView = function(_super) {
   __extends(BrushView2, _super);
   function BrushView2() {
@@ -71047,7 +71227,7 @@ var BrushView = function(_super) {
 }(Component_default2);
 var BrushView_default = BrushView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/brush/BrushModel.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/brush/BrushModel.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -71132,7 +71312,7 @@ function generateBrushOption(option, brushOption) {
 }
 var BrushModel_default = BrushModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/toolbox/feature/Brush.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/toolbox/feature/Brush.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -71230,7 +71410,7 @@ var BrushFeature = function(_super) {
 }(ToolboxFeature);
 var Brush_default = BrushFeature;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/brush/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/brush/install.js
 function install38(registers) {
   registers.registerComponentView(BrushView_default);
   registers.registerComponentModel(BrushModel_default);
@@ -71261,7 +71441,7 @@ function install38(registers) {
   registerFeature("brush", Brush_default);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/title/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/title/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -71440,7 +71620,7 @@ function install39(registers) {
   registers.registerComponentView(TitleView);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/timeline/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/timeline/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -71456,7 +71636,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/timeline/SliderTimelineModel.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/timeline/SliderTimelineModel.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -71472,7 +71652,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/timeline/TimelineModel.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/timeline/TimelineModel.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -71599,7 +71779,7 @@ var TimelineModel = function(_super) {
 }(Component_default);
 var TimelineModel_default = TimelineModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/timeline/SliderTimelineModel.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/timeline/SliderTimelineModel.js
 var SliderTimelineModel = function(_super) {
   __extends(SliderTimelineModel2, _super);
   function SliderTimelineModel2() {
@@ -71699,7 +71879,7 @@ var SliderTimelineModel = function(_super) {
 mixin(SliderTimelineModel, DataFormatMixin.prototype);
 var SliderTimelineModel_default = SliderTimelineModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/timeline/SliderTimelineView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/timeline/SliderTimelineView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -71715,7 +71895,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/timeline/TimelineView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/timeline/TimelineView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -71742,7 +71922,7 @@ var TimelineView = function(_super) {
 }(Component_default2);
 var TimelineView_default = TimelineView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/timeline/TimelineAxis.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/timeline/TimelineAxis.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -71774,7 +71954,7 @@ var TimelineAxis = function(_super) {
 }(Axis_default);
 var TimelineAxis_default = TimelineAxis;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/timeline/SliderTimelineView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/timeline/SliderTimelineView.js
 var PI10 = Math.PI;
 var labelDataIndexStore = makeInner();
 var SliderTimelineView = function(_super) {
@@ -72319,7 +72499,7 @@ function pointerMoveTo(pointer, progressLine, dataIndex, axis, timelineModel, no
 }
 var SliderTimelineView_default = SliderTimelineView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/timeline/timelineAction.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/timeline/timelineAction.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -72371,7 +72551,7 @@ function installTimelineAction(registers) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/timeline/preprocessor.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/timeline/preprocessor.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -72452,7 +72632,7 @@ function has(obj, attr) {
   return obj.hasOwnProperty(attr);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/timeline/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/timeline/install.js
 function install40(registers) {
   registers.registerComponentModel(SliderTimelineModel_default);
   registers.registerComponentView(SliderTimelineView_default);
@@ -72463,7 +72643,7 @@ function install40(registers) {
   registers.registerPreprocessor(timelinePreprocessor);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/marker/installMarkPoint.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/marker/installMarkPoint.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -72479,7 +72659,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/marker/checkMarkerInSeries.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/marker/checkMarkerInSeries.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -72507,7 +72687,7 @@ function checkMarkerInSeries(seriesOpts, markerType) {
   return false;
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/marker/MarkPointModel.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/marker/MarkPointModel.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -72523,7 +72703,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/marker/MarkerModel.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/marker/MarkerModel.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -72636,7 +72816,7 @@ var MarkerModel = function(_super) {
 mixin(MarkerModel, DataFormatMixin.prototype);
 var MarkerModel_default = MarkerModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/marker/MarkPointModel.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/marker/MarkPointModel.js
 var MarkPointModel = function(_super) {
   __extends(MarkPointModel2, _super);
   function MarkPointModel2() {
@@ -72672,7 +72852,7 @@ var MarkPointModel = function(_super) {
 }(MarkerModel_default);
 var MarkPointModel_default = MarkPointModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/marker/MarkPointView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/marker/MarkPointView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -72688,7 +72868,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/marker/markerHelper.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/marker/markerHelper.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -72810,7 +72990,7 @@ function numCalculate(data, valueDataDim, type) {
   }
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/marker/MarkerView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/marker/MarkerView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -72872,7 +73052,7 @@ var MarkerView = function(_super) {
 }(Component_default2);
 var MarkerView_default = MarkerView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/marker/MarkPointView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/marker/MarkPointView.js
 function updateMarkerLayout(mpData, seriesModel, api) {
   var coordSys = seriesModel.coordinateSystem;
   mpData.each(function(idx) {
@@ -73000,7 +73180,7 @@ function createData(coordSys, seriesModel, mpModel) {
 }
 var MarkPointView_default = MarkPointView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/marker/installMarkPoint.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/marker/installMarkPoint.js
 function install41(registers) {
   registers.registerComponentModel(MarkPointModel_default);
   registers.registerComponentView(MarkPointView_default);
@@ -73011,7 +73191,7 @@ function install41(registers) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/marker/installMarkLine.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/marker/installMarkLine.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -73027,7 +73207,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/marker/MarkLineModel.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/marker/MarkLineModel.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -73084,7 +73264,7 @@ var MarkLineModel = function(_super) {
 }(MarkerModel_default);
 var MarkLineModel_default = MarkLineModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/marker/MarkLineView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/marker/MarkLineView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -73152,13 +73332,13 @@ var markLineTransform = function(seriesModel, coordSys, mlModel, item) {
   merge(normalizedItem[2], normalizedItem[1]);
   return normalizedItem;
 };
-function isInifinity(val) {
+function isInfinity(val) {
   return !isNaN(val) && !isFinite(val);
 }
 function ifMarkLineHasOnlyDim(dimIndex, fromCoord, toCoord, coordSys) {
   var otherDimIndex = 1 - dimIndex;
   var dimName = coordSys.dimensions[dimIndex];
-  return isInifinity(fromCoord[otherDimIndex]) && isInifinity(toCoord[otherDimIndex]) && fromCoord[dimIndex] === toCoord[dimIndex] && coordSys.getAxis(dimName).containData(fromCoord[dimIndex]);
+  return isInfinity(fromCoord[otherDimIndex]) && isInfinity(toCoord[otherDimIndex]) && fromCoord[dimIndex] === toCoord[dimIndex] && coordSys.getAxis(dimName).containData(fromCoord[dimIndex]);
 }
 function markLineFilter(coordSys, item) {
   if (coordSys.type === "cartesian2d") {
@@ -73191,9 +73371,9 @@ function updateSingleMarkerEndLayout(data, idx, isFrom, seriesModel, api) {
       var xAxis = coordSys.getAxis("x");
       var yAxis = coordSys.getAxis("y");
       var dims = coordSys.dimensions;
-      if (isInifinity(data.get(dims[0], idx))) {
+      if (isInfinity(data.get(dims[0], idx))) {
         point[0] = xAxis.toGlobalCoord(xAxis.getExtent()[isFrom ? 0 : 1]);
-      } else if (isInifinity(data.get(dims[1], idx))) {
+      } else if (isInfinity(data.get(dims[1], idx))) {
         point[1] = yAxis.toGlobalCoord(yAxis.getExtent()[isFrom ? 0 : 1]);
       }
     }
@@ -73356,7 +73536,7 @@ function createList2(coordSys, seriesModel, mlModel) {
 }
 var MarkLineView_default = MarkLineView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/marker/installMarkLine.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/marker/installMarkLine.js
 function install42(registers) {
   registers.registerComponentModel(MarkLineModel_default);
   registers.registerComponentView(MarkLineView_default);
@@ -73367,7 +73547,7 @@ function install42(registers) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/marker/installMarkArea.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/marker/installMarkArea.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -73383,7 +73563,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/marker/MarkAreaModel.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/marker/MarkAreaModel.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -73433,7 +73613,7 @@ var MarkAreaModel = function(_super) {
 }(MarkerModel_default);
 var MarkAreaModel_default = MarkAreaModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/marker/MarkAreaView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/marker/MarkAreaView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -73466,12 +73646,12 @@ var markAreaTransform = function(seriesModel, coordSys, maModel, item) {
   result.y1 = rb2.y;
   return result;
 };
-function isInifinity2(val) {
+function isInfinity2(val) {
   return !isNaN(val) && !isFinite(val);
 }
 function ifMarkAreaHasOnlyDim(dimIndex, fromCoord, toCoord, coordSys) {
   var otherDimIndex = 1 - dimIndex;
-  return isInifinity2(fromCoord[otherDimIndex]) && isInifinity2(toCoord[otherDimIndex]);
+  return isInfinity2(fromCoord[otherDimIndex]) && isInfinity2(toCoord[otherDimIndex]);
 }
 function markAreaFilter(coordSys, item) {
   var fromCoord = item.coord[0];
@@ -73517,9 +73697,9 @@ function getSingleMarkerEndPoint(data, idx, dims, seriesModel, api) {
       var yAxis = coordSys.getAxis("y");
       var x = data.get(dims[0], idx);
       var y = data.get(dims[1], idx);
-      if (isInifinity2(x)) {
+      if (isInfinity2(x)) {
         point[0] = xAxis.toGlobalCoord(xAxis.getExtent()[dims[0] === "x0" ? 0 : 1]);
-      } else if (isInifinity2(y)) {
+      } else if (isInfinity2(y)) {
         point[1] = yAxis.toGlobalCoord(yAxis.getExtent()[dims[1] === "y0" ? 0 : 1]);
       }
     }
@@ -73699,7 +73879,7 @@ function createList3(coordSys, seriesModel, maModel) {
 }
 var MarkAreaView_default = MarkAreaView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/marker/installMarkArea.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/marker/installMarkArea.js
 function install43(registers) {
   registers.registerComponentModel(MarkAreaModel_default);
   registers.registerComponentView(MarkAreaView_default);
@@ -73710,7 +73890,7 @@ function install43(registers) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/legend/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/legend/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -73726,7 +73906,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/legend/installLegendPlain.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/legend/installLegendPlain.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -73742,7 +73922,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/legend/LegendModel.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/legend/LegendModel.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -73992,7 +74172,7 @@ var LegendModel = function(_super) {
 }(Component_default);
 var LegendModel_default = LegendModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/legend/LegendView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/legend/LegendView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -74388,7 +74568,7 @@ function dispatchDownplayAction(seriesName, dataName, api, excludeSeriesId) {
 }
 var LegendView_default = LegendView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/legend/legendFilter.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/legend/legendFilter.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -74419,7 +74599,7 @@ function legendFilter(ecModel) {
   }
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/legend/legendAction.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/legend/legendAction.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -74476,7 +74656,7 @@ function installLegendAction(registers) {
   registers.registerAction("legendUnSelect", "legendunselected", curry(legendSelectActionHandler, "unSelect"));
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/legend/installLegendPlain.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/legend/installLegendPlain.js
 function install44(registers) {
   registers.registerComponentModel(LegendModel_default);
   registers.registerComponentView(LegendView_default);
@@ -74487,7 +74667,7 @@ function install44(registers) {
   installLegendAction(registers);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/legend/installLegendScroll.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/legend/installLegendScroll.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -74503,7 +74683,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/legend/ScrollableLegendModel.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/legend/ScrollableLegendModel.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -74569,7 +74749,7 @@ function mergeAndNormalizeLayoutParams2(legendModel, target, raw) {
 }
 var ScrollableLegendModel_default = ScrollableLegendModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/legend/ScrollableLegendView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/legend/ScrollableLegendView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -74870,7 +75050,7 @@ var ScrollableLegendView = function(_super) {
 }(LegendView_default);
 var ScrollableLegendView_default = ScrollableLegendView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/legend/scrollableLegendAction.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/legend/scrollableLegendAction.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -74898,7 +75078,7 @@ function installScrollableLegendAction(registers) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/legend/installLegendScroll.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/legend/installLegendScroll.js
 function install45(registers) {
   use(install44);
   registers.registerComponentModel(ScrollableLegendModel_default);
@@ -74906,13 +75086,13 @@ function install45(registers) {
   installScrollableLegendAction(registers);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/legend/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/legend/install.js
 function install46(registers) {
   use(install44);
   use(install45);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/dataZoom/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/dataZoom/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -74928,7 +75108,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/dataZoom/installDataZoomInside.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/dataZoom/installDataZoomInside.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -74944,7 +75124,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/dataZoom/InsideZoomModel.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/dataZoom/InsideZoomModel.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -74979,7 +75159,7 @@ var InsideZoomModel = function(_super) {
 }(DataZoomModel_default);
 var InsideZoomModel_default = InsideZoomModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/dataZoom/InsideZoomView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/dataZoom/InsideZoomView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -74995,7 +75175,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/dataZoom/roams.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/dataZoom/roams.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -75162,7 +75342,7 @@ function installDataZoomRoamProcessor(registers) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/dataZoom/InsideZoomView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/dataZoom/InsideZoomView.js
 var InsideZoomView = function(_super) {
   __extends(InsideZoomView2, _super);
   function InsideZoomView2() {
@@ -75300,7 +75480,7 @@ var getDirectionInfo = {
 };
 var InsideZoomView_default = InsideZoomView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/dataZoom/installDataZoomInside.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/dataZoom/installDataZoomInside.js
 function install47(registers) {
   installCommon(registers);
   registers.registerComponentModel(InsideZoomModel_default);
@@ -75308,7 +75488,7 @@ function install47(registers) {
   installDataZoomRoamProcessor(registers);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/dataZoom/installDataZoomSlider.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/dataZoom/installDataZoomSlider.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -75324,7 +75504,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/dataZoom/SliderZoomModel.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/dataZoom/SliderZoomModel.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -75416,7 +75596,7 @@ var SliderZoomModel = function(_super) {
 }(DataZoomModel_default);
 var SliderZoomModel_default = SliderZoomModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/dataZoom/SliderZoomView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/dataZoom/SliderZoomView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -75619,7 +75799,8 @@ var SliderZoomView = function(_super) {
     var oldSize = this._shadowSize || [];
     var seriesModel = info.series;
     var data = seriesModel.getRawData();
-    var otherDim = seriesModel.getShadowDim ? seriesModel.getShadowDim() : info.otherDim;
+    var candlestickDim = seriesModel.getShadowDim && seriesModel.getShadowDim();
+    var otherDim = candlestickDim && data.getDimensionInfo(candlestickDim) ? seriesModel.getShadowDim() : info.otherDim;
     if (otherDim == null) {
       return;
     }
@@ -76114,20 +76295,20 @@ function getCursor(orient) {
 }
 var SliderZoomView_default = SliderZoomView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/dataZoom/installDataZoomSlider.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/dataZoom/installDataZoomSlider.js
 function install48(registers) {
   registers.registerComponentModel(SliderZoomModel_default);
   registers.registerComponentView(SliderZoomView_default);
   installCommon(registers);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/dataZoom/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/dataZoom/install.js
 function install49(registers) {
   use(install47);
   use(install48);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/visualMap/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/visualMap/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -76143,7 +76324,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/visualMap/installVisualMapContinuous.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/visualMap/installVisualMapContinuous.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -76159,7 +76340,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/visualMap/ContinuousModel.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/visualMap/ContinuousModel.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -76175,7 +76356,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/visualMap/VisualMapModel.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/visualMap/VisualMapModel.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -76191,7 +76372,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/visual/visualDefault.js
+// node_modules/_echarts@5.4.0@echarts/lib/visual/visualDefault.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -76248,7 +76429,7 @@ var defaultOption2 = {
 };
 var visualDefault_default = visualDefault;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/visualMap/VisualMapModel.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/visualMap/VisualMapModel.js
 var mapVisual2 = VisualMapping_default.mapVisual;
 var eachVisual = VisualMapping_default.eachVisual;
 var isArray2 = isArray;
@@ -76501,7 +76682,7 @@ var VisualMapModel = function(_super) {
 }(Component_default);
 var VisualMapModel_default = VisualMapModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/visualMap/ContinuousModel.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/visualMap/ContinuousModel.js
 var DEFAULT_BAR_BOUND = [20, 140];
 var ContinuousModel = function(_super) {
   __extends(ContinuousModel2, _super);
@@ -76661,7 +76842,7 @@ function getColorStopValues(visualMapModel, valueState, dataExtent) {
 }
 var ContinuousModel_default = ContinuousModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/visualMap/ContinuousView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/visualMap/ContinuousView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -76677,7 +76858,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/visualMap/VisualMapView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/visualMap/VisualMapView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -76781,7 +76962,7 @@ var VisualMapView = function(_super) {
 }(Component_default2);
 var VisualMapView_default = VisualMapView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/visualMap/helper.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/visualMap/helper.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -76830,7 +77011,7 @@ function makeHighDownBatch(batch, visualMapModel) {
   return batch;
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/visualMap/ContinuousView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/visualMap/ContinuousView.js
 var linearMap3 = linearMap;
 var each15 = each;
 var mathMin11 = Math.min;
@@ -77300,13 +77481,19 @@ var ContinuousView = function(_super) {
     this._dispatchHighDown("highlight", makeHighDownBatch(resultBatches[1], visualMapModel));
   };
   ContinuousView2.prototype._hoverLinkFromSeriesMouseOver = function(e2) {
-    var el = e2.target;
-    var visualMapModel = this.visualMapModel;
-    if (!el || getECData(el).dataIndex == null) {
+    var ecData;
+    findEventDispatcher(e2.target, function(target) {
+      var currECData = getECData(target);
+      if (currECData.dataIndex != null) {
+        ecData = currECData;
+        return true;
+      }
+    }, true);
+    if (!ecData) {
       return;
     }
-    var ecData = getECData(el);
     var dataModel = this.ecModel.getSeriesByIndex(ecData.seriesIndex);
+    var visualMapModel = this.visualMapModel;
     if (!visualMapModel.isTargetSeries(dataModel)) {
       return;
     }
@@ -77391,7 +77578,7 @@ function getCursor2(orient) {
 }
 var ContinuousView_default = ContinuousView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/visualMap/installCommon.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/visualMap/installCommon.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -77407,7 +77594,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/visualMap/visualMapAction.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/visualMap/visualMapAction.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -77436,7 +77623,7 @@ var visualMapActionHander = function(payload, ecModel) {
   });
 };
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/visualMap/visualEncoding.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/visualMap/visualEncoding.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -77508,7 +77695,7 @@ function getColorVisual(seriesModel, visualMapModel, value, valueState) {
   }
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/visualMap/preprocessor.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/visualMap/preprocessor.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -77556,7 +77743,7 @@ function has2(obj, name) {
   return obj && obj.hasOwnProperty && obj.hasOwnProperty(name);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/visualMap/installCommon.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/visualMap/installCommon.js
 var installed2 = false;
 function installCommon2(registers) {
   if (installed2) {
@@ -77573,14 +77760,14 @@ function installCommon2(registers) {
   registers.registerPreprocessor(visualMapPreprocessor);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/visualMap/installVisualMapContinuous.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/visualMap/installVisualMapContinuous.js
 function install50(registers) {
   registers.registerComponentModel(ContinuousModel_default);
   registers.registerComponentView(ContinuousView_default);
   installCommon2(registers);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/visualMap/installVisualMapPiecewise.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/visualMap/installVisualMapPiecewise.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -77596,7 +77783,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/visualMap/PiecewiseModel.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/visualMap/PiecewiseModel.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -77932,7 +78119,7 @@ function normalizeReverse(thisOption, pieceList) {
 }
 var PiecewiseModel_default = PiecewiseModel;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/visualMap/PiecewiseView.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/visualMap/PiecewiseView.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -78102,20 +78289,20 @@ var PiecewiseVisualMapView = function(_super) {
 }(VisualMapView_default);
 var PiecewiseView_default = PiecewiseVisualMapView;
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/visualMap/installVisualMapPiecewise.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/visualMap/installVisualMapPiecewise.js
 function install51(registers) {
   registers.registerComponentModel(PiecewiseModel_default);
   registers.registerComponentView(PiecewiseView_default);
   installCommon2(registers);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/visualMap/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/visualMap/install.js
 function install52(registers) {
   use(install50);
   use(install51);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/aria/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/aria/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -78131,7 +78318,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/visual/aria.js
+// node_modules/_echarts@5.4.0@echarts/lib/visual/aria.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -78321,7 +78508,7 @@ function ariaVisual(ecModel, api) {
   }
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/aria/preprocessor.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/aria/preprocessor.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -78352,13 +78539,13 @@ function ariaPreprocessor(option) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/aria/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/aria/install.js
 function install53(registers) {
   registers.registerPreprocessor(ariaPreprocessor);
   registers.registerVisual(registers.PRIORITY.VISUAL.ARIA, ariaVisual);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/transform/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/transform/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -78374,7 +78561,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/transform/filterTransform.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/transform/filterTransform.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -78390,7 +78577,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/util/conditionalExpression.js
+// node_modules/_echarts@5.4.0@echarts/lib/util/conditionalExpression.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -78605,7 +78792,7 @@ function parseConditionalExpression(exprOption, getters) {
   return new ConditionalExpressionParsed(exprOption, getters);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/transform/filterTransform.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/transform/filterTransform.js
 var filterTransform = {
   type: "echarts:filter",
   transform: function(params) {
@@ -78652,7 +78839,7 @@ var filterTransform = {
   }
 };
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/transform/sortTransform.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/transform/sortTransform.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -78769,13 +78956,13 @@ var sortTransform = {
   }
 };
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/transform/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/transform/install.js
 function install54(registers) {
   registers.registerTransform(filterTransform);
   registers.registerTransform(sortTransform);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/component/dataset/install.js
+// node_modules/_echarts@5.4.0@echarts/lib/component/dataset/install.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -78833,7 +79020,7 @@ function install55(registers) {
   registers.registerComponentView(DatasetView);
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/export/features.js
+// node_modules/_echarts@5.4.0@echarts/lib/export/features.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -78849,7 +79036,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/animation/universalTransition.js
+// node_modules/_echarts@5.4.0@echarts/lib/animation/universalTransition.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -78865,7 +79052,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_echarts@5.3.3@echarts/lib/animation/morphTransitionHelper.js
+// node_modules/_echarts@5.4.0@echarts/lib/animation/morphTransitionHelper.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -78881,7 +79068,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/tool/morphPath.js
+// node_modules/_zrender@5.4.0@zrender/lib/tool/morphPath.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -78897,7 +79084,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/tool/dividePath.js
+// node_modules/_zrender@5.4.0@zrender/lib/tool/dividePath.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -78913,7 +79100,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_zrender@5.3.2@zrender/lib/tool/convertPath.js
+// node_modules/_zrender@5.4.0@zrender/lib/tool/convertPath.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -79121,7 +79308,7 @@ function pathToPolygons(path, scale4) {
   return polygons;
 }
 
-// node_modules/_zrender@5.3.2@zrender/lib/tool/dividePath.js
+// node_modules/_zrender@5.4.0@zrender/lib/tool/dividePath.js
 function getDividingGrids(dimSize, rowDim, count2) {
   var rowSize = dimSize[rowDim];
   var columnSize = dimSize[1 - rowDim];
@@ -79427,7 +79614,7 @@ function split(path, count2) {
   return out2;
 }
 
-// node_modules/_zrender@5.3.2@zrender/lib/tool/morphPath.js
+// node_modules/_zrender@5.4.0@zrender/lib/tool/morphPath.js
 function alignSubpath(subpath1, subpath2) {
   var len1 = subpath1.length;
   var len2 = subpath2.length;
@@ -80006,7 +80193,7 @@ function separateMorph(fromPath, toPathList, animationOpts) {
   };
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/animation/morphTransitionHelper.js
+// node_modules/_echarts@5.4.0@echarts/lib/animation/morphTransitionHelper.js
 function isMultiple(elements) {
   return isArray(elements[0]);
 }
@@ -80148,7 +80335,7 @@ function getPathList(elements) {
   return pathList;
 }
 
-// node_modules/_echarts@5.3.3@echarts/lib/animation/universalTransition.js
+// node_modules/_echarts@5.4.0@echarts/lib/animation/universalTransition.js
 var DATA_COUNT_THRESHOLD = 1e4;
 var getUniversalTransitionGlobalStore = makeInner();
 function getGroupIdDimension(data) {
@@ -80599,7 +80786,7 @@ function installUniversalTransition(registers) {
   });
 }
 
-// node_modules/_echarts@5.3.3@echarts/index.js
+// node_modules/_echarts@5.4.0@echarts/index.js
 use([install2]);
 use([install]);
 use([install3, install4, install5, install7, install9, install11, install12, install13, install14, install15, install16, install18, install19, install20, install21, install22, install23, install24, install25, install26, install27, install28]);

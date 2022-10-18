@@ -1866,27 +1866,29 @@ npm install --save-dev redux-devtools
 
 
 
-src/App.js
+src/index.js
 
 ```jsx
-import store from './store'
-import ComA from './pages/ComA'
-import ComB from './pages/ComB'
-import {Provider} from 'react-redux'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import reportWebVitals from './reportWebVitals';
+import Router from './router'
+import {Provider} from "react-redux"
+import store from "./store"
 
-function App() {
-  return (
-    //最外层包裹provider,传入store属性
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
       <Provider store={store}>
-          <div className="App">
-              <ComA/>
-              <ComB/>
-          </div>
+          <Router />
       </Provider>
-  );
-}
 
-export default App;
+  </React.StrictMode>
+);
+
+
+reportWebVitals();
 
 ```
 
@@ -1896,7 +1898,7 @@ src/store.js
 
 ```js
 import {createStore} from 'redux'
-import {reducer} from  '../reducer'
+import {reducer} from  './reducer'
 const store = createStore(reducer)
 export default store
 ```
@@ -1925,24 +1927,24 @@ exports.reducer = (state = initState,action) => {
 src/Pages/ComA/index.jsx
 
 ```jsx
-import React, {Component} from "react";
+import React from "react";
 import {connect} from "react-redux";
 
-class ComA extends Component {
+function ComA (props) {
   	//按钮点击回调
     handleClick = () => {
-        console.log("A组件的props:",this.props)
+        console.log("A组件的props:",props)
       	//提交sendAction的action
-        this.props.sendAction()
+        props.sendAction()
     }
 
-    render() {
+  
         return (
             <div>
                 <button onClick={this.handleClick}>+</button>
             </div>
         )
-    }
+   
 }
 
 //实现发送方的mapDispatchToProps参数
@@ -1968,16 +1970,17 @@ export default connect(null,mapDispatchToProps)(ComA)
 src/Pages/ComB/index.jsx
 
 ```jsx
-import React, {Component} from "react";
+import React from "react";
 import {connect} from "react-redux";
 
-class ComB extends Component {
-    render() {
-        console.log("B组件的props",this.props)
-        return (
-            <div> {this.props.count} </div>
-        )
-    }
+function ComB (props) {
+    
+    console.log("B组件的props",props)
+    
+    return (
+        <div> {props.count} </div>
+    )
+   
 }
 
 const mapStateToProps = (state) => {
