@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import clientConfig0 from 'C:/Project/vuepress-hope-site/docs/.vuepress/.temp/sass-palette/load-hope.js'
 import clientConfig1 from 'C:/Project/vuepress-hope-site/docs/.vuepress/.temp/components/config.js'
 import clientConfig2 from 'C:/Project/vuepress-hope-site/node_modules/_@vuepress_plugin-active-header-links@2.0.0-beta.49@@vuepress/plugin-active-header-links/lib/client/config.js'
@@ -15,6 +16,8 @@ import clientConfig11 from 'C:/Project/vuepress-hope-site/docs/.vuepress/.temp/t
 =======
 =======
 >>>>>>> 815481ce3079460341bfa9ef9afd3199c8319e8d
+=======
+>>>>>>> 815481ce3079460341bfa9ef9afd3199c8319e8d
 import clientConfig0 from 'D:/Project/MyProject/hope/docs/.vuepress/.temp/sass-palette/load-hope.js'
 import clientConfig1 from 'D:/Project/MyProject/hope/docs/.vuepress/.temp/components/config.js'
 import clientConfig2 from 'D:/Project/MyProject/hope/node_modules/_@vuepress_plugin-active-header-links@2.0.0-beta.49@@vuepress/plugin-active-header-links/lib/client/config.js'
@@ -28,6 +31,9 @@ import clientConfig9 from 'D:/Project/MyProject/hope/node_modules/_vuepress-plug
 import clientConfig10 from 'D:/Project/MyProject/hope/docs/.vuepress/.temp/pwa2/config.js'
 import clientConfig11 from 'D:/Project/MyProject/hope/docs/.vuepress/.temp/theme-hope/config.js'
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 815481ce3079460341bfa9ef9afd3199c8319e8d
+=======
 >>>>>>> 815481ce3079460341bfa9ef9afd3199c8319e8d
 =======
 >>>>>>> 815481ce3079460341bfa9ef9afd3199c8319e8d

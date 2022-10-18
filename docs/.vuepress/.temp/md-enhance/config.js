@@ -2,6 +2,7 @@ import { defineClientConfig } from "@vuepress/client";
     import { defineAsyncComponent } from "vue";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import ChartJS from "C:/Project/vuepress-hope-site/node_modules/_vuepress-plugin-md-enhance@2.0.0-beta.91@vuepress-plugin-md-enhance/lib/client/components/ChartJS";
 import ECharts from "C:/Project/vuepress-hope-site/node_modules/_vuepress-plugin-md-enhance@2.0.0-beta.91@vuepress-plugin-md-enhance/lib/client/components/ECharts";
 import CodeDemo from "C:/Project/vuepress-hope-site/node_modules/_vuepress-plugin-md-enhance@2.0.0-beta.91@vuepress-plugin-md-enhance/lib/client/components/CodeDemo";
@@ -19,6 +20,8 @@ import "C:/Project/vuepress-hope-site/node_modules/_vuepress-plugin-md-enhance@2
 =======
 =======
 >>>>>>> 815481ce3079460341bfa9ef9afd3199c8319e8d
+=======
+>>>>>>> 815481ce3079460341bfa9ef9afd3199c8319e8d
 import ChartJS from "D:/Project/MyProject/hope/node_modules/_vuepress-plugin-md-enhance@2.0.0-beta.91@vuepress-plugin-md-enhance/lib/client/components/ChartJS";
 import ECharts from "D:/Project/MyProject/hope/node_modules/_vuepress-plugin-md-enhance@2.0.0-beta.91@vuepress-plugin-md-enhance/lib/client/components/ECharts";
 import CodeDemo from "D:/Project/MyProject/hope/node_modules/_vuepress-plugin-md-enhance@2.0.0-beta.91@vuepress-plugin-md-enhance/lib/client/components/CodeDemo";
@@ -34,6 +37,9 @@ const Playground = defineAsyncComponent(() => import("D:/Project/MyProject/hope/
 import "D:/Project/MyProject/hope/node_modules/_vuepress-plugin-md-enhance@2.0.0-beta.91@vuepress-plugin-md-enhance/lib/client/styles/tasklist.scss";
 import "D:/Project/MyProject/hope/node_modules/_vuepress-plugin-md-enhance@2.0.0-beta.91@vuepress-plugin-md-enhance/lib/client/styles/tex.scss";
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 815481ce3079460341bfa9ef9afd3199c8319e8d
+=======
 >>>>>>> 815481ce3079460341bfa9ef9afd3199c8319e8d
 =======
 >>>>>>> 815481ce3079460341bfa9ef9afd3199c8319e8d

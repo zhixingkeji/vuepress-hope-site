@@ -1,6 +1,7 @@
 <template><div><h2 id="第1章-jenkins简介" tabindex="-1"><a class="header-anchor" href="#第1章-jenkins简介" aria-hidden="true">#</a> 第1章 jenkins简介</h2>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <h3 id="_1-1-软件开发声明周期" tabindex="-1"><a class="header-anchor" href="#_1-1-软件开发声明周期" aria-hidden="true">#</a> 1.1 软件开发声明周期</h3>
 <h3 id="_1-2-软件开发瀑布模型" tabindex="-1"><a class="header-anchor" href="#_1-2-软件开发瀑布模型" aria-hidden="true">#</a> 1.2 软件开发瀑布模型</h3>
 <h3 id="_1-3-软件敏捷开发" tabindex="-1"><a class="header-anchor" href="#_1-3-软件敏捷开发" aria-hidden="true">#</a> 1.3 软件敏捷开发</h3>
@@ -9,6 +10,8 @@
 <h3 id="_1-6-jenkins-介绍" tabindex="-1"><a class="header-anchor" href="#_1-6-jenkins-介绍" aria-hidden="true">#</a> 1.6 jenkins 介绍</h3>
 <h2 id="第2章-jenkins基础" tabindex="-1"><a class="header-anchor" href="#第2章-jenkins基础" aria-hidden="true">#</a> 第2章 jenkins基础</h2>
 =======
+=======
+>>>>>>> 815481ce3079460341bfa9ef9afd3199c8319e8d
 =======
 >>>>>>> 815481ce3079460341bfa9ef9afd3199c8319e8d
 <h3 id="_1-1-持续集成与交付概念" tabindex="-1"><a class="header-anchor" href="#_1-1-持续集成与交付概念" aria-hidden="true">#</a> 1.1 持续集成与交付概念</h3>
@@ -24,6 +27,9 @@
 <h3 id="_2-5" tabindex="-1"><a class="header-anchor" href="#_2-5" aria-hidden="true">#</a> 2.5</h3>
 <h3 id="_2-6" tabindex="-1"><a class="header-anchor" href="#_2-6" aria-hidden="true">#</a> 2.6</h3>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 815481ce3079460341bfa9ef9afd3199c8319e8d
+=======
 >>>>>>> 815481ce3079460341bfa9ef9afd3199c8319e8d
 =======
 >>>>>>> 815481ce3079460341bfa9ef9afd3199c8319e8d

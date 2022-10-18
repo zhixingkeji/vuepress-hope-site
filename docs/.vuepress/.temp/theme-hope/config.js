@@ -12,7 +12,11 @@ import { setupSidebarItems } from "@theme-hope/module/sidebar/composables";
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import "C:/Project/vuepress-hope-site/node_modules/_vuepress-theme-hope@2.0.0-beta.91@vuepress-theme-hope/lib/client/styles/index.scss";
+=======
+import "D:/Project/MyProject/hope/node_modules/_vuepress-theme-hope@2.0.0-beta.91@vuepress-theme-hope/lib/client/styles/index.scss";
+>>>>>>> 815481ce3079460341bfa9ef9afd3199c8319e8d
 =======
 import "D:/Project/MyProject/hope/node_modules/_vuepress-theme-hope@2.0.0-beta.91@vuepress-theme-hope/lib/client/styles/index.scss";
 >>>>>>> 815481ce3079460341bfa9ef9afd3199c8319e8d
@@ -27,7 +31,11 @@ import BlogPage from "@theme-hope/module/blog/components/BlogPage";
 import { setupBlog } from "@theme-hope/module/blog/composables";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import "C:/Project/vuepress-hope-site/node_modules/_vuepress-theme-hope@2.0.0-beta.91@vuepress-theme-hope/lib/client/module/blog/styles/layout.scss";
+=======
+import "D:/Project/MyProject/hope/node_modules/_vuepress-theme-hope@2.0.0-beta.91@vuepress-theme-hope/lib/client/module/blog/styles/layout.scss";
+>>>>>>> 815481ce3079460341bfa9ef9afd3199c8319e8d
 =======
 import "D:/Project/MyProject/hope/node_modules/_vuepress-theme-hope@2.0.0-beta.91@vuepress-theme-hope/lib/client/module/blog/styles/layout.scss";
 >>>>>>> 815481ce3079460341bfa9ef9afd3199c8319e8d
