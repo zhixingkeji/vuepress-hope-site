@@ -163,6 +163,36 @@ apt-get install vim
 
 ## 第5章 ES集成
 
+### 5.1  spring data框架
+
+依赖
+
+```xml
+<dependency>
+	<groupId>org.springframework.boot</groupId>	
+  <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+</dependency>
+```
+
+配置
+
+```properties
+elasticsearch.host=127.0.0.1
+elasticsearch.port=9200	
+```
+
+
+
+
+
+
+
+### 5.2 spark stream
+
+
+
+### 5.3 flint
+
 
 
 ## 第6章 ES优化

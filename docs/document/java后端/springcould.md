@@ -1998,7 +1998,7 @@ Binding在消息中间件与应用程序提供的Provider和Consumer之间提供
 
 
 
-### 10.3 流式编程
+### 10.3 链式编程
 
 -   定义
 
@@ -2095,7 +2095,9 @@ allMatch / anyMatch / noneMatch
 
 -   并行流
 
-
+```java
+stream.paralleStream()
+```
 
 
 
@@ -2109,7 +2111,7 @@ List<Student> students = Arrays.asList(
     new Student("小流",15),
     new Student("小无",22),
 );
-
+ 
 //收集器
 List<Integer> ages = students.stream().map(Student::getAge)
 	.collect(Collectors.toList());
