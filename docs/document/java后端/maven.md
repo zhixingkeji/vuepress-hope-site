@@ -162,4 +162,209 @@ mvn install 安装项目
 
 ## 第5章 私服Nexus
 
-5.1 
+### 5.1 简介
+
+
+
+
+
+### 5.2 docker部署
+
+```
+docker search nexus3
+docker pull sonatype/nexus3
+chown -R 200 /home/nexus/nexus-data/
+docker run -d --restart=always --privileged=true -p 8081:8081 -p 8082:8082 -p 8083:8083 -p 8084:8084 --name nexus3 -v /home/nexus/nexus-data:/nexus-data sonatype/nexus3
+docker logs nexus3
+
+# 重新启动防火墙,打开腾讯云端口
+firewall-cmd --zone=public  --permanent --add-port=8081/tcp
+firewall-cmd --zone=public  --permanent --add-port=8082/tcp
+firewall-cmd --zone=public  --permanent --add-port=8083/tcp
+firewall-cmd --zone=public  --permanent --add-port=8084/tcp
+systemctl restart firewalld
+
+# 端口详情
+8081：nexus3网页端
+8082：docker(hosted)私有仓库，可以pull和push
+8083：docker(proxy)代理远程仓库，只能pull
+8084：docker(group)私有仓库和代理的组，只能pull
+
+# 挂载详情
+/home/nexus/nexus-data  # docker里存nexus数据目录
+
+# 账号详情
+http://43.143.141.8:8081  # 账号admin 密码在挂载目录admin.password
+```
+
+
+
+### 5.3 搭建maven私服
+
+本地maven配置
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.2.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0 https://maven.apache.org/xsd/settings-1.2.0.xsd">
+ 
+<!-- 配置本地仓库路径 -->
+  <localRepository>C:\Env\mavenrepo</localRepository>
+
+  <pluginGroups>
+  </pluginGroups>
+
+<!-- 配置代理 -->
+  <proxies>
+  </proxies>
+
+<!-- 配置认证信息 -->
+<!--  <servers>
+    <server>
+      <id>deploymentRepo</id>
+      <username>repouser</username>
+      <password>repopwd</password>
+    </server>
+  </servers>
+-->
+  
+  
+<!-- 配置镜像 使用私服不需要配置镜像-->
+  <mirrors>
+  </mirrors>
+
+
+<!-- 配置私服 -->
+  <profiles>
+    <profile>
+      <id>nexus</id>
+      <repositories>
+        <repository>
+          <id>nexus</id>
+          <name>nexus</name>
+          <url>http://43.143.141.8:8081/repository/maven-public/</url>
+          <layout>default</layout>
+          <snapshotPolicy>always</snapshotPolicy>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>nexus</id>
+          <name>nexus</name>
+          <url>http://43.143.141.8:8081/repository/maven-public/</url>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+  </profiles>
+
+  <!-- 激活私服 -->
+  <activeProfiles>
+    <activeProfile>nexus</activeProfile>
+  </activeProfiles>
+</settings>
+```
+
+
+
+服务端配置
+
+```
+创建一个maven2的proxy仓库
+名称 maven-aliyun
+url -> https://maven.aliyun.com/repository/public
+在maven-public中加入maven-aliyun -> 排序提到最高 -> 保存
+```
+
+
+
+配置pom文件方式
+
+只针对当前项目有效 , 如果需要全局生效则应配置config.xml 
+
+```xml
+ <repositories>
+      <!-- 配置nexus远程仓库 -->
+      <repository>
+         <id>nexus</id>
+         <name>Nexus Snapshot Repository</name>
+         <url>http://127.0.0.1:8088/nexus/content/groups/public/</url>
+         <releases>
+            <enabled>true</enabled>
+         </releases>
+         <snapshots>
+           <enabled>false</enabled>
+         </snapshots>
+      </repository>
+   </repositories>
+   <!-- 配置从哪个仓库中下载构件，即jar包 -->
+   <pluginRepositories>
+       <pluginRepository>
+         <id>nexus</id>
+         <name>Nexus Snapshot Repository</name>
+         <url>http://127.0.0.1:8088/nexus/content/groups/public/</url>
+         <releases>
+           <enabled>true</enabled>
+         </releases>
+         <snapshots>
+           <enabled>false</enabled>
+         </snapshots>
+      </pluginRepository>
+    </pluginRepositories>
+```
+
+
+
+
+
+测试 命令行输入
+
+```sh
+mvn dependency:get -Dartifact=redis.clients:jedis:3.6.1
+```
+
+
+
+
+
+### 5.4 搭建npm私服
+
+创建 npm hosted 仓库 名称 npm-hosted
+
+
+
+创建 npm proxy 仓库 名称 npm-proxy 
+
+添加地址  http://registry.npm.taobao.org/
+
+
+
+创建 npm group 仓库 名称 npm-group
+
+添加以上两个仓库成员 proxy在最前
+
+
+
+定义npm源
+
+```
+npm config set registry http://43.143.141.8:8081/repository/npm-group/
+```
+
+
+
+配置项目中的 `.npmrc` 文件
+
+```
+registry=http://43.143.141.8:8081/repository/npm-group/
+```
+
+
+
+### 5.5 搭建docker私服
+
+
+
+
+
+### 5.6 搭建python私服

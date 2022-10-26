@@ -8,15 +8,17 @@
 
 ### 1.1 快捷键篇
 
-IDEA快捷键
+IDEA 快捷键
 
-ctrl+p 显示括号里所有的参数方法
+ctrl + p 显示括号里所有的参数方法
 
-alt+enter  显示上下文操作 可以构建局部变量
+alt + enter  显示上下文操作 可以构建局部变量
 
 .var 快速引用
 
+ctrl + shift + num 新增书签
 
+ctrl + num  查找书签
 
 
 
@@ -61,3 +63,8 @@ pycharm
 
 
 ### 1.4 皮肤篇
+
+
+
+
+
