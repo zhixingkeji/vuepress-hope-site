@@ -2758,7 +2758,7 @@ yarn add react-native-swiper
 
 AsyncStorage  持久化存储系统
 
-```
+```jsx
 //安装
 yarn add @react-native-async-storage/async-storage
 
@@ -2778,15 +2778,90 @@ const storeData = async (value) =>{
 
 Geolocation  获取定位信息
 
+```jsx
+// 安装
+yarn add @react-native-community/geolocation
+
+//安卓配置 
+// android/app/src/main/AndroidManifest.xml 追加
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+import Geolocation from '@react-native-community/geolocation'  
+
+componentDidMount(){
+  
+  //如果本地没有位置信息 则获取地理位置
+  const location = storage.get("coords")
+  if(location === undefined || location == ""){
+    Geolocation.getCurrentPosition(
+  	info => {
+     console.log(info)
+      AsyncStorage.setItem("coords",JSON.stringify(info.coords))
+    },
+    error => Alert.alert("报错",JSON.stringify(error)),
+    {
+      timeout: 20000
+    })
+  }
+}
+```
+
+
+
 
 
 Camera  调用摄像头
+
+```jsx
+//安装
+npm install --save react-native-camera 
+
+//配置 android/app/src/main/AndroidManifest.xml
+<uses-permission android:name="android.permission.CAMERA" />
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+//配置 android/app/build.gradle
+android {
+  ...
+  defaultConfig {
+    ...
+    missingDimensionStrategy 'react-native-camera','general'
+  }
+}
+
+//使用
+<RNCamera
+  ref={ref => {
+    this.camera = ref
+  }}
+></RNCamera>
+```
 
 
 
 ImagePicker
 
+ ```jsx
+ //安装
+ yarn add react-native-image-picker
  
+ //配置
+ 同相机配置
+ 
+ //使用
+ 
+ ```
+
+
+
+自定义组件
+
+```
+```
+
+
 
 
 
@@ -2794,13 +2869,104 @@ ImagePicker
 
 简介
 
+
+
+
+
 基础组件
 
-stack 导航
+```
+//安装
+yarn add @react-navigation/native
+yarn add react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
+
+//ios下链接
+npx pod-install ios
+
+//安卓 rn>6 后自动链接
+
+// index.js 
+import "react-native-gesture-handler"
+import {NavigationContainer} from "@react-navigation/native"
+export default functionApp(){
+  return (
+  	// Navigation标签包裹最外层
+  	<NavigationContainer>
+			...
+		</NavigationContainer>
+  )
+}
+
+```
+
+
+
+stack 导航 
+
+rn中默认没有类似history对象
+
+如果想在rn中跳转 需要将路由声明在stack中
+
+```jsx
+//安装
+yarn add @react-navigation/stack
+
+import {createStackNavigator} from '@react-navigation/stack'
+const Stack = createStackNavigator(); 
+
+<Stack.Navigator
+  //配置默认加载的路由, 不填则匹配第一个路由
+  initialRouteName="Home"
+  //隐藏标题
+  screenOptions={{headerShown: false}}
+  >
+  <Stack.Screen name="Home" component={HomeScreen} 
+    options={{
+      title: "标题",
+      headerStyle: {
+        backgroundColor: "tomato"
+      },
+      headerRight: ()=>(
+        <Text>Hello</Text>
+      )
+    }}
+    />
+  <Stack.Screen name="News" component={NewsScreen} />
+</Stack.Navigator>
+
+
+fuction HomeScreen(prop) {
+  return (
+  	<View>
+    	<Button onPress={()=> prop.navigation.navigate("News")}></Button>
+    </View>
+  )
+}
+
+fuction NewsScreen(prop) {
+  return (
+  	<View>
+    	<Button onPress={()=> prop.navigation.navigate("Home")}></Button>
+    </View>
+  )
+}
+```
+
+
+
+
 
 BottomTab 导航
 
+
+
+
+
 Drawer 导航
+
+
+
+
 
 MaterialTopTab 导航
 

@@ -166,6 +166,135 @@ mysql 提供mysql驱动依赖
 
 
 
+### 1.7  场景启动器
+
+- 优点
+
+简化开发 定义了某应用场景里所有需要的jar包 和版本号 以及相关配置
+
+解决了jar包冲突 不用手动导包
+
+
+
+- 原理
+
+@SpringBootApplication注解开启了一个@EnableAutoConfiguration注解的自动配置功能, 最终会调用到 loadSpringFactories，这个方法就会读取被 @Configuration 标识的配置类下 META-INF/spring.factories文件
+
+@Condition  是自动配置的条件, 找到该类才自动配置 
+
+
+
+- 代码实现
+
+配置类
+
+```java
+package com.example.demospringbootstarter.config;
+
+import com.example.demospringbootstarter.properties.DemoProperties;
+import com.example.demospringbootstarter.service.DemoService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@EnableConfigurationProperties(DemoProperties.class)
+@ConditionalOnProperty(
+        prefix = "demo",
+        name = "isopen",
+        havingValue = "true"
+)
+public class DemoConfig {
+    @Autowired
+    private DemoProperties demoProperties;
+
+    @Bean(name = "demo")
+    public DemoService demoService() {
+        return new DemoService(demoProperties.getSayWhat(), demoProperties.getToWho());
+    }
+}
+
+```
+
+
+
+DemoProperties
+
+```java
+package com.example.demospringbootstarter.properties;
+
+import org.springframework.boot.context.properties.ConfigurationProperties;
+
+@ConfigurationProperties(prefix = "demo")
+public class DemoProperties {
+    private String sayWhat;
+    private String toWho;
+
+    public String getSayWhat() {
+        return sayWhat;
+    }
+
+    public void setSayWhat(String sayWhat) {
+        this.sayWhat = sayWhat;
+    }
+
+    public String getToWho() {
+        return toWho;
+    }
+
+    public void setToWho(String toWho) {
+        this.toWho = toWho;
+    }
+}
+
+```
+
+
+
+DemoService
+
+```java
+package com.example.demospringbootstarter.service;
+
+
+//不需要service注解
+public class DemoService {
+    public String sayWhat;
+    public String toWho;
+
+    public DemoService(String sayWhat, String toWho) {
+        this.sayWhat = sayWhat;
+        this.toWho = toWho;
+    }
+
+    public String say() {
+        return this.sayWhat + "!  " + toWho;
+    }
+}
+
+```
+
+
+
+resources / META-INF / spring.factories
+
+```properties
+#-------starter自动装配---------
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.example.demospringbootstarter.config.DemoConfig
+```
+
+
+
+推送到私服
+
+
+
+测试工程
+
+
+
 ## 第2章  配置文件 application.yml
 
 ### 2.1 不同环境的配置文件

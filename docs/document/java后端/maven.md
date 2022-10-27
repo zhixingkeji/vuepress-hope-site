@@ -164,7 +164,19 @@ mvn install 安装项目
 
 ### 5.1 简介
 
+Nexus可以做Maven私服，私服不是Maven的核心概念，它仅仅是一种衍生出来的特殊的Maven仓库。有三种专门的Maven仓库管理软件可以用来帮助大家建立私服：
 
+如果没有私服，我们所需的所有构件都需要通过maven的中央仓库和第三方的Maven仓库下载到本地，而一个团队中的所有人都重复的从maven仓库下载构件无疑加大了仓库的负载和浪费了外网带宽，如果网速慢的话，还会影响项目的进程。
+
+
+
+仓库类型
+
+hosted，本地仓库，通常我们会部署自己的构件到这一类型的仓库。比如公司的第二方库。
+
+proxy，代理仓库，它们被用来代理远程的公共仓库，如maven中央仓库。
+
+group，仓库组，用来合并多个hosted/proxy仓库，当你的项目希望在多个repository使用资源时就不需要多次引用了，只需要引用一个group即可。
 
 
 
@@ -201,7 +213,7 @@ http://43.143.141.8:8081  # 账号admin 密码在挂载目录admin.password
 
 ### 5.3 搭建maven私服
 
-本地maven配置
+本地maven配置 全局生效
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -280,7 +292,7 @@ url -> https://maven.aliyun.com/repository/public
 
 配置pom文件方式
 
-只针对当前项目有效 , 如果需要全局生效则应配置config.xml 
+只针对当前项目有效 , 如果需要全局生效则应配置 `settings.xml`
 
 ```xml
  <repositories>
@@ -314,6 +326,10 @@ url -> https://maven.aliyun.com/repository/public
 ```
 
 
+
+idea配置
+
+绑定本地的maven和settings.xml配置文件
 
 
 
