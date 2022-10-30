@@ -157,6 +157,28 @@ cp  -r a/ b/       //把文件夹递归复制到某个目录下
 
 
 
+### 2.5 远程复制文件
+
+从本地复制到远程
+
+```sh
+scp local_file remote_ip:remote_file 
+scp -r local_folder remote_ip:remote_folder # 复制目录
+```
+
+
+
+从远程复制到本地
+
+```sh
+scp root@www.runoob.com:/home/root/others/music /home/space/music/1.mp3 
+scp -r www.runoob.com:/home/root/others/ /home/space/music/ # 复制目录
+```
+
+
+
+
+
 ## 第3章 系统相关
 
 ### 3.1 自定义指令别名
@@ -467,9 +489,315 @@ ZZ   # 保存退出vim
 
 
 
-## 第5章 预留
+## 第5章 shell脚本
+
+### 5.1 变量
+
+```sh
+# 定义变量
+your_name="qinjx" 
+
+# 打印
+echo $your_name 
+echo ${your_name} # 打印 和上面效果相同,可读性更好
+
+# 删除变量
+unset your_name # 变量被删除后不能再次使用。unset 命令不能删除只读变量。
+
+# 只读变量
+readonly your_name # 使用 readonly 命令可以将变量定义为只读变量，只读变量的值不能被改变。
+
+# 单引号字符串
+str='this is a string' # 单引号里的任何字符都会原样输出，单引号字符串中的变量是无效的；
+
+# 双引号字符串
+str="Hello, I know you are \"${your_name}\"! \n" # 双引号里可以有变量,双引号里可以出现转义字符
+
+# 字符串拼接
+greeting_1="hello, ${your_name} !" 
+
+# 获取字符串长度
+echo ${#string} 
+
+# 截取字符串
+string="runoob is a great site" 
+echo ${string:1:4}  # 输出unoo 以下实例从字符串索引 1 开始截取 4 个字符：
+
+# 查找字符位置
+string="runoob is a great site"
+echo `expr index "$string" o`  # 输出 4
+```
 
 
+
+### 5.2 参数传递
+
+编写脚本
+
+```sh
+echo "第一个参数为：$1";
+echo "参数个数为：$#";
+echo "传递的参数作为一个字符串显示：$*";
+```
+
+
+
+控制台
+
+```sh
+chmod +x test.sh 
+./test.sh 1 2 3
+```
+
+
+
+输出
+
+```sh
+第一个参数为：1
+参数个数为：3
+传递的参数作为一个字符串显示：1 2 3
+```
+
+
+
+
+
+### 5.3 数组
+
+```sh
+# 定义数组
+array_name=(value0 value1 value2 value3)
+
+# 读取数组
+echo "第一个元素为: ${my_array[0]}"
+```
+
+
+
+关联数组
+
+```sh
+# 定义关联数组
+declare -A site
+site["google"]="www.google.com"
+site["runoob"]="www.runoob.com"
+site["taobao"]="www.taobao.com"
+
+# 读取数组元素
+echo ${site["runoob"]}
+
+# 获取数组中的所有元素
+echo "数组的元素为: ${site[@]}"
+
+# 获取数组的所有键
+echo "数组的键为: ${!site[@]}"
+
+# 获取数组的长度
+echo "数组元素个数为: ${#my_array[@]}"
+```
+
+
+
+
+
+### 5.4 运算符
+
+算数运算符
+
+```sh
+val=`expr 2 + 2`
+```
+
+
+
+关系运算符
+
+```sh
+if [ $a -eq $b ]
+```
+
+
+
+布尔运算符
+
+```sh
+if [ $a != $b ]  # ! 非运算
+if [ $a -lt 100 -a $b -gt 15 ] # -a 且运算
+if [ $a -lt 100 -o $b -gt 100 ] # -o 或运算
+
+if [[ $a -lt 100 && $b -gt 100 ]] # 且运算
+if [[ $a -lt 100 || $b -gt 100 ]] # 或运算
+```
+
+
+
+### 5.5 流程控制
+
+if elif else
+
+```sh
+a=10
+b=20
+if (( $a == $b ))
+then
+   echo "a 等于 b"
+elif (( $a > $b ))
+then
+   echo "a 大于 b"
+elif (( $a < $b ))
+then
+   echo "a 小于 b"
+else
+   echo "没有符合的条件"
+fi
+```
+
+
+
+for
+
+```sh
+for loop in 1 2 3 4 5
+do
+    echo "The value is: $loop"
+done
+```
+
+
+
+while
+
+```sh
+int=1
+while(( $int<=5 ))
+do
+    echo $int
+    let "int++"
+done
+```
+
+
+
+until 
+
+```sh
+a=0
+
+# 反向循环 直到条件成立才结束循环
+until [ ! $a -lt 10 ]
+do
+   echo $a
+   a=`expr $a + 1`
+done
+```
+
+
+
+case 
+
+```sh
+site="runoob"
+
+case "$site" in
+   "runoob") echo "菜鸟教程"
+   	break 
+   ;;
+   "google") echo "Google 搜索"
+   	continue
+   ;;
+   "taobao") echo "淘宝网"
+   ;;
+esac
+```
+
+
+
+
+
+
+
+
+
+### 5.6 函数
+
+```sh
+function demoFun2(){
+ echo "这是我的第二个 shell 函数!"
+ expr 1 + 1
+}
+```
+
+
+
+
+
+### 5.7 输入输出
+
+```sh
+# 覆盖
+command > file
+
+# 结尾追加
+command >> file
+
+# 反向
+cat << EOF
+欢迎来到
+菜鸟教程
+www.runoob.com
+EOF
+```
+
+
+
+
+
+### 5.8 文件包含
+
+
+
+### 5.9 其他命令
+
+echo
+
+```sh
+echo `date` # 打印当前日期
+echo "It is a test" > myfile # 打印结果定向至文件
+
+```
+
+
+
+printf
+
+```sh
+printf "Hello, Shell\n" # 模仿c语言的打印
+```
+
+
+
+test 
+
+```sh
+num1="ru1noob"
+num2="runoob"
+if test $num1 = $num2
+then
+    echo '两个字符串相等!'
+else
+    echo '两个字符串不相等!'
+fi
+```
+
+
+
+source
+
+```sh
+# Shell 也可以包含外部脚本。这样可以很方便的封装一些公用的代码作为一个独立的文件。
+source filename
+```
 
 
 
@@ -704,9 +1032,14 @@ apt install refind
 
 
 
-修改conf文件
+修改 / EFI / refind / refind.conf 文件 最底部追加内容
 
 ```
+# dont scan
+dont_scan_dirs ESP:/EFI/boot,EFI/ubuntu,EFI/boot,EFI/deepin_os,EFI/UOS,EFI/deepin
+
+# theme
+include themes/rEFInd-minimal/theme.conf
 ```
 
 
@@ -714,6 +1047,8 @@ apt install refind
 下载主题
 
 ```
+git clone https://github.com/evanpurkhiser/rEFInd-minimal.git
+放到refind目录下新建一个themes文件夹中
 ```
 
 
@@ -728,5 +1063,17 @@ bios设置
 
 
 
-### 9.2 
+### 9.2 双系统磁盘操作
+
+linux下可以直接操作windows文件
+
+windowx下使用linux reader 操作linux系统下的文件
+
+```
+https://www.diskinternals.com/linux-reader/
+```
+
+
+
+
 

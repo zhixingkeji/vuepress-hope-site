@@ -2,7 +2,7 @@ import {
   isPerformanceSupported,
   now,
   setupDevtoolsPlugin
-} from "./chunk-HMPCXJXH.js";
+} from "./chunk-MAEIMZLS.js";
 import {
   init_define_BACK_TO_TOP_LOCALES,
   init_define_CODE_COPY_LOCALES,

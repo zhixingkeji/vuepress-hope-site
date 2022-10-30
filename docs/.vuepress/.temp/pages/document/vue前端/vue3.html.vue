@@ -640,7 +640,7 @@ app.component('todo-list', {
 <p>安装element-plus</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>vue <span class="token function">add</span> element-plus
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>安装 element icon</p>
-<div class="language-she ext-she line-numbers-mode"><pre v-pre class="language-she"><code>cnpm install --save @element-plus/icons-vue 
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>cnpm <span class="token function">install</span> <span class="token parameter variable">--save</span> @element-plus/icons-vue 
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>全局注册 plugins/element.js</p>
 <div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code>
 <span class="token keyword">import</span> ElementPlus <span class="token keyword">from</span> <span class="token string">'element-plus'</span>
@@ -1586,4 +1586,7 @@ cnpm install @popperjs/core -S
 		<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#affect"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token string">"display"</span><span class="token punctuation">,</span><span class="token string">""</span><span class="token punctuation">)</span>
 	<span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div></template>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_8-12-滚动弹幕" tabindex="-1"><a class="header-anchor" href="#_8-12-滚动弹幕" aria-hidden="true">#</a> 8.12 滚动弹幕</h3>
+<h3 id="_8-13-多语言切换" tabindex="-1"><a class="header-anchor" href="#_8-13-多语言切换" aria-hidden="true">#</a> 8.13 多语言切换</h3>
+<h3 id="_8-14-3d可视化" tabindex="-1"><a class="header-anchor" href="#_8-14-3d可视化" aria-hidden="true">#</a> 8.14 3d可视化</h3>
+</div></template>

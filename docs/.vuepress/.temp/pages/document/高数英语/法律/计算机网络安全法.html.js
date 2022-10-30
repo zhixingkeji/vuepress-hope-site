@@ -1,14 +1,1 @@
-export const data = JSON.parse("{\"key\":\"v-7b4de35d\",\"path\":\"/document/%E9%AB%98%E6%95%B0%E8%8B%B1%E8%AF%AD/%E6%B3%95%E5%BE%8B/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%B3%95.html\",\"title\":\"\",\"lang\":\"zh-CN\",\"frontmatter\":{\"summary\":\"\",\"head\":[[\"meta\",{\"property\":\"og:url\",\"content\":\"https://vuepress-theme-hope-v2-demo.netlify.app/document/%E9%AB%98%E6%95%B0%E8%8B%B1%E8%AF%AD/%E6%B3%95%E5%BE%8B/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%B3%95.html\"}],[\"meta\",{\"property\":\"og:site_name\",\"content\":\"编程小站\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"zh-CN\"}],[\"link\",{\"rel\":\"canonical\",\"href\":\"https://vuepress-theme-hope.github.io/v2-demo/document/%E9%AB%98%E6%95%B0%E8%8B%B1%E8%AF%AD/%E6%B3%95%E5%BE%8B/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%B3%95.html\"}]]},\"excerpt\":\"\",\"headers\":[],\"readingTime\":{\"minutes\":0,\"words\":0},\"filePathRelative\":\"document/高数英语/法律/计算机网络安全法.md\"}")
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updatePageData) {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ data }) => {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  })
-}
+export const data = JSON.parse("{\"key\":\"v-7b4de35d\",\"path\":\"/document/%E9%AB%98%E6%95%B0%E8%8B%B1%E8%AF%AD/%E6%B3%95%E5%BE%8B/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%B3%95.html\",\"title\":\"\",\"lang\":\"zh-CN\",\"frontmatter\":{\"summary\":\"\",\"head\":[[\"meta\",{\"property\":\"og:url\",\"content\":\"https://vuepress-theme-hope-v2-demo.netlify.app/document/%E9%AB%98%E6%95%B0%E8%8B%B1%E8%AF%AD/%E6%B3%95%E5%BE%8B/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%B3%95.html\"}],[\"meta\",{\"property\":\"og:site_name\",\"content\":\"编程小站\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:updated_time\",\"content\":\"2022-08-28T11:35:59.000Z\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"zh-CN\"}],[\"meta\",{\"property\":\"article:modified_time\",\"content\":\"2022-08-28T11:35:59.000Z\"}],[\"link\",{\"rel\":\"canonical\",\"href\":\"https://vuepress-theme-hope.github.io/v2-demo/document/%E9%AB%98%E6%95%B0%E8%8B%B1%E8%AF%AD/%E6%B3%95%E5%BE%8B/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%B3%95.html\"}]]},\"excerpt\":\"\",\"headers\":[],\"git\":{\"createdTime\":1661686559000,\"updatedTime\":1661686559000,\"contributors\":[{\"name\":\"王乐\",\"email\":\"1973551473@qq.com\",\"commits\":1}]},\"readingTime\":{\"minutes\":0,\"words\":0},\"filePathRelative\":\"document/高数英语/法律/计算机网络安全法.md\",\"localizedDate\":\"2022年8月28日\"}")

@@ -1,35 +1,22 @@
 <template><div><h2 id="第1章-mq介绍" tabindex="-1"><a class="header-anchor" href="#第1章-mq介绍" aria-hidden="true">#</a> 第1章 MQ介绍</h2>
 <h3 id="_1-1-简介" tabindex="-1"><a class="header-anchor" href="#_1-1-简介" aria-hidden="true">#</a> 1.1 简介</h3>
+<p>MQ是一种提供<code v-pre>消息队列服务</code>的中间件, 是一套提供了消息生产, 存储, 消费全过程的软件</p>
 <h3 id="_1-2-优缺点" tabindex="-1"><a class="header-anchor" href="#_1-2-优缺点" aria-hidden="true">#</a> 1.2 优缺点</h3>
 <ul>
-<li>
-<p>异步提速</p>
-</li>
-<li>
-<p>应用解耦</p>
-</li>
-<li>
-<p>分布式事务的数据一致性</p>
-</li>
-<li>
-<p>消息的顺序收发</p>
-</li>
-<li>
-<p>削峰填谷</p>
-</li>
-<li>
-<p>大规模机器的缓存同步</p>
-</li>
-<li>
-<p>系统可用性降低（MQ死机则整个系统断裂）</p>
-</li>
-<li>
-<p>系统复杂度提高（mq可能发生的丢失消息，重复消费）</p>
-</li>
-<li>
-<p>一致性问题（MQ发送ABC三台服务器，AB成功，C失败）</p>
-</li>
+<li>优点</li>
 </ul>
+<p>异步提速</p>
+<p>应用解耦</p>
+<p>分布式事务的数据一致性</p>
+<p>消息的顺序收发</p>
+<p>削峰填谷</p>
+<p>大规模机器的缓存同步</p>
+<ul>
+<li>缺点</li>
+</ul>
+<p>系统可用性降低（MQ死机则整个系统断裂）</p>
+<p>系统复杂度提高（mq可能发生的丢失消息，重复消费）</p>
+<p>一致性问题（MQ发送ABC三台服务器，AB成功，C失败）</p>
 <h3 id="_1-3-使用场景" tabindex="-1"><a class="header-anchor" href="#_1-3-使用场景" aria-hidden="true">#</a> 1.3 使用场景</h3>
 <h3 id="_1-4-四种mq对比" tabindex="-1"><a class="header-anchor" href="#_1-4-四种mq对比" aria-hidden="true">#</a> 1.4 四种MQ对比</h3>
 <ul>
@@ -57,12 +44,35 @@
 <p>zeroMQ</p>
 <p>无broke中转站 直接使用socket 进行通信</p>
 <h3 id="_1-5-工作原理" tabindex="-1"><a class="header-anchor" href="#_1-5-工作原理" aria-hidden="true">#</a> 1.5 工作原理</h3>
-<p>生产者Producer、消费者Consumer、经纪人Broker</p>
+<ul>
+<li>生产者Producer、消费者Consumer、经纪人Broker</li>
+</ul>
 <p>Producer 发送消息给 Broker，并收到返回的接收结果</p>
 <p>Consumer 监听 Broker，Broker 有消息了就推送给 Consumer</p>
-<p>命名服务器NameServer</p>
+<ul>
+<li>命名服务器NameServer</li>
+</ul>
 <p>NameServer类似于注册中心，注册中心，发送心跳，负载均衡</p>
-<p>Topic主题、Tag标题、Message消息</p>
+<ul>
+<li>Topic主题</li>
+</ul>
+<p>表示一类消息的集合, 每个主题包含若干消息, 每个消息只能属于一个主题 , 是消息订阅的基本单位</p>
+<ul>
+<li>Tag标题</li>
+</ul>
+<p>用于统一主题下区分不同类型的消息</p>
+<ul>
+<li>Message消息</li>
+</ul>
+<p>生产和消费数据的最小单位 , 每条消息必须属于一个主题</p>
+<ul>
+<li>队列</li>
+</ul>
+<p>存储消息的物理实体</p>
+<ul>
+<li>消息标识</li>
+</ul>
+<p>生产者发送消息产生一个msgid, 到达broker后产生一个offestmsgid , 用户也可以指定与业务相关的key</p>
 <h2 id="第2章-rocketmq" tabindex="-1"><a class="header-anchor" href="#第2章-rocketmq" aria-hidden="true">#</a> 第2章 RocketMQ</h2>
 <h3 id="_2-1-安装配置" tabindex="-1"><a class="header-anchor" href="#_2-1-安装配置" aria-hidden="true">#</a> 2.1 安装配置</h3>
 <p><strong>下载安装包</strong></p>
@@ -88,10 +98,10 @@ start mqbroker.cmd -n localhost:9876 autoCreateTopicEnble=true
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>tools.cmd org.apache.rocketmq.example.quickstart.Consumer
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>可视化工具</strong></p>
 <p>拉取镜像</p>
-<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">docker</span> pull apacherocketmq/rocketmq-dashboard:latest
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">docker</span> pull apacherocketmq/rocketmq-dashboard
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>开启容器</p>
 <p>注意 namesrv.addr 填写宿主机地址 192.168.0.109</p>
-<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">--name</span> rocketmq-dashboard <span class="token parameter variable">-e</span> <span class="token string">"JAVA_OPTS=-Drocketmq.namesrv.addr=192.168.0.109:9876"</span> <span class="token parameter variable">-p</span> <span class="token number">8080</span>:8080 <span class="token parameter variable">-t</span> apacherocketmq/rocketmq-dashboard:latest
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">--name</span> rocketmq-dashboard <span class="token parameter variable">-e</span> <span class="token string">"JAVA_OPTS=-Drocketmq.namesrv.addr=127.0.0.1:9876"</span> <span class="token parameter variable">-p</span> <span class="token number">8080</span>:8080 <span class="token parameter variable">-t</span> apacherocketmq/rocketmq-dashboard
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="_2-2-在springboot项目中集成" tabindex="-1"><a class="header-anchor" href="#_2-2-在springboot项目中集成" aria-hidden="true">#</a> 2.2 在springboot项目中集成</h3>
 <p>创建maven空项目，作为父项目管理依赖，只有POM文件</p>
 <div class="language-xml ext-xml line-numbers-mode"><pre v-pre class="language-xml"><code><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?></span>
@@ -730,4 +740,11 @@ message<span class="token punctuation">.</span><span class="token function">putU
 <p><strong>怎么确保消息有顺序</strong></p>
 <p>一个主题里只放一个队列</p>
 <p>不能使用并发</p>
+<h2 id="第6章-rabbit" tabindex="-1"><a class="header-anchor" href="#第6章-rabbit" aria-hidden="true">#</a> 第6章 rabbit</h2>
+<p>安装</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>docker pull rabbitmq:management
+docker run -d --hostname my-rabbit --name rabbit -p 15672:15672 -p 5672:5672 rabbitmq:management
+
+http://localhost:15672/
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="第7章-kafka" tabindex="-1"><a class="header-anchor" href="#第7章-kafka" aria-hidden="true">#</a> 第7章 kafka</h2>
 </div></template>

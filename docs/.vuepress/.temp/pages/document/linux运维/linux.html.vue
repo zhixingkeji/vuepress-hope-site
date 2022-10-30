@@ -292,4 +292,37 @@ tar -tf archive.tar  #显示一个包中的内容</p>
 <span class="token function">service</span> nginx status
 
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="第8章-centos" tabindex="-1"><a class="header-anchor" href="#第8章-centos" aria-hidden="true">#</a> 第8章 centos</h2>
+<h3 id="_8-1-centos安装jdk" tabindex="-1"><a class="header-anchor" href="#_8-1-centos安装jdk" aria-hidden="true">#</a> 8.1 centos安装jdk</h3>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># 搜索软件</span>
+yum search <span class="token function">java</span><span class="token operator">|</span><span class="token function">grep</span> jdk
+
+<span class="token comment"># 安装jdk</span>
+yum <span class="token function">install</span> java-11-openjdk <span class="token parameter variable">-y</span>
+
+<span class="token comment"># 默认目录</span>
+/usr/lib/jvm/java-11-openjdk-11.0.11.0.9-1.el7_9.x86_64
+
+<span class="token comment">#设置变量 /etc/profile</span>
+<span class="token function">vim</span> /etc/profile
+
+<span class="token comment"># 加入下列信息</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">JAVA_HOME</span><span class="token operator">=</span>/usr/local/jdk/jdk1.8.0_181
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">CLASSPATH</span><span class="token operator">=</span>$:CLASSPATH:<span class="token variable">$JAVA_HOME</span>/lib/
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token environment constant">$PATH</span><span class="token builtin class-name">:</span><span class="token variable">$JAVA_HOME</span>/bin
+
+<span class="token comment"># 使修改生效</span>
+<span class="token builtin class-name">source</span> /etc/profile
+
+<span class="token comment"># 验证</span>
+<span class="token function">java</span> <span class="token parameter variable">-version</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="第9章-deepin" tabindex="-1"><a class="header-anchor" href="#第9章-deepin" aria-hidden="true">#</a> 第9章 deepin</h2>
+<h3 id="_9-1-安装双系统引导工具" tabindex="-1"><a class="header-anchor" href="#_9-1-安装双系统引导工具" aria-hidden="true">#</a> 9.1 安装双系统引导工具</h3>
+<p>安装refind</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>apt install refind
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>修改conf文件</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code></code></pre><div class="line-numbers" aria-hidden="true"></div></div><p>下载主题</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code></code></pre><div class="line-numbers" aria-hidden="true"></div></div><p>bios设置</p>
+<p>关闭安全引导</p>
+<p>使用refind作为第一优先级</p>
+<h3 id="_9-2" tabindex="-1"><a class="header-anchor" href="#_9-2" aria-hidden="true">#</a> 9.2</h3>
 </div></template>

@@ -1,10 +1,12 @@
 <template><div><h1 id="编程基础" tabindex="-1"><a class="header-anchor" href="#编程基础" aria-hidden="true">#</a> 编程基础</h1>
 <h2 id="第1章-idea全家桶" tabindex="-1"><a class="header-anchor" href="#第1章-idea全家桶" aria-hidden="true">#</a> 第1章 idea全家桶</h2>
 <h3 id="_1-1-快捷键篇" tabindex="-1"><a class="header-anchor" href="#_1-1-快捷键篇" aria-hidden="true">#</a> 1.1 快捷键篇</h3>
-<p>IDEA快捷键</p>
-<p>ctrl+p 显示括号里所有的参数方法</p>
-<p>alt+enter  显示上下文操作 可以构建局部变量</p>
+<p>IDEA 快捷键</p>
+<p>ctrl + p 显示括号里所有的参数方法</p>
+<p>alt + enter  显示上下文操作 可以构建局部变量</p>
 <p>.var 快速引用</p>
+<p>ctrl + shift + num 新增书签</p>
+<p>ctrl + num  查找书签</p>
 <h3 id="_1-2-插件篇" tabindex="-1"><a class="header-anchor" href="#_1-2-插件篇" aria-hidden="true">#</a> 1.2 插件篇</h3>
 <p>通用</p>
 <ul>

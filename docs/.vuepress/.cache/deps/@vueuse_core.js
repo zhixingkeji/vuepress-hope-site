@@ -26,8 +26,8 @@ import {
   unref,
   watch,
   watchEffect
-} from "./chunk-ZMJ3B4XV.js";
-import "./chunk-DPQNMCNE.js";
+} from "./chunk-HKP7SYEB.js";
+import "./chunk-PISKSQSP.js";
 import {
   init_define_BACK_TO_TOP_LOCALES,
   init_define_CODE_COPY_LOCALES,
@@ -61,7 +61,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_@vueuse_core@9.3.0@@vueuse/core/index.mjs
+// node_modules/_@vueuse_core@9.4.0@@vueuse/core/index.mjs
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -77,7 +77,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_@vueuse_shared@9.3.0@@vueuse/shared/index.mjs
+// node_modules/_@vueuse_shared@9.4.0@@vueuse/shared/index.mjs
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -127,7 +127,7 @@ function del(target, key) {
   delete target[key];
 }
 
-// node_modules/_@vueuse_shared@9.3.0@@vueuse/shared/index.mjs
+// node_modules/_@vueuse_shared@9.4.0@@vueuse/shared/index.mjs
 var __defProp$9 = Object.defineProperty;
 var __defProps$6 = Object.defineProperties;
 var __getOwnPropDescs$6 = Object.getOwnPropertyDescriptors;
@@ -254,7 +254,7 @@ function throttleFilter(ms, trailing = true, leading = true) {
         isLeading = true;
         clear();
         invoke2();
-      }, duration);
+      }, duration - elapsed);
     }
     if (!leading && !timer)
       timer = setTimeout(() => isLeading = true, duration);
@@ -605,8 +605,6 @@ function useDebounceFn(fn, ms = 200, options = {}) {
   return createFilterWrapper(debounceFilter(ms, options), fn);
 }
 function refDebounced(value, ms = 200, options = {}) {
-  if (ms <= 0)
-    return value;
   const debounced = ref(value.value);
   const updater = useDebounceFn(() => {
     debounced.value = value.value;
@@ -946,7 +944,7 @@ function useCounter(initialValue = 0, options = {}) {
   const inc = (delta = 1) => count.value = Math.min(max, count.value + delta);
   const dec = (delta = 1) => count.value = Math.max(min, count.value - delta);
   const get2 = () => count.value;
-  const set3 = (val) => count.value = val;
+  const set3 = (val) => count.value = Math.max(min, Math.min(max, val));
   const reset = (val = initialValue) => {
     initialValue = val;
     return set3(val);
@@ -961,7 +959,7 @@ var defaultMeridiem = (hours, minutes, isLowercase, hasPeriod) => {
     m = m.split("").reduce((acc, curr) => acc += `${curr}.`, "");
   return isLowercase ? m.toLowerCase() : m;
 };
-var formatDate = (date, formatStr, options) => {
+var formatDate = (date, formatStr, options = {}) => {
   var _a2;
   const years = date.getFullYear();
   const month = date.getMonth();
@@ -1578,7 +1576,7 @@ function whenever(source, cb, options) {
   }, options);
 }
 
-// node_modules/_@vueuse_core@9.3.0@@vueuse/core/index.mjs
+// node_modules/_@vueuse_core@9.4.0@@vueuse/core/index.mjs
 function computedAsync(evaluationCallback, initialState, optionsOrRef) {
   let options;
   if (isRef(optionsOrRef)) {
@@ -2134,8 +2132,8 @@ function useBluetooth(options) {
     navigator = defaultNavigator
   } = options || {};
   const isSupported = useSupported(() => navigator && "bluetooth" in navigator);
-  const device = ref(void 0);
-  const error = ref(null);
+  const device = shallowRef(void 0);
+  const error = shallowRef(null);
   watch(device, () => {
     connectToBluetoothGATTServer();
   });
@@ -2421,17 +2419,23 @@ function useClipboard(options = {}) {
     navigator = defaultNavigator,
     read = false,
     source,
-    copiedDuring = 1500
+    copiedDuring = 1500,
+    legacy = false
   } = options;
   const events2 = ["copy", "cut"];
-  const isSupported = useSupported(() => navigator && "clipboard" in navigator);
+  const isClipboardApiSupported = useSupported(() => navigator && "clipboard" in navigator);
+  const isSupported = computed(() => isClipboardApiSupported.value || legacy);
   const text = ref("");
   const copied = ref(false);
   const timeout = useTimeoutFn(() => copied.value = false, copiedDuring);
   function updateText() {
-    navigator.clipboard.readText().then((value) => {
-      text.value = value;
-    });
+    if (isClipboardApiSupported.value) {
+      navigator.clipboard.readText().then((value) => {
+        text.value = value;
+      });
+    } else {
+      text.value = legacyRead();
+    }
   }
   if (isSupported.value && read) {
     for (const event of events2)
@@ -2439,11 +2443,28 @@ function useClipboard(options = {}) {
   }
   async function copy(value = resolveUnref(source)) {
     if (isSupported.value && value != null) {
-      await navigator.clipboard.writeText(value);
+      if (isClipboardApiSupported.value)
+        await navigator.clipboard.writeText(value);
+      else
+        legacyCopy(value);
       text.value = value;
       copied.value = true;
       timeout.start();
     }
+  }
+  function legacyCopy(value) {
+    const ta = document.createElement("textarea");
+    ta.value = value != null ? value : "";
+    ta.style.position = "absolute";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand("copy");
+    ta.remove();
+  }
+  function legacyRead() {
+    var _a2, _b, _c;
+    return (_c = (_b = (_a2 = document == null ? void 0 : document.getSelection) == null ? void 0 : _a2.call(document)) == null ? void 0 : _b.toString()) != null ? _c : "";
   }
   return {
     isSupported,
@@ -2605,8 +2626,6 @@ function useStorage(key, defaults2, storage, options = {}) {
     }
   }
   function read(event) {
-    if (event && event.key !== key)
-      return;
     pauseWatch();
     try {
       const rawValue = event ? event.newValue : storage.getItem(key);
@@ -2633,6 +2652,12 @@ function useStorage(key, defaults2, storage, options = {}) {
     }
   }
   function update(event) {
+    if (event && event.storageArea !== storage)
+      return;
+    if (event && event.key === null) {
+      data.value = rawInit;
+      return;
+    }
     if (event && event.key !== key)
       return;
     data.value = read(event);
@@ -3749,11 +3774,11 @@ function headersToObject(headers) {
   return headers;
 }
 function chainCallbacks(...callbacks) {
-  return (ctx) => {
-    callbacks.forEach(async (callback) => {
+  return async (ctx) => {
+    await callbacks.reduce((prevCallback, callback) => prevCallback.then(async () => {
       if (callback)
         ctx = __spreadValues$c(__spreadValues$c({}, ctx), await callback(ctx));
-    });
+    }), Promise.resolve());
     return ctx;
   };
 }
@@ -6075,6 +6100,39 @@ function useShare(shareOptions = {}, options = {}) {
     share
   };
 }
+var defaultSortFn = (source, compareFn) => source.sort(compareFn);
+var defaultCompare = (a, b) => a - b;
+function useSorted(...args) {
+  var _a2, _b, _c, _d;
+  const [source] = args;
+  let compareFn = defaultCompare;
+  let options = {};
+  if (args.length === 2) {
+    if (typeof args[1] === "object") {
+      options = args[1];
+      compareFn = (_a2 = options.compareFn) != null ? _a2 : defaultCompare;
+    } else {
+      compareFn = (_b = args[1]) != null ? _b : defaultCompare;
+    }
+  } else if (args.length > 2) {
+    compareFn = (_c = args[1]) != null ? _c : defaultCompare;
+    options = (_d = args[2]) != null ? _d : {};
+  }
+  const {
+    dirty = false,
+    sortFn = defaultSortFn
+  } = options;
+  if (!dirty)
+    return computed(() => sortFn([...unref(source)], compareFn));
+  watchEffect(() => {
+    const result = sortFn(unref(source), compareFn);
+    if (isRef(source))
+      source.value = result;
+    else
+      source.splice(0, source.length, ...result);
+  });
+  return source;
+}
 function useSpeechRecognition(options = {}) {
   const {
     interimResults = true,
@@ -6710,20 +6768,21 @@ function useTimestamp(options = {}) {
 function useTitle(newTitle = null, options = {}) {
   var _a2, _b;
   const {
-    document: document2 = defaultDocument,
-    observe = false,
-    titleTemplate = "%s"
+    document: document2 = defaultDocument
   } = options;
   const title = resolveRef((_a2 = newTitle != null ? newTitle : document2 == null ? void 0 : document2.title) != null ? _a2 : null);
   const isReadonly = newTitle && isFunction(newTitle);
   function format(t) {
-    return isFunction(titleTemplate) ? titleTemplate(t) : unref(titleTemplate).replace("%s", t);
+    if (!("titleTemplate" in options))
+      return t;
+    const template = options.titleTemplate || "%s";
+    return isFunction(template) ? template(t) : unref(template).replace(/%s/g, t);
   }
   watch(title, (t, o) => {
-    if (isString(t) && t !== o && document2)
-      document2.title = format(t);
+    if (t !== o && document2)
+      document2.title = format(isString(t) ? t : "");
   }, { immediate: true });
-  if (observe && document2 && !isReadonly) {
+  if (options.observe && !options.titleTemplate && document2 && !isReadonly) {
     useMutationObserver((_b = document2.head) == null ? void 0 : _b.querySelector("title"), () => {
       if (document2 && document2.title !== title.value)
         title.value = format(document2.title);
@@ -7098,20 +7157,37 @@ function useVibrate(options) {
   };
 }
 function useVirtualList(list, options) {
-  const containerRef = ref();
+  const { containerStyle, wrapperProps, scrollTo, calculateRange, currentList, containerRef } = "itemHeight" in options ? useVerticalVirtualList(options, list) : useHorizontalVirtualList(options, list);
+  return {
+    list: currentList,
+    scrollTo,
+    containerProps: {
+      ref: containerRef,
+      onScroll: () => {
+        calculateRange();
+      },
+      style: containerStyle
+    },
+    wrapperProps
+  };
+}
+function useVirtualListResourses(list) {
+  const containerRef = ref(null);
   const size = useElementSize(containerRef);
   const currentList = ref([]);
   const source = shallowRef(list);
   const state = ref({ start: 0, end: 10 });
-  const { itemHeight, overscan = 5 } = options;
-  const getViewCapacity = (containerHeight) => {
-    if (typeof itemHeight === "number")
-      return Math.ceil(containerHeight / itemHeight);
+  return { state, source, currentList, size, containerRef };
+}
+function createGetViewCapacity(state, source, itemSize) {
+  return (containerHeight) => {
+    if (typeof itemSize === "number")
+      return Math.ceil(containerHeight / itemSize);
     const { start = 0 } = state.value;
     let sum = 0;
     let capacity = 0;
     for (let i = start; i < source.value.length; i++) {
-      const height = itemHeight(i);
+      const height = itemSize(i);
       sum += height;
       if (sum >= containerHeight) {
         capacity = i;
@@ -7120,26 +7196,30 @@ function useVirtualList(list, options) {
     }
     return capacity - start;
   };
-  const getOffset = (scrollTop) => {
-    if (typeof itemHeight === "number")
-      return Math.floor(scrollTop / itemHeight) + 1;
+}
+function createGetOffset(source, itemSize) {
+  return (scrollDirection) => {
+    if (typeof itemSize === "number")
+      return Math.floor(scrollDirection / itemSize) + 1;
     let sum = 0;
     let offset = 0;
     for (let i = 0; i < source.value.length; i++) {
-      const height = itemHeight(i);
-      sum += height;
-      if (sum >= scrollTop) {
+      const size = itemSize(i);
+      sum += size;
+      if (sum >= scrollDirection) {
         offset = i;
         break;
       }
     }
     return offset + 1;
   };
-  const calculateRange = () => {
+}
+function createCalculateRange(type, overscan, getOffset, getViewCapacity, { containerRef, state, currentList, source }) {
+  return () => {
     const element = containerRef.value;
     if (element) {
-      const offset = getOffset(element.scrollTop);
-      const viewCapacity = getViewCapacity(element.clientHeight);
+      const offset = getOffset(type === "vertical" ? element.scrollTop : element.scrollLeft);
+      const viewCapacity = getViewCapacity(type === "vertical" ? element.clientHeight : element.clientWidth);
       const from = offset - overscan;
       const to = offset + viewCapacity + overscan;
       state.value = {
@@ -7152,29 +7232,86 @@ function useVirtualList(list, options) {
       }));
     }
   };
+}
+function createGetDistance(itemSize, source) {
+  return (index) => {
+    if (typeof itemSize === "number") {
+      const size2 = index * itemSize;
+      return size2;
+    }
+    const size = source.value.slice(0, index).reduce((sum, _, i) => sum + itemSize(i), 0);
+    return size;
+  };
+}
+function useWatchForSizes(size, list, calculateRange) {
   watch([size.width, size.height, list], () => {
     calculateRange();
   });
-  const totalHeight = computed(() => {
-    if (typeof itemHeight === "number")
-      return source.value.length * itemHeight;
-    return source.value.reduce((sum, _, index) => sum + itemHeight(index), 0);
+}
+function createComputedTotalSize(itemSize, source) {
+  return computed(() => {
+    if (typeof itemSize === "number")
+      return source.value.length * itemSize;
+    return source.value.reduce((sum, _, index) => sum + itemSize(index), 0);
   });
-  const getDistanceTop = (index) => {
-    if (typeof itemHeight === "number") {
-      const height2 = index * itemHeight;
-      return height2;
-    }
-    const height = source.value.slice(0, index).reduce((sum, _, i) => sum + itemHeight(i), 0);
-    return height;
-  };
-  const scrollTo = (index) => {
+}
+var scrollToDictionaryForElementScrollKey = {
+  horizontal: "scrollLeft",
+  vertical: "scrollTop"
+};
+function createScrollTo(type, calculateRange, getDistance, containerRef) {
+  return (index) => {
     if (containerRef.value) {
-      containerRef.value.scrollTop = getDistanceTop(index);
+      containerRef.value[scrollToDictionaryForElementScrollKey[type]] = getDistance(index);
       calculateRange();
     }
   };
+}
+function useHorizontalVirtualList(options, list) {
+  const resources = useVirtualListResourses(list);
+  const { state, source, currentList, size, containerRef } = resources;
+  const containerStyle = { overflowX: "auto" };
+  const { itemWidth, overscan = 5 } = options;
+  const getViewCapacity = createGetViewCapacity(state, source, itemWidth);
+  const getOffset = createGetOffset(source, itemWidth);
+  const calculateRange = createCalculateRange("horizontal", overscan, getOffset, getViewCapacity, resources);
+  const getDistanceLeft = createGetDistance(itemWidth, source);
+  const offsetLeft = computed(() => getDistanceLeft(state.value.start));
+  const totalWidth = createComputedTotalSize(itemWidth, source);
+  useWatchForSizes(size, list, calculateRange);
+  const scrollTo = createScrollTo("horizontal", calculateRange, getDistanceLeft, containerRef);
+  const wrapperProps = computed(() => {
+    return {
+      style: {
+        height: "100%",
+        width: `${totalWidth.value - offsetLeft.value}px`,
+        marginLeft: `${offsetLeft.value}px`,
+        display: "flex"
+      }
+    };
+  });
+  return {
+    scrollTo,
+    calculateRange,
+    wrapperProps,
+    containerStyle,
+    currentList,
+    containerRef
+  };
+}
+function useVerticalVirtualList(options, list) {
+  const resources = useVirtualListResourses(list);
+  const { state, source, currentList, size, containerRef } = resources;
+  const containerStyle = { overflowY: "auto" };
+  const { itemHeight, overscan = 5 } = options;
+  const getViewCapacity = createGetViewCapacity(state, source, itemHeight);
+  const getOffset = createGetOffset(source, itemHeight);
+  const calculateRange = createCalculateRange("vertical", overscan, getOffset, getViewCapacity, resources);
+  const getDistanceTop = createGetDistance(itemHeight, source);
   const offsetTop = computed(() => getDistanceTop(state.value.start));
+  const totalHeight = createComputedTotalSize(itemHeight, source);
+  useWatchForSizes(size, list, calculateRange);
+  const scrollTo = createScrollTo("vertical", calculateRange, getDistanceTop, containerRef);
   const wrapperProps = computed(() => {
     return {
       style: {
@@ -7184,18 +7321,13 @@ function useVirtualList(list, options) {
       }
     };
   });
-  const containerStyle = { overflowY: "auto" };
   return {
-    list: currentList,
+    calculateRange,
     scrollTo,
-    containerProps: {
-      ref: containerRef,
-      onScroll: () => {
-        calculateRange();
-      },
-      style: containerStyle
-    },
-    wrapperProps
+    containerStyle,
+    wrapperProps,
+    currentList,
+    containerRef
   };
 }
 var useWakeLock = (options = {}) => {
@@ -7346,10 +7478,11 @@ function useWebSocket(url, options = {}) {
     return true;
   };
   const _init = () => {
+    if (explicitlyClosed)
+      return;
     const ws = new WebSocket(url, protocols);
     wsRef.value = ws;
     status.value = "CONNECTING";
-    explicitlyClosed = false;
     ws.onopen = () => {
       status.value = "OPEN";
       onConnected == null ? void 0 : onConnected(ws);
@@ -7379,8 +7512,8 @@ function useWebSocket(url, options = {}) {
       onError == null ? void 0 : onError(ws, e);
     };
     ws.onmessage = (e) => {
-      resetHeartbeat();
       if (options.heartbeat) {
+        resetHeartbeat();
         const {
           message = DEFAULT_PING_MESSAGE
         } = resolveNestedOptions(options.heartbeat);
@@ -7414,6 +7547,7 @@ function useWebSocket(url, options = {}) {
   }
   const open = () => {
     close();
+    explicitlyClosed = false;
     retried = 0;
     _init();
   };
@@ -7426,10 +7560,10 @@ function useWebSocket(url, options = {}) {
     ws: wsRef
   };
 }
-function useWebWorker(url, workerOptions, options = {}) {
+function useWebWorker(arg0, workerOptions, options) {
   const {
     window: window2 = defaultWindow
-  } = options;
+  } = options != null ? options : {};
   const data = ref(null);
   const worker = shallowRef();
   const post = function post2(val) {
@@ -7443,7 +7577,12 @@ function useWebWorker(url, workerOptions, options = {}) {
     worker.value.terminate();
   };
   if (window2) {
-    worker.value = new Worker(url, workerOptions);
+    if (isString(arg0))
+      worker.value = new Worker(arg0, workerOptions);
+    else if (isFunction(arg0))
+      worker.value = arg0();
+    else
+      worker.value = arg0;
     worker.value.onmessage = (e) => {
       data.value = e.data;
     };
@@ -7825,6 +7964,7 @@ export {
   useScrollLock,
   useSessionStorage,
   useShare,
+  useSorted,
   useSpeechRecognition,
   useSpeechSynthesis,
   useStepper,

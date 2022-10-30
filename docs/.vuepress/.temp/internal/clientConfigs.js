@@ -1,42 +1,15 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-import clientConfig0 from 'C:/Project/vuepress-hope-site/docs/.vuepress/.temp/sass-palette/load-hope.js'
-import clientConfig1 from 'C:/Project/vuepress-hope-site/docs/.vuepress/.temp/components/config.js'
-import clientConfig2 from 'C:/Project/vuepress-hope-site/node_modules/_@vuepress_plugin-active-header-links@2.0.0-beta.49@@vuepress/plugin-active-header-links/lib/client/config.js'
-import clientConfig3 from 'C:/Project/vuepress-hope-site/node_modules/_@vuepress_plugin-external-link-icon@2.0.0-beta.49@@vuepress/plugin-external-link-icon/lib/client/config.js'
-import clientConfig4 from 'C:/Project/vuepress-hope-site/node_modules/_@vuepress_plugin-nprogress@2.0.0-beta.49@@vuepress/plugin-nprogress/lib/client/config.js'
-import clientConfig5 from 'C:/Project/vuepress-hope-site/node_modules/_@vuepress_plugin-theme-data@2.0.0-beta.49@@vuepress/plugin-theme-data/lib/client/config.js'
-import clientConfig6 from 'C:/Project/vuepress-hope-site/node_modules/_vuepress-plugin-comment2@2.0.0-beta.91@vuepress-plugin-comment2/lib/client/config.js'
-import clientConfig7 from 'C:/Project/vuepress-hope-site/node_modules/_vuepress-plugin-copy-code2@2.0.0-beta.91@vuepress-plugin-copy-code2/lib/client/config.js'
-import clientConfig8 from 'C:/Project/vuepress-hope-site/docs/.vuepress/.temp/md-enhance/config.js'
-import clientConfig9 from 'C:/Project/vuepress-hope-site/node_modules/_vuepress-plugin-photo-swipe@2.0.0-beta.91@vuepress-plugin-photo-swipe/lib/client/config.js'
-import clientConfig10 from 'C:/Project/vuepress-hope-site/docs/.vuepress/.temp/pwa2/config.js'
-import clientConfig11 from 'C:/Project/vuepress-hope-site/docs/.vuepress/.temp/theme-hope/config.js'
-=======
-=======
->>>>>>> 815481ce3079460341bfa9ef9afd3199c8319e8d
-=======
->>>>>>> 815481ce3079460341bfa9ef9afd3199c8319e8d
-import clientConfig0 from 'D:/Project/MyProject/hope/docs/.vuepress/.temp/sass-palette/load-hope.js'
-import clientConfig1 from 'D:/Project/MyProject/hope/docs/.vuepress/.temp/components/config.js'
-import clientConfig2 from 'D:/Project/MyProject/hope/node_modules/_@vuepress_plugin-active-header-links@2.0.0-beta.49@@vuepress/plugin-active-header-links/lib/client/config.js'
-import clientConfig3 from 'D:/Project/MyProject/hope/node_modules/_@vuepress_plugin-external-link-icon@2.0.0-beta.49@@vuepress/plugin-external-link-icon/lib/client/config.js'
-import clientConfig4 from 'D:/Project/MyProject/hope/node_modules/_@vuepress_plugin-nprogress@2.0.0-beta.49@@vuepress/plugin-nprogress/lib/client/config.js'
-import clientConfig5 from 'D:/Project/MyProject/hope/node_modules/_@vuepress_plugin-theme-data@2.0.0-beta.49@@vuepress/plugin-theme-data/lib/client/config.js'
-import clientConfig6 from 'D:/Project/MyProject/hope/node_modules/_vuepress-plugin-comment2@2.0.0-beta.91@vuepress-plugin-comment2/lib/client/config.js'
-import clientConfig7 from 'D:/Project/MyProject/hope/node_modules/_vuepress-plugin-copy-code2@2.0.0-beta.91@vuepress-plugin-copy-code2/lib/client/config.js'
-import clientConfig8 from 'D:/Project/MyProject/hope/docs/.vuepress/.temp/md-enhance/config.js'
-import clientConfig9 from 'D:/Project/MyProject/hope/node_modules/_vuepress-plugin-photo-swipe@2.0.0-beta.91@vuepress-plugin-photo-swipe/lib/client/config.js'
-import clientConfig10 from 'D:/Project/MyProject/hope/docs/.vuepress/.temp/pwa2/config.js'
-import clientConfig11 from 'D:/Project/MyProject/hope/docs/.vuepress/.temp/theme-hope/config.js'
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 815481ce3079460341bfa9ef9afd3199c8319e8d
-=======
->>>>>>> 815481ce3079460341bfa9ef9afd3199c8319e8d
-=======
->>>>>>> 815481ce3079460341bfa9ef9afd3199c8319e8d
+import clientConfig0 from 'E:/Code/Project/vuepress-hope-site/docs/.vuepress/.temp/sass-palette/load-hope.js'
+import clientConfig1 from 'E:/Code/Project/vuepress-hope-site/docs/.vuepress/.temp/components/config.js'
+import clientConfig2 from 'E:/Code/Project/vuepress-hope-site/node_modules/_@vuepress_plugin-active-header-links@2.0.0-beta.49@@vuepress/plugin-active-header-links/lib/client/config.js'
+import clientConfig3 from 'E:/Code/Project/vuepress-hope-site/node_modules/_@vuepress_plugin-external-link-icon@2.0.0-beta.49@@vuepress/plugin-external-link-icon/lib/client/config.js'
+import clientConfig4 from 'E:/Code/Project/vuepress-hope-site/node_modules/_@vuepress_plugin-nprogress@2.0.0-beta.49@@vuepress/plugin-nprogress/lib/client/config.js'
+import clientConfig5 from 'E:/Code/Project/vuepress-hope-site/node_modules/_@vuepress_plugin-theme-data@2.0.0-beta.49@@vuepress/plugin-theme-data/lib/client/config.js'
+import clientConfig6 from 'E:/Code/Project/vuepress-hope-site/node_modules/_vuepress-plugin-comment2@2.0.0-beta.91@vuepress-plugin-comment2/lib/client/config.js'
+import clientConfig7 from 'E:/Code/Project/vuepress-hope-site/node_modules/_vuepress-plugin-copy-code2@2.0.0-beta.91@vuepress-plugin-copy-code2/lib/client/config.js'
+import clientConfig8 from 'E:/Code/Project/vuepress-hope-site/docs/.vuepress/.temp/md-enhance/config.js'
+import clientConfig9 from 'E:/Code/Project/vuepress-hope-site/node_modules/_vuepress-plugin-photo-swipe@2.0.0-beta.91@vuepress-plugin-photo-swipe/lib/client/config.js'
+import clientConfig10 from 'E:/Code/Project/vuepress-hope-site/docs/.vuepress/.temp/pwa2/config.js'
+import clientConfig11 from 'E:/Code/Project/vuepress-hope-site/docs/.vuepress/.temp/theme-hope/config.js'
 
 export const clientConfigs = [
   clientConfig0,

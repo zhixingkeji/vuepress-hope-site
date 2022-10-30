@@ -7,7 +7,7 @@
 <p>​	自动配置spring和第三方功能</p>
 <p>​	生产级别的监控，健康检查及外部化配置</p>
 <p>​	无代码生成，无需编写xml</p>
-<h3 id="_1-2-快速体验-springboot" tabindex="-1"><a class="header-anchor" href="#_1-2-快速体验-springboot" aria-hidden="true">#</a> 1.2 快速体验 springboot</h3>
+<h3 id="_1-2-基本注解" tabindex="-1"><a class="header-anchor" href="#_1-2-基本注解" aria-hidden="true">#</a> 1.2 基本注解</h3>
 <p>​	@RestController   代表@responsebody和@controller</p>
 <p>​	@GetMapping(&quot;/hello&quot;)   响应get请求</p>
 <p>​	@Configuration  注册配置类</p>
@@ -16,7 +16,29 @@
 <p>​	@Component  注册spring组件</p>
 <p>​	@ConfigurationProperties（prefix=“user”）自动装配</p>
 <p>​	@Value 自动装配</p>
-<h3 id="_1-3-自动配置原理入门" tabindex="-1"><a class="header-anchor" href="#_1-3-自动配置原理入门" aria-hidden="true">#</a> 1.3 自动配置原理入门</h3>
+<h3 id="_1-3-自动配置原理" tabindex="-1"><a class="header-anchor" href="#_1-3-自动配置原理" aria-hidden="true">#</a> 1.3 自动配置原理</h3>
+<p>基于java代码的bean配置</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>@Configuration
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>自动装配条件</p>
+<div class="language-java ext-java line-numbers-mode"><pre v-pre class="language-java"><code><span class="token comment">//必须错在该类</span>
+<span class="token annotation punctuation">@ConditionalOnclass</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token class-name">SqlSessionFactory</span><span class="token punctuation">.</span><span class="token keyword">class</span> <span class="token punctuation">,</span> <span class="token class-name">SqlSessionFactoryBean</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">//必须存在该bean</span>
+<span class="token annotation punctuation">@ConditionalOnBean</span><span class="token punctuation">(</span><span class="token class-name">DataSource</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>bean参数获取</p>
+<div class="language-java ext-java line-numbers-mode"><pre v-pre class="language-java"><code><span class="token comment">//读取配置文件中的信息 封装到该类里</span>
+<span class="token annotation punctuation">@ConfigurationProperties</span><span class="token punctuation">(</span>prefix <span class="token operator">=</span> <span class="token string">"spring.datasource"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DataSourceProperties</span> <span class="token punctuation">{</span>
+  <span class="token keyword">private</span> <span class="token class-name">String</span> username<span class="token punctuation">;</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>bean的发现</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>依赖jar包中的bean是如何被发现的 
+@SpringbootApplication -> @EnableAutoConfiguration -> @Import -> getCandidateConfigurations -> loadSpringFactories方法找到META-INF/spring.factories文件 -> 执行xxxAutoConfiguration配置类
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>bean的加载</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>1. 使用@Configuration 和 @Bean 注解
+2. 使用@Controller @Service @Repository @Component 
+3. @Import
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>引入场景启动器</p>
 <p>自动配置版本号，可以在pom的properties标签里修改版本号</p>
 <div class="language-xml ext-xml line-numbers-mode"><pre v-pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>properties</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mysql.version</span><span class="token punctuation">></span></span>5.1.34<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mysql.verison</span><span class="token punctuation">></span></span>
@@ -36,7 +58,100 @@
       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>exclution</span><span class="token punctuation">></span></span>
   	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>exclutions</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependce</span><span class="token punctuation">></span></span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_1-4-lombok简化开发" tabindex="-1"><a class="header-anchor" href="#_1-4-lombok简化开发" aria-hidden="true">#</a> 1.4 lombok简化开发</h3>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>优点</li>
+</ul>
+<p>简化开发 定义了某应用场景里所有需要的jar包 和版本号 以及相关配置</p>
+<p>解决了jar包冲突 不用手动导包</p>
+<ul>
+<li>原理</li>
+</ul>
+<p>@SpringBootApplication注解开启了一个@EnableAutoConfiguration注解的自动配置功能, 最终会调用到 loadSpringFactories，这个方法就会读取被 @Configuration 标识的配置类下 META-INF/spring.factories文件</p>
+<p>@Condition  是自动配置的条件, 找到该类才自动配置</p>
+<h3 id="_1-4-自定义starter" tabindex="-1"><a class="header-anchor" href="#_1-4-自定义starter" aria-hidden="true">#</a> 1.4 自定义starter</h3>
+<p>项目结构</p>
+<p>配置类</p>
+<div class="language-java ext-java line-numbers-mode"><pre v-pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>example<span class="token punctuation">.</span>demospringbootstarter<span class="token punctuation">.</span>config</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">com<span class="token punctuation">.</span>example<span class="token punctuation">.</span>demospringbootstarter<span class="token punctuation">.</span>properties<span class="token punctuation">.</span></span><span class="token class-name">DemoProperties</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">com<span class="token punctuation">.</span>example<span class="token punctuation">.</span>demospringbootstarter<span class="token punctuation">.</span>service<span class="token punctuation">.</span></span><span class="token class-name">DemoService</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>beans<span class="token punctuation">.</span>factory<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Autowired</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token punctuation">.</span>autoconfigure<span class="token punctuation">.</span>condition<span class="token punctuation">.</span></span><span class="token class-name">ConditionalOnProperty</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token punctuation">.</span>context<span class="token punctuation">.</span>properties<span class="token punctuation">.</span></span><span class="token class-name">EnableConfigurationProperties</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Bean</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Configuration</span></span><span class="token punctuation">;</span>
+
+<span class="token annotation punctuation">@Configuration</span>
+<span class="token annotation punctuation">@EnableConfigurationProperties</span><span class="token punctuation">(</span><span class="token class-name">DemoProperties</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@ConditionalOnProperty</span><span class="token punctuation">(</span>
+        prefix <span class="token operator">=</span> <span class="token string">"demo"</span><span class="token punctuation">,</span>
+        name <span class="token operator">=</span> <span class="token string">"isopen"</span><span class="token punctuation">,</span>
+        havingValue <span class="token operator">=</span> <span class="token string">"true"</span>
+<span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DemoConfig</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> <span class="token class-name">DemoProperties</span> demoProperties<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Bean</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"demo"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">DemoService</span> <span class="token function">demoService</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">DemoService</span><span class="token punctuation">(</span>demoProperties<span class="token punctuation">.</span><span class="token function">getSayWhat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> demoProperties<span class="token punctuation">.</span><span class="token function">getToWho</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>DemoProperties</p>
+<div class="language-java ext-java line-numbers-mode"><pre v-pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>example<span class="token punctuation">.</span>demospringbootstarter<span class="token punctuation">.</span>properties</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token punctuation">.</span>context<span class="token punctuation">.</span>properties<span class="token punctuation">.</span></span><span class="token class-name">ConfigurationProperties</span></span><span class="token punctuation">;</span>
+
+<span class="token annotation punctuation">@ConfigurationProperties</span><span class="token punctuation">(</span>prefix <span class="token operator">=</span> <span class="token string">"demo"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DemoProperties</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> sayWhat<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> toWho<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getSayWhat</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> sayWhat<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setSayWhat</span><span class="token punctuation">(</span><span class="token class-name">String</span> sayWhat<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>sayWhat <span class="token operator">=</span> sayWhat<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getToWho</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> toWho<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setToWho</span><span class="token punctuation">(</span><span class="token class-name">String</span> toWho<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>toWho <span class="token operator">=</span> toWho<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>DemoService</p>
+<div class="language-java ext-java line-numbers-mode"><pre v-pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>example<span class="token punctuation">.</span>demospringbootstarter<span class="token punctuation">.</span>service</span><span class="token punctuation">;</span>
+
+
+<span class="token comment">//不需要service注解</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DemoService</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> sayWhat<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> toWho<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">DemoService</span><span class="token punctuation">(</span><span class="token class-name">String</span> sayWhat<span class="token punctuation">,</span> <span class="token class-name">String</span> toWho<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>sayWhat <span class="token operator">=</span> sayWhat<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>toWho <span class="token operator">=</span> toWho<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>sayWhat <span class="token operator">+</span> <span class="token string">"!  "</span> <span class="token operator">+</span> toWho<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>resources / META-INF / spring.factories</p>
+<div class="language-properties ext-properties line-numbers-mode"><pre v-pre class="language-properties"><code><span class="token comment">#-------starter自动装配---------</span>
+<span class="token key attr-name">org.springframework.boot.autoconfigure.EnableAutoConfiguration</span><span class="token punctuation">=</span><span class="token value attr-value">com.example.demospringbootstarter.config.DemoConfig</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>安装到仓库</p>
+<p>install插件</p>
+<p>推送到私服</p>
+<p>deploy插件</p>
+<h3 id="_1-4-lombok简化开发" tabindex="-1"><a class="header-anchor" href="#_1-4-lombok简化开发" aria-hidden="true">#</a> 1.4 lombok简化开发</h3>
 <ul>
 <li><code v-pre>@ToString</code></li>
 </ul>
@@ -329,7 +444,9 @@ log<span class="token punctuation">.</span><span class="token function">error</s
            description <span class="token operator">=</span> <span class="token string">"参数"</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">}</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>访问页面</p>
 <div class="language-java ext-java line-numbers-mode"><pre v-pre class="language-java"><code>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>localhost<span class="token operator">:</span><span class="token number">8080</span><span class="token operator">/</span>swagger<span class="token operator">-</span>ui<span class="token operator">/</span>index<span class="token punctuation">.</span>html
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="第9章-freemarker视图模板" tabindex="-1"><a class="header-anchor" href="#第9章-freemarker视图模板" aria-hidden="true">#</a> 第9章 freemarker视图模板</h2>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="_8-3-mockito" tabindex="-1"><a class="header-anchor" href="#_8-3-mockito" aria-hidden="true">#</a> 8.3 mockito</h3>
+<h3 id="_8-4-hutool" tabindex="-1"><a class="header-anchor" href="#_8-4-hutool" aria-hidden="true">#</a> 8.4 hutool</h3>
+<h2 id="第9章-freemarker视图模板" tabindex="-1"><a class="header-anchor" href="#第9章-freemarker视图模板" aria-hidden="true">#</a> 第9章 freemarker视图模板</h2>
 <h3 id="_9-1-概述" tabindex="-1"><a class="header-anchor" href="#_9-1-概述" aria-hidden="true">#</a> 9.1 概述</h3>
 <p>Freemarker是一款模板引擎，是一种基于模版生成静态文件的通用工具，它是使用纯java编写的，一般用来生成HTML页面。</p>
 <p>注释</p>

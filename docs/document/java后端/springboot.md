@@ -30,7 +30,7 @@ SpringBoot优点
 
 
 
-### 1.2 快速体验 springboot
+### 1.2 基本注解
 
 ​	@RestController   代表@responsebody和@controller
 
@@ -50,7 +50,62 @@ SpringBoot优点
 
 
 
-### 1.3 自动配置原理入门
+### 1.3 自动配置原理
+
+基于java代码的bean配置
+
+```
+@Configuration
+```
+
+
+
+自动装配条件
+
+```java
+//必须错在该类
+@ConditionalOnclass({SqlSessionFactory.class , SqlSessionFactoryBean.class})
+//必须存在该bean
+@ConditionalOnBean(DataSource.class)
+```
+
+
+
+bean参数获取
+
+```java
+//读取配置文件中的信息 封装到该类里
+@ConfigurationProperties(prefix = "spring.datasource")
+public class DataSourceProperties {
+  private String username;
+    ...
+}
+```
+
+
+
+bean的发现
+
+```
+依赖jar包中的bean是如何被发现的 
+@SpringbootApplication -> @EnableAutoConfiguration -> @Import -> getCandidateConfigurations -> loadSpringFactories方法找到META-INF/spring.factories文件 -> 执行xxxAutoConfiguration配置类
+```
+
+
+
+bean的加载
+
+```
+1. 使用@Configuration 和 @Bean 注解
+2. 使用@Controller @Service @Repository @Component 
+3. @Import
+```
+
+
+
+
+
+引入场景启动器
 
 自动配置版本号，可以在pom的properties标签里修改版本号
 
@@ -88,6 +143,22 @@ SpringBoot优点
 
 
 
+- 优点
+
+简化开发 定义了某应用场景里所有需要的jar包 和版本号 以及相关配置
+
+解决了jar包冲突 不用手动导包
+
+
+
+- 原理
+
+@SpringBootApplication注解开启了一个@EnableAutoConfiguration注解的自动配置功能, 最终会调用到 loadSpringFactories，这个方法就会读取被 @Configuration 标识的配置类下 META-INF/spring.factories文件
+
+@Condition  是自动配置的条件, 找到该类才自动配置 
+
+
+
 
 
 ### 1.4 lombok简化开发
@@ -112,21 +183,23 @@ SpringBoot优点
 
 - `@NoArgsConstructor`  `@RequiredArgsConstructor`  `@AllArgsConstructor`
 
-  
-
-  生成无参的构造函数，生成带有必需参数的构造函数，生成全参的构造函数
+生成无参的构造函数，生成带有必需参数的构造函数，生成全参的构造函数
 
 
 
 - `@slf4j`
 
-  自动生成该类的 log 静态常量，要打日志就可以直接打，不用再手动 new log 静态常量了
+自动生成该类的 log 静态常量，要打日志就可以直接打，不用再手动 new log 静态常量了
 
-  
+
 
 - `@Builder`
 
-  自动生成流式 set 值写法，从此之后再也不用写一堆 setter 了
+将类转为建造者模式 , 创建对象的时候不用再写很多set
+
+```
+User user = User.builder().id(1).name("itcast").age(20).build();
+```
 
 
 
@@ -166,132 +239,7 @@ mysql 提供mysql驱动依赖
 
 
 
-### 1.7  场景启动器
 
-- 优点
-
-简化开发 定义了某应用场景里所有需要的jar包 和版本号 以及相关配置
-
-解决了jar包冲突 不用手动导包
-
-
-
-- 原理
-
-@SpringBootApplication注解开启了一个@EnableAutoConfiguration注解的自动配置功能, 最终会调用到 loadSpringFactories，这个方法就会读取被 @Configuration 标识的配置类下 META-INF/spring.factories文件
-
-@Condition  是自动配置的条件, 找到该类才自动配置 
-
-
-
-- 代码实现
-
-配置类
-
-```java
-package com.example.demospringbootstarter.config;
-
-import com.example.demospringbootstarter.properties.DemoProperties;
-import com.example.demospringbootstarter.service.DemoService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-
-@Configuration
-@EnableConfigurationProperties(DemoProperties.class)
-@ConditionalOnProperty(
-        prefix = "demo",
-        name = "isopen",
-        havingValue = "true"
-)
-public class DemoConfig {
-    @Autowired
-    private DemoProperties demoProperties;
-
-    @Bean(name = "demo")
-    public DemoService demoService() {
-        return new DemoService(demoProperties.getSayWhat(), demoProperties.getToWho());
-    }
-}
-
-```
-
-
-
-DemoProperties
-
-```java
-package com.example.demospringbootstarter.properties;
-
-import org.springframework.boot.context.properties.ConfigurationProperties;
-
-@ConfigurationProperties(prefix = "demo")
-public class DemoProperties {
-    private String sayWhat;
-    private String toWho;
-
-    public String getSayWhat() {
-        return sayWhat;
-    }
-
-    public void setSayWhat(String sayWhat) {
-        this.sayWhat = sayWhat;
-    }
-
-    public String getToWho() {
-        return toWho;
-    }
-
-    public void setToWho(String toWho) {
-        this.toWho = toWho;
-    }
-}
-
-```
-
-
-
-DemoService
-
-```java
-package com.example.demospringbootstarter.service;
-
-
-//不需要service注解
-public class DemoService {
-    public String sayWhat;
-    public String toWho;
-
-    public DemoService(String sayWhat, String toWho) {
-        this.sayWhat = sayWhat;
-        this.toWho = toWho;
-    }
-
-    public String say() {
-        return this.sayWhat + "!  " + toWho;
-    }
-}
-
-```
-
-
-
-resources / META-INF / spring.factories
-
-```properties
-#-------starter自动装配---------
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.example.demospringbootstarter.config.DemoConfig
-```
-
-
-
-推送到私服
-
-
-
-测试工程
 
 
 
@@ -647,6 +595,10 @@ spring的脚手架没有mybatisplus
 
 
 
+
+
+
+
 ## 第6章 Actutor生产指标监控
 
 could中整合了 不用单独学
@@ -671,11 +623,284 @@ could中整合了 不用单独学
 
 
 
-### 7.3 自定义stater细节
+
+
+### 7.3 自定义starter
+
+项目结构
+
+![image-20221028222344007](./asset/image-20221028222344007-16669670245351.png)
+
+HelloServiceAutoConfiguration
+
+```java
+package org.example.config;
+
+import org.example.service.HelloService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+// 自动配置类
+@Configuration
+@EnableConfigurationProperties(HelloProperties.class)
+public class HelloServiceAutoConfiguration {
+    @Autowired
+    private HelloProperties helloProperties;
+
+
+    //没有的时候才创建
+    @ConditionalOnMissingBean
+    //加了bean才会调用
+    @Bean
+    public HelloService helloService() {
+        return new HelloService(helloProperties.getName(),helloProperties.getAddress());
+    }
+}
+
+```
 
 
 
+HelloProperties
 
+```java
+package org.example.config;
+
+import org.springframework.boot.context.properties.ConfigurationProperties;
+
+//配置属性类
+@ConfigurationProperties(prefix = "hello")
+
+public class HelloProperties {
+    private String name;
+    private String address;
+
+    @Override
+    public String toString() {
+        return "HelloProperties{" +
+                "name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                '}';
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+}
+
+```
+
+
+
+HelloService
+
+```java
+package org.example.service;
+
+public class HelloService {
+    private String name;
+    private String address;
+
+    public HelloService(String name, String address) {
+        this.name = name;
+        this.address = address;
+    }
+
+    public String sayHello(){
+        return "你好,我叫" + name + ",我来自" + address;
+    }
+}
+
+```
+
+
+
+MyLog
+
+```java
+package org.example.log;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+//自定义日志注解
+
+//只能加载方法上
+@Target(ElementType.METHOD)
+@Retention(RetentionPolicy.RUNTIME)
+public @interface MyLog {
+    String desc() default "";
+}
+
+```
+
+
+
+MyLogInterceptor
+
+```java
+package org.example.log;
+
+import org.springframework.web.method.HandlerMethod;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.lang.reflect.Method;
+
+public class MyLogInterceptor extends HandlerInterceptorAdapter {
+    private  static final ThreadLocal<Long> startTimeThreadLocal = new ThreadLocal<>();
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception{
+        HandlerMethod handlerMethod = (HandlerMethod) handler;
+
+        Method method = handlerMethod.getMethod();
+
+        MyLog annotation = method.getAnnotation(MyLog.class);
+
+        if (annotation != null) {
+            long startTime = System.currentTimeMillis();
+            startTimeThreadLocal.set(startTime);
+        }
+        return true;
+    }
+
+
+    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
+
+        HandlerMethod handlerMethod = (HandlerMethod) handler;
+
+        Method method = handlerMethod.getMethod();
+
+        MyLog annotation = method.getAnnotation(MyLog.class);
+
+        if (annotation != null){
+            Long startTime = startTimeThreadLocal.get();
+            long endTime = System.currentTimeMillis();
+            long duration = endTime - startTime;
+
+            String mothodName= method.getDeclaringClass().getName()+"."+method.getName();
+
+            System.out.println("请求url" + request.getRequestURI());
+            System.out.println("请求方法名" + mothodName);
+            System.out.println("方法描述"+ annotation.desc());
+            System.out.println("执行时间" + duration );
+
+
+        }
+
+        super.postHandle(request, response, handler, modelAndView);
+
+    }
+
+
+}
+
+```
+
+
+
+MyLogAutoConfiguration
+
+```java
+package org.example.config;
+
+import org.example.log.MyLogInterceptor;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+@Configuration
+public class MyLogAutoConfiguration implements WebMvcConfigurer {
+
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(new MyLogInterceptor());
+    }
+}
+
+```
+
+
+
+resources / META-INF / spring.factories
+
+```properties
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+org.example.config.HelloServiceAutoConfiguration,\
+org.example.config.MyLogAutoConfiguration
+```
+
+
+
+安装到仓库
+
+install插件
+
+
+
+推送到私服
+
+deploy插件
+
+
+
+开始使用
+
+```java
+//pom依赖
+<dependency>
+      <groupId>org.example</groupId>
+      <artifactId>hello-spring-boot-starter</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
+    
+    
+ //yaml配置文件
+ hello:
+  name: wl
+  address: beijing
+  
+
+// 配置controller
+package org.example.controller;
+
+import org.example.service.HelloService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/hello")
+public class HelloController {
+    @Autowired
+    private HelloService  helloService;
+
+    @GetMapping("/say")
+    @MyLog("sayhello方法")
+    public String  say() {
+        return helloService.sayHello();
+    }
+}
+
+```
 
 
 
@@ -818,6 +1043,24 @@ public class ActivityController {
 ```java
 http://localhost:8080/swagger-ui/index.html
 ```
+
+
+
+
+
+### 8.3 mockito
+
+
+
+### 8.4 hutool
+
+
+
+### 8.5 阿里oss
+
+
+
+### 8.6 websocket
 
 
 

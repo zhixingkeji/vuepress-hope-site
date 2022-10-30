@@ -20,6 +20,8 @@ docker是基于go语言实现得到云开源项目。docker的理念就是一次
 
 虚拟机的缺点，资源占用多，冗余步骤多，启动慢。docker不是模拟出一个完整的操作系统，而是一个linux容器，依赖于宿主的内核，没有自己的内核。
 
+
+
 ### 1.2 docker安装
 
 **centos版docker**
@@ -189,39 +191,48 @@ jkd1.8  docker-compose.yml
 
 ### 1.4 可视化portainer
 
-
-
-创建数据卷
-
-docker volume create portainer_data
-
-
-
-拉取镜像
-
-docker pull portainer/portainer-ce:2.11.1
+```sh
+docker volume create portainer_data # 创建数据卷
+docker pull portainer/portainer-ce # 拉取镜像
+docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce # 创建容器
+https://localhost:9443 # 登录
+```
 
 
 
-创建容器
+### 1.5 切换国内源
 
-docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
+linux下
 
-
-
-登录
-
-`https://localhost:9443`
+```
+sudo vim /etc/docker/daemon.json
 
 
+{
+ "registry-mirrors": [
+ 		"http://hub-mirror.c.163.com",
+    	"https://docker.mirrors.ustc.edu.cn",
+ 		"https://registry.docker-cn.com"
+ 	]
+}
 
-账号密码
+sudo service docker restart
+docker info
+```
+
+
+
+win下
+
+```
+c: / 用户 / 你自己 /.docker / daemon.json
+```
 
 
 
 
 
-### 1.5 基本指令
+### 1.6 基本指令
 
 启动docker：systemctl start docker
 

@@ -249,7 +249,9 @@ size  <span class="token comment">//获取长度</span>
 <span class="token keyword">get</span>  <span class="token comment">//获取</span>
 has  <span class="token comment">//判断</span>
 clear  <span class="token comment">//清空</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="第2章-es7语法" tabindex="-1"><a class="header-anchor" href="#第2章-es7语法" aria-hidden="true">#</a> 第2章 ES7语法</h2>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_1-18-reflect反射" tabindex="-1"><a class="header-anchor" href="#_1-18-reflect反射" aria-hidden="true">#</a> 1.18 Reflect反射</h3>
+<p>Reflect.apply()</p>
+<h2 id="第2章-es7语法" tabindex="-1"><a class="header-anchor" href="#第2章-es7语法" aria-hidden="true">#</a> 第2章 ES7语法</h2>
 <h3 id="_2-1-includes" tabindex="-1"><a class="header-anchor" href="#_2-1-includes" aria-hidden="true">#</a> 2.1  includes</h3>
 <div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code><span class="token keyword">const</span> books <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'西游'</span><span class="token punctuation">,</span><span class="token string">'三国'</span><span class="token punctuation">,</span><span class="token string">'科技'</span><span class="token punctuation">]</span>
 books<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">'西游'</span><span class="token punctuation">)</span> <span class="token comment">//  如果存在则返回元素下标0</span>

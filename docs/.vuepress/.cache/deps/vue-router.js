@@ -1,6 +1,6 @@
 import {
   setupDevtoolsPlugin
-} from "./chunk-HMPCXJXH.js";
+} from "./chunk-MAEIMZLS.js";
 import {
   computed,
   defineComponent,
@@ -18,8 +18,8 @@ import {
   unref,
   watch,
   watchEffect
-} from "./chunk-ZMJ3B4XV.js";
-import "./chunk-DPQNMCNE.js";
+} from "./chunk-HKP7SYEB.js";
+import "./chunk-PISKSQSP.js";
 import {
   init_define_BACK_TO_TOP_LOCALES,
   init_define_CODE_COPY_LOCALES,
@@ -53,7 +53,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_vue-router@4.1.5@vue-router/dist/vue-router.esm-bundler.js
+// node_modules/_vue-router@4.1.6@vue-router/dist/vue-router.esm-bundler.js
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -69,7 +69,7 @@ init_define_REVEAL_CONFIG();
 init_define_WALINE_LOCALES();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 
-// node_modules/_vue-router@4.1.5@vue-router/dist/vue-router.mjs
+// node_modules/_vue-router@4.1.6@vue-router/dist/vue-router.mjs
 init_define_BACK_TO_TOP_LOCALES();
 init_define_CODE_COPY_LOCALES();
 init_define_CODE_COPY_OPTIONS();
@@ -972,7 +972,9 @@ function createRouterMatcher(routes, globalOptions) {
         }
       }
       originalRecord = originalRecord || matcher;
-      insertMatcher(matcher);
+      if (matcher.record.components && Object.keys(matcher.record.components).length || matcher.record.name || matcher.record.redirect) {
+        insertMatcher(matcher);
+      }
     }
     return originalMatcher ? () => {
       removeRoute(originalMatcher);
@@ -2544,7 +2546,7 @@ export {
   viewDepthKey
 };
 /*!
-  * vue-router v4.1.5
+  * vue-router v4.1.6
   * (c) 2022 Eduardo San Martin Morote
   * @license MIT
   */

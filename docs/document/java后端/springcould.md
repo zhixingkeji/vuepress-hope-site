@@ -2133,3 +2133,24 @@ System.out.printIn(ages)
 
 
 ### 10.5 RouterFunction
+
+
+
+
+
+## 第11章 通用权限系统
+
+### 11.1 项目结构
+
+```sh
+wl-parent
+	
+	wl-tools-knife4j # 日志组件
+
+
+```
+
+
+
+
+

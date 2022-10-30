@@ -10,7 +10,7 @@ React并不是一套MVC框架，它专注于MVC中View层的构建，要想实�
 
 
 
-#### 1.2 架构原理
+### 1.2 架构原理
 
 旧架构 native  → bridge → js 
 
@@ -30,7 +30,7 @@ native各个模块分离出核心依赖, 成为社区项目
 
 安装node环境 cnpm yarn
 
-安装jdk11环境 
+安装jdk17环境 必须
 
 安装AndroidStudio 和 android12s
 
@@ -66,11 +66,18 @@ Xcode
 
 
 
-安装插件
+安装cscode插件
 
 ```
 es7/React/redux/react-native/snippets
+```
 
+
+
+安装脚手架 
+
+```
+npm install -g react-native-cli
 ```
 
 
@@ -80,8 +87,11 @@ es7/React/redux/react-native/snippets
 ### 2.2 创建项目
 
 ````
-react-native init myproject
+//创建空文件夹 myproject
 cd myproject
+yarn add react-native --exact
+react-native init project
+
 yarn android
 ````
 

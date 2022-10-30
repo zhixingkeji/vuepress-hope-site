@@ -1119,19 +1119,7 @@ exports<span class="token punctuation">.</span><span class="token function-varia
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>src/Pages/ComA/index.jsx</p>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span>Component<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
-=======
 <div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
->>>>>>> 815481ce3079460341bfa9ef9afd3199c8319e8d
-=======
-<div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
->>>>>>> 815481ce3079460341bfa9ef9afd3199c8319e8d
-=======
-<div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
->>>>>>> 815481ce3079460341bfa9ef9afd3199c8319e8d
 <span class="token keyword">import</span> <span class="token punctuation">{</span>connect<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react-redux"</span><span class="token punctuation">;</span>
 
 <span class="token keyword">function</span> <span class="token function">ComA</span> <span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -1168,19 +1156,7 @@ exports<span class="token punctuation">.</span><span class="token function-varia
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">connect</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span>mapDispatchToProps<span class="token punctuation">)</span><span class="token punctuation">(</span>ComA<span class="token punctuation">)</span>
 
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>src/Pages/ComB/index.jsx</p>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span>Component<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
-=======
 <div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
->>>>>>> 815481ce3079460341bfa9ef9afd3199c8319e8d
-=======
-<div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
->>>>>>> 815481ce3079460341bfa9ef9afd3199c8319e8d
-=======
-<div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
->>>>>>> 815481ce3079460341bfa9ef9afd3199c8319e8d
 <span class="token keyword">import</span> <span class="token punctuation">{</span>connect<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react-redux"</span><span class="token punctuation">;</span>
 
 <span class="token keyword">function</span> <span class="token function">ComB</span> <span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -1282,7 +1258,7 @@ npm install --save react-redux
 <p>类似vue中的slot技术</p>
 <h3 id="_8-10-errorboundary" tabindex="-1"><a class="header-anchor" href="#_8-10-errorboundary" aria-hidden="true">#</a> 8.10 ErrorBoundary</h3>
 <p>用来捕获后代组件的错误</p>
-<h2 id="第9章-项目实战cms-manager" tabindex="-1"><a class="header-anchor" href="#第9章-项目实战cms-manager" aria-hidden="true">#</a> 第9章 项目实战cms-manager</h2>
+<h2 id="第9章-项目实战" tabindex="-1"><a class="header-anchor" href="#第9章-项目实战" aria-hidden="true">#</a> 第9章 项目实战</h2>
 <h3 id="_9-1-项目介绍" tabindex="-1"><a class="header-anchor" href="#_9-1-项目介绍" aria-hidden="true">#</a> 9.1 项目介绍</h3>
 <p>项目简介</p>
 <p>创建项目</p>

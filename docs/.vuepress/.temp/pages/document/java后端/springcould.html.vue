@@ -1,4 +1,4 @@
-<template><div><h2 id="第1章-spring-could-简介" tabindex="-1"><a class="header-anchor" href="#第1章-spring-could-简介" aria-hidden="true">#</a> 第1章 Spring could - 简介</h2>
+<template><div><h2 id="第1章-spring-could" tabindex="-1"><a class="header-anchor" href="#第1章-spring-could" aria-hidden="true">#</a> 第1章 Spring could</h2>
 <h3 id="_1-1-微服务概念" tabindex="-1"><a class="header-anchor" href="#_1-1-微服务概念" aria-hidden="true">#</a> 1.1 微服务概念</h3>
 <p>简而言之，就是将一个大型的单机应用系统拆分成若干个小的服务，这些小的服务独立部署，服务与服务之间采用rpc/http轻量协议传输数据，服务间不具有强耦合性，从而实现了单个服务的高内聚，服务与服务之间低耦合的效果。这些一个一个细分的小服务就称之为微服务。</p>
 <h3 id="_1-2-版本对应" tabindex="-1"><a class="header-anchor" href="#_1-2-版本对应" aria-hidden="true">#</a> 1.2 版本对应</h3>
@@ -193,10 +193,24 @@
 </tr>
 </tbody>
 </table>
-<h2 id="第2章-阿里nacos-服务注册与发现" tabindex="-1"><a class="header-anchor" href="#第2章-阿里nacos-服务注册与发现" aria-hidden="true">#</a> 第2章 阿里nacos - 服务注册与发现</h2>
+<h2 id="第2章-nacos-discovery" tabindex="-1"><a class="header-anchor" href="#第2章-nacos-discovery" aria-hidden="true">#</a> 第2章 nacos discovery</h2>
 <p>相关技术（eureka停更，consul，zookeeper）</p>
 <h3 id="_2-1-nacos-快速入门" tabindex="-1"><a class="header-anchor" href="#_2-1-nacos-快速入门" aria-hidden="true">#</a> 2.1 nacos 快速入门</h3>
-<h3 id="_2-2-nacos-服务端配置" tabindex="-1"><a class="header-anchor" href="#_2-2-nacos-服务端配置" aria-hidden="true">#</a> 2.2 nacos 服务端配置</h3>
+<h4 id="_2-1-1-心跳" tabindex="-1"><a class="header-anchor" href="#_2-1-1-心跳" aria-hidden="true">#</a> 2.1.1 心跳</h4>
+<p>通过心跳确定服务是否存活</p>
+<h4 id="_2-1-2-命名空间" tabindex="-1"><a class="header-anchor" href="#_2-1-2-命名空间" aria-hidden="true">#</a> 2.1.2 命名空间</h4>
+<p>namespace 区分生产环境和开发环境</p>
+<p>分组 更细粒度的划分</p>
+<h4 id="_2-1-3-临时实例" tabindex="-1"><a class="header-anchor" href="#_2-1-3-临时实例" aria-hidden="true">#</a> 2.1.3 临时实例</h4>
+<div class="language-java ext-java line-numbers-mode"><pre v-pre class="language-java"><code><span class="token comment">// 当实例不健康的时候也不删除 而是永久保留</span>
+spring<span class="token punctuation">.</span>cloud<span class="token punctuation">.</span>nacos<span class="token punctuation">.</span>discovery<span class="token punctuation">.</span>ephemeral<span class="token operator">=</span><span class="token boolean">false</span><span class="token punctuation">;</span>
+    
+<span class="token comment">// 保护阈值</span>
+不用配置<span class="token punctuation">,</span>使用熔断机制配置
+    
+<span class="token comment">// 权重</span>
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_2-2-nacos-服务端配置" tabindex="-1"><a class="header-anchor" href="#_2-2-nacos-服务端配置" aria-hidden="true">#</a> 2.2 nacos 服务端配置</h3>
 <h4 id="_2-2-1-nacos单机模式部署" tabindex="-1"><a class="header-anchor" href="#_2-2-1-nacos单机模式部署" aria-hidden="true">#</a> 2.2.1 nacos单机模式部署</h4>
 <p>startup.cmd</p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>set MODE="standalone"
@@ -246,7 +260,7 @@
 <h4 id="_2-4-3-常见负载均衡算法" tabindex="-1"><a class="header-anchor" href="#_2-4-3-常见负载均衡算法" aria-hidden="true">#</a> 2.4.3 常见负载均衡算法</h4>
 <p>随机 RandomRule</p>
 <p>轮训 RoundRobinRule</p>
-<p>重试 RetryRule</p>
+<p>轮训重试 RetryRule</p>
 <p>加权轮训</p>
 <p>地址hash</p>
 <p>最小连接数 BestAvailableRile</p>
@@ -256,9 +270,8 @@
 <p>要放到不能扫描的地方 或与启动类同级包下</p>
 <div class="language-java ext-java line-numbers-mode"><pre v-pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>example<span class="token punctuation">.</span>ribbon</span><span class="token punctuation">;</span>
 
-
 <span class="token comment">//注意这个配置文件不能放在springApplication能自动扫描到的地方</span>
-
+<span class="token comment">//会被扫描到然后共享 全局设置到所有服务上</span>
 <span class="token keyword">import</span> <span class="token import"><span class="token namespace">com<span class="token punctuation">.</span>netflix<span class="token punctuation">.</span>loadbalancer<span class="token punctuation">.</span></span><span class="token class-name">IRule</span></span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token import"><span class="token namespace">com<span class="token punctuation">.</span>netflix<span class="token punctuation">.</span>loadbalancer<span class="token punctuation">.</span></span><span class="token class-name">RoundRobinRule</span></span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Bean</span></span><span class="token punctuation">;</span>
@@ -271,16 +284,24 @@
         <span class="token comment">// 默认负载均衡策略 轮询</span>
         <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">RoundRobinRule</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-
 <span class="token punctuation">}</span>
-
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在启动类上注解</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在启动类上注解哪个服务使用该策略 不推荐</p>
 <p>为某个服务开启自定义的ribbon</p>
-<div class="language-java ext-java line-numbers-mode"><pre v-pre class="language-java"><code><span class="token annotation punctuation">@RibbonClients</span><span class="token punctuation">(</span>value<span class="token operator">=</span><span class="token punctuation">{</span><span class="token annotation punctuation">@RibbonClient</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"stock-service"</span><span class="token punctuation">,</span>configuration <span class="token operator">=</span> <span class="token class-name">RibbonConfig</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h4 id="_2-4-5-自定义策略" tabindex="-1"><a class="header-anchor" href="#_2-4-5-自定义策略" aria-hidden="true">#</a> 2.4.5 自定义策略</h4>
+<div class="language-java ext-java line-numbers-mode"><pre v-pre class="language-java"><code><span class="token annotation punctuation">@RibbonClients</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@RibbonClient</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"stock-service"</span><span class="token punctuation">,</span>
+                  configuration <span class="token operator">=</span> <span class="token class-name">RibbonConfig</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在配置类里配置负载均衡策略</p>
+<div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code><span class="token key atrule">stock-service</span><span class="token punctuation">:</span>
+  <span class="token key atrule">ribbon</span><span class="token punctuation">:</span>
+    <span class="token key atrule">NFLoadBalancerRuleClassName</span><span class="token punctuation">:</span>
+    // 根据nacos实例权重配置负载均衡策略
+    com.alibaba.cloud.nacos.ribbon.NacosRule
+    
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_2-4-5-自定义策略" tabindex="-1"><a class="header-anchor" href="#_2-4-5-自定义策略" aria-hidden="true">#</a> 2.4.5 自定义策略</h4>
 <h4 id="_2-4-6-使用-spring-loadbalancer替换-ribbon" tabindex="-1"><a class="header-anchor" href="#_2-4-6-使用-spring-loadbalancer替换-ribbon" aria-hidden="true">#</a> 2.4.6 使用 spring loadbalancer替换 ribbon</h4>
-<p>暂时不用替换</p>
-<h2 id="第3章-openfeign-服务调用" tabindex="-1"><a class="header-anchor" href="#第3章-openfeign-服务调用" aria-hidden="true">#</a> 第3章 openFeign - 服务调用</h2>
+<p>暂时不用替换 不好用</p>
+<h2 id="第3章-openfeign" tabindex="-1"><a class="header-anchor" href="#第3章-openfeign" aria-hidden="true">#</a> 第3章 openFeign</h2>
 <p>相关技术（Feign停更 , RestTemplate繁琐）</p>
 <h3 id="_3-1-openfeign-的介绍" tabindex="-1"><a class="header-anchor" href="#_3-1-openfeign-的介绍" aria-hidden="true">#</a> 3.1  openFeign 的介绍</h3>
 <p>集成了 spring could netflix Ribbon</p>
@@ -305,17 +326,18 @@
     <span class="token class-name">String</span> <span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在控制器内注入 调用</p>
-<div class="language-java ext-java line-numbers-mode"><pre v-pre class="language-java"><code> <span class="token annotation punctuation">@Autowired</span>
-    <span class="token class-name">StockFeignServoce</span> stockFeignServoce<span class="token punctuation">;</span>
-
+<div class="language-java ext-java line-numbers-mode"><pre v-pre class="language-java"><code><span class="token annotation punctuation">@Autowired</span>
+<span class="token class-name">StockFeignServoce</span> stockFeignServoce<span class="token punctuation">;</span>
 
 <span class="token class-name">String</span> msg <span class="token operator">=</span> stockFeignServoce<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_3-3-日志配置" tabindex="-1"><a class="header-anchor" href="#_3-3-日志配置" aria-hidden="true">#</a> 3.3 日志配置</h3>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>启动类上开启注解</p>
+<div class="language-java ext-java line-numbers-mode"><pre v-pre class="language-java"><code><span class="token annotation punctuation">@EnableFeignClients</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="_3-3-日志配置" tabindex="-1"><a class="header-anchor" href="#_3-3-日志配置" aria-hidden="true">#</a> 3.3 日志配置</h3>
 <h4 id="_3-3-1-日志级别" tabindex="-1"><a class="header-anchor" href="#_3-3-1-日志级别" aria-hidden="true">#</a> 3.3.1 日志级别</h4>
-<p>NONE   默认</p>
-<p>BASIC</p>
-<p>HEADERS</p>
-<p>FULL</p>
+<p>NONE   默认的</p>
+<p>BASIC 基础的</p>
+<p>HEADERS 加上请求头信息的</p>
+<p>FULL 全部的</p>
 <h4 id="_3-3-2-日志配置" tabindex="-1"><a class="header-anchor" href="#_3-3-2-日志配置" aria-hidden="true">#</a> 3.3.2 日志配置</h4>
 <p>conifg.OpenFeignConfig</p>
 <div class="language-java ext-java line-numbers-mode"><pre v-pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>example<span class="token punctuation">.</span>order<span class="token punctuation">.</span>config</span><span class="token punctuation">;</span>
@@ -324,10 +346,9 @@
 <span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Bean</span></span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Configuration</span></span><span class="token punctuation">;</span>
 
-<span class="token comment">//添加@Configuration注解表示全局启用,不加则局部启用</span>
+<span class="token comment">//添加Configuration注解表示全局启用,不加则局部启用</span>
 <span class="token annotation punctuation">@Configuration</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">OpenFeignConfig</span> <span class="token punctuation">{</span>
-
     <span class="token annotation punctuation">@Bean</span>
     <span class="token keyword">public</span> <span class="token class-name">Logger<span class="token punctuation">.</span>Level</span> <span class="token function">openfeignLoggerLevel</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token comment">//日志级别</span>
@@ -335,7 +356,7 @@
 
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>创建一个feign接口</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>创建一个feign接口</p>
 <div class="language-java ext-java line-numbers-mode"><pre v-pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>example<span class="token punctuation">.</span>order<span class="token punctuation">.</span>feign</span><span class="token punctuation">;</span>
 
 <span class="token annotation punctuation">@FeignClient</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"product-service"</span><span class="token punctuation">,</span>path<span class="token operator">=</span><span class="token string">"/product"</span><span class="token punctuation">)</span>
@@ -350,12 +371,12 @@
 <span class="token class-name">String</span> msg2 <span class="token operator">=</span> productFeignService<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>修改主配置yml文件</p>
 <div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code><span class="token comment"># feign的默认级别是debug,spring默认是info,所以不会输出</span>
-<span class="token comment">#单独为feign开启debug级别日志</span>
+<span class="token comment"># 单独为feign开启debug级别日志</span>
 <span class="token key atrule">logging</span><span class="token punctuation">:</span>
   <span class="token key atrule">level</span><span class="token punctuation">:</span>
     <span class="token key atrule">com.example.order.feign</span><span class="token punctuation">:</span> debug
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_3-4-契约配置" tabindex="-1"><a class="header-anchor" href="#_3-4-契约配置" aria-hidden="true">#</a> 3.4 契约配置</h3>
-<p>将适配springmvc的注解模式 修改为feign原生注解的模式</p>
+<p>将适配springmvc的注解模式 修改为feign原生注解的模式 (完全没必要)</p>
 <p>在配置类里增加一个bean</p>
 <div class="language-java ext-java line-numbers-mode"><pre v-pre class="language-java"><code><span class="token annotation punctuation">@Bean</span>
 <span class="token keyword">public</span> <span class="token class-name">COntract</span> <span class="token function">feignContract</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -365,16 +386,20 @@
 <p>在配置里增加一个bean</p>
 <div class="language-java ext-java line-numbers-mode"><pre v-pre class="language-java"><code><span class="token annotation punctuation">@Bean</span>
 <span class="token keyword">public</span> <span class="token class-name">Request<span class="token punctuation">.</span>Options</span> <span class="token function">options</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// $1 设置连接超时时间</span>
+    <span class="token comment">// $2 设置处理超时时间</span>
     <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Request<span class="token punctuation">.</span>Options</span><span class="token punctuation">(</span><span class="token number">5000</span><span class="token punctuation">,</span><span class="token number">10000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_3-6-自定义拦截器" tabindex="-1"><a class="header-anchor" href="#_3-6-自定义拦截器" aria-hidden="true">#</a> 3.6 自定义拦截器</h3>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_3-6-自定义拦截器" tabindex="-1"><a class="header-anchor" href="#_3-6-自定义拦截器" aria-hidden="true">#</a> 3.6 自定义拦截器</h3>
+<p>一般不使用, 通常会在网关层面配置拦截器</p>
+<p>创建自定义类继承接口</p>
 <div class="language-java ext-java line-numbers-mode"><pre v-pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CustomFeignInterceptor</span> <span class="token keyword">implements</span> <span class="token class-name">RequestInterceptor</span><span class="token punctuation">{</span>
   
   <span class="token annotation punctuation">@Override</span>
   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">apply</span><span class="token punctuation">(</span><span class="token class-name">RequestTemplate</span> requestTemplate<span class="token punctuation">)</span>
     
 <span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="第4章-阿里-nacos-服务配置" tabindex="-1"><a class="header-anchor" href="#第4章-阿里-nacos-服务配置" aria-hidden="true">#</a> 第4章 阿里 nacos - 服务配置</h2>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="第4章-nacos-config" tabindex="-1"><a class="header-anchor" href="#第4章-nacos-config" aria-hidden="true">#</a> 第4章 nacos config</h2>
 <p>相关技术（springcould config停更）</p>
 <p>为配置文件生成md5  , 每隔几毫秒与上一次md5做对比 , 不同则拉取新配置</p>
 <h3 id="_4-1-快速入门" tabindex="-1"><a class="header-anchor" href="#_4-1-快速入门" aria-hidden="true">#</a> 4.1 快速入门</h3>
@@ -387,9 +412,10 @@
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>在nacos网页内新增配置</strong></p>
 <p><img src="@source/document/java后端/asset/image-20220520080200118.png" alt="image-20220520080200118" loading="lazy"></p>
 <p><strong>开启nacos服务端的权限</strong></p>
-<p>nacos安装目录下的 application.properties  (注意不是springboot的配置文件)</p>
-<p>nacos.core.auth.enabled=true</p>
-<p><strong>在程序内新增一个bootstrap.yml文件</strong></p>
+<p>nacos安装目录下的 conf/application.properties</p>
+<p>注意不是springboot的配置文件</p>
+<div class="language-properties ext-properties line-numbers-mode"><pre v-pre class="language-properties"><code><span class="token key attr-name">nacos.core.auth.enabled</span><span class="token punctuation">=</span><span class="token value attr-value">true</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>在程序内新增一个bootstrap.yml文件</strong></p>
 <div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code><span class="token key atrule">spring</span><span class="token punctuation">:</span>
   <span class="token key atrule">application</span><span class="token punctuation">:</span>
     <span class="token key atrule">name</span><span class="token punctuation">:</span> nacos<span class="token punctuation">-</span>config<span class="token punctuation">-</span>service
@@ -535,7 +561,7 @@
     <span class="token punctuation">}</span>
 
 <span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="第5章-阿里-sentinel-服务熔断" tabindex="-1"><a class="header-anchor" href="#第5章-阿里-sentinel-服务熔断" aria-hidden="true">#</a> 第5章  阿里 sentinel - 服务熔断</h2>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="第5章-sentinel" tabindex="-1"><a class="header-anchor" href="#第5章-sentinel" aria-hidden="true">#</a> 第5章  sentinel</h2>
 <p>相关技术（Hystrix停更）</p>
 <h3 id="_5-1-介绍" tabindex="-1"><a class="header-anchor" href="#_5-1-介绍" aria-hidden="true">#</a> 5.1 介绍</h3>
 <p><strong>Sentinel概念</strong></p>
@@ -571,7 +597,6 @@
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>访问端口后即可在网页控制台看到信息</p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>http://127.0.0.1:8858/   # 用户名 sentinel 密码 sentinel
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="_5-3-流程控制" tabindex="-1"><a class="header-anchor" href="#_5-3-流程控制" aria-hidden="true">#</a> 5.3 流程控制</h3>
-<p>服务提供端</p>
 <h4 id="_5-3-1-阈值类型" tabindex="-1"><a class="header-anchor" href="#_5-3-1-阈值类型" aria-hidden="true">#</a> 5.3.1 阈值类型</h4>
 <p>QPS流控  每秒访问次数</p>
 <p>线程流控  并发线程数</p>
@@ -581,7 +606,9 @@
 <p><strong>关联</strong></p>
 <p>只影响设置关联的资源</p>
 <p>当前有两个资源，一个生成订单，一个查询订单，当生成订单访问量大的时候，限流查询订单，以保证生成订单能占用到大量资源，查询订单和生成订单相比，生成订单更加重要。</p>
-<p>具体操作，点击查询订单资源的流控按钮，资源为查询订单（对谁流控资源就是谁），关联资源为生成订单（关联的资源压力大的时候，限制当前资源的访问）。</p>
+<p>具体操作</p>
+<p>点击查询订单资源的流控按钮，资源为查询订单（对谁流控资源就是谁）</p>
+<p>关联资源为生成订单（关联的资源压力大的时候，限制当前资源的访问）</p>
 <p><img src="@source/document/java后端/asset/image-20220520174124326.png" alt="image-20220520174124326" loading="lazy"></p>
 <div class="language-java ext-java line-numbers-mode"><pre v-pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>example<span class="token punctuation">.</span>order<span class="token punctuation">.</span>controller</span><span class="token punctuation">;</span>
 
@@ -629,16 +656,30 @@
 <p>适合脉冲流量</p>
 <h4 id="_5-3-4-全局异常和自定义异常处理" tabindex="-1"><a class="header-anchor" href="#_5-3-4-全局异常和自定义异常处理" aria-hidden="true">#</a> 5.3.4 全局异常和自定义异常处理</h4>
 <p>自定义异常处理</p>
-<div class="language-java ext-java line-numbers-mode"><pre v-pre class="language-java"><code><span class="token annotation punctuation">@SentinelResource</span><span class="token punctuation">(</span>value<span class="token operator">=</span><span class="token string">"getUser"</span><span class="token punctuation">,</span>blockHandler<span class="token operator">=</span><span class="token string">"blockHandlerGerUser"</span><span class="token punctuation">)</span>
-<span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<div class="language-java ext-java line-numbers-mode"><pre v-pre class="language-java"><code><span class="token comment">// value定义资源名 blockHandler定义处理方法</span>
+<span class="token annotation punctuation">@SentinelResource</span><span class="token punctuation">(</span>
+    value<span class="token operator">=</span><span class="token string">"getUser"</span><span class="token punctuation">,</span>
+    blockHandler<span class="token operator">=</span><span class="token string">"blockHandlerGerUser"</span><span class="token punctuation">,</span>
+	fallback<span class="token operator">=</span><span class="token string">"fallbackHandlerGerUser"</span>
+<span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getUser</span><span class="token punctuation">(</span><span class="token keyword">int</span> id<span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token string">"查询用户"</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
-<span class="token comment">//自定义异常处理方法</span>
-<span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">blockHandlerGerUser</span><span class="token punctuation">(</span><span class="token class-name">BlockException</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token comment">//自定义熔断处理方法 优先级高于fallback</span>
+<span class="token comment">//接受原方法的参数,和异常参数e</span>
+<span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">blockHandlerGerUser</span><span class="token punctuation">(</span>
+    <span class="token keyword">int</span> id<span class="token punctuation">,</span> <span class="token class-name">BlockException</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token string">"查询用户"</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_5-4-降级规则" tabindex="-1"><a class="header-anchor" href="#_5-4-降级规则" aria-hidden="true">#</a> 5.4 降级规则</h3>
+
+<span class="token comment">//自定义接口异常处理方法</span>
+<span class="token comment">//接受原方法的参数,和异常参数e</span>
+<span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">fallbackHandlerGerUser</span><span class="token punctuation">(</span>
+    <span class="token keyword">int</span> id<span class="token punctuation">,</span> <span class="token class-name">FallbackException</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token string">"查询用户"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_5-4-降级规则" tabindex="-1"><a class="header-anchor" href="#_5-4-降级规则" aria-hidden="true">#</a> 5.4 降级规则</h3>
 <p>只能对弱依赖降级 针对服务消费端的</p>
 <h4 id="_5-4-1-过程解析" tabindex="-1"><a class="header-anchor" href="#_5-4-1-过程解析" aria-hidden="true">#</a> 5.4.1 过程解析</h4>
 <p>请求按比例进来 比如10个中有1个是慢调用就进入熔断</p>
@@ -649,23 +690,97 @@
 <p>异常比例</p>
 <p>异常数</p>
 <h3 id="_5-5-热点规则" tabindex="-1"><a class="header-anchor" href="#_5-5-热点规则" aria-hidden="true">#</a> 5.5 热点规则</h3>
+<p>若某个商品为热点, id为1, 则可单独为该热点id设置流控</p>
+<p>请求getOrder资源的时候, 如果参数值为1, 且每秒请求超过2个则熔断</p>
+<p><img src="@source/document/java后端/asset/image-20221015180455471.png" alt="image-20221015180455471" loading="lazy"></p>
 <h3 id="_5-6-系统规则" tabindex="-1"><a class="header-anchor" href="#_5-6-系统规则" aria-hidden="true">#</a> 5.6 系统规则</h3>
+<p>兜底的保护规则</p>
+<ul>
+<li>类型</li>
+</ul>
+<p>LOAD</p>
+<p>RT</p>
+<p>线程数</p>
+<p>入口QPS</p>
+<p>CPU使用率</p>
 <h3 id="_5-7-规则持久化" tabindex="-1"><a class="header-anchor" href="#_5-7-规则持久化" aria-hidden="true">#</a> 5.7 规则持久化</h3>
+<ul>
+<li>原始模式</li>
+</ul>
 <p>sentinel 默认配置保存在内存中 重启服务后丢失</p>
-<p>pull 拉模式</p>
-<p>push 推模式 结合 nacos配置中心</p>
-<p><img src="@source/document/java后端/asset/image-20220520190744103.png" alt="image-20220520190744103" loading="lazy"></p>
-<p>只能从nacos中拉 , 在sentinel中修改配置后无法推送给nacos , 需要寻找其他方法</p>
-<h3 id="_5-8-整合openfeign" tabindex="-1"><a class="header-anchor" href="#_5-8-整合openfeign" aria-hidden="true">#</a> 5.8 整合openfeign</h3>
-<h3 id="_5-9-整合getway" tabindex="-1"><a class="header-anchor" href="#_5-9-整合getway" aria-hidden="true">#</a> 5.9 整合getway</h3>
-<p>依赖</p>
-<div class="language-xml ext-xml line-numbers-mode"><pre v-pre class="language-xml"><code><span class="token comment">&lt;!--        sentinel 整合gateway--></span>
+<ul>
+<li>pull 拉模式</li>
+</ul>
+<p>不推荐 需要熟悉源码</p>
+<ul>
+<li>push 推模式 结合 nacos配置中心</li>
+</ul>
+<p>只能从nacos中拉 , 在sentinel中修改配置后无法推送给nacos</p>
+<p>添加依赖</p>
+<div class="language-xml ext-xml line-numbers-mode"><pre v-pre class="language-xml"><code><span class="token comment">&lt;!--        指定nacos为sentinel持久化--></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.alibaba.cloud<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-cloud-alibaba-sentinel-gateway<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.alibaba.csp<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>sentinel-datasource-nacos<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="@source/document/java后端/asset/image-20220520191811337.png" alt="image-20220520191811337" loading="lazy"></p>
-<h2 id="第6章-阿里-seata-事物" tabindex="-1"><a class="header-anchor" href="#第6章-阿里-seata-事物" aria-hidden="true">#</a> 第6章 阿里 seata - 事物</h2>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>配置yaml</p>
+<div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code><span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">application</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> order<span class="token punctuation">-</span>sentinel
+  <span class="token key atrule">cloud</span><span class="token punctuation">:</span>
+    <span class="token key atrule">sentinel</span><span class="token punctuation">:</span>
+      <span class="token key atrule">transport</span><span class="token punctuation">:</span>
+        <span class="token key atrule">dashboard</span><span class="token punctuation">:</span> 127.0.0.1<span class="token punctuation">:</span><span class="token number">8858</span>
+      <span class="token comment"># 开启链路模式</span>
+      <span class="token key atrule">web-context-unify</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+      <span class="token comment"># 持久化sentinel</span>
+      <span class="token key atrule">datasource</span><span class="token punctuation">:</span>
+        <span class="token key atrule">flow-rule</span><span class="token punctuation">:</span>
+          <span class="token key atrule">nacos</span><span class="token punctuation">:</span>
+            <span class="token key atrule">server-addr</span><span class="token punctuation">:</span> 127.0.0.1<span class="token punctuation">:</span><span class="token number">8848</span>
+            <span class="token key atrule">username</span><span class="token punctuation">:</span> nacos
+            <span class="token key atrule">password</span><span class="token punctuation">:</span> nacos
+            <span class="token key atrule">data-id</span><span class="token punctuation">:</span> order<span class="token punctuation">-</span>sentinel<span class="token punctuation">-</span>flow<span class="token punctuation">-</span>rule
+            <span class="token key atrule">rule-type</span><span class="token punctuation">:</span> flow
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>控制器方法</p>
+<div class="language-java ext-java line-numbers-mode"><pre v-pre class="language-java"><code><span class="token annotation punctuation">@RestController</span>
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/order"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">OrderController</span> <span class="token punctuation">{</span>
+
+	<span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/flow"</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@SentinelResource</span><span class="token punctuation">(</span>
+            value<span class="token operator">=</span><span class="token string">"flow"</span><span class="token punctuation">,</span>
+            blockHandler<span class="token operator">=</span><span class="token string">"blockHandlerGerUser"</span>
+
+    <span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">flow</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+        <span class="token keyword">return</span> <span class="token string">"sentile持久化"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+     <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">blockHandlerGerUser</span><span class="token punctuation">(</span>
+         <span class="token keyword">int</span> id<span class="token punctuation">,</span> <span class="token class-name">BlockException</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">"流控"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>nacos新增配置 order-sentinel-flow-rule</p>
+<div class="language-json ext-json line-numbers-mode"><pre v-pre class="language-json"><code><span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment">// 资源名 </span>
+        <span class="token property">"resource"</span><span class="token operator">:</span> <span class="token string">"/order/flow"</span><span class="token punctuation">,</span>
+        <span class="token comment">// 流控效果 0-快速失败</span>
+        <span class="token property">"controlBehavior"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+        <span class="token comment">//阈值</span>
+        <span class="token property">"count"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+        <span class="token comment">//阈值类型 1-Qps</span>
+        <span class="token property">"grade"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        <span class="token comment">//针对来源</span>
+        <span class="token property">"limitApp"</span><span class="token operator">:</span> <span class="token string">"default"</span><span class="token punctuation">,</span>
+        <span class="token comment">//流控模式 0-直接</span>
+        <span class="token property">"strategy"</span><span class="token operator">:</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="第6章-seata" tabindex="-1"><a class="header-anchor" href="#第6章-seata" aria-hidden="true">#</a> 第6章 seata</h2>
 <p>相关技术（）</p>
 <p>分布式事务解决方案</p>
 <p>一般来说 分布式事物不用seata , 除非某些纯金融类应用 如支付宝</p>
@@ -726,25 +841,61 @@
 <p><a href="https://github.com/seata/seata/releases" target="_blank" rel="noopener noreferrer">https://github.com/seata/seata/releases<ExternalLinkIcon/></a></p>
 <p>seata / conf / file.conf</p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>mode = "file"   // 还以 mysqlDB  和 redis 
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="第7章-spring-cloud-gateway-服务网关" tabindex="-1"><a class="header-anchor" href="#第7章-spring-cloud-gateway-服务网关" aria-hidden="true">#</a> 第7章 spring Cloud gateway - 服务网关</h2>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="第7章-gateway" tabindex="-1"><a class="header-anchor" href="#第7章-gateway" aria-hidden="true">#</a> 第7章 gateway</h2>
 <p>相关技术（zuul停更，zuul2停更）</p>
 <h3 id="_7-1-简介" tabindex="-1"><a class="header-anchor" href="#_7-1-简介" aria-hidden="true">#</a> 7.1 简介</h3>
-<p>无网关的架构的问题</p>
+<ul>
+<li>无网关的架构的问题</li>
+</ul>
 <p>每个业务都需要鉴权 , 限流 , 跨域 等逻辑</p>
 <p>多个微服务域名不同 , 存在数百个不同的域名</p>
-<p>采用网关的架构的优点</p>
-<p><img src="@source/document/java后端/asset/image-20220520202943046.png" alt="image-20220520202943046" loading="lazy"></p>
-<p><img src="@source/document/java后端/asset/image-20220520203415736.png" alt="image-20220520203415736" loading="lazy"></p>
+<ul>
+<li>网关优点</li>
+</ul>
+<p>全局性流控 日志统计 防止sql注入 防止web攻击</p>
+<p>黑白ip名单 证书加密解密 多级缓存 权限验证</p>
+<ul>
+<li>功能特征</li>
+</ul>
+<p>动态路由</p>
+<p>支持路径重写</p>
+<p>集成服务发现</p>
+<p>集成流控降级</p>
+<p>强大的断言和过滤器</p>
+<ul>
+<li>核心概念</li>
+</ul>
+<p>路由 断言 过滤器</p>
 <h3 id="_7-2-入门案例" tabindex="-1"><a class="header-anchor" href="#_7-2-入门案例" aria-hidden="true">#</a> 7.2 入门案例</h3>
 <p><strong>依赖</strong></p>
-<div class="language-xml ext-xml line-numbers-mode"><pre v-pre class="language-xml"><code><span class="token comment">&lt;!-- 不能加入springmvc依赖--></span>
+<div class="language-xml ext-xml line-numbers-mode"><pre v-pre class="language-xml"><code><span class="token comment">&lt;!-- 注意不能加入springmvc依赖--></span>
 
 <span class="token comment">&lt;!--        网关 场景--></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.cloud<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-cloud-starter-gateway<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>application.yml配置</strong></p>
+
+<span class="token comment">&lt;!--        nacos 发现--></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.alibaba.cloud<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-cloud-starter-alibaba-nacos-discovery<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+
+<span class="token comment">&lt;!--        sentinel 场景--></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.alibaba.cloud<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-cloud-starter-alibaba-sentinel<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+
+<span class="token comment">&lt;!--        整合 sentinel_网关 场景--></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.alibaba.cloud<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-cloud-alibaba-sentinel-gateway<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>application.yml配置</strong></p>
 <div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code><span class="token key atrule">server</span><span class="token punctuation">:</span>
   <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">8088</span>
 
@@ -760,9 +911,13 @@
         <span class="token key atrule">password</span><span class="token punctuation">:</span> nacos
         <span class="token key atrule">namespace</span><span class="token punctuation">:</span> public
     <span class="token key atrule">gateway</span><span class="token punctuation">:</span>
+    <span class="token comment"># 自动匹配服务名</span>
       <span class="token key atrule">discovery</span><span class="token punctuation">:</span>
         <span class="token key atrule">locator</span><span class="token punctuation">:</span>
-          <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> <span class="token comment"># 自动匹配服务名</span>
+          <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">sentinel</span><span class="token punctuation">:</span>
+      <span class="token key atrule">transport</span><span class="token punctuation">:</span>
+        <span class="token key atrule">dashboard</span><span class="token punctuation">:</span> 127.0.0.1<span class="token punctuation">:</span><span class="token number">8858</span>      
           
 <span class="token comment">#      手动配置方式     </span>
 <span class="token comment">#      routers:</span>
@@ -771,26 +926,105 @@
 <span class="token comment">#          predicates:</span>
 <span class="token comment">#            - Path=/order-serv/**</span>
 <span class="token comment">#          filters:</span>
+<span class="token comment">#             # 去掉第一层路径 即 /order-serv</span>
 <span class="token comment">#            - StripPrefix=1</span>
-
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_7-3-断言" tabindex="-1"><a class="header-anchor" href="#_7-3-断言" aria-hidden="true">#</a> 7.3 断言</h3>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>访问</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>http://localhost:8088/order-sentinel/order/flow
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="_7-3-断言" tabindex="-1"><a class="header-anchor" href="#_7-3-断言" aria-hidden="true">#</a> 7.3 断言</h3>
 <p><strong>作用</strong></p>
 <p>当请求 gateway 的时候，使用断言请求进行匹配，如果匹配成功就路由转发，如果匹配失败就返回404</p>
-<p><strong>类型</strong></p>
-<p>内置</p>
-<h4 id="基于datatime类型的断言工厂" tabindex="-1"><a class="header-anchor" href="#基于datatime类型的断言工厂" aria-hidden="true">#</a> 基于Datatime类型的断言工厂</h4>
-<h4 id="基于远程地址的断言工厂" tabindex="-1"><a class="header-anchor" href="#基于远程地址的断言工厂" aria-hidden="true">#</a> 基于远程地址的断言工厂</h4>
-<h4 id="基于cookie的断言工厂" tabindex="-1"><a class="header-anchor" href="#基于cookie的断言工厂" aria-hidden="true">#</a> 基于Cookie的断言工厂</h4>
-<h4 id="基于header的断言工厂" tabindex="-1"><a class="header-anchor" href="#基于header的断言工厂" aria-hidden="true">#</a> 基于Header的断言工厂</h4>
-<h4 id="基于host的断言工厂" tabindex="-1"><a class="header-anchor" href="#基于host的断言工厂" aria-hidden="true">#</a> 基于Host的断言工厂</h4>
-<h4 id="基于method请求方法的断言工厂" tabindex="-1"><a class="header-anchor" href="#基于method请求方法的断言工厂" aria-hidden="true">#</a> 基于Method请求方法的断言工厂</h4>
-<h4 id="基于query请求参数的断言工厂" tabindex="-1"><a class="header-anchor" href="#基于query请求参数的断言工厂" aria-hidden="true">#</a> 基于Query请求参数的断言工厂</h4>
-<h4 id="基于路由权重的断言工厂" tabindex="-1"><a class="header-anchor" href="#基于路由权重的断言工厂" aria-hidden="true">#</a> 基于路由权重的断言工厂</h4>
-<h4 id="自定义路由断言工厂" tabindex="-1"><a class="header-anchor" href="#自定义路由断言工厂" aria-hidden="true">#</a> 自定义路由断言工厂</h4>
-<h3 id="_7-4-过滤器" tabindex="-1"><a class="header-anchor" href="#_7-4-过滤器" aria-hidden="true">#</a> 7.4 过滤器</h3>
+<p>基于Datatime类型的断言工厂</p>
+<div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code><span class="token punctuation">-</span> After=2019<span class="token punctuation">-</span>12<span class="token punctuation">-</span>31T23<span class="token punctuation">:</span>59<span class="token punctuation">:</span>59.789+08<span class="token punctuation">:</span>00<span class="token punctuation">[</span>Asia/Shanghai<span class="token punctuation">]</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>基于远程地址的断言工厂</p>
+<div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code><span class="token punctuation">-</span> RemoteAddr=192.168.1.1/24
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>基于Cookie的断言工厂</p>
+<div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code><span class="token punctuation">-</span> Cookie=chocolate<span class="token punctuation">,</span> ch.
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>基于Header的断言工厂</p>
+<div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code><span class="token punctuation">-</span> Header=X<span class="token punctuation">-</span>Request<span class="token punctuation">-</span>Id<span class="token punctuation">,</span> \d+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>基于Host的断言工厂</p>
+<div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code><span class="token punctuation">-</span> Host=<span class="token important">**.testhost.org</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>基于Method请求方法的断言工厂</p>
+<div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code><span class="token punctuation">-</span> Method=GET
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>基于Path请求路径的断言工厂</p>
+<div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code><span class="token punctuation">-</span> Path=/foo/<span class="token punctuation">{</span>segement<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>基于Query请求参数的断言工厂</p>
+<div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code><span class="token punctuation">-</span> Query=baz<span class="token punctuation">,</span> ba
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>基于路由权重的断言工厂</p>
+<div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code><span class="token key atrule">routes</span><span class="token punctuation">:</span>
+  <span class="token key atrule">-id</span><span class="token punctuation">:</span> weight_route1
+  <span class="token key atrule">uri</span><span class="token punctuation">:</span> host1
+  <span class="token key atrule">predicates</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span>Path=/product/<span class="token important">**</span>
+    <span class="token punctuation">-</span>Weight=group3<span class="token punctuation">,</span><span class="token number">1</span>
+  <span class="token key atrule">-id</span><span class="token punctuation">:</span> weight_route2
+  <span class="token key atrule">uri</span><span class="token punctuation">:</span> host2
+  <span class="token key atrule">predicates</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span>Path=/product/<span class="token important">**</span>
+    <span class="token punctuation">-</span>Weight=group3<span class="token punctuation">,</span><span class="token number">9</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>自定义路由断言工厂</p>
+<div class="language-java ext-java line-numbers-mode"><pre v-pre class="language-java"><code><span class="token comment">//</span>
+<span class="token comment">// Source code recreated from a .class file by IntelliJ IDEA</span>
+<span class="token comment">// (powered by FernFlower decompiler)</span>
+<span class="token comment">//</span>
+
+<span class="token keyword">package</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cloud<span class="token punctuation">.</span>gateway<span class="token punctuation">.</span>handler<span class="token punctuation">.</span>predicate</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Arrays</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Iterator</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">List</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>function<span class="token punctuation">.</span></span><span class="token class-name">Predicate</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">javax<span class="token punctuation">.</span>validation<span class="token punctuation">.</span>constraints<span class="token punctuation">.</span></span><span class="token class-name">NotEmpty</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">StringUtils</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>validation<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Validated</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>server<span class="token punctuation">.</span></span><span class="token class-name">ServerWebExchange</span></span><span class="token punctuation">;</span>
+
+<span class="token comment">//该类名结尾必须是RoutePredicateFactory</span>
+<span class="token comment">//必须集成抽象类AbstractRoutePredicateFactory</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CheckAuthRoutePredicateFactory</span> <span class="token keyword">extends</span> <span class="token class-name">AbstractRoutePredicateFactory</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Config</span><span class="token punctuation">></span></span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">String</span> <span class="token constant">PARAM_KEY</span> <span class="token operator">=</span> <span class="token string">"param"</span><span class="token punctuation">;</span>
+  
+    <span class="token keyword">public</span> <span class="token class-name">QueryRoutePredicateFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token class-name">Config</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> <span class="token function">shortcutFieldOrder</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">Predicate</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">ServerWebExchange</span><span class="token punctuation">></span></span> 
+        <span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">final</span> <span class="token class-name">Config</span> config<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">GatewayPredicate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token class-name">ServerWebExchange</span> exchange<span class="token punctuation">)</span> 			<span class="token punctuation">{</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>config<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">"xushu"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                    <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// 获取参数信息</span>
+    <span class="token annotation punctuation">@Validated</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">Config</span> <span class="token punctuation">{</span>
+        <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+        <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">return</span> name<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        
+        <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">setName</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+   
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code><span class="token comment"># 只有当值为xushu才能通过</span>
+<span class="token punctuation">-</span> CheckAuth=xushu  
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_7-4-过滤器" tabindex="-1"><a class="header-anchor" href="#_7-4-过滤器" aria-hidden="true">#</a> 7.4 过滤器</h3>
 <p>官网31个局部过滤器</p>
 <p>全局滤过器</p>
 <p><img src="@source/document/java后端/asset/image-20220521184543666.png" alt="image-20220521184543666" loading="lazy"></p>
+<p>自定义过滤器</p>
 <h3 id="_7-5-网关配置跨域" tabindex="-1"><a class="header-anchor" href="#_7-5-网关配置跨域" aria-hidden="true">#</a> 7.5 网关配置跨域</h3>
 <p>config / CorsConfig.java</p>
 <div class="language-java ext-java line-numbers-mode"><pre v-pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>example<span class="token punctuation">.</span>stock<span class="token punctuation">.</span>config</span><span class="token punctuation">;</span>
@@ -820,23 +1054,7 @@
                 
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_7-6-集成-sentinel" tabindex="-1"><a class="header-anchor" href="#_7-6-集成-sentinel" aria-hidden="true">#</a> 7.6 集成 Sentinel</h3>
-<p>添加依赖</p>
-<div class="language-xml ext-xml line-numbers-mode"><pre v-pre class="language-xml"><code>   <span class="token comment">&lt;!--        sentinel 场景--></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.alibaba.cloud<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-cloud-starter-alibaba-sentinel<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-
-
-        <span class="token comment">&lt;!--        sentinel_网关 场景--></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.alibaba.cloud<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-cloud-alibaba-sentinel-gateway<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>配置</p>
-<div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code><span class="token key atrule">spring.could.sentinel.transport.dashboard</span><span class="token punctuation">:</span> 127.0.0.1<span class="token punctuation">:</span><span class="token number">8858</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="第8章-apache-skywalking-服务跟踪" tabindex="-1"><a class="header-anchor" href="#第8章-apache-skywalking-服务跟踪" aria-hidden="true">#</a> 第8章 Apache SkyWalking - 服务跟踪</h2>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="第8章-skywalking" tabindex="-1"><a class="header-anchor" href="#第8章-skywalking" aria-hidden="true">#</a> 第8章 SkyWalking</h2>
 <p>相关技术spring could sleuth</p>
 <h3 id="_8-1-简介" tabindex="-1"><a class="header-anchor" href="#_8-1-简介" aria-hidden="true">#</a> 8.1 简介</h3>
 <p><strong>微服务架构的问题</strong></p>
@@ -897,4 +1115,158 @@
 <span class="token punctuation">)</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_8-5-日志" tabindex="-1"><a class="header-anchor" href="#_8-5-日志" aria-hidden="true">#</a> 8.5 日志</h3>
 <h3 id="_8-6-告警" tabindex="-1"><a class="header-anchor" href="#_8-6-告警" aria-hidden="true">#</a> 8.6 告警</h3>
+<h2 id="第9章-springcloud-stream" tabindex="-1"><a class="header-anchor" href="#第9章-springcloud-stream" aria-hidden="true">#</a> 第9章 SpringCloud Stream</h2>
+<h3 id="_9-1-简介" tabindex="-1"><a class="header-anchor" href="#_9-1-简介" aria-hidden="true">#</a> 9.1 简介</h3>
+<ul>
+<li>应用场景</li>
+</ul>
+<p>应用解耦 异步处理 流量削峰 日志处理</p>
+<p>一套规范 能无感知切换各种mq产品</p>
+<p><img src="@source/document/java后端/asset/image-20221016002330656.png" alt="image-20221016002330656" loading="lazy"></p>
+<ul>
+<li>核心概念</li>
+</ul>
+<p>1、Binder：跟外部消息中间件集成的组件，用来创建Binding，各消息中间件都有自己的Binder实现；</p>
+<p>2、Binding：包括InputBinding和OutputBinding</p>
+<p>Binding在消息中间件与应用程序提供的Provider和Consumer之间提供了一个桥梁，实现了开发者只需使用应用程序的 Provider 或 Consumer 生产或消费数据即可，屏蔽了开发者与底层消息中间件的接触；</p>
+<p>3、input：应用程序通过input（相当于消费者consumer）与Spring Cloud Stream 中Binder交互，而Binder负责与消息中间件交互，因此，我们只需关注如何与Binder交互即可，而无需关注与具体消息中间件的交互。</p>
+<p>4、output：output（相当于生产者producer）与Spring Cloud Stream中Binder交互；</p>
+<p>5、Message 消息发送者与消息消费者沟通的简单数据结构</p>
+<ul>
+<li>
+<p>工作原理</p>
+</li>
+<li>
+<p>环境准备</p>
+</li>
+</ul>
+<h3 id="_9-2-基础" tabindex="-1"><a class="header-anchor" href="#_9-2-基础" aria-hidden="true">#</a> 9.2 基础</h3>
+<p>入门案例</p>
+<p>添加依赖</p>
+<div class="language-xml ext-xml line-numbers-mode"><pre v-pre class="language-xml"><code><span class="token comment">&lt;!--        rocket--></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.alibaba.cloud<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-cloud-starter-stream-rocketmq<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+
+
+<span class="token comment">&lt;!--        kafka--></span>
+<span class="token comment">&lt;!--        &lt;dependency>--></span>
+<span class="token comment">&lt;!--            &lt;groupId>org.springframework.cloud&lt;/groupId>--></span>
+<span class="token comment">&lt;!--            &lt;artifactId>spring-cloud-stream-binder-kafka&lt;/artifactId>--></span>
+<span class="token comment">&lt;!--        &lt;/dependency>--></span>
+
+
+<span class="token comment">&lt;!--        rabbit--></span>
+<span class="token comment">&lt;!--        &lt;dependency>--></span>
+<span class="token comment">&lt;!--            &lt;groupId>org.springframework.cloud&lt;/groupId>--></span>
+<span class="token comment">&lt;!--            &lt;artifactId>spring-cloud-stream-binder-rabbit&lt;/artifactId>--></span>
+<span class="token comment">&lt;!--        &lt;/dependency>--></span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_9-3-入门案例" tabindex="-1"><a class="header-anchor" href="#_9-3-入门案例" aria-hidden="true">#</a> 9.3 入门案例</h3>
+<h2 id="第10章-spring-webflux" tabindex="-1"><a class="header-anchor" href="#第10章-spring-webflux" aria-hidden="true">#</a> 第10章 Spring WebFlux</h2>
+<h3 id="_10-1-webflux简介" tabindex="-1"><a class="header-anchor" href="#_10-1-webflux简介" aria-hidden="true">#</a> 10.1 WebFlux简介</h3>
+<h3 id="_10-2-异步-servlet" tabindex="-1"><a class="header-anchor" href="#_10-2-异步-servlet" aria-hidden="true">#</a> 10.2 异步 servlet</h3>
+<ul>
+<li>概念</li>
+</ul>
+<p>在 Servlet3.0 之前，Servlet 采用 Thread-Per-Request 的方式处理 Http 请求，即每一次请求都是由某一个线程从头到尾负责处理。</p>
+<p>如果一个请求需要进行 IO 操作，比如访问数据库、调用第三方服务接口等，那么其所对应的线程将同步地等待 IO 操作完成， 而 IO 操作是非常慢的，所以此时的线程并不能及时地释放回线程池以供后续使用，如果并发量很大的话，那肯定会造性能问题。</p>
+<p>传统的 MVC 框架如 SpringMVC 也无法摆脱 Servlet 的桎梏，他们都是基于 Servlet 来实现的。</p>
+<p>为了解决这一问题，Servlet3.0引入异步 Servlet，Servlet3.1引入非阻塞 IO 来进一步增强异步处理的性能</p>
+<ul>
+<li>流程</li>
+</ul>
+<p>声明 Servlet，增加 asyncSupported 属性，开启异步支持：<code v-pre>@WebServlet(urlPatterns = &quot;/AsyncLongRunningServlet&quot;, asyncSupported = true)</code></p>
+<p>通过 request 获取异步上下文 AsyncContext：<code v-pre>AsyncContext asyncCtx = request.startAsync();</code></p>
+<p>开启业务逻辑处理线程，并将 AsyncContext 传递给业务线程：<code v-pre>executor.execute(new AsyncRequestProcessor(asyncCtx, secs));</code></p>
+<p>在异步业务逻辑处理线程中，通过 asyncContext 获取 request 和 response，处理对应的业务</p>
+<p>业务逻辑处理线程处理完成逻辑之后，调用<code v-pre>AsyncContext.complete</code>方法：<code v-pre>asyncContext.complete();</code>结束该次异步线程处理</p>
+<h3 id="_10-3-链式编程" tabindex="-1"><a class="header-anchor" href="#_10-3-链式编程" aria-hidden="true">#</a> 10.3 链式编程</h3>
+<ul>
+<li>定义</li>
+</ul>
+<p>有流的思想 lambda表示式</p>
+<ul>
+<li>惰性求值</li>
+</ul>
+<p>中间操作 依然是流 如map</p>
+<p>终止操作 返回结果 如sum</p>
+<p>没有终止操作调用的情况下, 中间操作不会执行</p>
+<ul>
+<li>流的创建</li>
+</ul>
+<div class="language-java ext-java line-numbers-mode"><pre v-pre class="language-java"><code><span class="token comment">//集合流</span>
+<span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Stirng</span><span class="token punctuation">></span></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+list<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+list<span class="token punctuation">.</span><span class="token function">parallelStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//数组流</span>
+<span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">//数字流</span>
+<span class="token class-name">IntStream</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//随机流</span>
+<span class="token keyword">new</span> <span class="token class-name">Random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ints</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">limit</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//自定义流</span>
+<span class="token class-name">Random</span> random <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">Stream</span><span class="token punctuation">.</span><span class="token function">generate</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-></span> random<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">limit</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>中间操作</li>
+</ul>
+<p>无状态操作
+map
+flatMap
+filter
+peek
+unordered</p>
+<p>有状态操作
+distinct
+sorted
+limit
+skip</p>
+<p>装箱 boxed</p>
+<p>对于 intStream不是Stream的子类 需要进行装箱</p>
+<ul>
+<li>终止操作</li>
+</ul>
+<p>非短路操作
+forEach / forEachOrdered</p>
+<p>collect / toArray</p>
+<p>reduce</p>
+<div class="language-java ext-java line-numbers-mode"><pre v-pre class="language-java"><code><span class="token class-name">String</span> str <span class="token operator">=</span> <span class="token string">"my name is wangle"</span><span class="token punctuation">;</span>
+<span class="token class-name">Optional</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> reduce <span class="token operator">=</span> 
+    <span class="token class-name">Stream</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span>s1<span class="token punctuation">,</span> s2<span class="token punctuation">)</span> <span class="token operator">-></span> s1 <span class="token operator">+</span> <span class="token string">"|"</span> <span class="token operator">+</span> s2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>reduce<span class="token punctuation">.</span><span class="token function">orElse</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>min / max / count</p>
+<p>短路操作
+findFirst / findAny
+allMatch / anyMatch / noneMatch</p>
+<ul>
+<li>并行流</li>
+</ul>
+<div class="language-java ext-java line-numbers-mode"><pre v-pre class="language-java"><code>stream<span class="token punctuation">.</span><span class="token function">paralleStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><ul>
+<li>收集流</li>
+</ul>
+<div class="language-java ext-java line-numbers-mode"><pre v-pre class="language-java"><code><span class="token comment">//测试数据</span>
+<span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Student</span><span class="token punctuation">></span></span> students <span class="token operator">=</span> <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span>
+	<span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"小名"</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"小米"</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"小流"</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"小无"</span><span class="token punctuation">,</span><span class="token number">22</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+ 
+<span class="token comment">//收集器</span>
+<span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">></span></span> ages <span class="token operator">=</span> students<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token class-name">Student</span><span class="token operator">::</span><span class="token function">getAge</span><span class="token punctuation">)</span>
+	<span class="token punctuation">.</span><span class="token function">collect</span><span class="token punctuation">(</span><span class="token class-name">Collectors</span><span class="token punctuation">.</span><span class="token function">toList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printIn</span><span class="token punctuation">(</span>ages<span class="token punctuation">)</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>流运行机制</li>
+</ul>
+<h3 id="_10-4-lambda表达式" tabindex="-1"><a class="header-anchor" href="#_10-4-lambda表达式" aria-hidden="true">#</a> 10.4 lambda表达式</h3>
+<h3 id="_10-5-routerfunction" tabindex="-1"><a class="header-anchor" href="#_10-5-routerfunction" aria-hidden="true">#</a> 10.5 RouterFunction</h3>
 </div></template>

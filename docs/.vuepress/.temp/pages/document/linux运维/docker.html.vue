@@ -6,8 +6,11 @@
 <p>虚拟机的缺点，资源占用多，冗余步骤多，启动慢。docker不是模拟出一个完整的操作系统，而是一个linux容器，依赖于宿主的内核，没有自己的内核。</p>
 <h3 id="_1-2-docker安装" tabindex="-1"><a class="header-anchor" href="#_1-2-docker安装" aria-hidden="true">#</a> 1.2 docker安装</h3>
 <p><strong>centos版docker</strong></p>
-<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># 卸载旧版本</span>
-<span class="token function">sudo</span> yum remove <span class="token function">docker</span> <span class="token punctuation">\</span>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># 更新软件</span>
+yum update
+
+<span class="token comment"># 卸载旧版本</span>
+yum remove <span class="token function">docker</span> <span class="token punctuation">\</span>
               docker-client <span class="token punctuation">\</span>
               docker-client-latest <span class="token punctuation">\</span>
               docker-common <span class="token punctuation">\</span>
@@ -17,16 +20,20 @@
               docker-engine
               
 <span class="token comment"># 更新工具</span>
-<span class="token function">sudo</span> yum <span class="token function">install</span> <span class="token parameter variable">-y</span> yum-utils <span class="token punctuation">\</span>
+yum <span class="token function">install</span> <span class="token parameter variable">-y</span> yum-utils <span class="token punctuation">\</span>
   device-mapper-persistent-data <span class="token punctuation">\</span>
   lvm2
   
 <span class="token comment"># 配置加速源</span>
-<span class="token function">sudo</span> yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+<span class="token function">sudo</span> yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 
 <span class="token comment"># 安装最新版本的Docker</span>
 <span class="token function">sudo</span> yum <span class="token function">install</span> docker-ce docker-ce-cli containerd.io
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>ubuntu版docker</strong></p>
+
+<span class="token comment"># 开机自动启动</span>
+<span class="token function">sudo</span> systemctl start <span class="token function">docker</span>
+<span class="token function">sudo</span> systemctl <span class="token builtin class-name">enable</span> <span class="token function">docker</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>ubuntu版docker</strong></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># 卸载旧版本</span>
 <span class="token function">sudo</span> <span class="token function">apt-get</span> remove <span class="token function">docker</span> docker-engine docker.io containerd runc
 
@@ -53,11 +60,16 @@
 
 <span class="token comment"># 配置国内镜像 输入以下内容</span>
 <span class="token function">vim</span> /etc/docker/daemon.json
- 
+
 <span class="token punctuation">{</span>
-    <span class="token string">"registry-mirrors"</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token string">"https://cq20bk8v.mirror.aliyuncs.com"</span><span class="token punctuation">]</span>
+    <span class="token string">"registry-mirrors"</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+    	<span class="token string">"https://cq20bk8v.mirror.aliyuncs.com"</span>,
+    	<span class="token string">"http://hub-mirror.c.163.com"</span>,
+    	<span class="token string">"https://registry.aliyuncs.com"</span>,
+    	<span class="token string">"https://ustc-edu.aliyuncs.com"</span>
+    <span class="token punctuation">]</span>
 <span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>windows版docker</strong></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>windows版docker</strong></p>
 <p>运行环境需要开启功能 hyper-v 或 wsl2</p>
 <p>推荐 wls2 因为 性能更好 ,  而且开启 hyper-V 会与 vm虚拟机冲突</p>
 <p>下载windows安装包</p>

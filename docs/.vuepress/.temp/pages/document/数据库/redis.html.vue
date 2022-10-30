@@ -390,6 +390,7 @@ dbfilename dumb6381.rdb
 <p>早起使用主机代理方式, redis3 以后使用 无中心化集群方式</p>
 <p>任何一个节点都可以作为入口, 相互注册 转发</p>
 <p>每个节点存放总数据库的 1/n</p>
+<p>哈希一致性算法 哈希环 解决扩容问题 只需要两台机器发生数据传输</p>
 <h3 id="_6-2-集群配置" tabindex="-1"><a class="header-anchor" href="#_6-2-集群配置" aria-hidden="true">#</a> 6.2 集群配置</h3>
 <p>略</p>
 <h3 id="_6-3-插槽" tabindex="-1"><a class="header-anchor" href="#_6-3-插槽" aria-hidden="true">#</a> 6.3 插槽</h3>
@@ -408,11 +409,14 @@ dbfilename dumb6381.rdb
 <h4 id="_7-1-2-原因" tabindex="-1"><a class="header-anchor" href="#_7-1-2-原因" aria-hidden="true">#</a> 7.1.2 原因</h4>
 <p>黑客攻击, 访问大量空url</p>
 <h4 id="_7-1-1-解决" tabindex="-1"><a class="header-anchor" href="#_7-1-1-解决" aria-hidden="true">#</a> 7.1.1 解决</h4>
-<p>空url也设置缓存, 但把时间过期设短</p>
-<p>设置请求的白名单</p>
-<p>布隆过滤器</p>
-<p>实时监控</p>
-<p>报网警解决</p>
+<p>无数据也设置缓存为 , 设置为null , 把时间过期设短 (依然能穿透)</p>
+<p>把所有id存在redis里 , 先判断是否存在 (内存消耗大)</p>
+<p>实时监控 设置请求的白名单 报网警解决 (效率低)</p>
+<p>推荐 布隆过滤器</p>
+<p>通过hash算法存到位数组中, 会产生hash碰撞有错误率</p>
+<p>增加位数组长度或者增加hash函数</p>
+<p>布隆算法说存在不一定存在, 但布隆说不存在则一定不存在</p>
+<p>删除数据时候, 可能好多id对应一个值, 需要用二维数组计数, 剩最后一个才能删除</p>
 <h3 id="_7-2-缓存击穿" tabindex="-1"><a class="header-anchor" href="#_7-2-缓存击穿" aria-hidden="true">#</a> 7.2 缓存击穿</h3>
 <h4 id="_7-2-1-现象" tabindex="-1"><a class="header-anchor" href="#_7-2-1-现象" aria-hidden="true">#</a> 7.2.1 现象</h4>
 <p>现象</p>
@@ -431,10 +435,10 @@ dbfilename dumb6381.rdb
 <h4 id="_7-3-2-原因" tabindex="-1"><a class="header-anchor" href="#_7-3-2-原因" aria-hidden="true">#</a> 7.3.2  原因</h4>
 <p>到了某个时间点 , 大量的key统一过期 , 请求都到了数据库</p>
 <h4 id="_7-3-3-解决" tabindex="-1"><a class="header-anchor" href="#_7-3-3-解决" aria-hidden="true">#</a> 7.3.3 解决</h4>
-<p>构建多级换错架构</p>
+<p>构建多级缓存架构</p>
 <p>使用锁和队列</p>
 <p>设置过期标志</p>
-<p>将缓存失效时间分散开</p>
+<p>加上随机值 使缓存失效时间离散开</p>
 <h3 id="_7-4-分布式锁" tabindex="-1"><a class="header-anchor" href="#_7-4-分布式锁" aria-hidden="true">#</a> 7.4 分布式锁</h3>
 <h4 id="_7-4-1-简介" tabindex="-1"><a class="header-anchor" href="#_7-4-1-简介" aria-hidden="true">#</a> 7.4.1 简介</h4>
 <p>在集群中, 对某个数据加锁 , 要把集群中所有机器都配置上锁</p>
@@ -462,4 +466,5 @@ dbfilename dumb6381.rdb
 <p>默认关闭</p>
 <h3 id="_8-3-工具支持-cluster" tabindex="-1"><a class="header-anchor" href="#_8-3-工具支持-cluster" aria-hidden="true">#</a> 8.3 工具支持 cluster</h3>
 <p>不需要单独安装ruby环境</p>
+<h2 id="第9章-面试技巧" tabindex="-1"><a class="header-anchor" href="#第9章-面试技巧" aria-hidden="true">#</a> 第9章 面试技巧</h2>
 </div></template>
