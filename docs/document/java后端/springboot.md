@@ -962,7 +962,7 @@ springboot2.6 以后, 不支持swagger2
      <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-ui</artifactId>
-            <version>1.6.7</version>
+            <version>1.6.6</version>
         </dependency>
 
  <!--配合Swagger2 形成一个knife4j页面 -->  
@@ -1048,19 +1048,270 @@ http://localhost:8080/swagger-ui/index.html
 
 
 
-### 8.3 mockito
+### 8.3 mockito 测试
 
 
 
-### 8.4 hutool
+### 8.4 hutool 工具集
 
 
 
-### 8.5 阿里oss
+### 8.5 阿里oss 对象文件
 
 
 
-### 8.6 websocket
+### 8.6 websocket 聊天
+
+
+
+### 8.7 dozer  对象拷贝
+
+目录结构
+
+![image-20221030130915584](./asset/image-20221030130915584.png)
+
+pom依赖
+
+```xml
+ 		<dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.github.dozermapper</groupId>
+            <artifactId>dozer-spring-boot-starter</artifactId>
+            <version>6.5.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+```
+
+
+
+application.yaml
+
+```yaml
+dozer:
+  mapping-files:  # 指定映射文件路径
+    - classpath:dozer/global.dozer.xml
+    - classpath:dozer/biz.dozer.xml
+```
+
+
+
+biz.dozer.xml
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://dozermapper.github.io/schema/bean-mapping"
+        xsi:schemaLocation="http://dozermapper.github.io/schema/bean-mapping
+                            http://dozermapper.github.io/schema/bean-mapping.xsd"
+>
+    <mapping date-format="yyyy-MM-dd" map-id="user">
+        <class-a>com.example.model.UserModel</class-a>
+        <class-b>com.example.model.UserDTO</class-b>
+        <field>
+            <a>id</a>
+            <b>userId</b>
+        </field>
+
+        <field>
+            <a>name</a>
+            <b>userName</b>
+        </field>
+
+        <field>
+            <a>age</a>
+            <b>userAge</b>
+        </field>
+        <field>
+            <a>address</a>
+            <b>address</b>
+        </field>
+
+        <field>
+            <a>birthday</a>
+            <b>birthday</b>
+        </field>
+    </mapping>
+
+</mappings>
+```
+
+
+
+global.dozer.xml
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://dozermapper.github.io/schema/bean-mapping"
+        xsi:schemaLocation="http://dozermapper.github.io/schema/bean-mapping
+                            http://dozermapper.github.io/schema/bean-mapping.xsd"
+>
+    <configuration>
+        <date-format>yyyy-MM-dd</date-format>
+    </configuration>
+
+</mappings>
+```
+
+
+
+UserDTO.java
+
+```java
+package com.example.model;
+
+import lombok.Data;
+@Data
+public class UserDTO {
+    private String userId;
+    private String userName;
+    private int userAge;
+    private String address;
+    private String birthday;
+}
+
+```
+
+
+
+UserModel.java
+
+```java
+package com.example.model;
+
+import lombok.Data;
+import java.util.Date;
+
+@Data
+public class UserModel {
+    private String id;
+    private String name;
+    private int age;
+    private String address;
+    private Date birthday;
+}
+
+```
+
+
+
+AppTest
+
+```java
+package com.example;
+
+import static org.junit.Assert.assertTrue;
+
+import com.example.model.UserDTO;
+import com.example.model.UserModel;
+import com.github.dozermapper.core.Mapper;
+import lombok.extern.slf4j.Slf4j;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+/**
+ * Unit test for simple App.
+ */
+@SpringBootTest(classes = DozerApplication.class)
+@RunWith(SpringRunner.class)
+@Slf4j
+public class AppTest 
+{
+    //注入dozer的mapper对象
+    @Autowired
+    private Mapper mapper;
+
+	//测试1 有dto对象, 通过反射创建user空对象, 进行赋值
+    @Test
+    public void test()
+    {
+        UserDTO userDTO = new UserDTO();
+        userDTO.setUserId("100");
+        userDTO.setUserName("John");
+        userDTO.setUserAge(20);
+        userDTO.setAddress("beijing");
+        userDTO.setBirthday("2022-2-30");
+
+		// mapper.map方()法用来拷贝 
+        //参数 第1个是数据, 赋值到第2个对象上,第3个参数是,指定xml里的map-id
+        UserModel user = mapper.map(userDTO,UserModel.class,"user");
+        System.out.println(user);
+    }
+
+
+    //测试2 有dto和现有user对象, 进行赋值后,user原有的值也被改变
+    @Test
+    public void test1()
+    {
+        UserDTO userDTO = new UserDTO();
+        userDTO.setUserId("100");
+        userDTO.setUserName("John");
+        userDTO.setUserAge(20);
+        userDTO.setAddress("beijing");
+        userDTO.setBirthday("2022-2-30");
+
+        UserModel user = new UserModel();
+        user.setId("50");
+        log.info("复制前: {}",user);
+
+        mapper.map(userDTO,user,"user");
+        log.info("复制后: {}",user);
+    }
+}
+```
+
+
+
+
+
+### 8.8 validator 校验
+
+项目结构
+
+
+
+依赖
+
+```
+```
+
+
+
+常用注解
+
+``` sh
+@AssertTrue  # 只能为true
+@AssertFalse  # 只能为false
+@CreditCardNumber  # 形式验证信用卡号
+@DecimalMax()  # 只能小于等于该值
+@DecimaMin()  # 只能大于等于该值
+@Email  # 形式验证邮箱
+@Future # 只能是将来日期
+@Length(min=,max=)  # 字符串长度
+@Max  # 数字只能小于等于该值
+@Min()  # 数字只能大于等于该值
+@NotNull  # 不能为null
+@NotBlank # 不能为空 忽略空格
+@NotEmpty  # 不能为空字符串
+@Pattern(regex=)  # 必须符合该正则表达式
+@URL(protocol=,host,port)  # 检测是否为url
+```
 
 
 

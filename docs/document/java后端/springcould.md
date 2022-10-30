@@ -2143,11 +2143,23 @@ System.out.printIn(ages)
 ### 11.1 项目结构
 
 ```sh
-wl-parent
+project
+	/apps
 	
-	wl-tools-knife4j # 日志组件
-
-
+	/parent
+	
+	/tools
+		/wl-tools-knife4j # 日志组件
+		/wl-tools-commin
+		/wl-tools-core
+		/wl-tools-databases # 持久层组件
+		/wl-tools-doser
+		/wl-tools-j2cache # 缓存组件
+		/wl-tools-jwt # 令牌
+		/wl-tools-log # 日志
+		/wl-tools-user # 用户
+		/wl-tools-validator # 校验
+		/wl-tools-xss # 防止xss攻击
 ```
 
 
