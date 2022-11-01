@@ -239,6 +239,14 @@ mysql 提供mysql驱动依赖
 
 
 
+### 1.7 maven模块忽略
+
+模块删除后, 会忽略该模块的pom文件, 如果再创建同名的模块则无法识别
+
+需要在maven配置里取消勾选 ignored files , 刷新maven
+
+![img](./asset/1248052-20210408103106661-1764898910.png)
+
 
 
 
@@ -1312,6 +1320,61 @@ public class AppTest
 @Pattern(regex=)  # 必须符合该正则表达式
 @URL(protocol=,host,port)  # 检测是否为url
 ```
+
+
+
+### 8.9 xss
+
+
+
+### 8.10 logback
+
+日志等级 : trace , debug , info , warn , error
+
+默认等级 : debug
+
+
+
+
+
+```
+```
+
+
+
+
+
+### 8.11 jwt
+
+
+
+
+
+### 8.12 user
+
+
+
+
+
+### 8.13 core
+
+核心模块 定义了各种超类
+
+
+
+### 8.14 common
+
+
+
+
+
+### 8.15 databases
+
+
+
+
+
+### 8.17 j2cache
 
 
 
