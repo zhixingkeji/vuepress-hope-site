@@ -963,22 +963,329 @@ logging:
 
 ### 8.2 接口文档 openapi
 
-springboot2.6 以后, 不支持swagger2
+#### 8.2.1 swagger2
+
+依赖
 
 ```xml
-  <!-- openapi -->
-     <dependency>
-            <groupId>org.springdoc</groupId>
-            <artifactId>springdoc-openapi-ui</artifactId>
-            <version>1.6.6</version>
-        </dependency>
-
- <!--配合Swagger2 形成一个knife4j页面 -->  
-   <dependency>
+        <dependency>
             <groupId>com.github.xiaoymin</groupId>
             <artifactId>knife4j-spring-boot-starter</artifactId>
-            <version>2.0.4</version>
-   </dependency>
+            <version>2.0.1</version>
+        </dependency>
+```
+
+
+
+语法
+
+```java
+@Api(tags = "菜单控制器")
+@ApiOperation(value = "查询所有菜单", notes = "查询所有菜单信息")
+
+@ApiModel(value = "菜单实体",description = "菜单实体")
+@ApiModelProperty(value = "菜单名称")
+```
+
+
+
+application.yml
+
+```yml
+server:
+  port: 8080
+
+
+pinda:
+  swagger:
+    enabled: true
+    title: 测试标题
+    description: 在线文档
+    version: 0.1
+
+#    不分组形式
+#    basePackage: cn.itcast.controller
+
+#    分组形式
+    docket:
+      user:
+        title: 用户模块
+        group: 用户组
+        basePackage: cn.itcast.controller.user
+      menu:
+        title: 菜单模块
+        group: 菜单组
+        basePackage: cn.itcast.controller.menu
+```
+
+
+
+SwaggerProperties.java
+
+```java
+package cn.itcast.config;
+
+import lombok.Data;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+/**
+ * 配置属性类，用于封装yml配置文件中关于接口文档相关的配置信息
+ */
+@ConfigurationProperties(prefix = "pinda.swagger")
+@Data
+public class SwaggerProperties {
+    private String title = "在线文档"; //标题
+    private String group = ""; //自定义组名
+    private String description = "在线文档"; //描述
+    private String version = "1.0"; //版本
+    private Contact contact = new Contact(); //联系人
+    private String basePackage = "com.itheima.pinda"; //swagger会解析的包路径
+    private List<String> basePath = new ArrayList<>(); //swagger会解析的url规则
+    private List<String> excludePath = new ArrayList<>();//在basePath基础上需要排除的url规则
+    private Map<String, DocketInfo> docket = new LinkedHashMap<>(); //分组文档
+    public String getGroup() {
+        if (group == null || "".equals(group)) {
+            return title;
+        }
+        return group;
+    }
+    @Data
+    public static class DocketInfo {
+        private String title = "在线文档"; //标题
+        private String group = ""; //自定义组名
+        private String description = "在线文档"; //描述
+        private String version = "1.0"; //版本
+        private Contact contact = new Contact(); //联系人
+        private String basePackage = ""; //swagger会解析的包路径
+        private List<String> basePath = new ArrayList<>(); //swagger会解析的url规则
+        private List<String> excludePath = new ArrayList<>();//在basePath基础上需要排除的url
+        public String getGroup() {
+            if (group == null || "".equals(group)) {
+                return title;
+            }
+            return group;
+        }
+    }
+    @Data
+    public static class Contact {
+        private String name = "pinda"; //联系人
+        private String url = ""; //联系人url
+        private String email = ""; //联系人email
+    }
+}
+
+```
+
+
+
+SwaggerAutoConfiguration.java
+
+```java
+package cn.itcast.config;
+
+import com.google.common.base.Predicate;
+import com.google.common.base.Predicates;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.BeanFactoryAware;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.Contact;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+import java.util.*;
+
+/**
+ * 配置类
+ */
+@Configuration
+@EnableConfigurationProperties(SwaggerProperties.class)
+@EnableSwagger2
+
+//通过yml配置是否启用文档
+@ConditionalOnProperty(name = "pinda.swagger.enabled", havingValue = "true",matchIfMissing = true)
+public class SwaggerAutoConfiguration implements BeanFactoryAware {
+    private BeanFactory beanFactory;
+
+    @Override
+    public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
+        this.beanFactory = beanFactory;
+    }
+
+    @Autowired
+    SwaggerProperties swaggerProperties;
+
+    @Bean
+    @ConditionalOnMissingBean
+    public List<Docket> createRestApi(){
+        ConfigurableBeanFactory configurableBeanFactory =
+                (ConfigurableBeanFactory) beanFactory;
+        List<Docket> docketList = new LinkedList<>();
+
+        //判断是否分组
+        if(swaggerProperties.getDocket().isEmpty()){
+            //没有分组
+            Docket docket = createDocket(swaggerProperties);
+            configurableBeanFactory.registerSingleton(swaggerProperties.getTitle(),docket);
+            docketList.add(docket);
+        }else{
+            //存在分组
+            Set<String> keySet = swaggerProperties.getDocket().keySet();
+            for (String key : keySet) {
+                SwaggerProperties.DocketInfo docketInfo = swaggerProperties.getDocket().get(key);
+                ApiInfo apiInfo = new ApiInfoBuilder()
+                        //页面标题
+                        .title(docketInfo.getTitle())
+                        //创建人
+                        .contact(new Contact(docketInfo.getContact().getName(),
+                                docketInfo.getContact().getUrl(),
+                                docketInfo.getContact().getEmail()))
+                        //版本号
+                        .version(docketInfo.getVersion())
+                        //描述
+                        .description(docketInfo.getDescription())
+                        .build();
+                // base-path处理
+                // 当没有配置任何path的时候，解析/**
+                if (docketInfo.getBasePath().isEmpty()) {
+                    docketInfo.getBasePath().add("/**");
+                }
+                List<Predicate<String>> basePath = new ArrayList<>();
+                for (String path : docketInfo.getBasePath()) {
+                    basePath.add(PathSelectors.ant(path));
+                }
+
+                // exclude-path处理
+                List<Predicate<String>> excludePath = new ArrayList<>();
+                for (String path : docketInfo.getExcludePath()) {
+                    excludePath.add(PathSelectors.ant(path));
+                }
+
+                Docket docket = new Docket(DocumentationType.SWAGGER_2)
+                        .apiInfo(apiInfo)
+                        .groupName(docketInfo.getGroup())
+                        .select()
+                        //为当前包路径
+                        .apis(RequestHandlerSelectors.basePackage(docketInfo.getBasePackage()))
+                        .paths(Predicates.and(Predicates.not(Predicates.or(excludePath)),Predicates.or(basePath)))
+                        .build();
+                configurableBeanFactory.registerSingleton(key, docket);
+                docketList.add(docket);
+            }
+        }
+        return docketList;
+    }
+
+    //构建 api文档的详细信息
+    private ApiInfo apiInfo(SwaggerProperties swaggerProperties) {
+        return new ApiInfoBuilder()
+                //页面标题
+                .title(swaggerProperties.getTitle())
+                //创建人
+                .contact(new Contact(swaggerProperties.getContact().getName(),
+                        swaggerProperties.getContact().getUrl(),
+                        swaggerProperties.getContact().getEmail()))
+                //版本号
+                .version(swaggerProperties.getVersion())
+                //描述
+                .description(swaggerProperties.getDescription())
+                .build();
+    }
+
+    //创建接口文档对象
+    private Docket createDocket(SwaggerProperties swaggerProperties) {
+        //API 基础信息
+        ApiInfo apiInfo = apiInfo(swaggerProperties);
+
+        // base-path处理
+        // 当没有配置任何path的时候，解析/**
+        if (swaggerProperties.getBasePath().isEmpty()) {
+            swaggerProperties.getBasePath().add("/**");
+        }
+        List<Predicate<String>> basePath = new ArrayList<>();
+        for (String path : swaggerProperties.getBasePath()) {
+            basePath.add(PathSelectors.ant(path));
+        }
+
+        // exclude-path处理
+        List<Predicate<String>> excludePath = new ArrayList<>();
+        for (String path : swaggerProperties.getExcludePath()) {
+            excludePath.add(PathSelectors.ant(path));
+        }
+
+        return new Docket(DocumentationType.SWAGGER_2)
+                .apiInfo(apiInfo)
+                .groupName(swaggerProperties.getGroup())
+                .select()
+                .apis(RequestHandlerSelectors.basePackage(swaggerProperties.getBasePackage()))
+                .paths(Predicates.and(Predicates.not(Predicates.or(excludePath)),Predicates.or(basePath)))
+                .build();
+    }
+}
+```
+
+
+
+spring.factories
+
+```factories
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.itheima.pinda.swagger2.SwaggerAutoConfiguration
+```
+
+
+
+访问地址
+
+```
+http://localhost:8080/doc.html
+```
+
+
+
+
+
+#### 8.2.1 swagger3
+
+springboot2.6 以后, 不支持swagger2
+
+依赖
+
+```xml
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>1.6.9</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.xiaoymin</groupId>
+			<artifactId>knife4j-spring-boot-starter</artifactId>
+			<version>2.0.9</version>
+		</dependency>
+
+
+
+
+//测试
+<dependency>
+			<groupId>com.github.xiaoymin</groupId>
+			<artifactId>knife4j-springdoc-ui</artifactId>
+			<version>3.0.3</version>
+</dependency>
 ```
 
 
