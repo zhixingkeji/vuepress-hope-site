@@ -12,7 +12,7 @@ date: 2022-03-24 00:28:26
 
 ### 1.1 ELK介绍
 
-Elasticsearch是个开源分布式搜索引擎，提供搜集、分析、存储数据三大功能。它的特点有：分布式，零配置，自动发现，索引自动分片，索引副本机制，restful风格接口，多数据源，自动搜索负载等。
+Elasticsearch是个开源分布式搜索引擎，基于Lucene构建, 提供搜集、分析、存储数据三大功能。它的特点有：分布式，零配置，自动发现，索引自动分片，索引副本机制，restful风格接口，多数据源，自动搜索负载等。
 
 Logstash 主要是用来日志的搜集、分析、过滤日志的工具，支持大量的数据获取方式。一般工作方式为c/s架构，client端安装在需要收集日志的主机上，server端负责将收到的各节点日志进行过滤、修改等操作在一并发往elasticsearch上去。
 
@@ -43,6 +43,8 @@ the guardian : 对用户行为进行收集
 github : 在千亿级别的代码行中搜索信息
 
 
+
+### 1.4 原理
 
 
 
@@ -324,25 +326,234 @@ get _analyze
 
 
 
-### 2.10 mapping问题
+### 2.10 mapping
+
+mapping 决定了一个index 中的field 用什么类型存储
+
+没有写分词器 默认是 标准分词器
+
+
+
+- 所有类型
+
+文本 : text
+
+整数 : byte short integer long
+
+浮点 : float double
+
+布尔 : boolean
+
+日期 : date
+
+数组 : array
+
+ 对象 : object
+
+关键字 : keyword 
+
+
+
+- mapping生效后的类型不许修改
+
+```sh
+put index_test4
+{
+	"mappings":{
+		"properties":{
+      "name":{
+        "type":"keyword"
+      },
+      "age":{
+        "type":"integer"
+      },
+      "desc":{
+        "type":"text",
+        "analyzer":"ik_max_word"
+      }
+		}
+	}
+}
+```
 
 
 
 
 
-## 第3章  ES 环境
+- text和keyword区别
+
+keyword 不允许分词
 
 
 
 
 
-## 第4章 ES 进阶
 
 
 
-## 第5章 ES集成
 
-### 5.1  spring data框架
+## 第3章  ES 查询
+
+### 3.1 query
+
+
+
+### 3.2  range
+
+```sh
+get test_search/_search
+{
+	"query": { # 查询
+    "range": {  # 范围查询
+      "eage":{  # 字段名
+        "gte": 10,  # gte大于等于  gt是大于
+        "lte": 20  # lte小于等于  lt是等于
+      }
+    }
+  }
+}
+```
+
+
+
+### 3.3  bool
+
+```sh
+get test_search/_search
+{
+	"query": { # 查询
+    "bool": {  # 多条件逻辑查询
+      "must":[  # 逻辑且
+      	"range": {  # 范围查询
+          "eage":{  # 字段名
+            "gte": 10,  # gte大于等于  gt是大于
+            "lte": 20  # lte小于等于  lt是等于
+          }
+        }
+      ],
+      
+      "must_not":[ # 逻辑必须非
+      
+      ]
+      
+      "should":[  # 逻辑或
+      	{},
+      	{}
+      ]
+    }
+  }
+}
+```
+
+
+
+多重嵌套
+
+```sh
+# 需求: 查找 必须是29岁的张三 或者 必须是24岁的韩梅梅
+get test_search/_search
+{
+	"query": {
+		"bool": {
+			"should": [
+			# should里第1个条件
+				{
+					"bool": {
+						"must":[
+						{
+							"match": {
+								"ename": "张三"
+							}
+						},
+						{
+							"match": {
+							 "eage": 29
+							}
+						}
+							
+						]
+					}
+				},
+				
+				# should里第2个条件
+				{
+					"bool": {
+						"must": [
+							{
+								"match": {
+									"ename": "韩梅梅"
+								}
+							},
+							{
+								"match": {
+									"eage": "24"
+								}
+							}
+						]
+					}
+				}
+			]
+		}
+	}
+}
+```
+
+
+
+
+
+### 3.4  排序和分页
+
+```sh
+get test_search/_search
+{
+	"query":{
+		"match_all": {}
+	},
+	
+	# 排序 与query同级
+	"sort":{
+		"eage": {
+			"order": "desc"
+		}
+	},
+	
+	# 分页
+	"from":2, # 起始下标
+	"size":2  # 查询记录数
+}
+```
+
+
+
+### 3.5  高亮显示
+
+```sh
+"highlight": {
+	"fields": {
+		"test":{
+			"fragment_size":5,
+			"number_of_fragments":1
+		}
+	},
+	"pre_tags":"<span style='color:red'>",
+	"post_tags":"<span/>"
+}
+```
+
+
+
+
+
+
+
+## 第4章 ES 增删改
+
+
+
+## 第5章 集成springboot
+
+### 5.1  spring data
 
 依赖
 
@@ -353,11 +564,192 @@ get _analyze
 </dependency>
 ```
 
+
+
 配置
 
 ```properties
 elasticsearch.host=127.0.0.1
 elasticsearch.port=9200	
+```
+
+
+
+实体类
+
+```java
+@Data
+@Document(indexName="index_item",shards=1,replicas=1)
+public class Item {
+  @Id
+  private String id;
+  @Field(name="title",type=FieldType.Text,analyzer="ik_max_word")
+  private String title;
+  @Field(tpe=FieldTYpe.Long)
+  private Long price;
+  @Field(type=FieldType.Keyword)
+  private String catName;
+}
+```
+
+
+
+操作
+
+```java
+@SpringBootTest
+class SpringdataesApplicationTests {
+	
+  @Autowired
+  private ElasticsearchRestTemplate elasticsearchRestTemplate;
+  
+  //初始化索引
+  @Test
+  void contextLoads(){
+    IndexOperations indexOperations = elasticsearchRestTemplate.indexOps(Item.class);
+    
+    //创建索引 默认配置 没有mapping
+    boolean result = indexOperations.create();
+    
+    //根据注解产生mapping
+    Document doc = indexOperations.createMapping(Item.class);
+    boolean result2 = indexOperations.putMapping(doc);
+    
+  }
+  
+  
+  //删除索引
+  @Test
+  void deleteIndex(){
+   IndexOperations indexOperations = elasticsearchRestTemplate.indexOps(Item.class);
+    indexOperations.delete();
+  }
+  
+  
+  //新增文档
+  @Test
+  void save(){
+    Item item = new Item(null,"华为","手机");
+    Item result = elasticsearchRestTemplate.save(item)
+  }
+  
+  
+  //批量新增
+  @Test
+  void saves(){
+    Item item1 = new Item(null,"华为","手机");
+    Item item2 = new Item(null,"小米","手机");
+    List<Item> list = new ArrayList<>();
+    list.add(item1);
+    list.add(item2);
+    elasticsearchRestTemplate.save(list);
+  }
+  
+  
+  //删除
+  @Test
+  void delete(){
+    //根据字符串id删除 返回删除的id
+    Stirng id = elasticsearchRestTemplate.detele("asdoKJH12",Item.class);
+    
+    //根据对象的id删除,其他属性是什么都无所谓,只关注id
+    Item item = new Item("asldjjlak","标题");
+    Stirng id = elasticsearchRestTemplate.detele(item);
+      
+  }
+  
+  //修改 全量替换
+  @Test
+  void update(){
+    Item item = new Item(1,"华为","手机");
+    Item result = elasticsearchRestTemplate.save(item)
+  }
+  
+  
+  //查询
+  @Test
+  void search(){
+    //根据主键查询
+  	Item item = elasticsearchRestTemplate.get("id",Item.class);
+    
+    //模糊查询
+    Query query = new NativeSearchQuery(QueryBuilders.queryStringQuery("手机"));
+    SearchHits<Item> search = elasticsearchRestTemplate.search(query,Item.class);
+    List<SearchHits<Item>> list = search.getSearchHits();
+    for(SearchHit<Item> searchHit : list) {
+      System.out.printIn(searchHit.getContent());  
+    }
+  }
+  
+  
+  //match 查询
+  @Test
+  void search_match(){
+    Query query = new NativeSearchQuery(QueryBuilders.matchQuery("title","手机"));
+    SearchHits<Item> search = elasticsearchRestTemplate.search(query,Item.class);
+    List<SearchHits<Item>> list = search.getSearchHits();
+    for(SearchHit<Item> searchHit : list) {
+      System.out.printIn(searchHit.getContent());  
+    }
+  }
+  
+  
+  //range 查询
+  @Test
+  void search_range(){
+    Query query = new NativeSearchQuery(QueryBuilders.rangeQuery("price").gte(200).lte(3000));
+    SearchHits<Item> search = elasticsearchRestTemplate.search(query,Item.class);
+    List<SearchHits<Item>> list = search.getSearchHits();
+    for(SearchHit<Item> searchHit : list) {
+      System.out.printIn(searchHit.getContent());  
+    }
+  }
+  
+  
+  //分页排序
+  @Test
+  void sortPage(){
+    Query query = new NativeSearchQuery(QueryBuilders.matchAllQuery());
+    query.addSort(Sort.by(Sort.Direction.DESC,"price"));
+    query.setPageable(PageRequest.of(0,2));
+    SearchHits<Item> search = elasticsearchRestTemplate.search(query,Item.class);
+    List<SearchHits<Item>> list = search.getSearchHits();
+    for(SearchHit<Item> searchHit : list) {
+      System.out.printIn(searchHit.getContent());  
+    }
+  }  
+  
+  
+  //高亮查询
+  @Test
+  void highlight(){
+    Query query = new NativeSearchQuery(QueryBuilders.matchQuery("title","手机"));
+    HighlightBuilder builder = new HighlightBuilder();
+    
+    builder.preTags("<span style='color:red;'>");
+    builder.postTags("</span>");
+    builder.field("title");
+    
+    HighlightQuery highlightQuery = new HighlightQuery(builder);
+    query.setHighlightQuery(highlightQuery);
+    
+    SearchHits<Item> search = elasticsearchRestTemplate.search(query,Item.class);
+    List<SearchHits<Item>> list = search.getSearchHits();
+    for(SearchHit<Item> searchHit : list) {
+      Item item = searchHit.getContent();
+      System.out.printIn("非高亮数据:" + item);
+      List<String> li = searchHit.getHighlightField("title");
+      
+      if( li != null && li.size()>0){
+        item.setTitle(list.get(0));
+      }
+      System.out.printIn("有高亮数据:" + item);
+    }
+  }
+  
+  
+  
+}
 ```
 
 
@@ -374,7 +766,7 @@ elasticsearch.port=9200
 
 
 
-## 第6章 ES优化
+## 第6章 ES常用插件
 
 
 

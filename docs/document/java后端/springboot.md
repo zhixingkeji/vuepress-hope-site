@@ -1378,6 +1378,50 @@ public class AppTest
 
 
 
+### 8.18 undertow
+
+高性能web服务器 替换tomcat
+
+```xml
+<!--移除Tomcat依赖-->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+    <exclusions>
+        <exclusion>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+        </exclusion>
+    </exclusions>
+</dependency>
+
+<!--引入undertow-->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-undertow</artifactId>
+</dependency>
+
+<dependency>
+    <groupId>io.undertow</groupId>
+    <artifactId>undertow-core</artifactId>
+  	<version>2.1.0.Final</version>
+</dependency>
+
+<dependency>
+    <groupId>io.undertow</groupId>
+    <artifactId>undertow-servlet</artifactId>
+  	<version>2.1.0.Final</version>
+</dependency>
+
+<dependency>
+    <groupId>io.undertow</groupId>
+    <artifactId>undertow-websocket-jsr</artifactId>
+  	<version>2.1.0.Final</version>
+</dependency>
+```
+
+
+
 
 
 
