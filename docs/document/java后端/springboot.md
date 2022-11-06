@@ -1276,16 +1276,6 @@ springboot2.6 以后, 不支持swagger2
 			<artifactId>knife4j-spring-boot-starter</artifactId>
 			<version>2.0.9</version>
 		</dependency>
-
-
-
-
-//测试
-<dependency>
-			<groupId>com.github.xiaoymin</groupId>
-			<artifactId>knife4j-springdoc-ui</artifactId>
-			<version>3.0.3</version>
-</dependency>
 ```
 
 
@@ -1358,6 +1348,10 @@ public class ActivityController {
 ```java
 http://localhost:8080/swagger-ui/index.html
 ```
+
+
+
+### 8.2.3 knefi4j 微服务nacos版
 
 
 
