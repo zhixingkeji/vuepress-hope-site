@@ -28,9 +28,23 @@ native各个模块分离出核心依赖, 成为社区项目
 
 ### 2.1 开发环境搭建
 
-安装node环境 cnpm yarn
+安装node环境  yarn yrm
 
-安装jdk17环境 必须
+```
+// npm 版
+npm install nrm -g
+nrm use taobao
+
+// yarn 版
+npm install yrm -g
+yrm use taobao
+```
+
+
+
+
+
+安装jdk11环境 必须
 
 安装AndroidStudio 和 android12s
 
@@ -87,11 +101,11 @@ npm install -g react-native-cli
 ### 2.2 创建项目
 
 ````
-//创建空文件夹 myproject
-cd myproject
+//创建空文件夹 rnproject
+cd rnproject
 yarn add react-native --exact
 react-native init project
-
+cd project
 yarn android
 ````
 
@@ -978,7 +992,19 @@ const { itemID, other } = route.params
 
 
 
-## 第5章 项目实战
+## 第5章 UI组件库
+
+```js
+import { Button } from 'antd-mobile'
+```
+
+
+
+
+
+
+
+## 第6章
 
 
 

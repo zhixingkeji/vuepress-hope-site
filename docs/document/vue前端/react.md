@@ -2218,3 +2218,478 @@ cnpm i axios redux react-redux sass sass-loader react-router-dom antd
 ### 9.6 redux状态管理
 
 
+
+
+
+## 第10章 umijs 
+
+### 10.1 介绍
+
+react脚手架的进一步组件的封装 
+
+
+
+### 10.2 安装
+
+```
+mkdir myapp && cd myapp
+yarn create umi
+yarn start
+```
+
+
+
+### 10.3 配置
+
+.umirc.ts  配置 不推荐
+
+```ts
+import {defubeCibfug} from "umi"
+
+export default defineConfig({
+  nodeModulesTransform: {
+    type: "none",
+  },
+	routes: [
+		{path: "/",component:"@/pages/index"}	
+	],
+  fastRefresh: {}, //刷新后保持组件状态
+  devServer: {
+    port: 9091 , //配置端口
+    https: true, //启用https
+  },
+  title: "网站标题",
+  favicon: "/favicon.ico", 
+  dynamicImport: {
+    loading: "@/componets/loading", //按需加载时候指定组件
+  }
+})
+```
+
+
+
+config 配置 推荐
+
+```js
+// config/config.js
+import {defubeCibfug} from "umi"
+import routes from "./routes"
+import theme from "./theme"
+import proxy from "./proxy"
+
+export default defineConfig({
+  nodeModulesTransform: {
+    type: "none",
+  },
+	routes: routes,
+  fastRefresh: {}, //刷新后保持组件状态
+  devServer: {
+    port: 9091 , //配置端口
+    https: true, //启用https
+  },
+  title: "网站标题",
+  favicon: "/favicon.ico", 
+  dynamicImport: {
+    loading: "@/componets/loading", //按需加载时候指定组件
+  },
+  mountElementId: "app",  //绑定根元素
+  theme, //配置主题
+  proxy, //方向代理
+})
+
+
+// config/routes.ts
+export default [
+		{path: "/",component:"@/pages/index"}	
+]
+
+
+// config/proxy.ts
+
+
+// config/theme.ts
+export default {
+  "@primary-color":"#399"
+}
+```
+
+
+
+### 10.4 使用组件库
+
+```java
+import {Button } from "antd" //pc端
+import {Button } from "antd-mobile" //移动端
+  
+// 更新移动端ui
+npm install @umijs/preset-react
+```
+
+
+
+### 10.5 样式模块化
+
+安装scss
+
+
+
+全局样式
+
+src / global.scss
+
+
+
+局部样式
+
+```
+import styles from "./index.scss"
+```
+
+
+
+
+
+### 10.6 hooks和函数式组件
+
+```jsx
+// pages/index.jsx
+import styles from "./index.less"
+import Child from "./child"
+export default function IndexPage(){
+  const [count,setCount] = useState("组件组件")
+  
+  const getNumMemo = useMemo(()=>{
+    return count * 100
+  },[count])
+  
+  //父子关系的组件, 父传给子函数, 但子不依赖该函数, 由于函数是引用,每次穿过来的都是新的地址,所以子组件会频繁更新, 这个时候需要用useCallback函数,防止子组件更新,只执行一次
+  const updateCount = useCallback(()=>{console.log("更新了")},[])
+  
+  return(
+  	<>
+    	<div>
+    		<h3>父组件</h3>
+      	<Child></Child>
+    	</div>
+    </>
+  )
+}
+
+
+// pages/child/index.jsx
+const Child = ()=>{
+	return (
+  	<>
+    	<div>
+    		
+    	</div>
+    </>
+  )
+}
+
+export default Child;
+```
+
+
+
+### 10.7 路由
+
+路由 权限 动态 约定
+
+```js
+export default [
+	{path: "/login",component:"@/pages/login"},
+  {
+    path: "/home",
+    component:"@/pages/home"
+  	routes: [  //配置子组件
+    	{path: "/home/user",component: "@/layouts/aside"}
+  		{path: "/home/user/:id",component: "@/pages/user"}  //动态路由
+    ]
+  },
+  {path: "/",redirect:"@/pages/home"},
+	{component:"@/pages/404"}  //找不到页面,不用配path,放到最后
+]
+```
+
+
+
+路由跳转
+
+```jsx
+// 编程式
+import {history} from "umi"  //第一种 直接用
+import {useHistory} from "umi" //第二种 用钩子
+
+<button onClick={getCom}>跳转</button>
+const history = useHistory()
+const getCom = ()=>{
+  history.push(`/goods/3/comment`)
+}
+
+// 声明式
+import {Link} from "umi"
+import {NavLink} from "umi"
+
+<NavLink to="/login"></NavLink>
+<NavLink to={(pathname: "/goods/4"),query:{a:2}}>商品</NavLink>
+
+```
+
+
+
+参数接收
+
+```jsx
+// 方法1 组件上下文
+function Com({
+  location: {search},
+  match: {params: {id}}
+}){
+  
+}
+
+// 方法2 hocks
+import {useHistory,useParams,useLocation,useRouteMatch} from "umi"
+const history = useHistory() 
+const location = useLocation() //获取search或者query
+const params = useParams() // 获取:id
+const match = useRouteMatch()
+```
+
+
+
+### 10.8  反向代理
+
+```js
+// config/proxy.ts
+export default {
+  "/api": {
+    target: "https://localhost:9001",
+    https: true,
+    changeOrigin: true,
+    pathRewrite: {"^/api": ""} //路径重写
+  },
+  "/book": {
+    target: "",
+    changeOrigin: true, 
+  }
+}
+```
+
+
+
+### 10.9 状态管理dva
+
+内置对象dva 类似redux
+
+![image-20221107204038763](./asset/image-20221107204038763.png)
+
+
+
+![image-20221107204336516](./asset/image-20221107204336516.png)
+
+
+
+全局级别
+
+```js
+// src/models/global.js
+
+export default {
+  
+  //初始化全局数据
+  state: {
+    title: "全局title",
+    text: "全局text",
+    login: false,
+    a: "全局models"
+  },
+  
+  //同步业务
+  reducers: {
+    setText(state) {
+      return {
+        ...state,
+        text: "重新修改数据"
+      }
+    },
+    
+    //action接受参数
+    setTitle(state,action) {
+      return {
+        ...state,
+        title: `重新修改数据${action.payload.a}`
+      }
+    },
+    
+    //箭头函数
+    signin: (state) =>({
+      ...state,
+      login: true
+    })
+  },
+  
+  
+  //异步数据
+  effects: {
+    *login(action,{call,put,select}){
+      const data = yield call(request,"/umi/login",{
+        method: "post",
+        data: {
+          username: action.payload.username,
+          password: action.payload.password,
+        },
+      });
+      
+      yield put({
+        type: "signin",
+        payload: data,
+      });
+      
+    }
+  }
+  
+  //源获取
+  subscriptions: {
+  	listenRoute()
+	}
+  
+}
+```
+
+
+
+页面级别
+
+
+
+使用hock
+
+```js
+import {useDispatch,useSelector} from "umi"
+const dispatch = useDispatch()
+const {dva} = useSelector((state)=>({dva:state.dva}))
+
+const onclick = ()=>{
+  dispatch({type: "global/setTitle",payload: {a:11,b:12}})
+}
+```
+
+
+
+
+
+
+
+### 10.10 权限
+
+src / app.js
+
+```js
+import {request} from "umi"
+
+
+let routesData = []  //动态传过来的路由
+
+//路由转换
+const filterRoutes = (routesData) =>{
+  routesData.map((item)=>{
+    if(item.routes && item.routes.length >0){
+      filterRoutes(item.routes);
+    }else{
+      item.exact=true
+    }
+    if(!item.redirect){
+      if(item.component.includes("404")){
+        item.component = require("@/"+item.component+".jsx").default
+      }
+      else {
+      	item.component = require("@/"+item.component+"index.jsx").default
+      
+      }
+      if(item.wrappers && item.wrappers.length > 0){
+        item.wrappers.map((str,index)=>{
+          item.wrappers[index] = require("@/" + str + ".jsx").default
+        })
+      }
+    }
+  })
+}
+
+//增加路由
+export function patchRoutes({routes}){
+  // 使用该格式添加路由
+  //routes.push({exact:true,component: require("@/pages/404").default});
+	
+  filterRoutes(routesData);
+  routesData.map((item) => routes.push(item))
+}
+
+export const render = async (oldRender) => {
+  const {isLogin} = await request("/umi/auth")
+  if(!isLogin){
+    history.push("/login")
+  }
+  oldRender();
+}
+
+//监听
+export function onRouteChange({matchedRoutes,location,routes,action}){
+  routes //路由信息
+  matchedRoutes //当前匹配路由和子路由
+  location //location及其参数
+  action //当前跳转执行的操作
+
+}
+
+export const request = {
+  timeout: 1000, //延时
+  errorConfig: {}, //错误处理
+  middlewares: [], //使用中间件
+  
+  //请求拦截
+  requestInterceptors: [
+    (url,options) => {
+      options.headers = {token: "123"}
+    	return {url,options}
+    }
+  ],
+  
+    //响应拦截
+  responseInterceptors: [
+    (response,options) => {
+     
+    	return response
+    }
+  ],
+}
+```
+
+
+
+
+
+
+
+## 第11章 ant design pro
+
+### 11.1 介绍
+
+umijs 和 ant design 结合的后台管理系统 开箱即用
+
+
+
+### 11.2 安装
+
+```
+npm i @ant-design/pro-cli -g
+pro create antpro
+yarn install
+yarn start
+```
+
+
+
+### 11.3 
+

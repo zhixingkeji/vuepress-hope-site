@@ -131,3 +131,16 @@ gas : 以太坊用于执行智能合约的虚拟燃料
 
 
 ## 第7章 solidity
+
+安装
+
+```
+pip3 install sphinx sphinx_rtd_theme
+pip3 install myst-parser
+git clone https://github.com/ethereum/remix-ide.git
+cd docs/
+make html
+```
+
+
+

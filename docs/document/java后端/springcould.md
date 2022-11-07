@@ -16,13 +16,19 @@ date: 2021-11-15 15:27:44
 
 
 
+### 1.2 springcould alibaba
 
 
-### 1.2 版本对应
+
+### 1.3 版本对应
 
 毕业版本
 
 [https://github.com/spring-cloud-incubator/spring-cloud-alibaba/wiki/%E7%89%88%E6%9C%AC%E8%AF%B4%E6%98%8E]
+
+
+
+
 
 
 
@@ -77,7 +83,7 @@ date: 2021-11-15 15:27:44
 
 
 
-## 第2章 nacos discovery
+## 第2章 nacos discovery 服务发现
 
 相关技术（eureka停更，consul，zookeeper）
 
@@ -322,7 +328,7 @@ stock-service:
 
 
 
-## 第3章 openFeign
+## 第3章 openFeign 服务调用
 
 相关技术（Feign停更 , RestTemplate繁琐）
 
@@ -527,7 +533,7 @@ public class CustomFeignInterceptor implements RequestInterceptor{
 
 
 
-## 第4章 nacos config
+## 第4章 nacos config 配置中心
 
 相关技术（springcould config停更）
 
@@ -767,7 +773,7 @@ public class ConfigController {
 
 
 
-## 第5章  sentinel
+## 第5章  sentinel 流控
 
 相关技术（Hystrix停更）
 
@@ -1182,7 +1188,7 @@ nacos新增配置 order-sentinel-flow-rule
 
 
 
-## 第6章 seata
+## 第6章 seata 交易
 
 相关技术（）
 
@@ -1350,7 +1356,7 @@ seata / conf / file.conf
 
 
 
-## 第7章 gateway
+## 第7章 gateway 网关
 
 相关技术（zuul停更，zuul2停更）
 
@@ -1705,7 +1711,7 @@ public class CorsConfig {
 
 
 
-## 第8章 SkyWalking
+## 第8章 SkyWalking 链路追踪
 
 相关技术spring could sleuth
 
@@ -1860,7 +1866,7 @@ storage:
 
 
 
-## 第9章 SpringCloud Stream
+## 第9章 SpringCloud Stream 消息
 
 ### 9.1 简介
 
@@ -1946,7 +1952,7 @@ Binding在消息中间件与应用程序提供的Provider和Consumer之间提供
 
 
 
-## 第10章 Spring WebFlux
+## 第10章 Spring WebFlux 响应式
 
 ### 10.1 WebFlux简介
 
