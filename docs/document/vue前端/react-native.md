@@ -24,6 +24,8 @@ native各个模块分离出核心依赖, 成为社区项目
 
 
 
+
+
 ## 第2章 ReactNative基础
 
 ### 2.1 开发环境搭建
@@ -44,7 +46,7 @@ yrm use taobao
 
 
 
-安装jdk11环境 必须
+安装 jdk11 以上环境 必须
 
 安装AndroidStudio 和 android12s
 
@@ -108,6 +110,14 @@ react-native init project
 cd project
 yarn android
 ````
+
+
+
+```
+npx react-native init aswpro
+```
+
+
 
 
 
@@ -1004,7 +1014,7 @@ import { Button } from 'antd-mobile'
 
 
 
-## 第6章
+## 第6章 项目实战
 
 
 
