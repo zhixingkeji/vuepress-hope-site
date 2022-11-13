@@ -41,6 +41,10 @@ apt-get install npm
 
 
 
+
+
+
+
 ### 1.2 常用指令
 
 
@@ -57,11 +61,9 @@ apt-get install npm
 
 
 
-### 1.3 nvm版本管理工具
+### 1.3 nvm 版本管理工具
 
-介绍
-
-切换node版本的工具
+介绍 切换node版本的工具
 
 
 
@@ -71,35 +73,60 @@ https://github.com/coreybutler/nvm-windows/releases
 
 
 
-常用指令
+```sh
+# 查看版本
+nvm -v  
 
-nvm -v  查看版本
+# 列出所有安装的版本
+nvm -ls  
 
-nvm -ls  列出所有安装的版本
+# 安装最新版本node
+nvm install node  
 
-nvm install node  安装最新版本node
+# 列出所有可安装的版本
+nvm list available  
 
-nvm list available  列出所有可安装的版本
+# 安装指定版本号的Node
+nvm install 11.13.0  
 
-nvm install 11.13.0  安装指定版本号的Node
+# 使用特定版本的Node
+nvm use 11.13.0  
 
+# 卸载版本号的Node
+nvm uninstall 11.13.0  
 
-nvm use 11.13.0  使用特定版本的Node
+# 开启node.js版本管理
+nvm on
 
-
-nvm uninstall 11.13.0  卸载版本号的Node
-
-nvm on ：开启node.js版本管理
-
-nvm off ：关闭node.js版本管理
-
-
-
-
-
-### 1.4 pnpm
-
+# 关闭node.js版本管理
+nvm off
 ```
+
+
+
+
+
+
+
+### 1.4 包管理工具
+
+npm
+
+node官方包管理中国
+
+
+
+cnpm
+
+中国源的包管理工具 不推荐
+
+
+
+pnpm
+
+不推荐
+
+```sh
 cnpm install pnpm -g
 pnpm config get registry // 查看源
 pnpm config set registry http://registry.npm.taobao.org // 切换淘宝源
@@ -117,6 +144,40 @@ pnpm upgrade 包 --global   //更新全局包
 设置存储路径：pnpm config set store-dir /path/to/.pnpm-store
 
 ```
+
+
+
+yarn
+
+```sh
+npm install -g yarn
+
+npm install -g yrm
+yrm use taobao
+```
+
+
+
+nrm
+
+```sh
+# nrm安装
+npm install -g nrm
+
+# 查看可选源
+nrm ls
+
+# 查看当前源
+nrm current 
+
+# 切换源
+nrm use <registry>
+
+# 测速
+nrm test <registry>
+```
+
+
 
 
 

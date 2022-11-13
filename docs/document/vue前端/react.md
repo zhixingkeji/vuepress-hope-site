@@ -31,19 +31,6 @@ date: 2022-03-24 00:41:38
 
 ### 1.3 基本使用
 
-npm配置源
-
-```bash
-//脚手架创建项目时会特别慢,因为很多依赖都在外网,需要换成国内镜像源
-//设置npm镜像源
-npm config set registry https://registry.npm.taobao.org
-
-//查看npm镜像源
-npm config get registry
-```
-
-
-
 npm升级
 
 ```bash
@@ -65,14 +52,8 @@ n 10.0.0
 脚手架安装
 
 ```bash
-//安装node 
-node -v
-
-//安装cnpm,并且设置镜像源
-npm install -g cnpm --registry=https://registry.npm.taobao.org
-
 //全局安装react脚手架
-sudo cnpm install -g create-react-app
+npm install -g create-react-app
 
 //创建项目
 create-react-app react-study
@@ -248,6 +229,54 @@ ReactDOM.render(<MyComponent/>,document.getElementById('text'))
 
 
 
+案例计算器
+
+```tsx
+import React, {useState} from "react"
+
+const ComputerPage: React.FC = () => {
+    //变量
+    const [count,setCount] = useState<number>(0)
+
+
+    //方法
+    const decrease = () => {
+        setCount(count  -1  )
+    }
+
+    const increase = () => {
+        setCount(count  + 1  )
+    }
+
+    const reset = () => {
+        setCount(0)
+    }
+
+
+    return (
+        <div>
+            <div>函数组件</div>
+            <div>计算器: <p>{count}</p></div>
+
+            <div>
+                <button onClick={increase}>增加</button>
+                <button onClick={decrease}>减少</button>
+                <button onClick={reset}>归零</button>
+            </div>
+        </div>
+    );
+};
+
+export default ComputerPage;
+
+```
+
+
+
+
+
+
+
 #### 2.2.2 类式组件
 
 类式组件适用于复杂组件
@@ -270,6 +299,62 @@ ReactDOM.render(<MyComponent/>,document.getElementById('text'))
 //首先react解析标签,找到该组件
 //发现是类式组件,new出该组件实例,通过实例调用到原型上的render方法
 //将render返回的虚拟dom转换为真实dom,呈现在页面里
+```
+
+
+
+案例 计算器
+
+```tsx
+import React, {Component} from 'react';
+
+//类组件 计算机
+class Computerl extends Component {
+
+    //创建变量
+    state = {
+        count:0
+    }
+
+
+    //方法
+    decrease = () => {
+        this.setState({
+            count: this.state.count - 1
+        })
+    }
+
+    increase = () => {
+        this.setState({
+            count: this.state.count + 1
+        })
+    }
+
+    reset = () => {
+        this.setState({
+            count: 0
+        })
+    }
+
+
+
+    render() {
+        return (
+            <div>
+                <div>类组件</div>
+                <div>计算器: <p>{this.state.count}</p></div>
+
+                <div>
+                    <button onClick={this.increase}>增加</button>
+                    <button onClick={this.decrease}>减少</button>
+                    <button onClick={this.reset}>归零</button>
+                </div>
+            </div>
+        );
+    }
+}
+
+export default Computerl;
 ```
 
 
@@ -1026,9 +1111,9 @@ key是虚拟DOM对象的表示, 在更新时有及其重要的作用
 
 父子组件 : props
 
-兄弟组件 : pubsub , redux
+兄弟组件 : pubsub , redux , dva
 
-祖孙组件 :  pubsub , redux , context
+祖孙组件 :  pubsub , redux , context , dva
 
 
 
@@ -1051,6 +1136,60 @@ key是虚拟DOM对象的表示, 在更新时有及其重要的作用
 
 
 ### 3.2 插槽
+
+这是最外层代码
+
+```jsx
+import React, { Component } from 'react'
+import NavBar from './NavBar'
+import NavBar2 from './NavBar2'
+
+export default class App extends Component {
+  render() {
+    return (
+      <div>
+        <NavBar>
+          <span>aaa</span>
+          <strong>bbb</strong>
+          <a href="/#">ccc</a>
+        </NavBar>
+
+        <NavBar2 leftslot={<span>aaa</span>}
+        centerslot={<strong>bbb</strong>}
+        rightslot={<a href="/#">ccc</a>}/>
+      </div>
+    )
+  }
+}
+```
+
+
+
+用直接命名方式
+
+```jsx
+import React, { Component } from 'react'
+
+import './style.css'
+export default class NavBar extends Component {
+  render () {
+    const {leftslot, centerslot,rightslot} = this.props
+    return (
+      <div className="nav-bar">
+        <div className="nav-left">
+          {leftslot}
+        </div>
+        <div className="nav-center">
+          {centerslot}
+        </div>
+        <div className="nav-right">
+          {rightslot}
+        </div>
+      </div>
+    )
+  }
+}
+```
 
 
 
@@ -2238,7 +2377,7 @@ react脚手架的进一步组件的封装
 ### 10.2 安装
 
 ```
-mkdir myapp && cd myapp
+mkdir umi-study && cd umi-study
 yarn create umi
 yarn start
 ```
@@ -2688,9 +2827,10 @@ umijs 和 ant design 结合的后台管理系统 开箱即用
 
 ### 11.2 安装
 
-```
+```sh
 npm i @ant-design/pro-cli -g
-pro create antpro
+pro create antpro-study
+cd antpro-study
 yarn install
 yarn start
 ```

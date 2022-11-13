@@ -35,11 +35,11 @@ yum install java-11-openjdk -y
 
 # 默认目录
 /usr/lib/jvm/java-11-openjdk-11.0.11.0.9-1.el7_9.x86_64
+cd /usr/lib/jvm
+mv java-11-openjdk-11.0.11.0.9-1.el7_9.x86_64 java-11-openjdk-11
 
 # 编辑环境配置文件
 vim /etc/profile
-
-# 配置环境变量
 JAVA_HOME=/usr/lib/jvm/java-11-openjdk-11
 JRE_HOME=$JAVA_HOME/jre
 JAVA_BIN=$JAVA_HOME/bin
@@ -56,42 +56,177 @@ java -version
 
 
 
--   安装jenkins
+-   yum安装jenkins
 
 ```sh
+# 添加仓库
 sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
 sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
 
-yum install jenkins
+yum install jenkins -y
+
+systemctl start jenkins
+systemctl status jenkins
+
+# 关闭防火墙
+systemctl stop firewalld
+systemctl disable firewalld
+
+# 修改默认端口
+vim /etc/sysconfig/jenkins
+JENKINS_PORT="8080"
+
+
+# 查看密码
+cat /var/lib/jenkins/secrets/initialAdminPassword
+
+# 登录后使用admin账号 并修改密码为admin
+
+
+# 卸载
+rpm -e jenkins
+rm -rf /usr/local/jenkins_home/
+rm -rf /root/.jenkins/
 ```
 
 
 
--   安装maven
+- yum 安装 git
 
 ```sh
-
+yun install git -y
 ```
 
 
 
 
 
--   安装git
+### 1.4 构建spring项目
+
+服务器安装maven
 
 ```sh
-yum install git -y
+yum install maven -y
+```
+
+
+
+jenkins安装maven插件
+
+![image-20221111121825618](./asset/image-20221111121825618.png)
+
+
+
+jenkins全局配置maven的路径
+
+yum安装默认路径为  /usr/share/maven
+
+![image-20221111124948331](./asset/image-20221111124948331.png)
+
+
+
+jenkins新建项目
+
+![image-20221111121925351](./asset/image-20221111121925351.png)
+
+
+
+配置 github项目
+
+填写浏览器里网页的url
+
+![image-20221111133624280](./asset/image-20221111133624280.png)
+
+
+
+配置 源码管理 使用git 
+
+填写仓库地址  https://github.com/zhixingkeji/testjar.git
+
+修改分支名为 */main
+
+配置身份
+
+
+
+安装插件 publish over ssh
+
+系统配置 添加 ssh服务器
+
+![image-20221111150103600](./asset/image-20221111150103600.png)
+
+
+
+项目配置
+
+Post Steps 配置
+
+构建完成后 通过 ssh插件发送jar包到测试服务器上
+
+Exec Command 执行命令 自动运行jar包
+
+```
+nohup java -jar /root/test1/target/test.jar.jar >mylog.log 2>&1 &
+```
+
+
+
+![image-20221111155248011](./asset/image-20221111155248011.png)
+
+
+
+Post Steps 配置
+
+自动清理文件夹和端口
+
+./x.sh test 
+
+```sh
+#!/bin/bash
+
+# 删除历史
+rm -rf test1
+
+
+# 获取命令行传来的第一个参数
+echo "arg:$1"
+appname=$1
+
+# 获取pid  awk $2是获取第二列的数据
+pid=`ps -ef | grep $1 | grep 'java -jar' awk '{printf $2}'`
+echo $pid
+
+# 空值判断 否则报错 -z代表判断是否为空
+if [ -z $pid];
+	then 
+		echo "$appname not started"
+	else 
+		kill -9 $pid
+		echo "$appname stoped"
+fi		
 ```
 
 
 
 
 
--   进入jenkins 安装maven插件
+
+
+jps查看jar包是否运行
+
+
+
+api 访问接口
+
+```
+http://ip:8090/test/s
+```
 
 
 
 
+
+### 1.5 构建vue项目
 
 
 
@@ -149,7 +284,7 @@ jenkins服务器接受到该请求 触发该项目的工作
 
 -   job依赖构建
 
-当依赖得劲ob被构建时执行本job
+当依赖的job被构建时执行本job
 
 
 
@@ -176,6 +311,86 @@ github-webhook触发时构建本job
 
 
 ### 2.3 插件
+
+Folders
+
+ 
+
+OWASP Markup Formatter
+
+ 
+
+Build Timeout
+
+ 
+
+Credentials Binding
+
+ 
+
+Timestamper
+
+ 
+
+Workspace Cleanup
+
+ 
+
+Ant
+
+ 
+
+Gradle
+
+ 
+
+Pipeline
+
+ 
+
+GitHub Branch Source
+
+ 
+
+Pipeline: GitHub Groovy Libraries
+
+ 
+
+Pipeline: Stage View
+
+ 
+
+Git
+
+ 
+
+SSH Build Agents
+
+ 
+
+Matrix Authorization Strategy
+
+ 
+
+PAM Authentication
+
+ 
+
+LDAP
+
+ 
+
+Email Extension
+
+ 
+
+Mailer
+
+ 
+
+Localization: Chinese (Simplified)
+
+
 
 
 
@@ -267,55 +482,19 @@ sudo touch index.html
 
 
 
-### 2.7 jenkins集群并发构建
+
+
+### 2.7 cron表达式
 
 
 
 
 
-
-
-### 2.8 流水线 pipeline
-
-安装插件 blue ocean 功能更多的流水线UI管理界面
-
-```sh
-pipeline {
-    agent any
-
-    stages {
-        stage('Hello') {
-            steps {
-                echo 'Hello World'
-            }
-        }
-    }
-}
-
-```
-
-
-多分支流水线
-
-
-
-
-
-### 2.9 用户权限
-
-
-
-### 2.10 依赖项目
-
-
-
-
-
-## 第3章 容器化构建docker
+## 第3章 容器化构建 docker
 
 ### 3.1 环境安装
 
-1.   安装 vmware虚拟机 ubuntu20操作系统
+1.   安装 vmware虚拟机 centos9 操作系统
 
 2.   安装 docker 和 openssh-server
 
@@ -350,6 +529,40 @@ cat /var/jenkins_home/secrets/initialAdminPassword
 
 
 
+DockerFile
+
+```sh
+# 拉取jdk
+FROM openjdk:11
+# 暴露端口
+EXPOSE 8080
+# 基本目录
+WORKDIR /root
+# 参数1是相对基本目录的文件 参数2是绝对路径 可以重命名
+ADD test1/target/test.jar.jar /root/app.jar
+# 执行命令
+ENTRYPOINT ["java","-jar","/root/app.jar"]
+```
+
+
+
+前置钩子
+
+```
+rm -rf *
+docker rm -f demo
+docker rmi demo
+```
+
+
+
+后置钩子
+
+```
+docker build -t demo .
+docker run -d --name demo -p 8090:8090 demo
+```
+
 
 
 
@@ -359,3 +572,117 @@ cat /var/jenkins_home/secrets/initialAdminPassword
 ## 第4章  容器化构建 k8s
 
 ### 4.1 环境安装
+
+
+
+
+
+## 第5章 jenkins集群 / 并发构建
+
+### 5.1 新增节点
+
+
+
+
+
+### 5.2 配置 job
+
+配置 限制项目的运行节点
+
+勾选 在必要的时候并发构建
+
+
+
+
+
+
+
+## 第6章 流水线
+
+### 6.1 流水线 pipeline
+
+流水线类似于dockerfile
+
+
+
+安装插件 blue ocean 功能更多的流水线UI管理界面
+
+![image-20221112112942535](./asset/image-20221112112942535.png)
+
+
+
+创建 item 选择 pipeline
+
+```sh
+pipeline {
+	# 指定执行器
+    agent any
+	# 所有阶段
+    stages {
+    	# 某一个阶段
+        stage('Hello1') {
+        	# 每个步骤
+            steps {
+                echo 'Hello World'
+            }
+        }
+        
+        # 某一个阶段
+        stage('Hello2') {
+        	# 每个步骤
+            steps {
+                echo 'Hello World'
+            }
+        }
+    }
+}
+```
+
+
+
+
+
+### 6.2 pipeline打包镜像
+
+```sh
+pipeline {
+    agent any
+    tools {
+    	maven "maven3"
+    }
+    stages {
+        stage('拉取代码') {
+            steps {
+                git branch: "main",credentialsId: "github",url:"http://xxxx/xxx.git"
+                echo "拉取成功"
+            }
+        }
+        stage('执行构建') {
+            steps {
+            	sh """
+            	cd demo -1
+            	mvn clean package
+            	"""
+                echo '构建完成'
+            }
+        }
+        
+        stage('发送jar包') {
+            steps {
+                echo 'jar包发送完成'
+            }
+        }
+    }
+}
+
+```
+
+
+
+
+
+### 6.3 多分支流水线
+
+```
+```
+

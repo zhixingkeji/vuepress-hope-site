@@ -195,7 +195,9 @@ jkd1.8  docker-compose.yml
 docker volume create portainer_data # 创建数据卷
 docker pull portainer/portainer-ce # 拉取镜像
 docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce # 创建容器
-https://localhost:9443 # 登录
+
+https://localhost:9443 # 登录 
+wl18612854561 # 密码
 ```
 
 
@@ -204,7 +206,8 @@ https://localhost:9443 # 登录
 
 linux下
 
-```
+```sh
+# 编辑
 sudo vim /etc/docker/daemon.json
 
 
@@ -216,8 +219,20 @@ sudo vim /etc/docker/daemon.json
  	]
 }
 
-sudo service docker restart
-docker info
+{
+  "registry-mirrors": ["https://registry.docker-cn.com",
+                        "http://hub-mirror.c.163.com",
+                        "https://docker.mirrors.ustc.edu.cn",
+                        "https://docker.mirrors.ustc.edu.cn"],
+  "insecure-registries": [],
+  "debug": true,
+  "experimental": false
+}
+
+# 更新配置
+systemctl daemon-reload
+# 重启
+systemctl restart docker
 ```
 
 

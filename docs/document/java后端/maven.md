@@ -25,10 +25,24 @@ JAR类型：Java普通项目
 
 
 
-### 1.3 maven配置
+### 1.3 maven安装
 
-```text
-//镜像配置
+centos
+
+```sh
+yum install maven -y
+
+# 默认路径
+/usr/share/maven
+```
+
+
+
+
+
+### 1.4 maven国内源配置
+
+```xml
 <!-- 阿里云镜像 -->
 <mirror>
   <id>aliyunmaven</id>
@@ -36,7 +50,6 @@ JAR类型：Java普通项目
   <name>阿里云公共仓库</name>
   <url>https://maven.aliyun.com/repository/public</url>
 </mirror>
-
 ```
 
 
