@@ -1277,13 +1277,18 @@ const { itemID, other } = route.params
 
 
 
+### 4.10 路由鉴权
+
+```
+```
+
 
 
 
 
 ## 第5章 常用库
 
-### 5.1 react-native-eui
+### 5.1 element-ui
 
 element 的移动端 ui
 
@@ -1332,7 +1337,154 @@ https://github.com/appintheair/react-native-looped-carousel
 
 
 
-线性渐变组件 
+### 5.4 状态管理 redux 
+
+安装
+
+```js
+npm install redux react-redux redux-thunk --save
+```
+
+
+
+redux/store.js
+
+```js
+import {createStore,applyMiddleware} from "redux"
+import reducers from "./reducers"
+import redixThunk from "redux-thunk"
+
+const store = createStore( reducers, applyMiddleware(redixThunk) )
+export default store
+```
+
+
+
+redux/reducers/index.js
+
+```js
+import { combineReducers } from "redux"
+import Counter from "./Counter"
+//import User from "./User"
+
+export default combineReducers ({
+    Counter,
+    //User
+}) 
+```
+
+
+
+redux/reducers/Counter.js
+
+```js
+import actionTypes from "../action/actionType"
+const initState = {
+    num: 1
+}
+
+export default (state = initState,action) => {
+    switch(action.type){
+        case actionTypes.COUNTER_INCREMENT:
+            return {
+                ...state,
+                num: state.num + action.payload
+            }
+            
+        case actionTypes.COUNTER_INCREMENT:
+            return {
+                ...state,
+                num: state.num - action.payload
+            }
+        default:
+            return state
+    }
+}
+```
+
+
+
+redux/actions/actionType.js
+
+```js
+export default {
+    COUNTER_INCREMENT: "COUNTER_INCREMENT",
+    COUNTER_DECREMENT: "COUNTER_DECREMENT"
+}
+```
+
+
+
+redux/actions/Counter.js
+
+```js
+import actionTypes from "./actionTypes"
+
+//递增
+export const increment = (value) => {
+    return {
+        type: actionTypes.COUNTER_INCREMENT,
+        payload: value
+    }
+}
+//递减
+export const decrement = (value) => {
+    return {
+        type: actionTypes.COUNTER_DECREMENT,
+        payload: value
+    }
+}
+```
+
+
+
+App.js
+
+```jsx
+import {Provider as StoreProvider} from "react-redux"
+import store from "./src/redux/store"
+
+<StoreProvider store={store}>
+	<NavigationContainer></NavigationContainer>    
+</StoreProvider>
+```
+
+
+
+Counter.jsx
+
+```jsx
+import {connect} from "react-redux"
+import {increment,decrement} from "../../redux/action/Counter"
+
+const mapStateToProps = state => {
+    return {
+        num: state.Counter.num
+    }
+}
+
+const Counter = ()=>{
+    return(
+    	<View>
+            <Text>{props.num}</Text>
+            <Button title={"+"} onPress={()=>{props.increment(1)}}></Button>
+            <Button title={"-"} onPress={()=>{props.decrement(1)}}></Button>
+        </View>
+    )
+}
+
+export default connect(mapStateToProps,{increment,decrement})(Counter)
+```
+
+
+
+
+
+### 5.5 线性渐变组件 
+
+
+
+### 5.6 其他
 
 自动管理Timer组件 https://github.com/reactjs/react-timer-mixin
 
